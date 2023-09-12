@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30330.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyRecordPatcher", "AnyRecordPatcher\AnyRecordPatcher.csproj", "{8BA2E1B7-DD65-42B6-A780-17E4037A3C1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyRecordData", "AnyRecordData\AnyRecordData.csproj", "{ABFAB7A3-BE8F-4584-9331-E3B6B4BD7F34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnyRecordExporter", "AnyRecordExporter\AnyRecordExporter.csproj", "{9F745742-5533-43F9-B117-873550A80500}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BA2E1B7-DD65-42B6-A780-17E4037A3C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA2E1B7-DD65-42B6-A780-17E4037A3C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA2E1B7-DD65-42B6-A780-17E4037A3C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA2E1B7-DD65-42B6-A780-17E4037A3C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABFAB7A3-BE8F-4584-9331-E3B6B4BD7F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABFAB7A3-BE8F-4584-9331-E3B6B4BD7F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABFAB7A3-BE8F-4584-9331-E3B6B4BD7F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABFAB7A3-BE8F-4584-9331-E3B6B4BD7F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F745742-5533-43F9-B117-873550A80500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F745742-5533-43F9-B117-873550A80500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F745742-5533-43F9-B117-873550A80500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F745742-5533-43F9-B117-873550A80500}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
