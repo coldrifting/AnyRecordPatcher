@@ -4,7 +4,9 @@ using Mutagen.Bethesda.Skyrim;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataPerk : BaseItem, IHasName, IHasDescription
+public class DataPerk : BaseItem, 
+                        IHasName, 
+                        IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }

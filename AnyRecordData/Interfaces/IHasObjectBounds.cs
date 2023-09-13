@@ -10,11 +10,7 @@ public interface IHasObjectBounds
 
     public void SaveChangesInterface(IObjectBoundedOptionalGetter newRef, IObjectBoundedOptionalGetter oldRef)
     {
-        if (newRef.ObjectBounds is null && oldRef.ObjectBounds is not null)
-        {
-            BoundsDeleted = true;
-            return;
-        }
+        BoundsDeleted = Utility.GetDeleted(newRef.ObjectBounds, oldRef.ObjectBounds);
         
         if (newRef.ObjectBounds is null || newRef.ObjectBounds.Equals(oldRef.ObjectBounds)) 
             return;
@@ -32,15 +28,10 @@ public interface IHasObjectBounds
         where T : IObjectBoundedOptional
     {
         if (BoundsDeleted == true)
-        {
-            if (!typeof(T).IsAssignableTo(typeof(IObjectBounded)))
-            {
-                // Only set object bounds to null if it can be removed from the record normally
-                rec.ObjectBounds = null;
-            }
-        }
+            rec.ObjectBounds = null;
         
-        if (Bounds is null) return;
+        if (Bounds is null) 
+            return;
 
         rec.ObjectBounds ??= new ObjectBounds();
         rec.ObjectBounds.First = new P3Int16(Bounds[0], Bounds[1], Bounds[2]);

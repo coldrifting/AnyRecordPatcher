@@ -3,7 +3,19 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects, IHasEquipmentType, IHasMenuDisplayObject, IHasDescription
+public class DataScroll : BaseItem, 
+                          IHasName, 
+                          IHasKeywords, 
+                          IHasModel, 
+                          IHasObjectBounds, 
+                          IHasWeightValue, 
+                          IHasPickUpPutDownSound, 
+                          IHasMagicEffects, 
+                          IHasEquipmentType, 
+                          IHasMenuDisplayObject, 
+                          IHasDescription,
+                          IHasSpellData,
+                          IHasFlags
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -12,6 +24,7 @@ public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -35,6 +48,17 @@ public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
 
     public string? Description { get; set; }
     public bool? DescriptionDeleted { get; set; }
+    
+    public uint? BaseCost { get; set; }
+    public string? Type { get; set; }
+    public float? ChargeTime { get; set; }
+    public string? CastType { get; set; }
+    public string? TargetType { get; set; }
+    public float? CastDuration { get; set; }
+    public float? Range { get; set; }
+    public string? HalfCostPerk { get; set; }
+    
+    public string[]? Flags { get; set; }
 
     public DataScroll()
     {
@@ -59,6 +83,8 @@ public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
         ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
         ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasSpellData)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasFlags)this).SaveChangesInterface(newRef, oldRef);
     }
 
     public override void Patch(ISkyrimMajorRecord rec)
@@ -79,6 +105,8 @@ public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         ((IHasEquipmentType)this).PatchInterface(rec);
         ((IHasMenuDisplayObject)this).PatchInterface(rec);
         ((IHasDescription)this).PatchInterface(rec);
+        ((IHasSpellData)this).PatchInterface(rec);
+        ((IHasFlags)this).PatchInterface(rec);
     }
 
     public override bool IsModified()
@@ -92,6 +120,8 @@ public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
                ((IHasMagicEffects)this).IsModifiedInterface() ||
                ((IHasEquipmentType)this).IsModifiedInterface() ||
                ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
-               ((IHasDescription)this).IsModifiedInterface();
+               ((IHasDescription)this).IsModifiedInterface() ||
+               ((IHasSpellData)this).IsModifiedInterface() ||
+               ((IHasFlags)this).IsModifiedInterface();
     }
 }

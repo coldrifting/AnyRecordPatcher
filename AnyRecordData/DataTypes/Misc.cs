@@ -3,7 +3,13 @@
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataMisc : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound
+public class DataMisc : BaseItem,
+                        IHasName,
+                        IHasKeywords,
+                        IHasModel,
+                        IHasObjectBounds,
+                        IHasWeightValue,
+                        IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -12,6 +18,7 @@ public class DataMisc : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }

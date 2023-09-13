@@ -10,15 +10,14 @@ using DataTypes;
 public interface IHasModel
 {
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public void SaveChangesInterface(IModeledGetter newRef, IModeledGetter oldRef)
     {
-        if ((oldRef.Model != null && newRef.Model != null && !newRef.Model.File.RawPath.Equals(oldRef.Model.File.RawPath)) ||
-            (oldRef.Model is null && newRef.Model is not null))
-        {
-            ModelPath = newRef.Model.File.RawPath;
-        }
+        ModelPathDeleted = Utility.GetDeleted(newRef.Model?.File.RawPath, oldRef.Model?.File.RawPath);
+        ModelPath = Utility.GetChangesString(newRef.Model?.File.RawPath, oldRef.Model?.File.RawPath);
+        
 
         if ((oldRef.Model != null &&
              newRef.Model is { AlternateTextures: not null } &&
@@ -61,7 +60,7 @@ public interface IHasModel
                 AlternateTexture texture = new()
                 {
                     Name = altTex.Name,
-                    NewTexture = new FormLink<ITextureSetGetter>(FormKey.Factory(altTex.Texture)),
+                    NewTexture = new FormLink<ITextureSetGetter>(altTex.Texture.ToFormKey()),
                     Index = altTex.Index
                 };
                 rec.Model.AlternateTextures.Add(texture);

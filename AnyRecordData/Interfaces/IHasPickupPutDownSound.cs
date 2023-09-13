@@ -13,26 +13,14 @@ public interface IHasPickUpPutDownSound
 
     public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        (string?, string?) newSounds = GetPickUpPutDownSounds(newRef);
-        (string?, string?) oldSounds = GetPickUpPutDownSounds(oldRef);
+        var newSounds = GetPickUpPutDownSounds(newRef);
+        var oldSounds = GetPickUpPutDownSounds(oldRef);
 
-        if (newSounds.Item1 is null && oldSounds.Item1 is not null)
-        {
-            PickUpSoundDeleted = true;
-        }
-        else if (newSounds.Item1?.Equals(oldSounds.Item1) == false)
-        {
-            PickUpSound = newSounds.Item1;
-        }
+        PickUpSoundDeleted = Utility.GetDeleted(newSounds.Item1, oldSounds.Item1);
+        PickUpSound = Utility.GetChangesFormKey(newSounds.Item1, oldSounds.Item1);
         
-        if (newSounds.Item2 is null && oldSounds.Item2 is not null)
-        {
-            PutDownSoundDeleted = true;
-        }
-        else if (newSounds.Item2?.Equals(oldSounds.Item2) == false)
-        {
-            PutDownSound = newSounds.Item2;
-        }
+        PutDownSoundDeleted = Utility.GetDeleted(newSounds.Item2, oldSounds.Item2);
+        PutDownSound = Utility.GetChangesFormKey(newSounds.Item2, oldSounds.Item2);
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
@@ -55,14 +43,14 @@ public interface IHasPickUpPutDownSound
         {
             switch (rec)
             {
-                case IAmmunition    item: item.PickUpSound = PickUpSoundLink(); break;
-                case IArmor         item: item.PickUpSound = PickUpSoundLink(); break;
-                case IBook          item: item.PickUpSound = PickUpSoundLink(); break;
-                case IIngestible    item: item.PickUpSound = PickUpSoundLink(); break;
-                case IIngredient    item: item.PickUpSound = PickUpSoundLink(); break;
-                case IMiscItem      item: item.PickUpSound = PickUpSoundLink(); break;
-                case ISoulGem       item: item.PickUpSound = PickUpSoundLink(); break;
-                case IWeapon        item: item.PickUpSound = PickUpSoundLink(); break;
+                case IAmmunition    item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IArmor         item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IBook          item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IIngestible    item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IIngredient    item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IMiscItem      item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case ISoulGem       item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
+                case IWeapon        item: item.PickUpSound.SetTo(PickUpSound.ToFormKey()); break;
             }
         }
         
@@ -84,21 +72,21 @@ public interface IHasPickUpPutDownSound
         {
             switch (rec)
             {
-                case IAmmunition    item: item.PutDownSound = PutDownSoundLink(); break;
-                case IArmor         item: item.PutDownSound = PutDownSoundLink(); break;
-                case IBook          item: item.PutDownSound = PutDownSoundLink(); break;
-                case IIngestible    item: item.PutDownSound = PutDownSoundLink(); break;
-                case IIngredient    item: item.PutDownSound = PutDownSoundLink(); break;
-                case IMiscItem      item: item.PutDownSound = PutDownSoundLink(); break;
-                case ISoulGem       item: item.PutDownSound = PutDownSoundLink(); break;
-                case IWeapon        item: item.PutDownSound = PutDownSoundLink(); break;
+                case IAmmunition    item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IArmor         item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IBook          item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IIngestible    item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IIngredient    item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IMiscItem      item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case ISoulGem       item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
+                case IWeapon        item: item.PutDownSound.SetTo(PutDownSound.ToFormKey()); break;
             }
         }
     }
 
-    private static (string?, string?) GetPickUpPutDownSounds(ISkyrimMajorRecordGetter rec)
+    private static (IFormLinkNullableGetter<ISoundDescriptorGetter>, IFormLinkNullableGetter<ISoundDescriptorGetter>) GetPickUpPutDownSounds(ISkyrimMajorRecordGetter rec)
     {
-        var sounds = rec switch
+        return rec switch
         {
             IAmmunitionGetter   item => (item.PickUpSound, item.PutDownSound),
             IArmorGetter        item => (item.PickUpSound, item.PutDownSound),
@@ -110,18 +98,6 @@ public interface IHasPickUpPutDownSound
             IWeaponGetter       item => (item.PickUpSound, item.PutDownSound),
             _ => default
         };
-
-        return (sounds.PickUpSound?.FormKey.ToString(), sounds.PutDownSound?.FormKey.ToString());
-    }
-
-    private FormLinkNullable<ISoundDescriptorGetter> PutDownSoundLink()
-    {
-        return new FormLinkNullable<ISoundDescriptorGetter>(FormKey.Factory(PutDownSound));
-    }
-
-    private FormLinkNullable<ISoundDescriptorGetter> PickUpSoundLink()
-    {
-        return new FormLinkNullable<ISoundDescriptorGetter>(FormKey.Factory(PickUpSound));
     }
 
     public bool IsModifiedInterface()

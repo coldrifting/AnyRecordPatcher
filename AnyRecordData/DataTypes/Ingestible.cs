@@ -1,10 +1,20 @@
-﻿using Mutagen.Bethesda.Plugins;
-using Mutagen.Bethesda.Skyrim;
+﻿using Mutagen.Bethesda.Skyrim;
+using Noggog;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects, IHasEquipmentType, IHasDescription
+public class DataIngestible : BaseItem,
+                              IHasName,
+                              IHasKeywords,
+                              IHasModel,
+                              IHasObjectBounds,
+                              IHasWeightValue,
+                              IHasPickUpPutDownSound,
+                              IHasMagicEffects,
+                              IHasEquipmentType,
+                              IHasDescription,
+                              IHasFlags
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -13,6 +23,7 @@ public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -34,8 +45,9 @@ public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
     public string? Description { get; set; }
     public bool? DescriptionDeleted { get; set; }
     
+    public string[]? Flags { get; set; }
+    
     // Ingestible Specific
-    public uint? Flags { get; set; }
     public string? Addiction { get; set; }
     public float? AddictionChance { get; set; }
     public string? ConsumeSound { get; set; }
@@ -62,18 +74,11 @@ public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
         ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
         ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasFlags)this).SaveChangesInterface(newRef, oldRef);
 
-        if (newRef.Flags != oldRef.Flags)
-            Flags = (uint)newRef.Flags;
-
-        if (!newRef.Addiction.FormKey.ToString().Equals(oldRef.Addiction.FormKey.ToString()))
-            Addiction = newRef.Addiction.FormKey.ToString();
-
-        if (!Utility.AreEqual(newRef.AddictionChance, oldRef.AddictionChance))
-            AddictionChance = newRef.AddictionChance;
-
-        if (!newRef.ConsumeSound.FormKey.ToString().Equals(oldRef.ConsumeSound.FormKey.ToString()))
-            ConsumeSound = newRef.ConsumeSound.FormKey.ToString();
+        Addiction = Utility.GetChangesFormKey(newRef.Addiction, oldRef.Addiction);
+        AddictionChance = Utility.GetChangesNumber(newRef.AddictionChance, oldRef.AddictionChance);
+        ConsumeSound = Utility.GetChangesFormKey(newRef.ConsumeSound, oldRef.ConsumeSound);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -93,18 +98,16 @@ public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasMagicEffects)this).PatchInterface(rec);
         ((IHasEquipmentType)this).PatchInterface(rec);
         ((IHasDescription)this).PatchInterface(rec);
-
-        if (Flags is not null)
-            rec.Flags = (Ingestible.Flag)Flags;
-
+        ((IHasFlags)this).PatchInterface(rec);
+        
         if (Addiction is not null)
-            rec.Addiction = new FormLink<ISkyrimMajorRecordGetter>(Addiction.ToFormKey());
+            rec.Addiction.SetTo(ConsumeSound.ToFormKey());
 
         if (AddictionChance is not null)
             rec.AddictionChance = AddictionChance ?? 0.0f;
 
         if (ConsumeSound is not null)
-            rec.ConsumeSound = new FormLink<ISoundDescriptorGetter>(ConsumeSound.ToFormKey());
+            rec.ConsumeSound.SetTo(ConsumeSound.ToFormKey());
     }
 
     public override bool IsModified()
@@ -118,7 +121,7 @@ public class DataIngestible : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
                ((IHasMagicEffects)this).IsModifiedInterface() ||
                ((IHasEquipmentType)this).IsModifiedInterface() ||
                ((IHasDescription)this).IsModifiedInterface() ||
-               Flags is not null ||
+               ((IHasFlags)this).IsModifiedInterface() ||
                Addiction is not null ||
                AddictionChance is not null ||
                ConsumeSound is not null;

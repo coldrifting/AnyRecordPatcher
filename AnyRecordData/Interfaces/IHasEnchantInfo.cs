@@ -1,5 +1,4 @@
-﻿using Mutagen.Bethesda.Plugins;
-using Mutagen.Bethesda.Skyrim;
+﻿using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.Interfaces;
 
@@ -11,17 +10,9 @@ public interface IHasEnchantInfo
 
     public void SaveChangesInterface(IEnchantableGetter newRef, IEnchantableGetter oldRef)
     {
-        string newEnchant = newRef.ObjectEffect.FormKey.ToString();
-        string oldEnchant = oldRef.ObjectEffect.FormKey.ToString();
-        if (newEnchant is "Null" && oldEnchant is not "Null")
-        {
-            ObjectEffectDeleted = true;
-        }
-
-        if (newEnchant is not "Null" && newEnchant != oldEnchant)
-        {
-            ObjectEffect = newEnchant;
-        }
+        ObjectEffectDeleted = Utility.GetDeleted(newRef.ObjectEffect, oldRef.ObjectEffect);
+        ObjectEffect = Utility.GetChangesFormKey(newRef.ObjectEffect, oldRef.ObjectEffect);
+        EnchantmentAmount = Utility.GetChangesNumber(newRef.EnchantmentAmount, oldRef.EnchantmentAmount);
     }
 
     public void PatchInterface(IEnchantable rec)

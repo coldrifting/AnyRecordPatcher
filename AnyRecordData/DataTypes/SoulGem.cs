@@ -5,7 +5,13 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataSoulGem : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound
+public class DataSoulGem : BaseItem, 
+                           IHasName, 
+                           IHasKeywords, 
+                           IHasModel, 
+                           IHasObjectBounds, 
+                           IHasWeightValue, 
+                           IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -14,6 +20,7 @@ public class DataSoulGem : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObje
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -49,15 +56,8 @@ public class DataSoulGem : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObje
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        
-        if (!newRef.LinkedTo.IsNull)
-        {
-            if (oldRef.LinkedTo.IsNull ||
-                oldRef.LinkedTo.FormKey.ToString().Equals(newRef.LinkedTo.FormKey.ToString()))
-            {
-                LinkedTo = newRef.LinkedTo.FormKey.ToString();
-            }
-        }
+
+        LinkedTo = Utility.GetChangesString(newRef.LinkedTo, oldRef.LinkedTo);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -76,9 +76,7 @@ public class DataSoulGem : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObje
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
 
         if (LinkedTo is not null)
-        {
-            rec.LinkedTo = new FormLinkNullable<ISoulGemGetter>(FormKey.Factory(LinkedTo));
-        }
+            rec.LinkedTo = new FormLinkNullable<ISoulGemGetter>(LinkedTo.ToFormKey());
     }
     
     public override bool IsModified()

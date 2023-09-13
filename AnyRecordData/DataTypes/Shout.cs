@@ -4,18 +4,21 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataShout : BaseItem, IHasName, IHasMenuDisplayObject, IHasDescription
+public class DataShout : BaseItem, 
+                         IHasName, 
+                         IHasDescription,
+                         IHasMenuDisplayObject
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
+    
+    public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
     
     public string? MenuObject { get; set; }
     public bool? MenuObjectDeleted { get; set; }
     
     // Shout specific
-    public string? Description { get; set; }
-    public bool? DescriptionDeleted { get; set; }
-
     public List<DataWord>? Words { get; set; }
 
     public DataShout()
@@ -32,8 +35,8 @@ public class DataShout : BaseItem, IHasName, IHasMenuDisplayObject, IHasDescript
     private void SaveChanges(IShoutGetter newRef, IShoutGetter oldRef)
     {
         ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
         ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
 
         if (!newRef.WordsOfPower.SequenceEqual(oldRef.WordsOfPower))
         {
@@ -65,8 +68,8 @@ public class DataShout : BaseItem, IHasName, IHasMenuDisplayObject, IHasDescript
     private void Patch(IShout rec)
     {
         ((IHasName)this).PatchInterface(rec);
-        ((IHasMenuDisplayObject)this).PatchInterface(rec);
         ((IHasDescription)this).PatchInterface(rec);
+        ((IHasMenuDisplayObject)this).PatchInterface(rec);
 
         if (Words is null) 
             return;
@@ -87,8 +90,8 @@ public class DataShout : BaseItem, IHasName, IHasMenuDisplayObject, IHasDescript
     public override bool IsModified()
     {
         return ((IHasName)this).IsModifiedInterface() ||
-               ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
                ((IHasDescription)this).IsModifiedInterface() ||
+               ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
                Words is not null;
     }
 }

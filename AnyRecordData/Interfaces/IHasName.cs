@@ -9,16 +9,8 @@ public interface IHasName
 
     public void SaveChangesInterface(INamedGetter newRef, INamedGetter oldRef)
     {
-        if (newRef.Name is null && oldRef.Name is not null)
-        {
-            NameDeleted = true;
-            return;
-        }
-        
-        if (newRef.Name is not null && !newRef.Name.Equals(oldRef.Name))
-        {
-            Name = newRef.Name;
-        }
+        NameDeleted = Utility.GetDeleted(newRef.Name, oldRef.Name);
+        Name = Utility.GetChangesString(newRef.Name, oldRef.Name);
     }
     
     public void PatchInterface<T>(T rec)
@@ -29,7 +21,6 @@ public interface IHasName
         
         if (Name is not null) 
             rec.Name = Name;
-
     }
 
     public bool IsModifiedInterface()

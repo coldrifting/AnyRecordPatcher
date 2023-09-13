@@ -26,13 +26,13 @@ public static class Exporter
         {
             if (arg.ToLower().StartsWith("plugin="))
             {
-                _pluginName = arg.Remove(7);
+                _pluginName = arg[7..];
                 continue;
             }
 
             if (arg.ToLower().StartsWith("path="))
             {
-                _parentFolder = Path.GetFullPath(arg.Remove(5));
+                _parentFolder = Path.GetFullPath(arg[5..]);
                 continue;
             }
 

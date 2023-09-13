@@ -1,9 +1,19 @@
 ﻿using Mutagen.Bethesda.Skyrim;
+using Noggog;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects, IHasEquipmentType
+public class DataIngredient : BaseItem, 
+                              IHasName, 
+                              IHasKeywords, 
+                              IHasModel, 
+                              IHasObjectBounds, 
+                              IHasWeightValue, 
+                              IHasPickUpPutDownSound, 
+                              IHasMagicEffects, 
+                              IHasEquipmentType,
+                              IHasFlags
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -12,6 +22,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -30,7 +41,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
 
     public List<DataMagicEffect>? Effects { get; set; }
 
-    public uint? Flags { get; set; }
+    public string[]? Flags { get; set; }
 
     public DataIngredient()
     {
@@ -53,9 +64,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
         ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
         ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
-
-        if (newRef.Flags != oldRef.Flags)
-            Flags = (uint)newRef.Flags;
+        ((IHasFlags)this).SaveChangesInterface(newRef, oldRef);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -73,9 +82,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
         ((IHasMagicEffects)this).PatchInterface(rec);
-
-        if (Flags is not null)
-            rec.Flags = (Ingredient.Flag)Flags;
+        ((IHasFlags)this).PatchInterface(rec);
     }
 
     public override bool IsModified()
@@ -87,6 +94,6 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
                ((IHasWeightValue)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
                ((IHasMagicEffects)this).IsModifiedInterface() ||
-               Flags is not null;
+               ((IHasFlags)this).IsModifiedInterface();
     }
 }

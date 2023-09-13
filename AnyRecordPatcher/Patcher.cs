@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using AnyRecordData;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Synthesis;
@@ -124,7 +125,7 @@ public static class Patcher
                 continue;
             }
 
-            dictionary.Add(FormKey.Factory(item.Id), item);
+            dictionary.Add(item.Id.ToFormKey(), item);
         }
     }
 

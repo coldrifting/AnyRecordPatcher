@@ -57,16 +57,8 @@ public interface IHasDescription
 
     private void SaveChangesDescription(string? newDesc, string? oldDesc)
     {
-        string newDescCheck = newDesc ?? "";
-        string oldDescCheck = oldDesc ?? "";
-        if (newDescCheck is "" && oldDescCheck is not "")
-        {
-            DescriptionDeleted = true;
-        }
-        else if (newDescCheck != oldDescCheck)
-        {
-            Description = newDescCheck;
-        }
+        DescriptionDeleted = Utility.GetDeleted(newDesc, oldDesc);
+        Description = Utility.GetChangesString(newDesc, oldDesc);
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)

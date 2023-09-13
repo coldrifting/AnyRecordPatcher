@@ -4,7 +4,13 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataAmmo : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound
+public class DataAmmo : BaseItem,
+                        IHasName,
+                        IHasKeywords,
+                        IHasModel,
+                        IHasObjectBounds,
+                        IHasWeightValue,
+                        IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -13,6 +19,7 @@ public class DataAmmo : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -49,8 +56,7 @@ public class DataAmmo : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
         ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
 
-        if (!Utility.AreEqual(newRef.Damage, oldRef.Damage)) 
-            Damage = newRef.Damage;
+        Damage = Utility.GetChangesNumber(newRef.Damage, oldRef.Damage);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -69,7 +75,7 @@ public class DataAmmo : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
 
         if (Damage is not null)
-            rec.Damage = Damage ?? 1.0f;
+            rec.Damage = Damage ?? 0.0f;
     }
 
     public override bool IsModified()

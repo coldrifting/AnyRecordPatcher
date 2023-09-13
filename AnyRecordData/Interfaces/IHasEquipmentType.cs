@@ -41,17 +41,8 @@ public interface IHasEquipmentType
     public void SaveChangesEquipType(IFormLinkNullableGetter<IEquipTypeGetter> first,
                       IFormLinkNullableGetter<IEquipTypeGetter> second)
     {
-        string newEquipType = first.FormKey.ToString();
-        string oldEquipType = second.FormKey.ToString();
-        if (newEquipType is "Null" && oldEquipType is not "Null")
-        {
-            EquipmentTypeDeleted = true;
-        }
-
-        if (newEquipType is not "Null" && newEquipType != oldEquipType)
-        {
-            EquipmentType = newEquipType;
-        }
+        EquipmentTypeDeleted = Utility.GetDeleted(first, second);
+        EquipmentType = Utility.GetChangesFormKey(first, second);
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)

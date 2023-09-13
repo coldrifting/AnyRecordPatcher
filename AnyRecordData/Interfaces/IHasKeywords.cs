@@ -12,17 +12,10 @@ public interface IHasKeywords
 
     public void SaveChangesInterface(IKeywordedGetter<IKeywordGetter> newRef, IKeywordedGetter<IKeywordGetter> oldRef)
     {
-        if (newRef.Keywords is null && oldRef.Keywords is not null)
-        {
-            KeywordsDeleted = true;
-            return;
-        }
+        KeywordsDeleted = Utility.GetDeleted(newRef.Keywords, oldRef.Keywords);
         
-        var newKeywords = Utility.ToStringSet(newRef.Keywords);
-        var oldKeywords = Utility.ToStringSet(oldRef.Keywords);
-
-        if (!newKeywords.SetEquals(oldKeywords)) 
-            Keywords = newKeywords.ToArray();
+        if (KeywordsDeleted is null)
+            Keywords = Utility.GetChangesSet(Utility.ToStringSet(newRef.Keywords), Utility.ToStringSet(oldRef.Keywords));
     }
     
     public void PatchInterface<T>(T rec)
@@ -40,7 +33,7 @@ public interface IHasKeywords
         rec.Keywords.Clear();
         foreach (string kwd in Keywords)
         {
-            rec.Keywords.Add(new FormLink<IKeywordGetter>(FormKey.Factory(kwd)));
+            rec.Keywords.Add(new FormLink<IKeywordGetter>(kwd.ToFormKey()));
         }
     }
 

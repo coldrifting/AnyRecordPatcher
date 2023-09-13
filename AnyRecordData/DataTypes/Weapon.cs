@@ -4,7 +4,15 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasPickUpPutDownSound, IHasEquipmentType, IHasEnchantInfo, IHasDescription
+public class DataWeapon : BaseItem,
+                          IHasName,
+                          IHasKeywords,
+                          IHasModel,
+                          IHasObjectBounds,
+                          IHasPickUpPutDownSound,
+                          IHasEquipmentType,
+                          IHasEnchantInfo,
+                          IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -13,6 +21,7 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
     public bool? KeywordsDeleted { get; set; }
 
     public string? ModelPath { get; set; }
+    public bool? ModelPathDeleted { get; set; }
     public AltTexSet[]? ModelTextures { get; set; }
     
     public short[]? Bounds { get; set; }
@@ -44,7 +53,7 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
     [YamlMember] public float? Stagger { get; set; }
     [YamlMember] public float? RangeMin { get; set; }
     [YamlMember] public float? RangeMax { get; set; }
-    [YamlMember] public uint? DetectSoundLvl { get; set; }
+    [YamlMember] public string? DetectSoundLevel { get; set; }
 
     public DataWeapon()
     {
@@ -67,86 +76,21 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
         ((IHasEnchantInfo)this).SaveChangesInterface(newRef, oldRef);
         ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+
+        Weight = Utility.GetChangesNumber(newRef.BasicStats?.Weight, oldRef.BasicStats?.Weight);
+        Value = Utility.GetChangesNumber(newRef.BasicStats?.Value, oldRef.BasicStats?.Value);
+        Damage = Utility.GetChangesNumber(newRef.BasicStats?.Damage, oldRef.BasicStats?.Damage);
         
-        if (oldRef.Data is null && newRef.Data is not null)
-        {
-            Reach = newRef.Data.Reach;
-            Speed = newRef.Data.Speed;
-            Stagger = newRef.Data.Stagger;
-            RangeMin = newRef.Data.RangeMin;
-            RangeMax = newRef.Data.RangeMax;
-        }
-        else if (oldRef.Data is not null && newRef.Data is not null)
-        {
-            if (!Equals(newRef.Data.Reach, oldRef.Data.Reach)) 
-                Reach = newRef.Data.Reach;
-
-            if (!Equals(newRef.Data.Speed, oldRef.Data.Speed)) 
-                Speed = newRef.Data.Speed;
-
-            if (!Equals(newRef.Data.Stagger, oldRef.Data.Stagger)) 
-                Stagger = newRef.Data.Stagger;
-
-            if (!Equals(newRef.Data.RangeMin, oldRef.Data.RangeMin)) 
-                RangeMin = newRef.Data.RangeMin;
-
-            if (!Equals(newRef.Data.RangeMax, oldRef.Data.RangeMax)) 
-                RangeMax = newRef.Data.RangeMax;
-        }
+        Reach = Utility.GetChangesNumber(newRef.Data?.Reach, oldRef.Data?.Reach);
+        Speed = Utility.GetChangesNumber(newRef.Data?.Speed, oldRef.Data?.Speed);
+        Stagger = Utility.GetChangesNumber(newRef.Data?.Stagger, oldRef.Data?.Stagger);
+        RangeMin = Utility.GetChangesNumber(newRef.Data?.RangeMin, oldRef.Data?.RangeMin);
+        RangeMax = Utility.GetChangesNumber(newRef.Data?.RangeMax, oldRef.Data?.RangeMax);
         
-        if (oldRef.Critical is null && newRef.Critical is not null)
-        {
-            CriticalDamage = newRef.Critical.Damage;
-            CriticalMult = newRef.Critical.PercentMult;
-        }
-        else if (oldRef.Critical is not null && newRef.Critical is not null)
-        {
-            if (!Equals(newRef.Critical.Damage, oldRef.Critical.Damage))
-            {
-                CriticalDamage = newRef.Critical.Damage;
-            }
+        CriticalDamage = Utility.GetChangesNumber(newRef.Critical?.Damage, oldRef.Critical?.Damage);
+        CriticalMult = Utility.GetChangesNumber(newRef.Critical?.PercentMult, oldRef.Critical?.PercentMult);
 
-            if (!Equals(newRef.Critical.PercentMult, oldRef.Critical.PercentMult))
-            {
-                CriticalMult = newRef.Critical.PercentMult;
-            }
-        }
-        
-        if (oldRef.BasicStats is null && newRef.BasicStats is not null)
-        {
-            Weight = newRef.BasicStats.Weight;
-            Value = newRef.BasicStats.Value;
-            Damage = newRef.BasicStats.Damage;
-        }
-        else if (oldRef.BasicStats is not null && newRef.BasicStats is not null)
-        {
-            if (!Utility.AreEqual(newRef.BasicStats.Weight, oldRef.BasicStats.Weight))
-            {
-                Weight = newRef.BasicStats.Weight;
-            }
-
-            if (newRef.BasicStats.Value != oldRef.BasicStats.Value)
-            {
-                Value = newRef.BasicStats.Value;
-            }
-
-            if (newRef.BasicStats.Damage != oldRef.BasicStats.Damage)
-            {
-                Damage = newRef.BasicStats.Damage;
-            }
-        }
-
-        if (newRef.DetectionSoundLevel != oldRef.DetectionSoundLevel)
-        {
-            DetectSoundLvl = newRef.DetectionSoundLevel switch
-            {
-                SoundLevel.Loud => 0,
-                SoundLevel.VeryLoud => 3,
-                SoundLevel.Silent => 2,
-                SoundLevel.Normal => 1,
-                _ => 1
-            };
-        }
+        DetectSoundLevel = Utility.GetChangesString(newRef.DetectionSoundLevel, oldRef.DetectionSoundLevel);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -182,18 +126,8 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         rec.Data.Stagger = Stagger ?? rec.Data.Stagger;
         rec.Data.RangeMin = RangeMin ?? rec.Data.RangeMin;
         rec.Data.RangeMax = RangeMax ?? rec.Data.RangeMax;
-        
-        if (DetectSoundLvl is not null)
-        {
-            rec.DetectionSoundLevel ??= SoundLevel.Normal;
-            rec.DetectionSoundLevel = DetectSoundLvl switch
-            {
-                0 => SoundLevel.Loud,
-                2 => SoundLevel.Silent,
-                3 => SoundLevel.VeryLoud,
-                _ => SoundLevel.Normal
-            };
-        }
+
+        rec.DetectionSoundLevel = Enum.Parse<SoundLevel>(DetectSoundLevel ?? "Normal");
     }
     
     public override bool IsModified()
@@ -216,6 +150,6 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
                Stagger is not null ||
                RangeMin is not null ||
                RangeMax is not null ||
-               DetectSoundLvl is not null;
+               DetectSoundLevel is not null;
     }
 }

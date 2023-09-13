@@ -34,17 +34,8 @@ public interface IHasMenuDisplayObject
         IFormKeyGetter first,
         IFormKeyGetter second)
     {
-        string newMenuObject = first.FormKey.ToString();
-        string oldMenuObject = second.FormKey.ToString();
-        if (newMenuObject is "Null" && oldMenuObject is not "Null")
-        {
-            MenuObjectDeleted = true;
-        }
-
-        if (newMenuObject is not "Null" && newMenuObject != oldMenuObject)
-        {
-            MenuObject = newMenuObject;
-        }
+        MenuObjectDeleted = Utility.GetDeleted(first, second);
+        MenuObject = Utility.GetChangesFormKey(first, second);
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
