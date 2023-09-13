@@ -10,26 +10,42 @@ using AnyRecordData.DataTypes;
 
 public static class Exporter
 {
-    private static string _pluginName = "Book Covers Skyrim Updated.esp";
+    private static string _pluginName = "Unofficial Skyrim Special Edition Patch.esp";
     private static string _parentFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     private static string _patchFolder = "";
+
+    private static bool _saveBookText = true;
+    
     private static readonly ISerializer Serializer = new SerializerBuilder()
         .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
         .Build();
     
     public static void Main(string[] args)
     {
-        using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
-        
-        if (args.Length > 0)
-            _pluginName = args[0];
+        foreach (string arg in args)
+        {
+            if (arg.ToLower().StartsWith("plugin="))
+            {
+                _pluginName = arg.Remove(7);
+                continue;
+            }
 
-        if (args.Length > 1)
-            _parentFolder = Path.GetFullPath(args[1]);
+            if (arg.ToLower().StartsWith("path="))
+            {
+                _parentFolder = Path.GetFullPath(arg.Remove(5));
+                continue;
+            }
+
+            if (arg.ToLower().StartsWith("savebooktext="))
+            {
+                _saveBookText = arg.ToLower().Equals("savebooktext=true");
+            }
+        }
 
         Regex regex = new Regex(@"\.es(p|m)", RegexOptions.IgnoreCase);
         _patchFolder = _parentFolder + "\\" + regex.Replace(_pluginName, "");
         
+        using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
         GetChanges(env);
     }
     
@@ -37,9 +53,14 @@ public static class Exporter
     {
         if (!CheckForMod(env, _pluginName))
         {
-            Console.WriteLine($"Mod: {_pluginName} not found. Exiting...");
+            Console.WriteLine($"ERR: Mod: {_pluginName} not found. Exiting...");
             return;
         }
+        
+        Console.WriteLine($"INFO: Creating config patch for mod: {_pluginName}");
+        
+        if (!_saveBookText)
+            Console.WriteLine("INFO: Saving of Book Text to config file disabled by user");
 
         SaveChanges<IAmmunitionGetter, DataAmmo>( 
             GetModifiedRecords<IAmmunitionGetter>(env));
@@ -174,6 +195,12 @@ public static class Exporter
                 case (IWeaponGetter, IWeaponGetter) x :
                     data.SaveChanges((IWeaponGetter)x.newRef, (IWeaponGetter)x.oldRef);
                     break;
+            }
+
+            if (data is DataBook dataBook)
+            {
+                if (!_saveBookText)
+                    dataBook.Text = null;
             }
             
             if (!data.IsModified())
