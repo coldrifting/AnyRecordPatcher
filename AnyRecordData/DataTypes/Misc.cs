@@ -44,8 +44,6 @@ public class DataMisc : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        
-        // TODO
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -62,8 +60,6 @@ public class DataMisc : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
-        
-        // TODO
     }
     
     public override bool IsModified()
@@ -74,6 +70,5 @@ public class DataMisc : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectB
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasWeightValue)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface();
-        // TODO
     }
 }

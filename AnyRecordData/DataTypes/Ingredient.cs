@@ -3,7 +3,7 @@
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound
+public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -24,6 +24,8 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
     public string? PutDownSound { get; set; }
     public bool? PickUpSoundDeleted { get; set; }
     public bool? PutDownSoundDeleted { get; set; }
+
+    public List<DataMagicEffect>? Effects { get; set; }
     
     // TODO - Ingestible Specific 
 
@@ -46,7 +48,8 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        
+        ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
+
         // TODO
     }
     
@@ -64,6 +67,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
+        ((IHasMagicEffects)this).PatchInterface(rec);
 
         // TODO
     }
@@ -75,6 +79,7 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
                ((IHasModel)this).IsModifiedInterface() ||
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasWeightValue)this).IsModifiedInterface() ||
-               ((IHasPickUpPutDownSound)this).IsModifiedInterface();
+               ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
+               ((IHasMagicEffects)this).IsModifiedInterface();
     }
 }

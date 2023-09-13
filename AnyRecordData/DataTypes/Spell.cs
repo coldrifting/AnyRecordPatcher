@@ -4,7 +4,7 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
+public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHasMagicEffects
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -30,7 +30,7 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
     public float? Range { get; set; }
     public string? HalfCostPerk { get; set; }
     
-    public List<DataSpellEffect>? Effects { get; set; }
+    public List<DataMagicEffect>? Effects { get; set; }
 
     public DataSpell()
     {
@@ -48,6 +48,7 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
         ((IHasName)this).SaveChangesInterface(newRef, oldRef);
         ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
 
         string newDesc = newRef.Description.String ?? "";
         string oldDesc = oldRef.Description.String ?? "";
@@ -96,40 +97,12 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
 
         if (newHalfCostPerk != oldHalfCostPerk)
             HalfCostPerk = newHalfCostPerk;
-        
-        if (!newRef.Effects.ToHashSet().SetEquals(oldRef.Effects))
-        {
-            CopyEffects(newRef.Effects);
-        }
-    }
-
-    private void CopyEffects(IEnumerable<IEffectGetter> newRef)
-    {
-        Effects = new List<DataSpellEffect>();
-        foreach (IEffectGetter effect in newRef)
-        {
-            DataSpellEffect dataSpellEffect = new()
-            {
-                BaseEffect = effect.BaseEffect.FormKey.ToString(),
-                Magnitude = effect.Data?.Magnitude ?? 0,
-                Area = effect.Data?.Area ?? 0,
-                Duration = effect.Data?.Duration ?? 0,
-                Conditions = new List<DataCondition>()
-            };
-
-            foreach (IConditionGetter condition in effect.Conditions)
-            {
-                dataSpellEffect.Conditions.Add(DataCondition.ConvertToData(condition));
-            }
-
-            Effects.Add(dataSpellEffect);
-        }
     }
 
     public override void Patch(ISkyrimMajorRecord rec)
     {
-        if (rec is ISpell recSoulGem)
-            Patch(recSoulGem);
+        if (rec is ISpell recSpell)
+            Patch(recSpell);
     }
 
     public void Patch(ISpell rec)
@@ -137,15 +110,16 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
         ((IHasObjectBounds)this).PatchInterface(rec);
+        ((IHasMagicEffects)this).PatchInterface(rec);
 
         if (Description is not null)
             rec.Description = Description;
 
         if (EquipmentType is not null)
-            rec.EquipmentType = new FormLinkNullable<IEquipTypeGetter>(FormKey.Factory(EquipmentType));
+            rec.EquipmentType = new FormLinkNullable<IEquipTypeGetter>(EquipmentType.ToFormKey());
 
         if (MenuObject is not null)
-            rec.MenuDisplayObject = new FormLinkNullable<IStaticGetter>(FormKey.Factory(MenuObject));
+            rec.MenuDisplayObject = new FormLinkNullable<IStaticGetter>(MenuObject.ToFormKey());
 
         if (BaseCost is not null)
             rec.BaseCost = BaseCost ?? 1;
@@ -172,34 +146,7 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
             rec.Range = Range ?? 1.0f;
 
         if (HalfCostPerk is not null)
-            rec.HalfCostPerk = new FormLinkNullable<IPerkGetter>(FormKey.Factory(HalfCostPerk));
-        
-        if (Effects is not null)
-        {
-            rec.Effects.Clear();
-            foreach (var dataEffect in Effects)
-            {
-                Effect fx = new()
-                {
-                    BaseEffect = new FormLinkNullable<IMagicEffectGetter>(FormKey.Factory(dataEffect.BaseEffect))
-                };
-
-                fx.Data ??= new EffectData();
-                fx.Data.Magnitude = dataEffect.Magnitude;
-                fx.Data.Area = dataEffect.Area;
-                fx.Data.Duration = dataEffect.Duration;
-
-                if (dataEffect.Conditions is not null)
-                {
-                    foreach (DataCondition c in dataEffect.Conditions)
-                    {
-                        fx.Conditions.Add(c.ConvertToPatch());
-                    } 
-                }
-
-                rec.Effects.Add(fx);
-            } 
-        }
+            rec.HalfCostPerk = new FormLinkNullable<IPerkGetter>(HalfCostPerk.ToFormKey());
     }
 
     public override bool IsModified()
@@ -207,6 +154,7 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
         return ((IHasName)this).IsModifiedInterface() ||
                ((IHasKeywords)this).IsModifiedInterface() ||
                ((IHasObjectBounds)this).IsModifiedInterface() ||
+               ((IHasMagicEffects)this).IsModifiedInterface() ||
                Description is not null ||
                EquipmentType is not null ||
                MenuObject is not null ||
@@ -221,14 +169,4 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds
                HalfCostPerk is not null ||
                Effects is not null;
     }
-}
-
-public class DataSpellEffect
-{
-    public string BaseEffect = "";
-    public float Magnitude;
-    public int Area;
-    public int Duration;
-
-    public List<DataCondition>? Conditions;
 }
