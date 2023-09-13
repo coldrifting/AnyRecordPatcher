@@ -4,13 +4,15 @@ using Mutagen.Bethesda.Skyrim;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataPerk : BaseItem, IHasName
+public class DataPerk : BaseItem, IHasName, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
-    
-    // Perk Specific
+
     public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
+
+    // Perk Specific
     public string? NextPerk { get; set; }
     public bool? NextPerkDeleted { get; set; }
 
@@ -38,13 +40,7 @@ public class DataPerk : BaseItem, IHasName
     private void SaveChanges(IPerkGetter newRef, IPerkGetter oldRef)
     {
         ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        
-        string newDesc = newRef.Description.String ?? "";
-        string oldDesc = oldRef.Description.String ?? "";
-        if (newDesc != oldDesc)
-        {
-            Description = newDesc;
-        }
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
         
         if (newRef.NextPerk.IsNull && !oldRef.NextPerk.FormKey.IsNull)
         {
@@ -94,9 +90,7 @@ public class DataPerk : BaseItem, IHasName
     private void Patch(IPerk rec)
     {
         ((IHasName)this).PatchInterface(rec);
-
-        if (Description is not null)
-            rec.Description = Description;
+        ((IHasDescription)this).PatchInterface(rec);
 
         if (NextPerk is not null)
             rec.NextPerk = new FormLinkNullable<IPerkGetter>(NextPerk.ToFormKey());
@@ -138,7 +132,7 @@ public class DataPerk : BaseItem, IHasName
     public override bool IsModified()
     {
         return ((IHasName)this).IsModifiedInterface() ||
-               Description is not null ||
+               ((IHasDescription)this).IsModifiedInterface() ||
                NextPerk is not null ||
                Trait is not null ||
                Level is not null ||

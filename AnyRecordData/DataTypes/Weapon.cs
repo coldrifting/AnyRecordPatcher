@@ -4,7 +4,7 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasPickUpPutDownSound
+public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasPickUpPutDownSound, IHasEquipmentType, IHasEnchantInfo, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -22,6 +22,16 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
     public string? PutDownSound { get; set; }
     public bool? PickUpSoundDeleted { get; set; }
     public bool? PutDownSoundDeleted { get; set; }
+
+    public string? EquipmentType { get; set; }
+    public bool? EquipmentTypeDeleted { get; set; }
+
+    public string? ObjectEffect { get; set; }
+    public bool? ObjectEffectDeleted { get; set; }
+    public ushort? EnchantmentAmount { get; set; }
+
+    public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
     
     // Weapon Specific
     [YamlMember] public uint? Value { get; set; }
@@ -54,6 +64,9 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasEnchantInfo)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
         
         if (oldRef.Data is null && newRef.Data is not null)
         {
@@ -149,6 +162,9 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
         ((IHasModel)this).PatchInterface(rec);
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
+        ((IHasEquipmentType)this).PatchInterface(rec);
+        ((IHasEnchantInfo)this).PatchInterface(rec);
+        ((IHasDescription)this).PatchInterface(rec);
         
         rec.BasicStats ??= new WeaponBasicStats();
         
@@ -187,6 +203,9 @@ public class DataWeapon : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjec
                ((IHasModel)this).IsModifiedInterface() ||
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
+               ((IHasEquipmentType)this).IsModifiedInterface() ||
+               ((IHasEnchantInfo)this).IsModifiedInterface() ||
+               ((IHasDescription)this).IsModifiedInterface() ||
                Value is not null ||
                Weight is not null ||
                Damage is not null ||

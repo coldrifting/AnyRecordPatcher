@@ -78,6 +78,8 @@ public static class Exporter
             GetModifiedRecords<IMiscItemGetter>(env));
         SaveChanges<IPerkGetter, DataPerk>(
             GetModifiedRecords<IPerkGetter>(env));
+        SaveChanges<IScrollGetter, DataScroll>(
+            GetModifiedRecords<IScrollGetter>(env));
         SaveChanges<ISoulGemGetter, DataSoulGem>(
             GetModifiedRecords<ISoulGemGetter>(env));
         SaveChanges<IShoutGetter, DataShout>(
@@ -182,6 +184,9 @@ public static class Exporter
                     break;
                 case (IPerkGetter, IPerkGetter) x :
                     data.SaveChanges((IPerkGetter)x.newRef, (IPerkGetter)x.oldRef);
+                    break;
+                case (IScrollGetter, IScrollGetter) x :
+                    data.SaveChanges((IScrollGetter)x.newRef, (IScrollGetter)x.oldRef);
                     break;
                 case (ISoulGemGetter, ISoulGemGetter) x :
                     data.SaveChanges((ISoulGemGetter)x.newRef, (ISoulGemGetter)x.oldRef);

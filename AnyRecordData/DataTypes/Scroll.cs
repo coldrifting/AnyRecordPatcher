@@ -1,9 +1,9 @@
-﻿using Mutagen.Bethesda.Skyrim;
+﻿using AnyRecordData.Interfaces;
+using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
-using Interfaces;
 
-public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects, IHasEquipmentType
+public class DataScroll : BaseItem, IHasName, IHasKeywords, IHasModel, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasMagicEffects, IHasEquipmentType, IHasMenuDisplayObject, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -25,25 +25,29 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
     public bool? PickUpSoundDeleted { get; set; }
     public bool? PutDownSoundDeleted { get; set; }
 
+    public List<DataMagicEffect>? Effects { get; set; }
+    
     public string? EquipmentType { get; set; }
     public bool? EquipmentTypeDeleted { get; set; }
 
-    public List<DataMagicEffect>? Effects { get; set; }
+    public string? MenuObject { get; set; }
+    public bool? MenuObjectDeleted { get; set; }
 
-    public uint? Flags { get; set; }
+    public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
 
-    public DataIngredient()
+    public DataScroll()
     {
-        PatchFileName = "Ingredients";
+        PatchFileName = "Scrolls";
     }
 
     public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        if (newRef is IIngredientGetter x && oldRef is IIngredientGetter y)
+        if (newRef is IScrollGetter x && oldRef is IScrollGetter y)
             SaveChanges(x, y);
     }
 
-    private void SaveChanges(IIngredientGetter newRef, IIngredientGetter oldRef)
+    private void SaveChanges(IScrollGetter newRef, IScrollGetter oldRef)
     {
         ((IHasName)this).SaveChangesInterface(newRef, oldRef);
         ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
@@ -53,18 +57,17 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
         ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
         ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
-
-        if (newRef.Flags != oldRef.Flags)
-            Flags = (uint)newRef.Flags;
+        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
     }
-    
+
     public override void Patch(ISkyrimMajorRecord rec)
     {
-        if (rec is IIngredient recIngredient)
-            Patch(recIngredient);
+        if (rec is IScroll recScroll)
+            Patch(recScroll);
     }
 
-    public void Patch(IIngredient rec)
+    private void Patch(IScroll rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
@@ -73,9 +76,9 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
         ((IHasMagicEffects)this).PatchInterface(rec);
-
-        if (Flags is not null)
-            rec.Flags = (Ingredient.Flag)Flags;
+        ((IHasEquipmentType)this).PatchInterface(rec);
+        ((IHasMenuDisplayObject)this).PatchInterface(rec);
+        ((IHasDescription)this).PatchInterface(rec);
     }
 
     public override bool IsModified()
@@ -87,6 +90,8 @@ public class DataIngredient : BaseItem, IHasName, IHasKeywords, IHasModel, IHasO
                ((IHasWeightValue)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
                ((IHasMagicEffects)this).IsModifiedInterface() ||
-               Flags is not null;
+               ((IHasEquipmentType)this).IsModifiedInterface() ||
+               ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
+               ((IHasDescription)this).IsModifiedInterface();
     }
 }

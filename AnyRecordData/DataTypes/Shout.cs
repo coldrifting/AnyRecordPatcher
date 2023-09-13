@@ -4,14 +4,17 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataShout : BaseItem, IHasName
+public class DataShout : BaseItem, IHasName, IHasMenuDisplayObject, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
     
+    public string? MenuObject { get; set; }
+    public bool? MenuObjectDeleted { get; set; }
+    
     // Shout specific
     public string? Description { get; set; }
-    public string? MenuObject { get; set; }
+    public bool? DescriptionDeleted { get; set; }
 
     public List<DataWord>? Words { get; set; }
 
@@ -29,16 +32,8 @@ public class DataShout : BaseItem, IHasName
     private void SaveChanges(IShoutGetter newRef, IShoutGetter oldRef)
     {
         ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        
-        string newDesc = newRef.Description?.String ?? "";
-        string oldDesc = oldRef.Description?.String ?? "";
-        if (newDesc != oldDesc)
-        {
-            Description = newDesc;
-        }
-        
-        if (!newRef.MenuDisplayObject.FormKey.ToString().Equals(oldRef.MenuDisplayObject.FormKey.ToString()))
-            MenuObject = newRef.MenuDisplayObject.FormKey.ToString();
+        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
 
         if (!newRef.WordsOfPower.SequenceEqual(oldRef.WordsOfPower))
         {
@@ -70,34 +65,30 @@ public class DataShout : BaseItem, IHasName
     private void Patch(IShout rec)
     {
         ((IHasName)this).PatchInterface(rec);
+        ((IHasMenuDisplayObject)this).PatchInterface(rec);
+        ((IHasDescription)this).PatchInterface(rec);
 
-        if (Description is not null)
-            rec.Description = Description;
-
-        if (MenuObject is not null)
-            rec.MenuDisplayObject = new FormLinkNullable<IStaticGetter>(FormKey.Factory(MenuObject));
+        if (Words is null) 
+            return;
         
-        if (Words is not null)
+        rec.WordsOfPower.Clear();
+        foreach (DataWord dataWord in Words)
         {
-            rec.WordsOfPower.Clear();
-            foreach (DataWord dataWord in Words)
+            ShoutWord newWord = new()
             {
-                ShoutWord newWord = new()
-                {
-                    Spell = new FormLink<ISpellGetter>(dataWord.Spell.ToFormKey()),
-                    Word = new FormLink<IWordOfPowerGetter>(dataWord.Word.ToFormKey()),
-                    RecoveryTime = dataWord.RecoveryTime ?? 0.0f
-                };
-                rec.WordsOfPower.Add(newWord);
-            }
+                Spell = new FormLink<ISpellGetter>(dataWord.Spell.ToFormKey()),
+                Word = new FormLink<IWordOfPowerGetter>(dataWord.Word.ToFormKey()),
+                RecoveryTime = dataWord.RecoveryTime ?? 0.0f
+            };
+            rec.WordsOfPower.Add(newWord);
         }
     }
 
     public override bool IsModified()
     {
         return ((IHasName)this).IsModifiedInterface() ||
-               Description is not null ||
-               MenuObject is not null ||
+               ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
+               ((IHasDescription)this).IsModifiedInterface() ||
                Words is not null;
     }
 }

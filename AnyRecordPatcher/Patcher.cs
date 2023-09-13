@@ -23,6 +23,7 @@ public static class Patcher
     private static readonly Dictionary<FormKey, DataLight> Lights = new();
     private static readonly Dictionary<FormKey, DataMisc> Misc = new();
     private static readonly Dictionary<FormKey, DataPerk> Perks = new();
+    private static readonly Dictionary<FormKey, DataScroll> Scrolls = new();
     private static readonly Dictionary<FormKey, DataSoulGem> SoulGems = new();
     private static readonly Dictionary<FormKey, DataShout> Shouts = new();
     private static readonly Dictionary<FormKey, DataSpell> Spells = new();
@@ -62,8 +63,9 @@ public static class Patcher
             ReadPatchFile(patchDir, Lights);
             ReadPatchFile(patchDir, Misc);
             ReadPatchFile(patchDir, Perks);
-            ReadPatchFile(patchDir, SoulGems);
+            ReadPatchFile(patchDir, Scrolls);
             ReadPatchFile(patchDir, Shouts);
+            ReadPatchFile(patchDir, SoulGems);
             ReadPatchFile(patchDir, Spells);
             ReadPatchFile(patchDir, Weapons);
 
@@ -76,6 +78,7 @@ public static class Patcher
             Patch(state, Lights);
             Patch(state, Misc);
             Patch(state, Perks);
+            Patch(state, Scrolls);
             Patch(state, Shouts);
             Patch(state, SoulGems);
             Patch(state, Spells);
@@ -165,6 +168,10 @@ public static class Patcher
                 case DataPerk: 
                     if (state.LinkCache.TryResolve<IPerkGetter>(f, out var perkGetter))
                         xyz = state.PatchMod.Perks.GetOrAddAsOverride(perkGetter); 
+                    break;
+                case DataScroll: 
+                    if (state.LinkCache.TryResolve<IScrollGetter>(f, out var scrollGetter))
+                        xyz = state.PatchMod.Scrolls.GetOrAddAsOverride(scrollGetter); 
                     break;
                 case DataSoulGem: 
                     if (state.LinkCache.TryResolve<ISoulGemGetter>(f, out var soulGemGetter))

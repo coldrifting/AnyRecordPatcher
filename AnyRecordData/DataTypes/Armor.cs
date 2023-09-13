@@ -1,12 +1,13 @@
 ﻿using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Plugins.Records;
 using Mutagen.Bethesda.Skyrim;
+using Noggog;
 using YamlDotNet.Serialization;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound
+public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHasWeightValue, IHasPickUpPutDownSound, IHasEquipmentType, IHasEnchantInfo, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -24,6 +25,16 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
     public string? PutDownSound { get; set; }
     public bool? PickUpSoundDeleted { get; set; }
     public bool? PutDownSoundDeleted { get; set; }
+
+    public string? EquipmentType { get; set; }
+    public bool? EquipmentTypeDeleted { get; set; }
+
+    public string? ObjectEffect { get; set; }
+    public bool? ObjectEffectDeleted { get; set; }
+    public ushort? EnchantmentAmount { get; set; }
+
+    public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
     
     // Armor Specific
     [YamlMember] public float? ArmorRating { get; set; }
@@ -61,6 +72,9 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasEnchantInfo)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
         
         if (!Utility.AreEqual(newRef.ArmorRating, oldRef.ArmorRating))
         {
@@ -119,10 +133,24 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
         }
 
         // Models
+        string newMaleModelPath = newRef.WorldModel?.Male?.Model?.File.RawPath ?? "";
+        string oldMaleModelPath = newRef.WorldModel?.Male?.Model?.File.RawPath ?? "";
+        if (newMaleModelPath != oldMaleModelPath)
+        {
+            MaleModelPath = newMaleModelPath;
+        }
+        
         var newMaleList = newRef.WorldModel?.Male?.Model?.AlternateTextures;
         var oldMaleList = oldRef.WorldModel?.Male?.Model?.AlternateTextures;
         MaleModelTextures = CompareTextureLists(newMaleList, oldMaleList);
 
+        string newFemaleModelPath = newRef.WorldModel?.Female?.Model?.File.RawPath ?? "";
+        string oldFemaleModelPath = newRef.WorldModel?.Female?.Model?.File.RawPath ?? "";
+        if (newFemaleModelPath != oldFemaleModelPath)
+        {
+            FemaleModelPath = newFemaleModelPath;
+        }
+        
         var newFemaleList = newRef.WorldModel?.Female?.Model?.AlternateTextures;
         var oldFemaleList = oldRef.WorldModel?.Female?.Model?.AlternateTextures;
         FemaleModelTextures = CompareTextureLists(newFemaleList, oldFemaleList);
@@ -202,6 +230,9 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
+        ((IHasEquipmentType)this).PatchInterface(rec);
+        ((IHasEnchantInfo)this).PatchInterface(rec);
+        ((IHasDescription)this).PatchInterface(rec);
         
         if (ArmorRating is not null)
             rec.ArmorRating = ArmorRating ?? 1.0f;
@@ -259,16 +290,16 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
             rec.WorldModel.Male.Model ??= new Model();
-            rec.WorldModel.Male.Model.AlternateTextures ??= new();
+            rec.WorldModel.Male.Model.AlternateTextures ??= new ExtendedList<AlternateTexture>();
             rec.WorldModel.Male.Model.AlternateTextures.Clear();
 
-            for (int i = 0; i < MaleModelTextures.Length; i++)
+            foreach (AltTexSet t in MaleModelTextures)
             {
                 rec.WorldModel.Male.Model.AlternateTextures.Add(new AlternateTexture
                 {
-                    Name = MaleModelTextures[i].Name,
-                    NewTexture = new FormLink<ITextureSetGetter>(FormKey.Factory(MaleModelTextures[i].Texture)),
-                    Index = MaleModelTextures[i].Index
+                    Name = t.Name,
+                    NewTexture = new FormLink<ITextureSetGetter>(t.Texture.ToFormKey()),
+                    Index = t.Index
                 });
             }
         }
@@ -308,13 +339,13 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
             rec.WorldModel.Female.Model.AlternateTextures ??= new();
             rec.WorldModel.Female.Model.AlternateTextures.Clear();
 
-            for (int i = 0; i < FemaleModelTextures.Length; i++)
+            foreach (AltTexSet t in FemaleModelTextures)
             {
                 rec.WorldModel.Female.Model.AlternateTextures.Add(new AlternateTexture
                 {
-                    Name = FemaleModelTextures[i].Name,
-                    NewTexture = new FormLink<ITextureSetGetter>(FormKey.Factory(FemaleModelTextures[i].Texture)),
-                    Index = FemaleModelTextures[i].Index
+                    Name = t.Name,
+                    NewTexture = new FormLink<ITextureSetGetter>(t.Texture.ToFormKey()),
+                    Index = t.Index
                 });
             }
         }
@@ -345,6 +376,9 @@ public class DataArmor : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasWeightValue)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
+               ((IHasEquipmentType)this).IsModifiedInterface() ||
+               ((IHasEnchantInfo)this).IsModifiedInterface() ||
+               ((IHasDescription)this).IsModifiedInterface() ||
                ArmorRating is not null ||
                BashImpact is not null ||
                AlternativeBlock is not null ||

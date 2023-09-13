@@ -4,7 +4,7 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHasMagicEffects
+public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHasMagicEffects, IHasEquipmentType, IHasMenuDisplayObject, IHasDescription
 {
     public string? Name { get; set; }
     public bool? NameDeleted { get; set; }
@@ -15,11 +15,16 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
     public short[]? Bounds { get; set; }
     public bool? BoundsDeleted { get; set; }
     
-    // Spell Specific
-    public string? Description { get; set; }
     public string? EquipmentType { get; set; }
+    public bool? EquipmentTypeDeleted { get; set; }
+    
     public string? MenuObject { get; set; }
+    public bool? MenuObjectDeleted { get; set; }
+    
+    public string? Description { get; set; }
+    public bool? DescriptionDeleted { get; set; }
 
+    // Spell Specific
     public uint? BaseCost { get; set; }
     public uint? Flags { get; set; }
     public string? Type { get; set; }
@@ -49,20 +54,10 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
         ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
         ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
         ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
-
-        string newDesc = newRef.Description.String ?? "";
-        string oldDesc = oldRef.Description.String ?? "";
-        if (newDesc != oldDesc)
-        {
-            Description = newDesc;
-        }
-
-        if (!newRef.EquipmentType.FormKey.ToString().Equals(oldRef.EquipmentType.FormKey.ToString()))
-            EquipmentType = newRef.EquipmentType.FormKey.ToString();
-
-        if (!newRef.MenuDisplayObject.FormKey.ToString().Equals(oldRef.MenuDisplayObject.FormKey.ToString()))
-            MenuObject = newRef.MenuDisplayObject.FormKey.ToString();
-
+        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+        
         if (newRef.BaseCost != oldRef.BaseCost)
             BaseCost = newRef.BaseCost;
 
@@ -111,16 +106,10 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
         ((IHasKeywords)this).PatchInterface(rec);
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasMagicEffects)this).PatchInterface(rec);
-
-        if (Description is not null)
-            rec.Description = Description;
-
-        if (EquipmentType is not null)
-            rec.EquipmentType = new FormLinkNullable<IEquipTypeGetter>(EquipmentType.ToFormKey());
-
-        if (MenuObject is not null)
-            rec.MenuDisplayObject = new FormLinkNullable<IStaticGetter>(MenuObject.ToFormKey());
-
+        ((IHasEquipmentType)this).PatchInterface(rec);
+        ((IHasMenuDisplayObject)this).PatchInterface(rec);
+        ((IHasDescription)this).PatchInterface(rec);
+        
         if (BaseCost is not null)
             rec.BaseCost = BaseCost ?? 1;
 
@@ -155,9 +144,9 @@ public class DataSpell : BaseItem, IHasName, IHasKeywords, IHasObjectBounds, IHa
                ((IHasKeywords)this).IsModifiedInterface() ||
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasMagicEffects)this).IsModifiedInterface() ||
-               Description is not null ||
-               EquipmentType is not null ||
-               MenuObject is not null ||
+               ((IHasEquipmentType)this).IsModifiedInterface() ||
+               ((IHasMenuDisplayObject)this).IsModifiedInterface() ||
+               ((IHasDescription)this).IsModifiedInterface() ||
                BaseCost is not null ||
                Flags is not null ||
                Type is not null ||
