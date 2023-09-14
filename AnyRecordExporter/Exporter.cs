@@ -68,6 +68,8 @@ public static class Exporter
             GetModifiedRecords<IArmorGetter>(env));
         SaveChanges<IBookGetter, DataBook>(
             GetModifiedRecords<IBookGetter>(env));
+        SaveChanges<ICellGetter, DataCell>(
+            GetModifiedRecords<ICellGetter>(env));
         SaveChanges<IIngestibleGetter, DataIngestible>(
             GetModifiedRecords<IIngestibleGetter>(env));
         SaveChanges<IIngredientGetter, DataIngredient>(
@@ -141,7 +143,7 @@ public static class Exporter
     // Go through the list of comparable records and serialize the modifications to disk.
     private static void SaveChanges<T, TE>(List<(T, T)> compares)
         where T : ISkyrimMajorRecordGetter
-        where TE : BaseItem, new()
+        where TE : DataBaseItem, new()
     {
         if (compares.Count < 0)
             return;
@@ -162,43 +164,46 @@ public static class Exporter
             switch (newRef, oldRef)
             {
                 case (IAmmunitionGetter, IAmmunitionGetter) x :
-                    data.SaveChanges((IAmmunitionGetter)x.newRef, (IAmmunitionGetter)x.oldRef);
+                    data.GetData((IAmmunitionGetter)x.newRef, (IAmmunitionGetter)x.oldRef);
                     break;
                 case (IArmorGetter, IArmorGetter) x :
-                    data.SaveChanges((IArmorGetter)x.newRef, (IArmorGetter)x.oldRef);
+                    data.GetData((IArmorGetter)x.newRef, (IArmorGetter)x.oldRef);
                     break;
                 case (IBookGetter, IBookGetter) x :
-                    data.SaveChanges((IBookGetter)x.newRef, (IBookGetter)x.oldRef);
+                    data.GetData((IBookGetter)x.newRef, (IBookGetter)x.oldRef);
+                    break;
+                case (ICellGetter, ICellGetter) x :
+                    data.GetData((ICellGetter)x.newRef, (ICellGetter)x.oldRef);
                     break;
                 case (IIngestibleGetter, IIngestibleGetter) x :
-                    data.SaveChanges((IIngestibleGetter)x.newRef, (IIngestibleGetter)x.oldRef);
+                    data.GetData((IIngestibleGetter)x.newRef, (IIngestibleGetter)x.oldRef);
                     break;
                 case (IIngredientGetter, IIngredientGetter) x :
-                    data.SaveChanges((IIngredientGetter)x.newRef, (IIngredientGetter)x.oldRef);
+                    data.GetData((IIngredientGetter)x.newRef, (IIngredientGetter)x.oldRef);
                     break;
                 case (ILightGetter, ILightGetter) x :
-                    data.SaveChanges((ILightGetter)x.newRef, (ILightGetter)x.oldRef);
+                    data.GetData((ILightGetter)x.newRef, (ILightGetter)x.oldRef);
                     break;
                 case (IMiscItemGetter, IMiscItemGetter) x :
-                    data.SaveChanges((IMiscItemGetter)x.newRef, (IMiscItemGetter)x.oldRef);
+                    data.GetData((IMiscItemGetter)x.newRef, (IMiscItemGetter)x.oldRef);
                     break;
                 case (IPerkGetter, IPerkGetter) x :
-                    data.SaveChanges((IPerkGetter)x.newRef, (IPerkGetter)x.oldRef);
+                    data.GetData((IPerkGetter)x.newRef, (IPerkGetter)x.oldRef);
                     break;
                 case (IScrollGetter, IScrollGetter) x :
-                    data.SaveChanges((IScrollGetter)x.newRef, (IScrollGetter)x.oldRef);
+                    data.GetData((IScrollGetter)x.newRef, (IScrollGetter)x.oldRef);
                     break;
                 case (ISoulGemGetter, ISoulGemGetter) x :
-                    data.SaveChanges((ISoulGemGetter)x.newRef, (ISoulGemGetter)x.oldRef);
+                    data.GetData((ISoulGemGetter)x.newRef, (ISoulGemGetter)x.oldRef);
                     break;
                 case (IShoutGetter, IShoutGetter) x :
-                    data.SaveChanges((IShoutGetter)x.newRef, (IShoutGetter)x.oldRef);
+                    data.GetData((IShoutGetter)x.newRef, (IShoutGetter)x.oldRef);
                     break;
                 case (ISpellGetter, ISpellGetter) x :
-                    data.SaveChanges((ISpellGetter)x.newRef, (ISpellGetter)x.oldRef);
+                    data.GetData((ISpellGetter)x.newRef, (ISpellGetter)x.oldRef);
                     break;
                 case (IWeaponGetter, IWeaponGetter) x :
-                    data.SaveChanges((IWeaponGetter)x.newRef, (IWeaponGetter)x.oldRef);
+                    data.GetData((IWeaponGetter)x.newRef, (IWeaponGetter)x.oldRef);
                     break;
             }
 

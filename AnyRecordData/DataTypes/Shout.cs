@@ -4,7 +4,7 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataShout : BaseItem, 
+public class DataShout : DataBaseItem, 
                          IHasName, 
                          IHasDescription,
                          IHasMenuDisplayObject
@@ -26,7 +26,7 @@ public class DataShout : BaseItem,
         PatchFileName = "Shouts";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IShoutGetter x && oldRef is IShoutGetter y)
             SaveChanges(x, y);

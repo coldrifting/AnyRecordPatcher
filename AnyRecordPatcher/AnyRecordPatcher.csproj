@@ -13,14 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="data\Patcher 1\Books.yaml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-
-
-  <ItemGroup>
     <ProjectReference Include="..\AnyRecordData\AnyRecordData.csproj" />
   </ItemGroup>
 

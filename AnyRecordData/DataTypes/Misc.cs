@@ -3,7 +3,7 @@
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataMisc : BaseItem,
+public class DataMisc : DataBaseItem,
                         IHasName,
                         IHasKeywords,
                         IHasModel,
@@ -37,7 +37,7 @@ public class DataMisc : BaseItem,
         PatchFileName = "Misc";
     }
     
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IMiscItemGetter x && oldRef is IMiscItemGetter y)
             SaveChanges(x, y);

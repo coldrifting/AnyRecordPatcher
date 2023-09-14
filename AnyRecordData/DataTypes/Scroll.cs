@@ -3,7 +3,7 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataScroll : BaseItem, 
+public class DataScroll : DataBaseItem, 
                           IHasName, 
                           IHasKeywords, 
                           IHasModel, 
@@ -65,7 +65,7 @@ public class DataScroll : BaseItem,
         PatchFileName = "Scrolls";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IScrollGetter x && oldRef is IScrollGetter y)
             SaveChanges(x, y);

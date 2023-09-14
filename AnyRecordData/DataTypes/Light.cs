@@ -3,7 +3,7 @@
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataLight : BaseItem, 
+public class DataLight : DataBaseItem, 
                          IHasName, 
                          IHasModel, 
                          IHasObjectBounds, 
@@ -45,7 +45,7 @@ public class DataLight : BaseItem,
         PatchFileName = "Lights";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is ILightGetter x && oldRef is ILightGetter y)
             SaveChanges(x, y);

@@ -5,7 +5,7 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataBook : BaseItem,
+public class DataBook : DataBaseItem,
                         IHasName,
                         IHasKeywords,
                         IHasWeightValue,
@@ -44,7 +44,7 @@ public class DataBook : BaseItem,
         PatchFileName = "Books";
     }
     
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IBookGetter x && oldRef is IBookGetter y)
             SaveChanges(x, y);

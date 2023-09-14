@@ -1,10 +1,9 @@
 ﻿using Mutagen.Bethesda.Skyrim;
-using Noggog;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataIngredient : BaseItem, 
+public class DataIngredient : DataBaseItem, 
                               IHasName, 
                               IHasKeywords, 
                               IHasModel, 
@@ -48,7 +47,7 @@ public class DataIngredient : BaseItem,
         PatchFileName = "Ingredients";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IIngredientGetter x && oldRef is IIngredientGetter y)
             SaveChanges(x, y);

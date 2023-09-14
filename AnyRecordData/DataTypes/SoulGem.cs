@@ -5,7 +5,7 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataSoulGem : BaseItem, 
+public class DataSoulGem : DataBaseItem, 
                            IHasName, 
                            IHasKeywords, 
                            IHasModel, 
@@ -42,7 +42,7 @@ public class DataSoulGem : BaseItem,
         PatchFileName = "SoulGems";
     }
     
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is ISoulGemGetter x && oldRef is ISoulGemGetter y)
             SaveChanges(x, y);

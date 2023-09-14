@@ -4,7 +4,7 @@ using Mutagen.Bethesda.Skyrim;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataPerk : BaseItem, 
+public class DataPerk : DataBaseItem, 
                         IHasName, 
                         IHasDescription
 {
@@ -33,7 +33,7 @@ public class DataPerk : BaseItem,
         PatchFileName = "Perks";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IPerkGetter x && oldRef is IPerkGetter y)
             SaveChanges(x, y);

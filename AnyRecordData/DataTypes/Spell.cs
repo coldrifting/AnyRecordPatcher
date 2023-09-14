@@ -3,7 +3,7 @@ using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 
-public class DataSpell : BaseItem, 
+public class DataSpell : DataBaseItem, 
                          IHasName, 
                          IHasKeywords, 
                          IHasObjectBounds, 
@@ -51,7 +51,7 @@ public class DataSpell : BaseItem,
         PatchFileName = "Spells";
     }
     
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is ISpellGetter x && oldRef is ISpellGetter y)
             SaveChanges(x, y);

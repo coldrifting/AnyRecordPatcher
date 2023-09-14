@@ -7,7 +7,7 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataArmor : BaseItem,
+public class DataArmor : DataBaseItem,
                          IHasName,
                          IHasDescription,
                          IHasKeywords,
@@ -69,7 +69,7 @@ public class DataArmor : BaseItem,
         PatchFileName = "Armor";
     }
     
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IArmorGetter x && oldRef is IArmorGetter y)
             SaveChanges(x, y);

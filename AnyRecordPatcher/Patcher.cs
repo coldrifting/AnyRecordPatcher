@@ -19,6 +19,7 @@ public static class Patcher
     private static readonly Dictionary<FormKey, DataAmmo> Ammo = new();
     private static readonly Dictionary<FormKey, DataArmor> Armors = new();
     private static readonly Dictionary<FormKey, DataBook> Books = new();
+    private static readonly Dictionary<FormKey, DataCell> Cells = new();
     private static readonly Dictionary<FormKey, DataIngestible> Ingestibles = new();
     private static readonly Dictionary<FormKey, DataIngredient> Ingredients = new();
     private static readonly Dictionary<FormKey, DataLight> Lights = new();
@@ -59,6 +60,7 @@ public static class Patcher
             ReadPatchFile(patchDir, Ammo);
             ReadPatchFile(patchDir, Armors);
             ReadPatchFile(patchDir, Books);
+            ReadPatchFile(patchDir, Cells);
             ReadPatchFile(patchDir, Ingestibles);
             ReadPatchFile(patchDir, Ingredients);
             ReadPatchFile(patchDir, Lights);
@@ -74,6 +76,7 @@ public static class Patcher
             Patch(state, Ammo);
             Patch(state, Armors);
             Patch(state, Books);
+            Patch(state, Cells);
             Patch(state, Ingestibles);
             Patch(state, Ingredients);
             Patch(state, Lights);
@@ -86,17 +89,17 @@ public static class Patcher
             Patch(state, Weapons);
         }
 
-        if (_errors)
-        {
-            Console.WriteLine("1 or more records could not be patched because there were missing identifiers.");
-            Console.WriteLine("Please check your patch files...");
-        }
+        if (!_errors) 
+            return;
+        
+        Console.WriteLine("1 or more records could not be patched because there were missing identifiers.");
+        Console.WriteLine("Please check your patch files...");
     }
 
     // Reads a patch file contents, serializes the yaml data into objects,
     // and adds those objects into a dictionary of the specified type
     private static void ReadPatchFile<T>(string patchDir, IDictionary<FormKey, T> dictionary)
-    where T : BaseItem, new()
+    where T : DataBaseItem, new()
     {
         string patchFileFullPath = patchDir + "\\" + new T().PatchFileName + ".yaml";
         if (!File.Exists(patchFileFullPath)) 
@@ -130,76 +133,50 @@ public static class Patcher
     }
 
     private static void Patch<T>(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, Dictionary<FormKey, T> dict)
-        where T : BaseItem
+        where T : DataBaseItem
     {
-        foreach ((FormKey f, BaseItem data) in dict)
+        foreach ((FormKey f, DataBaseItem data) in dict)
         {
-            ISkyrimMajorRecord? xyz = null;
-            
-            switch (data)
+            ISkyrimMajorRecord? recOverride = data switch
             {
-                case DataAmmo: 
-                    if (state.LinkCache.TryResolve<IAmmunitionGetter>(f, out var ammoGetter))
-                        xyz = state.PatchMod.Ammunitions.GetOrAddAsOverride(ammoGetter); 
-                    break;
-                case DataArmor: 
-                    if (state.LinkCache.TryResolve<IArmorGetter>(f, out var armorGetter))
-                        xyz = state.PatchMod.Armors.GetOrAddAsOverride(armorGetter); 
-                    break;
-                case DataBook: 
-                    if (state.LinkCache.TryResolve<IBookGetter>(f, out var bookGetter))
-                        xyz = state.PatchMod.Books.GetOrAddAsOverride(bookGetter); 
-                    break;
-                case DataIngestible: 
-                    if (state.LinkCache.TryResolve<IIngestibleGetter>(f, out var ingestibleGetter))
-                        xyz = state.PatchMod.Ingestibles.GetOrAddAsOverride(ingestibleGetter); 
-                    break;
-                case DataIngredient: 
-                    if (state.LinkCache.TryResolve<IIngredientGetter>(f, out var ingredientGetter))
-                        xyz = state.PatchMod.Ingredients.GetOrAddAsOverride(ingredientGetter); 
-                    break;
-                case DataLight: 
-                    if (state.LinkCache.TryResolve<ILightGetter>(f, out var lightGetter))
-                        xyz = state.PatchMod.Lights.GetOrAddAsOverride(lightGetter); 
-                    break;
-                case DataMisc: 
-                    if (state.LinkCache.TryResolve<IMiscItemGetter>(f, out var miscGetter))
-                        xyz = state.PatchMod.MiscItems.GetOrAddAsOverride(miscGetter); 
-                    break;
-                case DataPerk: 
-                    if (state.LinkCache.TryResolve<IPerkGetter>(f, out var perkGetter))
-                        xyz = state.PatchMod.Perks.GetOrAddAsOverride(perkGetter); 
-                    break;
-                case DataScroll: 
-                    if (state.LinkCache.TryResolve<IScrollGetter>(f, out var scrollGetter))
-                        xyz = state.PatchMod.Scrolls.GetOrAddAsOverride(scrollGetter); 
-                    break;
-                case DataSoulGem: 
-                    if (state.LinkCache.TryResolve<ISoulGemGetter>(f, out var soulGemGetter))
-                        xyz = state.PatchMod.SoulGems.GetOrAddAsOverride(soulGemGetter); 
-                    break;
-                case DataShout: 
-                    if (state.LinkCache.TryResolve<IShoutGetter>(f, out var shoutGetter))
-                        xyz = state.PatchMod.Shouts.GetOrAddAsOverride(shoutGetter); 
-                    break;
-                case DataSpell: 
-                    if (state.LinkCache.TryResolve<ISpellGetter>(f, out var spellGetter))
-                        xyz = state.PatchMod.Spells.GetOrAddAsOverride(spellGetter); 
-                    break;
-                case DataWeapon: 
-                    if (state.LinkCache.TryResolve<IWeaponGetter>(f, out var weaponGetter))
-                        xyz = state.PatchMod.Weapons.GetOrAddAsOverride(weaponGetter); 
-                    break;
-            }
-            
-            if (xyz is not null)
-                data.Patch(xyz);
+                DataAmmo => state.PatchMod.Ammunitions.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IAmmunitionGetter>(f)),
+                DataArmor => state.PatchMod.Armors.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IArmorGetter>(f)),
+                DataBook => state.PatchMod.Books.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IBookGetter>(f)),
+                DataCell => state.LinkCache.ResolveContext<ICell, ICellGetter>(f).GetOrAddAsOverride(state.PatchMod),
+                DataIngestible => state.PatchMod.Ingestibles.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IIngestibleGetter>(f)),
+                DataIngredient => state.PatchMod.Ingredients.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IIngredientGetter>(f)),
+                DataLight => state.PatchMod.Lights.GetOrAddAsOverride(
+                state.LinkCache.Resolve<ILightGetter>(f)),
+                DataMisc => state.PatchMod.MiscItems.GetOrAddAsOverride(
+                state.LinkCache.Resolve<IMiscItemGetter>(f)),
+                DataPerk => state.PatchMod.Perks.GetOrAddAsOverride(
+                state.LinkCache.Resolve<IPerkGetter>(f)),
+                DataScroll => state.PatchMod.Scrolls.GetOrAddAsOverride(
+                state.LinkCache.Resolve<IScrollGetter>(f)),
+                DataSoulGem => state.PatchMod.SoulGems.GetOrAddAsOverride(
+                state.LinkCache.Resolve<ISoulGemGetter>(f)),
+                DataShout => state.PatchMod.Shouts.GetOrAddAsOverride(
+                state.LinkCache.Resolve<IShoutGetter>(f)),
+                DataSpell => state.PatchMod.Spells.GetOrAddAsOverride(
+                state.LinkCache.Resolve<ISpellGetter>(f)),
+                DataWeapon => state.PatchMod.Weapons.GetOrAddAsOverride(
+                state.LinkCache.Resolve<IWeaponGetter>(f)),
+                _ => null
+            };
+
+            if (recOverride is not null)
+                data.Patch(recOverride);
         }
 
         // Clear database for next patch
         dict.Clear();
     }
-    
+
     private static Stream ToStream(this string str)
     {
         MemoryStream stream = new();

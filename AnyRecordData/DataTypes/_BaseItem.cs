@@ -4,7 +4,7 @@ using YamlDotNet.Serialization;
 
 namespace AnyRecordData.DataTypes;
 
-public abstract class BaseItem
+public abstract class DataBaseItem
 {
     // Which record to replace (FormKey)
     public string? Id { get; set; }
@@ -12,7 +12,7 @@ public abstract class BaseItem
     [YamlIgnore]
     public string PatchFileName { get; set; } = "";
 
-    public abstract void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef);
+    public abstract void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef);
 
     public abstract void Patch(ISkyrimMajorRecord rec);
     
@@ -41,7 +41,7 @@ public class AltTexSet
 
     public static AltTexSet FromPatch(IAlternateTextureGetter at)
     {
-        return new AltTexSet(at.Name, at.NewTexture.FormKey.ToString() ?? string.Empty, at.Index);
+        return new AltTexSet(at.Name, at.NewTexture.FormKey.ToString(), at.Index);
     }
 
     public AlternateTexture ToPatch()

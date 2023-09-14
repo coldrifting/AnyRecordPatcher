@@ -1,10 +1,9 @@
 ﻿using Mutagen.Bethesda.Skyrim;
-using Noggog;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataIngestible : BaseItem,
+public class DataIngestible : DataBaseItem,
                               IHasName,
                               IHasKeywords,
                               IHasModel,
@@ -57,7 +56,7 @@ public class DataIngestible : BaseItem,
         PatchFileName = "Ingestibles";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IIngestibleGetter x && oldRef is IIngestibleGetter y)
             SaveChanges(x, y);

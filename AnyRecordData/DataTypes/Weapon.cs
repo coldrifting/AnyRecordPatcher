@@ -4,7 +4,7 @@ using YamlDotNet.Serialization;
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataWeapon : BaseItem,
+public class DataWeapon : DataBaseItem,
                           IHasName,
                           IHasKeywords,
                           IHasModel,
@@ -60,7 +60,7 @@ public class DataWeapon : BaseItem,
         PatchFileName = "Weapons";
     }
 
-    public override void SaveChanges(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IWeaponGetter x && oldRef is IWeaponGetter y)
             SaveChanges(x, y);
