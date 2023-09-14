@@ -1,8 +1,6 @@
-﻿using Mutagen.Bethesda.Plugins;
+﻿using JetBrains.Annotations;
 using Mutagen.Bethesda.Plugins.Records;
 using Mutagen.Bethesda.Skyrim;
-using Noggog;
-using YamlDotNet.Serialization;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
@@ -19,50 +17,34 @@ public class DataArmor : DataBaseItem,
                          IHasFlags
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-
     public string? Description { get; set; }
-    public bool? DescriptionDeleted { get; set; }
-    
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-    
+    public List<string>? Keywords { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public float? Weight { get; set; }
     public uint? Value { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
-
     public string? EquipmentType { get; set; }
-    public bool? EquipmentTypeDeleted { get; set; }
-
     public string? ObjectEffect { get; set; }
-    public bool? ObjectEffectDeleted { get; set; }
     public ushort? EnchantmentAmount { get; set; }
-    
-    [YamlMember] public string[]? Flags { get; set; }
+    public List<string>? Flags { get; set; }
     
     // Armor Specific
-    [YamlMember] public float? ArmorRating { get; set; }
-    [YamlMember] public string? BashImpact { get; set; }
-    [YamlMember] public string? AlternativeBlock { get; set; }
-    [YamlMember] public string? ArmorType { get; set; }
-    [YamlMember] public string? Race { get; set; }
-    [YamlMember] public string? TemplateArmor { get; set;}
-    [YamlMember] public string[]? Armatures { get; set; }
-    [YamlMember] public string? MaleModelPath { get; set; }
-    [YamlMember] public AltTexSet[]? MaleModelTextures { get; set; }
-    [YamlMember] public string? FemaleModelPath { get; set; }
-    [YamlMember] public AltTexSet[]? FemaleModelTextures { get; set; }
-    [YamlMember] public string? MaleIconLarge { get; set; }
-    [YamlMember] public string? MaleIconSmall { get; set; }
-    [YamlMember] public string? FemaleIconLarge { get; set; }
-    [YamlMember] public string? FemaleIconSmall { get; set; }
+    [UsedImplicitly] public float? ArmorRating { get; set; }
+    [UsedImplicitly] public string? BashImpact { get; set; }
+    [UsedImplicitly] public string? AlternativeBlock { get; set; }
+    [UsedImplicitly] public string? ArmorType { get; set; }
+    [UsedImplicitly] public string? Race { get; set; }
+    [UsedImplicitly] public string? TemplateArmor { get; set;}
+    [UsedImplicitly] public List<string>? Armatures { get; set; }
+    [UsedImplicitly] public string? MaleModelPath { get; set; }
+    [UsedImplicitly] public List<DataAltTexSet>? MaleModelTextures { get; set; }
+    [UsedImplicitly] public string? FemaleModelPath { get; set; }
+    [UsedImplicitly] public List<DataAltTexSet>? FemaleModelTextures { get; set; }
+    [UsedImplicitly] public string? MaleIconLarge { get; set; }
+    [UsedImplicitly] public string? MaleIconSmall { get; set; }
+    [UsedImplicitly] public string? FemaleIconLarge { get; set; }
+    [UsedImplicitly] public string? FemaleIconSmall { get; set; }
 
     public DataArmor()
     {
@@ -72,50 +54,51 @@ public class DataArmor : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IArmorGetter x && oldRef is IArmorGetter y)
-            SaveChanges(x, y);
+            GetChanges(x, y);
     }
 
-    private void SaveChanges(IArmorGetter newRef, IArmorGetter oldRef)
+    private void GetChanges(IArmorGetter newRef, IArmorGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasEnchantInfo)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasFlags)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
+        ((IHasEquipmentType)this).GetDataInterface(newRef, oldRef);
+        ((IHasEnchantInfo)this).GetDataInterface(newRef, oldRef);
+        ((IHasDescription)this).GetDataInterface(newRef, oldRef);
+        ((IHasFlags)this).GetDataInterface(newRef, oldRef);
         
-        ArmorRating = Utility.GetChangesNumber(newRef.ArmorRating, oldRef.ArmorRating);
-        BashImpact = Utility.GetChangesFormKey(newRef.BashImpactDataSet, oldRef.BashImpactDataSet);
-        AlternativeBlock = Utility.GetChangesFormKey(newRef.AlternateBlockMaterial, oldRef.AlternateBlockMaterial);
-        TemplateArmor = Utility.GetChangesFormKey(newRef.TemplateArmor, oldRef.TemplateArmor);
-        Race = Utility.GetChangesFormKey(newRef.Race, oldRef.Race);
-        ArmorType = Utility.GetChangesString(newRef.BodyTemplate?.ArmorType, oldRef.BodyTemplate?.ArmorType);
-        Armatures = Utility.GetChangesSet(Utility.ToStringSet(newRef.Armature), Utility.ToStringSet(oldRef.Armature));
+        ArmorRating = DataUtils.GetNumber(newRef.ArmorRating, oldRef.ArmorRating);
+        BashImpact = DataUtils.GetString(newRef.BashImpactDataSet, oldRef.BashImpactDataSet);
+        AlternativeBlock = DataUtils.GetString(newRef.AlternateBlockMaterial, oldRef.AlternateBlockMaterial);
+        TemplateArmor = DataUtils.GetString(newRef.TemplateArmor, oldRef.TemplateArmor);
+        Race = DataUtils.GetString(newRef.Race, oldRef.Race);
+        ArmorType = DataUtils.GetString(newRef.BodyTemplate?.ArmorType, oldRef.BodyTemplate?.ArmorType);
+        Armatures = DataUtils.GetDataFormLinkList(newRef.Armature, oldRef.Armature);
 
         // Models
-        MaleModelPath = Utility.GetChangesString(
-            newRef.WorldModel?.Male?.Model?.File.RawPath,
-            newRef.WorldModel?.Male?.Model?.File.RawPath);
-        FemaleModelPath = Utility.GetChangesString(
-            newRef.WorldModel?.Female?.Model?.File.RawPath,
-            newRef.WorldModel?.Female?.Model?.File.RawPath);
+        string? newMaleModelFile = newRef.WorldModel?.Male?.Model?.File.RawPath;
+        string? oldMaleModelFile = oldRef.WorldModel?.Male?.Model?.File.RawPath;
+        MaleModelPath = DataUtils.GetString(newMaleModelFile, oldMaleModelFile);
+        
+        string? newFemaleModelFile = newRef.WorldModel?.Female?.Model?.File.RawPath;
+        string? oldFemaleModelFile = oldRef.WorldModel?.Female?.Model?.File.RawPath;
+        FemaleModelPath = DataUtils.GetString(newFemaleModelFile, oldFemaleModelFile);
         
         var newMaleList = newRef.WorldModel?.Male?.Model?.AlternateTextures;
         var oldMaleList = oldRef.WorldModel?.Male?.Model?.AlternateTextures;
-        MaleModelTextures = AltTexSet.CompareTextureLists(newMaleList, oldMaleList);
+        MaleModelTextures = DataAltTexSet.GetTextureList(newMaleList, oldMaleList);
 
         var newFemaleList = newRef.WorldModel?.Female?.Model?.AlternateTextures;
         var oldFemaleList = oldRef.WorldModel?.Female?.Model?.AlternateTextures;
-        FemaleModelTextures = AltTexSet.CompareTextureLists(newFemaleList, oldFemaleList);
+        FemaleModelTextures = DataAltTexSet.GetTextureList(newFemaleList, oldFemaleList);
 
         // Icons
-        MaleIconLarge = Utility.GetChangesString(newRef.WorldModel?.Male?.Icons?.LargeIconFilename, oldRef.WorldModel?.Male?.Icons?.LargeIconFilename);
-        MaleIconSmall = Utility.GetChangesString(newRef.WorldModel?.Male?.Icons?.SmallIconFilename, oldRef.WorldModel?.Male?.Icons?.SmallIconFilename);
-        FemaleIconLarge = Utility.GetChangesString(newRef.WorldModel?.Female?.Icons?.LargeIconFilename, oldRef.WorldModel?.Female?.Icons?.LargeIconFilename);
-        FemaleIconSmall = Utility.GetChangesString(newRef.WorldModel?.Female?.Icons?.SmallIconFilename, oldRef.WorldModel?.Female?.Icons?.SmallIconFilename);
+        MaleIconLarge = DataUtils.GetString(newRef.WorldModel?.Male?.Icons?.LargeIconFilename, oldRef.WorldModel?.Male?.Icons?.LargeIconFilename);
+        MaleIconSmall = DataUtils.GetString(newRef.WorldModel?.Male?.Icons?.SmallIconFilename, oldRef.WorldModel?.Male?.Icons?.SmallIconFilename);
+        FemaleIconLarge = DataUtils.GetString(newRef.WorldModel?.Female?.Icons?.LargeIconFilename, oldRef.WorldModel?.Female?.Icons?.LargeIconFilename);
+        FemaleIconSmall = DataUtils.GetString(newRef.WorldModel?.Female?.Icons?.SmallIconFilename, oldRef.WorldModel?.Female?.Icons?.SmallIconFilename);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -124,7 +107,7 @@ public class DataArmor : DataBaseItem,
             Patch(recArmor);
     }
 
-    public void Patch(IArmor rec)
+    private void Patch(IArmor rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
@@ -135,42 +118,29 @@ public class DataArmor : DataBaseItem,
         ((IHasEnchantInfo)this).PatchInterface(rec);
         ((IHasDescription)this).PatchInterface(rec);
         ((IHasFlags)this).PatchInterface(rec);
-        
-        rec.ArmorRating = ArmorRating ?? rec.ArmorRating;
-        
-        if (BashImpact is not null)
-            rec.BashImpactDataSet.SetTo(BashImpact.ToFormKey());
-        
-        if (AlternativeBlock is not null)
-            rec.AlternateBlockMaterial.SetTo(AlternativeBlock.ToFormKey());
 
+        rec.ArmorRating = DataUtils.PatchNumber(rec.ArmorRating, ArmorRating);
+
+        DataUtils.PatchFormLink(rec.AlternateBlockMaterial, AlternativeBlock);
+        DataUtils.PatchFormLink(rec.BashImpactDataSet, BashImpact);
+        
         if (ArmorType is not null)
         {
             rec.BodyTemplate ??= new BodyTemplate();
             rec.BodyTemplate.ArmorType = Enum.Parse<ArmorType>(ArmorType);
         }
 
-        if (Race is not null)
-            rec.Race.SetTo(Race.ToFormKey());
-
-        if (TemplateArmor is not null)
-            rec.TemplateArmor.SetTo(TemplateArmor.ToFormKey());
-
-        if (Armatures is not null)
-        {
-            rec.Armature.Clear();
-            foreach (string arm in Armatures)
-            {
-                rec.Armature.Add(new FormLink<ArmorAddon>(arm.ToFormKey()));
-            }
-        }
+        DataUtils.PatchFormLink(rec.Race, Race);
+        DataUtils.PatchFormLink(rec.TemplateArmor, TemplateArmor);
+        
+        DataUtils.PatchFormLinkList(rec.Armature, Armatures);
         
         if (MaleModelPath is not null)
         {
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
             rec.WorldModel.Male.Model ??= new Model();
-            rec.WorldModel.Male.Model.File.RawPath = MaleModelPath;
+            DataUtils.PatchString(rec.WorldModel.Male.Model.File.RawPath, MaleModelPath);
         }
         
         if (MaleModelTextures is not null)
@@ -178,31 +148,23 @@ public class DataArmor : DataBaseItem,
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
             rec.WorldModel.Male.Model ??= new Model();
-            rec.WorldModel.Male.Model.AlternateTextures ??= new ExtendedList<AlternateTexture>();
-            rec.WorldModel.Male.Model.AlternateTextures.Clear();
-
-            foreach (AltTexSet t in MaleModelTextures)
-            {
-                rec.WorldModel.Male.Model.AlternateTextures.Add(t.ToPatch());
-            }
+            DataAltTexSet.PatchModelTextures(rec.WorldModel.Male.Model.AlternateTextures, MaleModelTextures);
         }
 
         if (MaleIconLarge is not null)
         {
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
-            rec.WorldModel.Male.Model ??= new Model();
             rec.WorldModel.Male.Icons ??= new Icons();
-            rec.WorldModel.Male.Icons.LargeIconFilename = MaleIconLarge;
+            DataUtils.PatchString(rec.WorldModel.Male.Icons.LargeIconFilename, MaleIconLarge);
         }
 
         if (MaleIconSmall is not null)
         {
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
-            rec.WorldModel.Male.Model ??= new Model();
             rec.WorldModel.Male.Icons ??= new Icons();
-            rec.WorldModel.Male.Icons.SmallIconFilename = MaleIconSmall;
+            DataUtils.PatchString(rec.WorldModel.Male.Icons.SmallIconFilename, MaleIconSmall);
         }
         
         if (FemaleModelPath is not null)
@@ -210,7 +172,7 @@ public class DataArmor : DataBaseItem,
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Female ??= new ArmorModel();
             rec.WorldModel.Female.Model ??= new Model();
-            rec.WorldModel.Female.Model.File.RawPath = FemaleModelPath;
+            DataUtils.PatchString(rec.WorldModel.Female.Model.File.RawPath, FemaleModelPath);
         }
         
         if (FemaleModelTextures is not null)
@@ -218,31 +180,23 @@ public class DataArmor : DataBaseItem,
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Female ??= new ArmorModel();
             rec.WorldModel.Female.Model ??= new Model();
-            rec.WorldModel.Female.Model.AlternateTextures ??= new ExtendedList<AlternateTexture>();
-            rec.WorldModel.Female.Model.AlternateTextures.Clear();
-
-            foreach (AltTexSet t in FemaleModelTextures)
-            {
-                rec.WorldModel.Female.Model.AlternateTextures.Add(t.ToPatch());
-            }
+            DataAltTexSet.PatchModelTextures(rec.WorldModel.Female.Model.AlternateTextures, FemaleModelTextures);
         }
 
         if (FemaleIconLarge is not null)
         {
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Female ??= new ArmorModel();
-            rec.WorldModel.Female.Model ??= new Model();
             rec.WorldModel.Female.Icons ??= new Icons();
-            rec.WorldModel.Female.Icons.LargeIconFilename = FemaleIconLarge;
+            DataUtils.PatchString(rec.WorldModel.Female.Icons.LargeIconFilename, FemaleIconLarge);
         }
 
         if (FemaleIconSmall is not null)
         {
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Female ??= new ArmorModel();
-            rec.WorldModel.Female.Model ??= new Model();
             rec.WorldModel.Female.Icons ??= new Icons();
-            rec.WorldModel.Female.Icons.SmallIconFilename = FemaleIconSmall;
+            DataUtils.PatchString(rec.WorldModel.Female.Icons.SmallIconFilename, FemaleIconSmall);
         }
     }
 

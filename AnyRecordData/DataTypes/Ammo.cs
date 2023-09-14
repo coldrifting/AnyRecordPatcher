@@ -1,5 +1,5 @@
-﻿using Mutagen.Bethesda.Skyrim;
-using YamlDotNet.Serialization;
+﻿using JetBrains.Annotations;
+using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
@@ -13,28 +13,17 @@ public class DataAmmo : DataBaseItem,
                         IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-
-    public string? ModelPath { get; set; }
-    public bool? ModelPathDeleted { get; set; }
-    public AltTexSet[]? ModelTextures { get; set; }
-    
+    public List<string>? Keywords { get; set; }
+    public string? ModelFile { get; set; }
+    public List<DataAltTexSet>? ModelTextures { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public float? Weight { get; set; }
     public uint? Value { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
     
     // Ammunition Specific
-    [YamlMember] public float? Damage { get; set; }
+    [UsedImplicitly] public float? Damage { get; set; }
 
     public DataAmmo()
     {
@@ -44,19 +33,19 @@ public class DataAmmo : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IAmmunitionGetter x && oldRef is IAmmunitionGetter y)
-            SaveChanges(x, y);
+            GetData(x, y);
     }
 
-    private void SaveChanges(IAmmunitionGetter newRef, IAmmunitionGetter oldRef)
+    private void GetData(IAmmunitionGetter newRef, IAmmunitionGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasModel)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
 
-        Damage = Utility.GetChangesNumber(newRef.Damage, oldRef.Damage);
+        Damage = DataUtils.GetNumber(newRef.Damage, oldRef.Damage);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -74,8 +63,7 @@ public class DataAmmo : DataBaseItem,
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
 
-        if (Damage is not null)
-            rec.Damage = Damage ?? 0.0f;
+        rec.Damage = DataUtils.PatchNumber(rec.Damage, Damage);
     }
 
     public override bool IsModified()

@@ -1,6 +1,5 @@
-﻿using Mutagen.Bethesda.Plugins;
+﻿using JetBrains.Annotations;
 using Mutagen.Bethesda.Skyrim;
-using YamlDotNet.Serialization;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
@@ -14,28 +13,17 @@ public class DataSoulGem : DataBaseItem,
                            IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-    
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-
-    public string? ModelPath { get; set; }
-    public bool? ModelPathDeleted { get; set; }
-    public AltTexSet[]? ModelTextures { get; set; }
-    
+    public List<string>? Keywords { get; set; }
+    public string? ModelFile { get; set; }
+    public List<DataAltTexSet>? ModelTextures { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public float? Weight { get; set; }
     public uint? Value { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
         
     // SoulGem Specific
-    [YamlMember] public string? LinkedTo { get; set; }
+    [UsedImplicitly] public string? LinkedTo { get; set; }
 
     public DataSoulGem()
     {
@@ -45,19 +33,19 @@ public class DataSoulGem : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is ISoulGemGetter x && oldRef is ISoulGemGetter y)
-            SaveChanges(x, y);
+            GetData(x, y);
     }
 
-    private void SaveChanges(ISoulGemGetter newRef, ISoulGemGetter oldRef)
+    private void GetData(ISoulGemGetter newRef, ISoulGemGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasModel)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
 
-        LinkedTo = Utility.GetChangesString(newRef.LinkedTo, oldRef.LinkedTo);
+        LinkedTo = DataUtils.GetString(newRef.LinkedTo, oldRef.LinkedTo);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -66,7 +54,7 @@ public class DataSoulGem : DataBaseItem,
             Patch(recSoulGem);
     }
 
-    public void Patch(ISoulGem rec)
+    private void Patch(ISoulGem rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
@@ -75,8 +63,7 @@ public class DataSoulGem : DataBaseItem,
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
 
-        if (LinkedTo is not null)
-            rec.LinkedTo = new FormLinkNullable<ISoulGemGetter>(LinkedTo.ToFormKey());
+        DataUtils.PatchFormLink(rec.LinkedTo, LinkedTo);
     }
     
     public override bool IsModified()

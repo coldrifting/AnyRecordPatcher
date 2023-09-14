@@ -1,85 +1,36 @@
-﻿using Mutagen.Bethesda.Plugins;
-using Mutagen.Bethesda.Skyrim;
+﻿using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.Interfaces;
 
 public interface IHasEquipmentType
 {
     public string? EquipmentType { get; set; }
-    public bool? EquipmentTypeDeleted { get; set; }
     
-    public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public void GetDataInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        switch (newRef, oldRef)
+        EquipmentType = newRef switch
         {
-            case (IArmorGetter, IArmorGetter) x:
-                SaveChangesEquipType(
-                    ((IArmorGetter)x.newRef).EquipmentType,
-                    ((IArmorGetter)x.oldRef).EquipmentType);
-                break;
-
-            case (IIngestibleGetter, IIngestibleGetter) x:
-                SaveChangesEquipType(
-                    ((IIngestibleGetter)x.newRef).EquipmentType,
-                    ((IIngestibleGetter)x.oldRef).EquipmentType);
-                break;
-            
-            case (ISpellGetter, ISpellGetter) x:
-                SaveChangesEquipType(
-                    ((ISpellGetter)x.newRef).EquipmentType,
-                    ((ISpellGetter)x.oldRef).EquipmentType);
-                break;
-            
-            case (IWeaponGetter, IWeaponGetter) x:
-                SaveChangesEquipType(
-                    ((IWeaponGetter)x.newRef).EquipmentType,
-                    ((IWeaponGetter)x.oldRef).EquipmentType);
-                break;
-        }
-    }
-
-    public void SaveChangesEquipType(IFormLinkNullableGetter<IEquipTypeGetter> first,
-                      IFormLinkNullableGetter<IEquipTypeGetter> second)
-    {
-        EquipmentTypeDeleted = Utility.GetDeleted(first, second);
-        EquipmentType = Utility.GetChangesFormKey(first, second);
+            IArmorGetter =>      DataUtils.GetString(newRef.AsArmor().EquipmentType, oldRef.AsArmor().EquipmentType),
+            IIngestibleGetter => DataUtils.GetString(newRef.AsIngestible().EquipmentType, oldRef.AsIngestible().EquipmentType),
+            ISpellGetter =>      DataUtils.GetString(newRef.AsSpell().EquipmentType, oldRef.AsSpell().EquipmentType),
+            IWeaponGetter =>     DataUtils.GetString(newRef.AsWeapon().EquipmentType, oldRef.AsWeapon().EquipmentType),
+            _ => default
+        };
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
     {
         switch (rec)
         {
-            case IArmor x:
-                x.EquipmentType = PatchEquipType(x.EquipmentType);
-                break;
-
-            case IIngestible x:
-                x.EquipmentType = PatchEquipType(x.EquipmentType);
-                break;
-            
-            case ISpell x:
-                x.EquipmentType = PatchEquipType(x.EquipmentType);
-                break;
-            
-            case IWeapon x:
-                x.EquipmentType = PatchEquipType(x.EquipmentType);
-                break;
+            case IArmor      item1: DataUtils.PatchFormLink(item1.EquipmentType, EquipmentType); break;
+            case IIngestible item2: DataUtils.PatchFormLink(item2.EquipmentType, EquipmentType); break;
+            case ISpell      item3: DataUtils.PatchFormLink(item3.EquipmentType, EquipmentType); break;
+            case IWeapon     item4: DataUtils.PatchFormLink(item4.EquipmentType, EquipmentType); break;
         }
-    }
-
-    public IFormLinkNullable<IEquipTypeGetter> PatchEquipType(IFormLinkNullable<IEquipTypeGetter> original)
-    {
-        if (EquipmentType is not null)
-            return new FormLinkNullable<IEquipTypeGetter>(EquipmentType.ToFormKey());
-        
-        return EquipmentTypeDeleted is not null 
-            ? new FormLinkNullable<IEquipTypeGetter>(FormKey.Null) 
-            : original;
     }
 
     public bool IsModifiedInterface()
     {
-        return EquipmentType is not null ||
-               EquipmentTypeDeleted is not null;
+        return EquipmentType is not null;
     }
 }

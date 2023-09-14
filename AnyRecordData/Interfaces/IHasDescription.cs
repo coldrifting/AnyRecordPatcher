@@ -5,106 +5,38 @@ namespace AnyRecordData.Interfaces;
 public interface IHasDescription
 {
     public string? Description { get; set; }
-    public bool? DescriptionDeleted { get; set; }
 
-    public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public void GetDataInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        switch (newRef, oldRef)
+        Description = newRef switch
         {
-            case (IArmorGetter, IArmorGetter) x:
-                SaveChangesDescription(
-                    ((IArmorGetter)x.newRef).Description?.ToString(), 
-                    (((IArmorGetter)x.oldRef).Description?.ToString()));
-                break;
-            
-            case (IIngestibleGetter, IIngestibleGetter) x:
-                SaveChangesDescription(
-                    ((IIngestibleGetter)x.newRef).Description?.ToString(), 
-                    (((IIngestibleGetter)x.oldRef).Description?.ToString()));
-                break;
-            
-            case (IPerkGetter, IPerkGetter) x:
-                SaveChangesDescription(
-                    ((IPerkGetter)x.newRef).Description.ToString(), 
-                    (((IPerkGetter)x.oldRef).Description.ToString()));
-                break;
-            
-            case (IScrollGetter, IScrollGetter) x:
-                SaveChangesDescription(
-                    ((IScrollGetter)x.newRef).Description?.ToString(), 
-                    (((IScrollGetter)x.oldRef).Description?.ToString()));
-                break;
-            
-            case (IShoutGetter, IShoutGetter) x:
-                SaveChangesDescription(
-                    ((IShoutGetter)x.newRef).Description?.ToString(), 
-                    (((IShoutGetter)x.oldRef).Description?.ToString()));
-                break;
-            
-            case (ISpellGetter, ISpellGetter) x:
-                SaveChangesDescription(
-                    ((ISpellGetter)x.newRef).Description.ToString(), 
-                    (((ISpellGetter)x.oldRef).Description.ToString()));
-                break;
-            
-            case (IWeaponGetter, IWeaponGetter) x:
-                SaveChangesDescription(
-                    ((IWeaponGetter)x.newRef).Description?.ToString(), 
-                    (((IWeaponGetter)x.oldRef).Description?.ToString()));
-                break;
-        }
-    }
-
-    private void SaveChangesDescription(string? newDesc, string? oldDesc)
-    {
-        DescriptionDeleted = Utility.GetDeleted(newDesc, oldDesc);
-        Description = Utility.GetChangesString(newDesc, oldDesc);
+            IArmorGetter =>      DataUtils.GetString(newRef.AsArmor().Description, oldRef.AsArmor().Description),
+            IIngestibleGetter => DataUtils.GetString(newRef.AsIngestible().Description, oldRef.AsIngestible().Description),
+            IPerkGetter =>       DataUtils.GetString(newRef.AsPerk().Description, oldRef.AsPerk().Description),
+            IScrollGetter =>     DataUtils.GetString(newRef.AsScroll().Description, oldRef.AsScroll().Description),
+            IShoutGetter =>      DataUtils.GetString(newRef.AsShout().Description, oldRef.AsShout().Description),
+            ISpellGetter =>      DataUtils.GetString(newRef.AsSpell().Description, oldRef.AsSpell().Description),
+            IWeaponGetter =>     DataUtils.GetString(newRef.AsWeapon().Description, oldRef.AsWeapon().Description),
+            _ => default
+        };
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
     {
-        if (Description is null && DescriptionDeleted is null)
-            return;
-
-        string? desc = Description;
-        if (DescriptionDeleted is not null)
-            desc = null;
-        
         switch (rec)
         {
-            case IArmor item:
-                item.Description = desc;
-                break;
-            
-            case IIngestible item:
-                item.Description = desc;
-                break;
-            
-            case IPerk item:
-                item.Description = desc;
-                break;
-            
-            case IScroll item:
-                item.Description = desc;
-                break;
-            
-            case IShout item:
-                item.Description = desc;
-                break;
-            
-            case ISpell item:
-                item.Description = desc;
-                break;
-            
-            case IWeapon item:
-                item.Description = desc;
-                break;
+            case IArmor      item1: item1.Description = DataUtils.PatchString(item1.Description, Description); break;
+            case IIngestible item2: item2.Description = DataUtils.PatchString(item2.Description, Description); break;
+            case IPerk       item3: item3.Description = DataUtils.PatchString(item3.Description, Description); break;
+            case IScroll     item4: item4.Description = DataUtils.PatchString(item4.Description, Description); break;
+            case IShout      item5: item5.Description = DataUtils.PatchString(item5.Description, Description); break;
+            case ISpell      item6: item6.Description = DataUtils.PatchString(item6.Description, Description); break;
+            case IWeapon     item7: item7.Description = DataUtils.PatchString(item7.Description, Description); break;
         }
     }
 
     public bool IsModifiedInterface()
     {
-        return Description is not null ||
-               DescriptionDeleted is not null;
+        return Description is not null;
     }
 }

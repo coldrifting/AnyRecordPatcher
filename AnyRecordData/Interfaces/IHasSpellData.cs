@@ -13,86 +13,78 @@ public interface IHasSpellData
     public float? Range { get; set; }
     public string? HalfCostPerk { get; set; }
 
-    public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public void GetDataInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        switch (newRef, oldRef)
+        switch (newRef)
         {
-            case (IScrollGetter, IScrollGetter) x:
-                SaveChangesScroll((IScrollGetter)x.newRef, (IScrollGetter)x.oldRef);
-                break;
-            
-            case (ISpellGetter, ISpellGetter) x:
-                SaveChangesSpell((ISpellGetter)x.newRef, (ISpellGetter)x.oldRef);
-                break;
+            case IScrollGetter: SaveChangesScroll(newRef.AsScroll(), oldRef.AsScroll()); break;
+            case ISpellGetter:  SaveChangesSpell(newRef.AsSpell(), oldRef.AsSpell()); break;
         }
     }
 
     private void SaveChangesScroll(IScrollGetter newRef, IScrollGetter oldRef)
     {
-        BaseCost = Utility.GetChangesNumber(newRef.BaseCost, oldRef.BaseCost);
-        Type = Utility.GetChangesString(newRef.Type, oldRef.Type);
-        ChargeTime = Utility.GetChangesNumber(newRef.ChargeTime, oldRef.ChargeTime);
-        CastType = Utility.GetChangesString(newRef.CastType, oldRef.CastType);
-        TargetType = Utility.GetChangesString(newRef.TargetType, oldRef.TargetType);
-        CastDuration = Utility.GetChangesNumber(newRef.CastDuration, oldRef.CastDuration);
-        Range = Utility.GetChangesNumber(newRef.Range, oldRef.Range);
-        HalfCostPerk = Utility.GetChangesFormKey(newRef.HalfCostPerk, oldRef.HalfCostPerk);
+        BaseCost     = DataUtils.GetNumber(newRef.BaseCost, oldRef.BaseCost);
+        ChargeTime   = DataUtils.GetNumber(newRef.ChargeTime, oldRef.ChargeTime);
+        CastDuration = DataUtils.GetNumber(newRef.CastDuration, oldRef.CastDuration);
+        Range        = DataUtils.GetNumber(newRef.Range, oldRef.Range);
+        
+        Type         = DataUtils.GetString(newRef.Type, oldRef.Type);
+        CastType     = DataUtils.GetString(newRef.CastType, oldRef.CastType);
+        TargetType   = DataUtils.GetString(newRef.TargetType, oldRef.TargetType);
+        
+        HalfCostPerk = DataUtils.GetString(newRef.HalfCostPerk, oldRef.HalfCostPerk);
     }
 
     private void SaveChangesSpell(ISpellGetter newRef, ISpellGetter oldRef)
     {
-        BaseCost = Utility.GetChangesNumber(newRef.BaseCost, oldRef.BaseCost);
-        Type = Utility.GetChangesString(newRef.Type, oldRef.Type);
-        ChargeTime = Utility.GetChangesNumber(newRef.ChargeTime, oldRef.ChargeTime);
-        CastType = Utility.GetChangesString(newRef.CastType, oldRef.CastType);
-        TargetType = Utility.GetChangesString(newRef.TargetType, oldRef.TargetType);
-        CastDuration = Utility.GetChangesNumber(newRef.CastDuration, oldRef.CastDuration);
-        Range = Utility.GetChangesNumber(newRef.Range, oldRef.Range);
-        HalfCostPerk = Utility.GetChangesFormKey(newRef.HalfCostPerk, oldRef.HalfCostPerk);
+        BaseCost     = DataUtils.GetNumber(newRef.BaseCost, oldRef.BaseCost);
+        ChargeTime   = DataUtils.GetNumber(newRef.ChargeTime, oldRef.ChargeTime);
+        CastDuration = DataUtils.GetNumber(newRef.CastDuration, oldRef.CastDuration);
+        Range        = DataUtils.GetNumber(newRef.Range, oldRef.Range);
+        
+        Type         = DataUtils.GetString(newRef.Type, oldRef.Type);
+        CastType     = DataUtils.GetString(newRef.CastType, oldRef.CastType);
+        TargetType   = DataUtils.GetString(newRef.TargetType, oldRef.TargetType);
+        
+        HalfCostPerk = DataUtils.GetString(newRef.HalfCostPerk, oldRef.HalfCostPerk);
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
     {
         switch (rec)
         {
-            case IScroll scroll:
-                PatchScroll(scroll);
-                break;
-            
-            case ISpell spell:
-                PatchSpell(spell);
-                break;
+            case IScroll scroll: PatchScroll(scroll); break;
+            case ISpell spell:   PatchSpell(spell);break;
         }
     }
 
     private void PatchScroll(IScroll rec)
     {
-        rec.BaseCost = BaseCost ?? rec.BaseCost;
+        rec.BaseCost = DataUtils.PatchNumber(rec.BaseCost, BaseCost);
+        rec.ChargeTime = DataUtils.PatchNumber(rec.ChargeTime, ChargeTime);
+        rec.CastDuration = DataUtils.PatchNumber(rec.CastDuration, CastDuration);
+        rec.Range = DataUtils.PatchNumber(rec.Range, Range);
+        
         rec.Type = Enum.Parse<SpellType>(Type ?? rec.Type.ToString());
-        rec.ChargeTime = ChargeTime ?? rec.ChargeTime;
         rec.CastType = Enum.Parse<CastType>(CastType ?? rec.CastType.ToString());
         rec.TargetType = Enum.Parse<TargetType>(TargetType ?? rec.TargetType.ToString());
-        rec.CastDuration = CastDuration ?? rec.CastDuration;
-        rec.Range = Range ?? rec.Range;
-        rec.ChargeTime = ChargeTime ?? rec.ChargeTime;
 
-        if (HalfCostPerk is not null)
-            rec.HalfCostPerk.SetTo(HalfCostPerk.ToFormKey());
+        DataUtils.PatchFormLink(rec.HalfCostPerk, HalfCostPerk);
     }
     
     private void PatchSpell(ISpell rec)
     {
-        rec.BaseCost = BaseCost ?? rec.BaseCost;
+        rec.BaseCost = DataUtils.PatchNumber(rec.BaseCost, BaseCost);
+        rec.ChargeTime = DataUtils.PatchNumber(rec.ChargeTime, ChargeTime);
+        rec.CastDuration = DataUtils.PatchNumber(rec.CastDuration, CastDuration);
+        rec.Range = DataUtils.PatchNumber(rec.Range, Range);
+        
         rec.Type = Enum.Parse<SpellType>(Type ?? rec.Type.ToString());
-        rec.ChargeTime = ChargeTime ?? rec.ChargeTime;
         rec.CastType = Enum.Parse<CastType>(CastType ?? rec.CastType.ToString());
         rec.TargetType = Enum.Parse<TargetType>(TargetType ?? rec.TargetType.ToString());
-        rec.CastDuration = CastDuration ?? rec.CastDuration;
-        rec.Range = Range ?? rec.Range;
-        rec.ChargeTime = ChargeTime ?? rec.ChargeTime;
 
-        if (HalfCostPerk is not null)
-            rec.HalfCostPerk.SetTo(HalfCostPerk.ToFormKey());
+        DataUtils.PatchFormLink(rec.HalfCostPerk, HalfCostPerk);
     }
 
     public bool IsModifiedInterface()

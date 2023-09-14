@@ -1,11 +1,13 @@
-﻿using Mutagen.Bethesda.Skyrim;
+﻿using System.Text.RegularExpressions;
+using JetBrains.Annotations;
+using Mutagen.Bethesda.Skyrim;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
 
-public class DataBook : DataBaseItem,
+public partial class DataBook : DataBaseItem,
                         IHasName,
                         IHasKeywords,
                         IHasWeightValue,
@@ -14,30 +16,21 @@ public class DataBook : DataBaseItem,
                         IHasPickUpPutDownSound
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-    
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-    
-    public string? ModelPath { get; set; }
-    public bool? ModelPathDeleted { get; set; }
-    public AltTexSet[]? ModelTextures { get; set; }
-    
+    public List<string>? Keywords { get; set; }
+    public string? ModelFile { get; set; }
+    public List<DataAltTexSet>? ModelTextures { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public float? Weight { get; set; }
     public uint? Value { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
     
     // Book Specific
-    [YamlMember(ScalarStyle = ScalarStyle.Plain)] public string? Text { get; set; }
-    [YamlMember] public string? InventoryArt { get; set; }
-    [YamlMember] public string? BookType { get; set; }
+    [YamlMember(ScalarStyle = ScalarStyle.Literal)] 
+    public string? BookText { get; set; }
+    
+    [UsedImplicitly] public string? InventoryArt { get; set; }
+    [UsedImplicitly] public string? Type { get; set; }
 
     public DataBook()
     {
@@ -47,21 +40,26 @@ public class DataBook : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IBookGetter x && oldRef is IBookGetter y)
-            SaveChanges(x, y);
+            GetChanges(x, y);
     }
 
-    private void SaveChanges(IBookGetter newRef, IBookGetter oldRef)
+    private void GetChanges(IBookGetter newRef, IBookGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasModel)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
 
-        Text = Utility.GetChangesString(newRef.BookText, oldRef.BookText);
-        InventoryArt = Utility.GetChangesString(newRef.InventoryArt, oldRef.InventoryArt);
-        BookType = Utility.GetChangesString(newRef.Type, oldRef.Type);
+        string newTextNoWhiteSpace = RemoveWhiteSpace().Replace(newRef.BookText.String ?? "", "");
+        string oldTextNoWhiteSpace = RemoveWhiteSpace().Replace(oldRef.BookText.String ?? "", "");
+
+        if (!newTextNoWhiteSpace.Equals(oldTextNoWhiteSpace))
+            BookText = newRef.BookText.String;
+        
+        InventoryArt = DataUtils.GetString(newRef.InventoryArt, oldRef.InventoryArt);
+        Type = DataUtils.GetString(newRef.Type, oldRef.Type);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -70,7 +68,7 @@ public class DataBook : DataBaseItem,
             Patch(recBook);
     }
 
-    public void Patch(IBook rec)
+    private void Patch(IBook rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
@@ -79,14 +77,16 @@ public class DataBook : DataBaseItem,
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
 
-        if (Text is not null)
-            rec.BookText = Text;
+        // Prevent extra conflicts in xEdit due to line ending differences
+        if (BookText != null && !BookText.Contains("\r\n"))
+            BookText = BookText?.Replace("\n", "\r\n");
+        
+        rec.BookText = DataUtils.PatchString(rec.BookText, BookText);
 
-        if (BookType is not null)
-            rec.Type = Enum.Parse<Book.BookType>(BookType);
+        DataUtils.PatchFormLink(rec.InventoryArt, InventoryArt);
 
-        if (InventoryArt is not null)
-            rec.InventoryArt.SetTo(InventoryArt.ToFormKey());
+        if (Type is not null)
+            rec.Type = Enum.Parse<Book.BookType>(Type);
     }
 
     public override bool IsModified()
@@ -97,8 +97,11 @@ public class DataBook : DataBaseItem,
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasWeightValue)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
-               Text is not null ||
+               BookText is not null ||
                InventoryArt is not null ||
-               BookType is not null;
+               Type is not null;
     }
+
+    [GeneratedRegex("\\s+")]
+    private static partial Regex RemoveWhiteSpace();
 }

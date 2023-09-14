@@ -1,5 +1,5 @@
-﻿using Mutagen.Bethesda.Skyrim;
-using YamlDotNet.Serialization;
+﻿using JetBrains.Annotations;
+using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
 using Interfaces;
@@ -15,45 +15,29 @@ public class DataWeapon : DataBaseItem,
                           IHasDescription
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-    
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-
-    public string? ModelPath { get; set; }
-    public bool? ModelPathDeleted { get; set; }
-    public AltTexSet[]? ModelTextures { get; set; }
-    
+    public List<string>? Keywords { get; set; }
+    public string? ModelFile { get; set; }
+    public List<DataAltTexSet>? ModelTextures { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
-
     public string? EquipmentType { get; set; }
-    public bool? EquipmentTypeDeleted { get; set; }
-
     public string? ObjectEffect { get; set; }
-    public bool? ObjectEffectDeleted { get; set; }
     public ushort? EnchantmentAmount { get; set; }
-
     public string? Description { get; set; }
-    public bool? DescriptionDeleted { get; set; }
     
     // Weapon Specific
-    [YamlMember] public uint? Value { get; set; }
-    [YamlMember] public float? Weight { get; set; }
-    [YamlMember] public ushort? Damage { get; set; }
-    [YamlMember] public ushort? CriticalDamage { get; set; }
-    [YamlMember] public float? CriticalMult { get; set; }
-    [YamlMember] public float? Speed { get; set; }
-    [YamlMember] public float? Reach { get; set; }
-    [YamlMember] public float? Stagger { get; set; }
-    [YamlMember] public float? RangeMin { get; set; }
-    [YamlMember] public float? RangeMax { get; set; }
-    [YamlMember] public string? DetectSoundLevel { get; set; }
+    [UsedImplicitly] public uint? Value { get; set; }
+    [UsedImplicitly] public float? Weight { get; set; }
+    [UsedImplicitly] public ushort? Damage { get; set; }
+    [UsedImplicitly] public ushort? CriticalDamage { get; set; }
+    [UsedImplicitly] public float? CriticalMult { get; set; }
+    [UsedImplicitly] public float? Speed { get; set; }
+    [UsedImplicitly] public float? Reach { get; set; }
+    [UsedImplicitly] public float? Stagger { get; set; }
+    [UsedImplicitly] public float? RangeMin { get; set; }
+    [UsedImplicitly] public float? RangeMax { get; set; }
+    [UsedImplicitly] public string? DetectSoundLevel { get; set; }
 
     public DataWeapon()
     {
@@ -63,34 +47,34 @@ public class DataWeapon : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IWeaponGetter x && oldRef is IWeaponGetter y)
-            SaveChanges(x, y);
+            GetData(x, y);
     }
     
-    private void SaveChanges(IWeaponGetter newRef, IWeaponGetter oldRef)
+    private void GetData(IWeaponGetter newRef, IWeaponGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasEnchantInfo)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasModel)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
+        ((IHasEquipmentType)this).GetDataInterface(newRef, oldRef);
+        ((IHasEnchantInfo)this).GetDataInterface(newRef, oldRef);
+        ((IHasDescription)this).GetDataInterface(newRef, oldRef);
 
-        Weight = Utility.GetChangesNumber(newRef.BasicStats?.Weight, oldRef.BasicStats?.Weight);
-        Value = Utility.GetChangesNumber(newRef.BasicStats?.Value, oldRef.BasicStats?.Value);
-        Damage = Utility.GetChangesNumber(newRef.BasicStats?.Damage, oldRef.BasicStats?.Damage);
+        Weight = DataUtils.GetNumber(newRef.BasicStats?.Weight, oldRef.BasicStats?.Weight);
+        Value = DataUtils.GetNumber(newRef.BasicStats?.Value, oldRef.BasicStats?.Value);
+        Damage = DataUtils.GetNumber(newRef.BasicStats?.Damage, oldRef.BasicStats?.Damage);
         
-        Reach = Utility.GetChangesNumber(newRef.Data?.Reach, oldRef.Data?.Reach);
-        Speed = Utility.GetChangesNumber(newRef.Data?.Speed, oldRef.Data?.Speed);
-        Stagger = Utility.GetChangesNumber(newRef.Data?.Stagger, oldRef.Data?.Stagger);
-        RangeMin = Utility.GetChangesNumber(newRef.Data?.RangeMin, oldRef.Data?.RangeMin);
-        RangeMax = Utility.GetChangesNumber(newRef.Data?.RangeMax, oldRef.Data?.RangeMax);
+        Reach = DataUtils.GetNumber(newRef.Data?.Reach, oldRef.Data?.Reach);
+        Speed = DataUtils.GetNumber(newRef.Data?.Speed, oldRef.Data?.Speed);
+        Stagger = DataUtils.GetNumber(newRef.Data?.Stagger, oldRef.Data?.Stagger);
+        RangeMin = DataUtils.GetNumber(newRef.Data?.RangeMin, oldRef.Data?.RangeMin);
+        RangeMax = DataUtils.GetNumber(newRef.Data?.RangeMax, oldRef.Data?.RangeMax);
         
-        CriticalDamage = Utility.GetChangesNumber(newRef.Critical?.Damage, oldRef.Critical?.Damage);
-        CriticalMult = Utility.GetChangesNumber(newRef.Critical?.PercentMult, oldRef.Critical?.PercentMult);
+        CriticalDamage = DataUtils.GetNumber(newRef.Critical?.Damage, oldRef.Critical?.Damage);
+        CriticalMult = DataUtils.GetNumber(newRef.Critical?.PercentMult, oldRef.Critical?.PercentMult);
 
-        DetectSoundLevel = Utility.GetChangesString(newRef.DetectionSoundLevel, oldRef.DetectionSoundLevel);
+        DetectSoundLevel = DataUtils.GetString(newRef.DetectionSoundLevel, oldRef.DetectionSoundLevel);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -99,7 +83,7 @@ public class DataWeapon : DataBaseItem,
             Patch(recWeapon);
     }
 
-    public void Patch(IWeapon rec)
+    private void Patch(IWeapon rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);
@@ -111,23 +95,23 @@ public class DataWeapon : DataBaseItem,
         ((IHasDescription)this).PatchInterface(rec);
         
         rec.BasicStats ??= new WeaponBasicStats();
-        
-        rec.BasicStats.Weight = Weight ?? rec.BasicStats.Weight;
-        rec.BasicStats.Value = Value ?? rec.BasicStats.Value;
-        rec.BasicStats.Damage = Damage ?? rec.BasicStats.Damage;
+        rec.BasicStats.Weight = DataUtils.PatchNumber(rec.BasicStats.Weight, Weight);
+        rec.BasicStats.Value = DataUtils.PatchNumber(rec.BasicStats.Value, Value);
+        rec.BasicStats.Damage = DataUtils.PatchNumber(rec.BasicStats.Damage, Damage);
         
         rec.Critical ??= new CriticalData();
-        rec.Critical.Damage = CriticalDamage ?? rec.Critical.Damage;
-        rec.Critical.PercentMult = CriticalMult ?? rec.Critical.PercentMult;
+        rec.Critical.Damage = DataUtils.PatchNumber(rec.Critical.Damage, CriticalDamage);
+        rec.Critical.PercentMult = DataUtils.PatchNumber(rec.Critical.PercentMult, CriticalMult);
 
         rec.Data ??= new WeaponData();
-        rec.Data.Speed = Speed ?? rec.Data.Speed;
-        rec.Data.Reach = Reach ?? rec.Data.Reach;
-        rec.Data.Stagger = Stagger ?? rec.Data.Stagger;
-        rec.Data.RangeMin = RangeMin ?? rec.Data.RangeMin;
-        rec.Data.RangeMax = RangeMax ?? rec.Data.RangeMax;
+        rec.Data.Speed = DataUtils.PatchNumber(rec.Data.Speed, Speed);
+        rec.Data.Reach = DataUtils.PatchNumber(rec.Data.Reach, Reach);
+        rec.Data.Stagger = DataUtils.PatchNumber(rec.Data.Stagger, Stagger);
+        rec.Data.RangeMin = DataUtils.PatchNumber(rec.Data.RangeMin, RangeMin);
+        rec.Data.RangeMax = DataUtils.PatchNumber(rec.Data.RangeMax, RangeMax);
 
-        rec.DetectionSoundLevel = Enum.Parse<SoundLevel>(DetectSoundLevel ?? "Normal");
+        if (DetectSoundLevel is not null)
+            rec.DetectionSoundLevel = Enum.Parse<SoundLevel>(DetectSoundLevel);
     }
     
     public override bool IsModified()

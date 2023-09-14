@@ -15,32 +15,17 @@ public class DataIngredient : DataBaseItem,
                               IHasFlags
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-    
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
-
-    public string? ModelPath { get; set; }
-    public bool? ModelPathDeleted { get; set; }
-    public AltTexSet[]? ModelTextures { get; set; }
-    
+    public List<string>? Keywords { get; set; }
+    public string? ModelFile { get; set; }
+    public List<DataAltTexSet>? ModelTextures { get; set; }
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
-    
     public float? Weight { get; set; }
     public uint? Value { get; set; }
-    
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
-    public bool? PickUpSoundDeleted { get; set; }
-    public bool? PutDownSoundDeleted { get; set; }
-
     public string? EquipmentType { get; set; }
-    public bool? EquipmentTypeDeleted { get; set; }
-
     public List<DataMagicEffect>? Effects { get; set; }
-
-    public string[]? Flags { get; set; }
+    public List<string>? Flags { get; set; }
 
     public DataIngredient()
     {
@@ -50,20 +35,20 @@ public class DataIngredient : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IIngredientGetter x && oldRef is IIngredientGetter y)
-            SaveChanges(x, y);
+            GetData(x, y);
     }
 
-    private void SaveChanges(IIngredientGetter newRef, IIngredientGetter oldRef)
+    private void GetData(IIngredientGetter newRef, IIngredientGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasKeywords)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasModel)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasObjectBounds)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasWeightValue)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasPickUpPutDownSound)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasMagicEffects)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasEquipmentType)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasFlags)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasKeywords)this).GetDataInterface(newRef, oldRef);
+        ((IHasModel)this).GetDataInterface(newRef, oldRef);
+        ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
+        ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
+        ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
+        ((IHasMagicEffects)this).GetDataInterface(newRef, oldRef);
+        ((IHasEquipmentType)this).GetDataInterface(newRef, oldRef);
+        ((IHasFlags)this).GetDataInterface(newRef, oldRef);
     }
     
     public override void Patch(ISkyrimMajorRecord rec)
@@ -72,7 +57,7 @@ public class DataIngredient : DataBaseItem,
             Patch(recIngredient);
     }
 
-    public void Patch(IIngredient rec)
+    private void Patch(IIngredient rec)
     {
         ((IHasName)this).PatchInterface(rec);
         ((IHasKeywords)this).PatchInterface(rec);

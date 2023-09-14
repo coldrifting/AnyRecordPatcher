@@ -1,4 +1,5 @@
-﻿using Mutagen.Bethesda.Plugins;
+﻿using JetBrains.Annotations;
+using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.DataTypes;
@@ -6,35 +7,35 @@ namespace AnyRecordData.DataTypes;
 public class DataPerkEffect
 {
     // Header
-    public string? Type { get; set; }
-    public byte? Rank { get; set; }
-    public byte? Priority { get; set; }
+    [UsedImplicitly] public string? Type { get; set; }
+    [UsedImplicitly] public byte? Rank { get; set; }
+    [UsedImplicitly] public byte? Priority { get; set; }
 
     // Perk Conditions
-    public List<DataPerkEffectCondition>? PerkEffectConditions { get; set; }
+    [UsedImplicitly] public List<DataPerkEffectCondition>? PerkEffectConditions { get; set; }
     
     // Data
-    public string? EntryPointType { get; set; }
-    public byte? TabCount { get; set; }
+    [UsedImplicitly] public string? EntryPointType { get; set; }
+    [UsedImplicitly] public byte? TabCount { get; set; }
 
-    public string? ModType { get; set; }
-    public float? ModValue { get; set; }
+    [UsedImplicitly] public string? ModType { get; set; }
+    [UsedImplicitly] public float? ModValue { get; set; }
 
-    public string? Spell { get; set; }
+    [UsedImplicitly] public string? Spell { get; set; }
 
-    public string? ButtonLabel { get; set; }
-    public ushort? FragIndex { get; set; }
-    public uint? ScriptFlags { get; set; }
+    [UsedImplicitly] public string? ButtonLabel { get; set; }
+    [UsedImplicitly] public ushort? FragIndex { get; set; }
+    [UsedImplicitly] public uint? ScriptFlags { get; set; }
 
-    public string? ActorValue { get; set; }
+    [UsedImplicitly] public string? ActorValue { get; set; }
 
     // PerkEntryPointSelectText
-    public string? Text { get; set; }
+    [UsedImplicitly] public string? Text { get; set; }
 
-    public string? Quest { get; set; }
-    public byte? Stage { get; set; }
+    [UsedImplicitly] public string? Quest { get; set; }
+    [UsedImplicitly] public byte? Stage { get; set; }
     
-    public string? Ability { get; set; }
+    [UsedImplicitly] public string? Ability { get; set; }
 
     public APerkEffect ConvertToPatch()
     {

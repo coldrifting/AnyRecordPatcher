@@ -7,20 +7,17 @@ public interface IHasWeightValue
     public float? Weight { get; set; }
     public uint? Value { get; set; }
 
-    public void SaveChangesInterface(IWeightValueGetter newRef, IWeightValueGetter oldRef)
+    public void GetDataInterface(IWeightValueGetter newRef, IWeightValueGetter oldRef)
     {
-        Weight = Utility.GetChangesNumber(newRef.Weight, oldRef.Weight);
-        Value = Utility.GetChangesNumber(newRef.Value, oldRef.Value);
+        Weight = DataUtils.GetNumber(newRef.Weight, oldRef.Weight);
+        Value = DataUtils.GetNumber(newRef.Value, oldRef.Value);
     }
     
     public void PatchInterface<T>(T rec)
         where T : IWeightValue
     {
-        if (Weight is not null)
-            rec.Weight = Weight ?? 1.0f;
-
-        if (Value is not null)
-            rec.Value = Value ?? 1;
+        Weight = DataUtils.PatchNumber(rec.Weight, Weight);
+        Value = DataUtils.PatchNumber(rec.Value, Value);
     }
 
     public bool IsModifiedInterface()

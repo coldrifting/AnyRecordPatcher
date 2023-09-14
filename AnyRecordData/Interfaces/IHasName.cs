@@ -6,9 +6,9 @@ public interface IHasName
 {
     public string? Name { get; set; }
 
-    public void SaveChangesInterface(INamedGetter newRef, INamedGetter oldRef)
+    public void GetDataInterface(INamedGetter newRef, INamedGetter oldRef)
     {
-        Name = DataUtils.GetDataString(newRef.Name, oldRef.Name);
+        Name = DataUtils.GetString(newRef.Name, oldRef.Name);
     }
     
     public void PatchInterface<T>(T rec)

@@ -6,32 +6,34 @@ namespace AnyRecordData.Interfaces;
 public interface IHasObjectBounds
 {
     public short[]? Bounds { get; set; }
-    public bool? BoundsDeleted { get; set; }
 
-    public void SaveChangesInterface(IObjectBoundedOptionalGetter newRef, IObjectBoundedOptionalGetter oldRef)
+    public void GetDataInterface(IObjectBoundedOptionalGetter newRef, IObjectBoundedOptionalGetter oldRef)
     {
-        BoundsDeleted = Utility.GetDeleted(newRef.ObjectBounds, oldRef.ObjectBounds);
+        if (newRef.ObjectBounds is null && oldRef.ObjectBounds is not null)
+            Bounds = Array.Empty<short>();
         
         if (newRef.ObjectBounds is null || newRef.ObjectBounds.Equals(oldRef.ObjectBounds)) 
             return;
         
-        Bounds = new short[6];
-        Bounds[0]= newRef.ObjectBounds.First.X;
-        Bounds[1]= newRef.ObjectBounds.First.Y;
-        Bounds[2]= newRef.ObjectBounds.First.Z;
-        Bounds[3]= newRef.ObjectBounds.Second.X;
-        Bounds[4]= newRef.ObjectBounds.Second.Y;
-        Bounds[5]= newRef.ObjectBounds.Second.Z;
+        Bounds = new[]
+        {
+            newRef.ObjectBounds.First.X, 
+            newRef.ObjectBounds.First.Y, 
+            newRef.ObjectBounds.First.Z, 
+            newRef.ObjectBounds.Second.X, 
+            newRef.ObjectBounds.Second.Y, 
+            newRef.ObjectBounds.Second.Z
+        };
     }
     
     public void PatchInterface<T>(T rec)
         where T : IObjectBoundedOptional
     {
-        if (BoundsDeleted == true)
-            rec.ObjectBounds = null;
-        
         if (Bounds is null) 
             return;
+        
+        if (Bounds.Length <= 6)
+            rec.ObjectBounds = null;
 
         rec.ObjectBounds ??= new ObjectBounds();
         rec.ObjectBounds.First = new P3Int16(Bounds[0], Bounds[1], Bounds[2]);
@@ -40,7 +42,6 @@ public interface IHasObjectBounds
 
     public bool IsModifiedInterface()
     {
-        return Bounds is not null ||
-               BoundsDeleted is not null;
+        return Bounds is not null;
     }
 }

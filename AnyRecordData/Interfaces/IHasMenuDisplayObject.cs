@@ -1,71 +1,34 @@
-﻿using Mutagen.Bethesda.Plugins;
-using Mutagen.Bethesda.Plugins.Records;
-using Mutagen.Bethesda.Skyrim;
+﻿using Mutagen.Bethesda.Skyrim;
 
 namespace AnyRecordData.Interfaces;
 
 public interface IHasMenuDisplayObject
 {
     public string? MenuObject { get; set; }
-    public bool? MenuObjectDeleted { get; set; }
 
-    public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public void GetDataInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        switch (newRef, oldRef)
+        MenuObject = newRef switch
         {
-            case (IScrollGetter, IScrollGetter) x:
-                SaveChangesMenuObject(
-                    ((IScrollGetter)x.newRef).MenuDisplayObject, ((IScrollGetter)x.oldRef).MenuDisplayObject);
-                break;
-            
-            case (IShoutGetter, IShoutGetter) x:
-                SaveChangesMenuObject(
-                    ((IShoutGetter)x.newRef).MenuDisplayObject, ((IShoutGetter)x.oldRef).MenuDisplayObject);
-                break;
-            
-            case (ISpellGetter, ISpellGetter) x:
-                SaveChangesMenuObject(
-                    ((ISpellGetter)x.newRef).MenuDisplayObject, ((ISpellGetter)x.oldRef).MenuDisplayObject);
-                break;
-        }
-    }
-    
-    private void SaveChangesMenuObject(
-        IFormKeyGetter first,
-        IFormKeyGetter second)
-    {
-        MenuObjectDeleted = Utility.GetDeleted(first, second);
-        MenuObject = Utility.GetChangesFormKey(first, second);
+            IScrollGetter => DataUtils.GetString(newRef.AsScroll().MenuDisplayObject, oldRef.AsScroll().MenuDisplayObject),
+            IShoutGetter => DataUtils.GetString(newRef.AsShout().MenuDisplayObject, oldRef.AsShout().MenuDisplayObject),
+            ISpellGetter => DataUtils.GetString(newRef.AsSpell().MenuDisplayObject, oldRef.AsSpell().MenuDisplayObject),
+            _ => default
+        };
     }
 
     public void PatchInterface(ISkyrimMajorRecord rec)
     {
-        if (MenuObject is null && MenuObjectDeleted is null)
-            return;
-        
-        FormKey menuObject = FormKey.Null;
-        if (MenuObject is not null)
-            menuObject = MenuObject.ToFormKey();
-        
         switch (rec)
         {
-            case IScroll x:
-                x.MenuDisplayObject.SetTo(menuObject);
-                break;
-            
-            case IShout x:
-                x.MenuDisplayObject.SetTo(menuObject);
-                break;
-            
-            case ISpell x:
-                x.MenuDisplayObject.SetTo(menuObject);
-                break;
+            case IScroll item: DataUtils.PatchFormLink(item.MenuDisplayObject, MenuObject); break;
+            case IShout  item: DataUtils.PatchFormLink(item.MenuDisplayObject, MenuObject); break;
+            case ISpell  item: DataUtils.PatchFormLink(item.MenuDisplayObject, MenuObject); break;
         }
     }
 
     public bool IsModifiedInterface()
     {
-        return MenuObject is not null ||
-               MenuObjectDeleted is not null;
+        return MenuObject is not null;
     }
 }

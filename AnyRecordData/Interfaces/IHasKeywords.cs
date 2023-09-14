@@ -7,39 +7,23 @@ namespace AnyRecordData.Interfaces;
 
 public interface IHasKeywords
 {
-    public string[]? Keywords { get; set; }
-    public bool? KeywordsDeleted { get; set; }
+    public List<string>? Keywords { get; set; }
 
-    public void SaveChangesInterface(IKeywordedGetter<IKeywordGetter> newRef, IKeywordedGetter<IKeywordGetter> oldRef)
+    public void GetDataInterface(IKeywordedGetter<IKeywordGetter> newRef, IKeywordedGetter<IKeywordGetter> oldRef)
     {
-        KeywordsDeleted = Utility.GetDeleted(newRef.Keywords, oldRef.Keywords);
-        
-        if (KeywordsDeleted is null)
-            Keywords = Utility.GetChangesSet(Utility.ToStringSet(newRef.Keywords), Utility.ToStringSet(oldRef.Keywords));
+        Keywords = DataUtils.GetDataFormLinkList(newRef.Keywords, oldRef.Keywords);
     }
     
     public void PatchInterface<T>(T rec)
         where T : IKeyworded<IKeywordGetter>
     {
-        if (KeywordsDeleted == true)
-        {
+        DataUtils.PatchFormLinkList(rec.Keywords ??= new ExtendedList<IFormLinkGetter<IKeywordGetter>>(), Keywords);
+        if (rec.Keywords.Count == 0)
             rec.Keywords = null;
-            return;
-        }
-        
-        if (Keywords is null) return;
-        
-        rec.Keywords ??= new ExtendedList<IFormLinkGetter<IKeywordGetter>>();
-        rec.Keywords.Clear();
-        foreach (string kwd in Keywords)
-        {
-            rec.Keywords.Add(new FormLink<IKeywordGetter>(kwd.ToFormKey()));
-        }
     }
 
     public bool IsModifiedInterface()
     {
-        return Keywords is not null ||
-               KeywordsDeleted is not null;
+        return Keywords is not null;
     }
 }

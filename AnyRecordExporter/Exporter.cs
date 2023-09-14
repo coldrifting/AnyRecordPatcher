@@ -43,13 +43,15 @@ public static class Exporter
         }
 
         Regex regex = new Regex(@"\.es(p|m)", RegexOptions.IgnoreCase);
-        _patchFolder = _parentFolder + "\\" + regex.Replace(_pluginName, "");
+        _patchFolder = _parentFolder + Path.DirectorySeparatorChar + regex.Replace(_pluginName, "");
         
         using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
         GetChanges(env);
+        
+        Console.WriteLine("Done!");
     }
     
-    public static void GetChanges(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
+    private static void GetChanges(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
     {
         if (!CheckForMod(env, _pluginName))
         {
@@ -210,7 +212,7 @@ public static class Exporter
             if (data is DataBook dataBook)
             {
                 if (!_saveBookText)
-                    dataBook.Text = null;
+                    dataBook.BookText = null;
             }
             
             if (!data.IsModified())
@@ -221,7 +223,7 @@ public static class Exporter
             string cereal = Serializer.Serialize(data);
             if (cereal.Trim().Length > 0)
             {
-                strings.Add(cereal.Replace("Deleted: true", ": null"));
+                strings.Add(cereal);
             }
         }
 

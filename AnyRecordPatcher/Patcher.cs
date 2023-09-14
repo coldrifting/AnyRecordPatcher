@@ -12,7 +12,7 @@ using AnyRecordData.DataTypes;
 
 public static class Patcher
 {
-    private static string _patchDataPath = @"C:\Users\coldrifting\Desktop";
+    private static string _patchDataPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     private const string PatchIdentifier = "AnyRecordPatcher.esp";
     private static bool _errors;
 
@@ -101,7 +101,7 @@ public static class Patcher
     private static void ReadPatchFile<T>(string patchDir, IDictionary<FormKey, T> dictionary)
     where T : DataBaseItem, new()
     {
-        string patchFileFullPath = patchDir + "\\" + new T().PatchFileName + ".yaml";
+        string patchFileFullPath = patchDir + Path.DirectorySeparatorChar + new T().PatchFileName + ".yaml";
         if (!File.Exists(patchFileFullPath)) 
             return;
         
@@ -115,7 +115,7 @@ public static class Patcher
             if (yaml.Trim().Length == 0)
                 continue;
             
-            using StreamReader input = new(yaml.Replace(": null", "Deleted: true").ToStream());
+            using StreamReader input = new(yaml.ToStream());
                         
             IDeserializer deserializer = new DeserializerBuilder()
                .WithNamingConvention(PascalCaseNamingConvention.Instance)
@@ -135,6 +135,7 @@ public static class Patcher
     private static void Patch<T>(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, Dictionary<FormKey, T> dict)
         where T : DataBaseItem
     {
+        bool first = true;
         foreach ((FormKey f, DataBaseItem data) in dict)
         {
             ISkyrimMajorRecord? recOverride = data switch
@@ -168,6 +169,12 @@ public static class Patcher
                 state.LinkCache.Resolve<IWeaponGetter>(f)),
                 _ => null
             };
+            
+            if (first)
+            {
+                Console.WriteLine($"Patching {data.PatchFileName}...");
+                first = false;
+            }
 
             if (recOverride is not null)
                 data.Patch(recOverride);

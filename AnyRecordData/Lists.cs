@@ -1,9 +1,11 @@
 ﻿using Mutagen.Bethesda.Plugins;
+using Mutagen.Bethesda.Plugins.Records;
 using Mutagen.Bethesda.Skyrim;
 using Noggog;
 
 namespace AnyRecordData;
 
+// Helper Functions for dealing with lists and sets
 public static partial class DataUtils
 {
     public static List<string>? GetDataFormLinkList(
@@ -35,25 +37,19 @@ public static partial class DataUtils
         return x;
     }
 
-    public static void PatchFormLinkList<T>(ExtendedList<T>? recList, List<string>? dataList)
+    public static void PatchFormLinkList<T>(ExtendedList<IFormLinkGetter<T>> recList, List<string>? dataList)
+    where T: class, IMajorRecordGetter
     {
         if (dataList is null)
             return;
 
-        recList ??= new();
         recList.Clear();
         if (dataList.Count <= 0)
-        {
             return;
-        }
 
-        foreach (string form in dataList)
+        foreach (var x in dataList)
         {
-            FormKey f = form.ToFormKey();
-            if (recList is ExtendedList<IFormLinkGetter<IRegionGetter>> list)
-            {
-                list.Add(new FormLink<IRegionGetter>(f));
-            }
+            recList.Add(new FormLink<T>(x.ToFormKey()));
         }
     }
 

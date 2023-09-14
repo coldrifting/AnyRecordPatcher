@@ -1,4 +1,5 @@
 ﻿using AnyRecordData.Interfaces;
+using JetBrains.Annotations;
 using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Skyrim;
 
@@ -10,16 +11,11 @@ public class DataShout : DataBaseItem,
                          IHasMenuDisplayObject
 {
     public string? Name { get; set; }
-    public bool? NameDeleted { get; set; }
-    
     public string? Description { get; set; }
-    public bool? DescriptionDeleted { get; set; }
-    
     public string? MenuObject { get; set; }
-    public bool? MenuObjectDeleted { get; set; }
     
     // Shout specific
-    public List<DataWord>? Words { get; set; }
+    [UsedImplicitly] public List<DataWord>? Words { get; set; }
 
     public DataShout()
     {
@@ -29,14 +25,14 @@ public class DataShout : DataBaseItem,
     public override void GetData(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
         if (newRef is IShoutGetter x && oldRef is IShoutGetter y)
-            SaveChanges(x, y);
+            GetData(x, y);
     }
 
-    private void SaveChanges(IShoutGetter newRef, IShoutGetter oldRef)
+    private void GetData(IShoutGetter newRef, IShoutGetter oldRef)
     {
-        ((IHasName)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasDescription)this).SaveChangesInterface(newRef, oldRef);
-        ((IHasMenuDisplayObject)this).SaveChangesInterface(newRef, oldRef);
+        ((IHasName)this).GetDataInterface(newRef, oldRef);
+        ((IHasDescription)this).GetDataInterface(newRef, oldRef);
+        ((IHasMenuDisplayObject)this).GetDataInterface(newRef, oldRef);
 
         if (!newRef.WordsOfPower.SequenceEqual(oldRef.WordsOfPower))
         {

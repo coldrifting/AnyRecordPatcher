@@ -8,32 +8,35 @@ public interface IHasMagicEffects
 {
     public List<DataMagicEffect>? Effects { get; set; }
     
-    public void SaveChangesInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
+    public void GetDataInterface(ISkyrimMajorRecordGetter newRef, ISkyrimMajorRecordGetter oldRef)
     {
-        switch (newRef, oldRef)
+        switch (newRef)
         {
-            case (ISpellGetter, ISpellGetter) x: 
-                CopyEffects(((ISpellGetter)x.newRef).Effects, ((ISpellGetter)x.oldRef).Effects);
-                break;
-                
-            case (IIngestibleGetter, IIngestibleGetter) x: 
-                CopyEffects(((IIngestibleGetter)x.newRef).Effects, ((IIngestibleGetter)x.oldRef).Effects);
-                break;
-                
-            case (IIngredientGetter, IIngredientGetter) x: 
-                CopyEffects(((IIngredientGetter)x.newRef).Effects, ((IIngredientGetter)x.oldRef).Effects);
-                break;
+            case ISpellGetter:      CopyEffects(newRef.AsSpell().Effects, oldRef.AsSpell().Effects); break;
+            case IIngestibleGetter: CopyEffects(newRef.AsIngestible().Effects, oldRef.AsIngestible().Effects); break;
+            case IIngredientGetter: CopyEffects(newRef.AsIngredient().Effects, oldRef.AsIngredient().Effects); break;
         }
     }
 
-    private void CopyEffects(IEnumerable<IEffectGetter> newEffects, IEnumerable<IEffectGetter> oldEffects)
+    private void CopyEffects(IEnumerable<IEffectGetter>? newEffects, IEnumerable<IEffectGetter>? oldEffects)
     {
-        var effectGetters = newEffects as IEffectGetter[] ?? newEffects.ToArray();
-        if (effectGetters.ToHashSet().SetEquals(oldEffects))
+        // Both Null
+        if (newEffects is null)
+        {
+            if (oldEffects is null)
+                return;
+            
+            Effects = new List<DataMagicEffect>();
+            return;
+        }
+
+        var newEffectsSet = newEffects.ToHashSet();
+        if (oldEffects is null || newEffectsSet.SetEquals(oldEffects)) 
             return;
         
+        // Copy - New is not Null and not equal to old
         Effects = new List<DataMagicEffect>();
-        foreach (IEffectGetter effect in effectGetters)
+        foreach (IEffectGetter effect in newEffectsSet)
         {
             DataMagicEffect dataMagicEffect = new()
             {
@@ -41,12 +44,15 @@ public interface IHasMagicEffects
                 Magnitude = effect.Data?.Magnitude ?? 0,
                 Area = effect.Data?.Area ?? 0,
                 Duration = effect.Data?.Duration ?? 0,
-                Conditions = new List<DataCondition>()
             };
 
-            foreach (IConditionGetter condition in effect.Conditions)
+            if (effect.Conditions.Count > 0)
             {
-                dataMagicEffect.Conditions.Add(DataCondition.ConvertToData(condition));
+                dataMagicEffect.Conditions = new List<DataCondition>();
+                foreach (IConditionGetter condition in effect.Conditions)
+                {
+                    dataMagicEffect.Conditions.Add(DataCondition.ConvertToData(condition));
+                }
             }
 
             Effects.Add(dataMagicEffect);
