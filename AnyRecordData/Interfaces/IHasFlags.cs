@@ -11,6 +11,7 @@ public interface IHasFlags
     {
         Flags = newRef switch
         {
+            IAmmunitionGetter => GetFlags(newRef.AsAmmo().Flags, oldRef.AsAmmo().Flags),
             IArmorGetter =>      GetFlags(newRef.AsArmor().BodyTemplate?.FirstPersonFlags, oldRef.AsArmor().BodyTemplate?.FirstPersonFlags),
             ICellGetter =>       GetFlags(newRef.AsCell().Flags, oldRef.AsCell().Flags),
             IIngestibleGetter => GetFlags(newRef.AsIngestible().Flags, oldRef.AsIngestible().Flags),
@@ -20,6 +21,13 @@ public interface IHasFlags
             ISpellGetter =>      GetFlags(newRef.AsSpell().Flags, oldRef.AsSpell().Flags),
             _ => default
         };
+    }
+    
+    private static List<string>? GetFlags(Ammunition.Flag? newFlags, Ammunition.Flag? oldFlags)
+    {
+        return !Equals(newFlags, oldFlags) 
+            ? newFlags?.EnumerateContainedFlags().Select(flag => flag.ToString()).ToList()
+            : null;
     }
     
     private static List<string>? GetFlags(BipedObjectFlag? newFlags, BipedObjectFlag? oldFlags)
@@ -68,6 +76,9 @@ public interface IHasFlags
     {
         switch (rec)
         {
+            case IAmmunition item:
+                item.Flags = SetAmmoFlags() ?? item.Flags;
+                break;
             case IArmor item:
                 item.BodyTemplate ??= new BodyTemplate();
                 item.BodyTemplate.FirstPersonFlags = SetArmorFlags() ?? item.BodyTemplate.FirstPersonFlags;
@@ -91,6 +102,20 @@ public interface IHasFlags
                 item.Flags = SetSpellDataFlags() ?? item.Flags;
                 break;
         }
+    }
+
+    private Ammunition.Flag? SetAmmoFlags()
+    {
+        if (Flags is null) 
+            return null;
+        
+        Ammunition.Flag flags = new();
+        foreach (string flag in Flags)
+        {
+            flags = flags.SetFlag(Enum.Parse<Ammunition.Flag>(flag), true);
+        }
+        
+        return flags;
     }
 
     private BipedObjectFlag? SetArmorFlags()

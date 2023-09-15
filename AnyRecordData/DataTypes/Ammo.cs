@@ -10,7 +10,8 @@ public class DataAmmo : DataBaseItem,
                         IHasModel,
                         IHasObjectBounds,
                         IHasWeightValue,
-                        IHasPickUpPutDownSound
+                        IHasPickUpPutDownSound,
+                        IHasFlags
 {
     public string? Name { get; set; }
     public List<string>? Keywords { get; set; }
@@ -21,6 +22,7 @@ public class DataAmmo : DataBaseItem,
     public uint? Value { get; set; }
     public string? PickUpSound { get; set; }
     public string? PutDownSound { get; set; }
+    public List<string>? Flags { get; set; }
     
     // Ammunition Specific
     [UsedImplicitly] public float? Damage { get; set; }
@@ -44,6 +46,7 @@ public class DataAmmo : DataBaseItem,
         ((IHasObjectBounds)this).GetDataInterface(newRef, oldRef);
         ((IHasWeightValue)this).GetDataInterface(newRef, oldRef);
         ((IHasPickUpPutDownSound)this).GetDataInterface(newRef, oldRef);
+        ((IHasFlags)this).GetDataInterface(newRef, oldRef);
 
         Damage = DataUtils.GetNumber(newRef.Damage, oldRef.Damage);
     }
@@ -62,6 +65,7 @@ public class DataAmmo : DataBaseItem,
         ((IHasObjectBounds)this).PatchInterface(rec);
         ((IHasWeightValue)this).PatchInterface(rec);
         ((IHasPickUpPutDownSound)this).PatchInterface(rec);
+        ((IHasFlags)this).PatchInterface(rec);
 
         rec.Damage = DataUtils.PatchNumber(rec.Damage, Damage);
     }
@@ -73,6 +77,7 @@ public class DataAmmo : DataBaseItem,
                ((IHasModel)this).IsModifiedInterface() ||
                ((IHasObjectBounds)this).IsModifiedInterface() ||
                ((IHasPickUpPutDownSound)this).IsModifiedInterface() ||
+               ((IHasFlags)this).IsModifiedInterface() ||
                Damage is not null;
     }
 }

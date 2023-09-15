@@ -1,20 +1,19 @@
 ﻿using System.Text.RegularExpressions;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
-using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Skyrim;
 using YamlDotNet.Serialization;
 
 namespace AnyRecordExporter;
 using AnyRecordData.DataTypes;
 
-public static class Exporter
+public static partial class Exporter
 {
-    private static string _pluginName = "Unofficial Skyrim Special Edition Patch.esp";
+    private static string _pluginName = "Skyrim.esm";
     private static string _parentFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     private static string _patchFolder = "";
 
-    private static bool _saveBookText = true;
+    private static bool _ignoreBookText;
     
     private static readonly ISerializer Serializer = new SerializerBuilder()
         .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
@@ -22,196 +21,104 @@ public static class Exporter
     
     public static void Main(string[] args)
     {
-        foreach (string arg in args)
+        // Default settings file is located next to the application
+        string configFilePath = AppDomain.CurrentDomain.BaseDirectory + "Settings.yaml";
+        try
         {
-            if (arg.ToLower().StartsWith("plugin="))
+            if (args.Length > 0)
             {
-                _pluginName = arg[7..];
-                continue;
+                configFilePath = Path.GetFullPath(args[0]);
             }
-
-            if (arg.ToLower().StartsWith("path="))
-            {
-                _parentFolder = Path.GetFullPath(arg[5..]);
-                continue;
-            }
-
-            if (arg.ToLower().StartsWith("savebooktext="))
-            {
-                _saveBookText = arg.ToLower().Equals("savebooktext=true");
-            }
+            // Read config
+            string config = File.ReadAllText(configFilePath);
+            IDeserializer deserializer = new Deserializer();
+            Config c = deserializer.Deserialize<Config>(config);
+            
+            // Edit program variables
+            _pluginName = c.Plugin;
+            _parentFolder = c.Path;
+            _ignoreBookText = c.IgnoreBookText;
+        }
+        catch(Exception)
+        {
+            Console.Error.WriteLine($"ERR: Invalid or nonexistent config file: {configFilePath}");
+            WaitToExit();
+            return;
         }
 
-        Regex regex = new Regex(@"\.es(p|m)", RegexOptions.IgnoreCase);
-        _patchFolder = _parentFolder + Path.DirectorySeparatorChar + regex.Replace(_pluginName, "");
+        _patchFolder = _parentFolder + Path.DirectorySeparatorChar + StripPluginExtension().Replace(_pluginName, "");
         
-        using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
-        GetChanges(env);
-        
-        Console.WriteLine("Done!");
+        GetChanges(GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE));
     }
     
     private static void GetChanges(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
     {
         if (!CheckForMod(env, _pluginName))
         {
-            Console.WriteLine($"ERR: Mod: {_pluginName} not found. Exiting...");
+            Console.WriteLine($"ERR: Mod: {_pluginName} not found or not enabled.");
+            WaitToExit();
             return;
         }
         
-        Console.WriteLine($"INFO: Creating config patch for mod: {_pluginName}");
+        Console.WriteLine($"INFO: Creating config for mod: {_pluginName}");
         
-        if (!_saveBookText)
-            Console.WriteLine("INFO: Saving of Book Text to config file disabled by user");
+        if (_ignoreBookText)
+            Console.WriteLine("INFO: Saving of Book Text to config file disabled in config file");
 
-        SaveChanges<IAmmunitionGetter, DataAmmo>( 
-            GetModifiedRecords<IAmmunitionGetter>(env));
-        SaveChanges<IArmorGetter, DataArmor>(
-            GetModifiedRecords<IArmorGetter>(env));
-        SaveChanges<IBookGetter, DataBook>(
-            GetModifiedRecords<IBookGetter>(env));
-        SaveChanges<ICellGetter, DataCell>(
-            GetModifiedRecords<ICellGetter>(env));
-        SaveChanges<IIngestibleGetter, DataIngestible>(
-            GetModifiedRecords<IIngestibleGetter>(env));
-        SaveChanges<IIngredientGetter, DataIngredient>(
-            GetModifiedRecords<IIngredientGetter>(env));
-        SaveChanges<ILightGetter, DataLight>(
-            GetModifiedRecords<ILightGetter>(env));
-        SaveChanges<IMiscItemGetter, DataMisc>(
-            GetModifiedRecords<IMiscItemGetter>(env));
-        SaveChanges<IPerkGetter, DataPerk>(
-            GetModifiedRecords<IPerkGetter>(env));
-        SaveChanges<IScrollGetter, DataScroll>(
-            GetModifiedRecords<IScrollGetter>(env));
-        SaveChanges<ISoulGemGetter, DataSoulGem>(
-            GetModifiedRecords<ISoulGemGetter>(env));
-        SaveChanges<IShoutGetter, DataShout>(
-            GetModifiedRecords<IShoutGetter>(env));
-        SaveChanges<ISpellGetter, DataSpell>(
-            GetModifiedRecords<ISpellGetter>(env));
-        SaveChanges<IWeaponGetter, DataWeapon>(
-            GetModifiedRecords<IWeaponGetter>(env));
-    }
-    
-    private static List<(T, T)> GetModifiedRecords<T>(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
-        where T : ISkyrimMajorRecordGetter
-    {
-        Dictionary<FormKey, T> newRefs = new();
-        Dictionary<FormKey, T> oldRefs = new();
-        List<(T, T)> compares = new();
-
-        // Get override version of record we care about
-        foreach (var mod in env.LoadOrder.ListedOrder.OnlyEnabled())
-        {
-            if (!mod.FileName.Equals(_pluginName) || mod.Mod is null)
-                continue;
-            
-            foreach (T newRef in mod.Mod.EnumerateMajorRecords(typeof(T)))
-            {
-                newRefs.Add(newRef.FormKey, newRef);
-            }
-        }
-
-        // Get previous definition (or override?)
-        foreach (var mod in env.LoadOrder.ListedOrder.OnlyEnabled())
-        {
-            if (mod.FileName.Equals(_pluginName))
-                break;
-
-            if (mod.Mod is null)
-                continue;
-
-            foreach (T oldRef in mod.Mod.EnumerateMajorRecords(typeof(T)))
-            {
-                if (newRefs.ContainsKey(oldRef.FormKey))
-                {
-                    oldRefs[oldRef.FormKey] = oldRef;
-                }
-            }
-        }
-
-        foreach (T over in newRefs.Values)
-        {
-            if (oldRefs.TryGetValue(over.FormKey, out T? def))
-            {
-                compares.Add((over, def));
-            }
-        }
-
-        return compares;
+        PatchChanges<DataAmmo, IAmmunitionGetter>(env); 
+        PatchChanges<DataArmor, IArmorGetter>(env);
+        PatchChanges<DataBook, IBookGetter>(env);
+        PatchChanges<DataCell, ICellGetter>(env);
+        PatchChanges<DataIngestible, IIngestibleGetter>(env);
+        PatchChanges<DataIngredient, IIngredientGetter>(env);
+        PatchChanges<DataLight, ILightGetter>(env);
+        PatchChanges<DataMisc, IMiscItemGetter>(env);
+        PatchChanges<DataPerk, IPerkGetter>(env);
+        PatchChanges<DataScroll, IScrollGetter>(env);
+        PatchChanges<DataSoulGem, ISoulGemGetter>(env);
+        PatchChanges<DataShout, IShoutGetter>(env);
+        PatchChanges<DataSpell, ISpellGetter>(env);
+        PatchChanges<DataWeapon, IWeaponGetter>(env);
+        
+        Console.WriteLine("INFO: Done!");
+        Thread.Sleep(500);
     }
 
     // Go through the list of comparable records and serialize the modifications to disk.
-    private static void SaveChanges<T, TE>(List<(T, T)> compares)
-        where T : ISkyrimMajorRecordGetter
-        where TE : DataBaseItem, new()
+    private static void PatchChanges<TData, TMajorGetter>(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
+        where TMajorGetter : class, ISkyrimMajorRecordGetter
+        where TData : DataBaseItem, new()
     {
+        var compares = GetModifiedRecords<TMajorGetter>(env);
+        
         if (compares.Count < 0)
             return;
 
         string type = "Default";
         
         List<string> strings = new();
+        bool first = true;
         bool modifiedCategory = false;
-        foreach ((T newRef, T oldRef) in compares)
+        foreach ((TMajorGetter newRef, TMajorGetter oldRef) in compares)
         {
             // Reset shared object
-            TE data = new()
+            TData data = new()
             {
                 Id = newRef.FormKey.ToString()
             };
             type = data.PatchFileName;
-            
-            switch (newRef, oldRef)
+
+            if (first)
             {
-                case (IAmmunitionGetter, IAmmunitionGetter) x :
-                    data.GetData((IAmmunitionGetter)x.newRef, (IAmmunitionGetter)x.oldRef);
-                    break;
-                case (IArmorGetter, IArmorGetter) x :
-                    data.GetData((IArmorGetter)x.newRef, (IArmorGetter)x.oldRef);
-                    break;
-                case (IBookGetter, IBookGetter) x :
-                    data.GetData((IBookGetter)x.newRef, (IBookGetter)x.oldRef);
-                    break;
-                case (ICellGetter, ICellGetter) x :
-                    data.GetData((ICellGetter)x.newRef, (ICellGetter)x.oldRef);
-                    break;
-                case (IIngestibleGetter, IIngestibleGetter) x :
-                    data.GetData((IIngestibleGetter)x.newRef, (IIngestibleGetter)x.oldRef);
-                    break;
-                case (IIngredientGetter, IIngredientGetter) x :
-                    data.GetData((IIngredientGetter)x.newRef, (IIngredientGetter)x.oldRef);
-                    break;
-                case (ILightGetter, ILightGetter) x :
-                    data.GetData((ILightGetter)x.newRef, (ILightGetter)x.oldRef);
-                    break;
-                case (IMiscItemGetter, IMiscItemGetter) x :
-                    data.GetData((IMiscItemGetter)x.newRef, (IMiscItemGetter)x.oldRef);
-                    break;
-                case (IPerkGetter, IPerkGetter) x :
-                    data.GetData((IPerkGetter)x.newRef, (IPerkGetter)x.oldRef);
-                    break;
-                case (IScrollGetter, IScrollGetter) x :
-                    data.GetData((IScrollGetter)x.newRef, (IScrollGetter)x.oldRef);
-                    break;
-                case (ISoulGemGetter, ISoulGemGetter) x :
-                    data.GetData((ISoulGemGetter)x.newRef, (ISoulGemGetter)x.oldRef);
-                    break;
-                case (IShoutGetter, IShoutGetter) x :
-                    data.GetData((IShoutGetter)x.newRef, (IShoutGetter)x.oldRef);
-                    break;
-                case (ISpellGetter, ISpellGetter) x :
-                    data.GetData((ISpellGetter)x.newRef, (ISpellGetter)x.oldRef);
-                    break;
-                case (IWeaponGetter, IWeaponGetter) x :
-                    data.GetData((IWeaponGetter)x.newRef, (IWeaponGetter)x.oldRef);
-                    break;
+                Console.WriteLine($"Exporting {data.PatchFileName}...");
+                first = false;
             }
+            
+            data.GetData(newRef, oldRef);
 
             if (data is DataBook dataBook)
             {
-                if (!_saveBookText)
+                if (_ignoreBookText)
                     dataBook.BookText = null;
             }
             
@@ -233,11 +140,60 @@ public static class Exporter
         if (!Directory.Exists(_patchFolder))
             Directory.CreateDirectory(_patchFolder);
             
-        File.WriteAllText($@"{_patchFolder}\{type}.yaml", string.Join("---\r\n", strings));
+        File.WriteAllText($@"{_patchFolder}\{type}.yaml", string.Join($"---{Environment.NewLine}", strings));
+    }
+    
+    private static Stack<(TMajorGetter, TMajorGetter)> GetModifiedRecords<TMajorGetter>(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
+        where TMajorGetter : class, ISkyrimMajorRecordGetter
+    {
+        Stack<(TMajorGetter, TMajorGetter)> compares = new();
+
+        // Get override version of record we care about
+        var targetMod = env.LoadOrder[_pluginName];
+        if (targetMod.Mod is null)
+            return compares;
+
+        var newRefs = targetMod.Mod.EnumerateMajorRecords<TMajorGetter>().ToDictionary(newRef => newRef.FormKey);
+
+        bool reached = false;
+        foreach (var prevMod in env.LoadOrder.PriorityOrder)
+        {
+            if (prevMod.FileName.Equals(_pluginName))
+            {
+                reached = true;
+                continue;
+            }
+
+            if (!reached || prevMod.Mod is null) 
+                continue;
+
+            var modRecords = typeof(TMajorGetter) == typeof(ICellGetter) 
+                ? prevMod.Mod.Cells.EnumerateMajorRecords<TMajorGetter>()
+                : prevMod.Mod.EnumerateMajorRecords<TMajorGetter>();
+
+            foreach (TMajorGetter record in modRecords)
+            {
+                if (newRefs.TryGetValue(record.FormKey, out TMajorGetter? @ref))
+                {
+                    compares.Push((@ref, record));
+                }
+            }
+        }
+        
+        return compares;
     }
 
     private static bool CheckForMod(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env, string modName)
     {
         return env.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(modName));
     }
+
+    private static void WaitToExit()
+    {
+        Console.Error.WriteLine("INFO: Press any key to exit...");
+        Console.ReadKey();
+    }
+
+    [GeneratedRegex("\\.es(p|m)", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex StripPluginExtension();
 }
