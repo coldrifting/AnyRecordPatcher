@@ -1,0 +1,341 @@
+Id: D2C9FB:MysticismMagic.esp
+Name: 'Staff - Alteration I: Poison Spray'
+---
+Id: D4B03C:MysticismMagic.esp
+Name: 'Staff - Alteration I: Sunbeam'
+---
+Id: D31B02:MysticismMagic.esp
+Name: 'Staff - Alteration II: Poison Rune'
+---
+Id: D31B00:MysticismMagic.esp
+Name: 'Staff - Alteration II: Poisonbolts'
+---
+Id: D4B036:MysticismMagic.esp
+Name: 'Staff - Alteration II: Sun Fire'
+---
+Id: D4B039:MysticismMagic.esp
+Name: 'Staff - Alteration II: Sunlight Rune'
+---
+Id: F59AEA:MysticismMagic.esp
+Name: 'Staff - Alteration III: Ash Form'
+---
+Id: C8A8D6:MysticismMagic.esp
+Name: 'Staff - Alteration III: Burden'
+---
+Id: C8A8CD:MysticismMagic.esp
+Name: 'Staff - Alteration III: Corrode Armor'
+---
+Id: D2C9FD:MysticismMagic.esp
+Name: 'Staff - Alteration III: Deadly Poison Spray'
+---
+Id: F59AE4:MysticismMagic.esp
+Name: 'Staff - Alteration III: Destroy Construct'
+---
+Id: C8A8C9:MysticismMagic.esp
+Name: 'Staff - Alteration III: Disintegrate Weapon'
+---
+Id: D2C9F8:MysticismMagic.esp
+Name: 'Staff - Alteration III: Poison Cloud'
+---
+Id: D4B03E:MysticismMagic.esp
+Name: 'Staff - Alteration III: Radiant Sunbeam'
+---
+Id: FAFCDC:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Ash Cloud'
+---
+Id: F59AF3:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Ash Rune'
+---
+Id: C8A8DC:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Burden Rune'
+---
+Id: D36C05:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Deadly Poison Rune'
+---
+Id: C8A8DE:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Encumber'
+---
+Id: D36C09:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Poison Wall'
+---
+Id: D4B063:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Radiant Sunlight Rune'
+---
+Id: D4B045:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Reflective Light'
+---
+Id: D4B064:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Sunlight Wall'
+---
+Id: D36C04:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Viperbolt'
+---
+Id: C8A8E6:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Weakness to Fire'
+---
+Id: C8A8E8:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Weakness to Frost'
+---
+Id: C8A8EA:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Weakness to Poison'
+---
+Id: C8A8E9:MysticismMagic.esp
+Name: 'Staff - Alteration IV: Weakness to Shock'
+---
+Id: C8A8D2:MysticismMagic.esp
+Name: 'Staff - Alteration V: Armoreater'
+---
+Id: F59AFC:MysticismMagic.esp
+Name: 'Staff - Alteration V: Cinder Storm'
+---
+Id: D4B062:MysticismMagic.esp
+Name: 'Staff - Alteration V: Daybreak'
+---
+Id: D36C0B:MysticismMagic.esp
+Name: 'Staff - Alteration V: Death Cloud'
+---
+Id: F59AF9:MysticismMagic.esp
+Name: 'Staff - Alteration V: Dwemerbane'
+---
+Id: D2C9FE:MysticismMagic.esp
+Name: 'Staff - Alteration V: Miasma'
+---
+Id: D4B05C:MysticismMagic.esp
+Name: 'Staff - Alteration V: Solar Flare'
+---
+Id: C8A8D4:MysticismMagic.esp
+Name: 'Staff - Alteration V: Swordbreaker'
+---
+Id: E1FB5B:MysticismMagic.esp
+Name: 'Staff - Conjuration I: Conjure Skeleton'
+---
+Id: F59B0C:MysticismMagic.esp
+Name: 'Staff - Conjuration II: Conjure Death Hound'
+---
+Id: E1FB5D:MysticismMagic.esp
+Name: 'Staff - Conjuration II: Conjure Skeleton Archer'
+---
+Id: E1FB59:MysticismMagic.esp
+Name: 'Staff - Conjuration II: Conjure Spectral Dire Wolf'
+---
+Id: E1FB6F:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Ancestral Guardian'
+---
+Id: E1FB72:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Ash Spawn'
+---
+Id: E1FB75:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Boneman'
+---
+Id: E1FB66:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Dremora Warrior'
+---
+Id: E1FB6C:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Flaming Familiar'
+---
+Id: F59B18:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Gargoyle'
+---
+Id: E1FB78:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Seeker'
+---
+Id: E1FB69:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Skeleton Mage'
+---
+Id: E1FB60:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Spectral Sabre Cat'
+---
+Id: E1FB63:MysticismMagic.esp
+Name: 'Staff - Conjuration III: Conjure Spectral Steed'
+---
+Id: E1FB84:MysticismMagic.esp
+Name: 'Staff - Conjuration IV: Conjure Ancestral Wizard'
+---
+Id: F4F8BE:MysticismMagic.esp
+Name: 'Staff - Conjuration IV: Conjure Mistman'
+---
+Id: E1FB82:MysticismMagic.esp
+Name: 'Staff - Conjuration IV: Conjure Skeleton Warrior'
+---
+Id: E1FB7B:MysticismMagic.esp
+Name: 'Staff - Conjuration IV: Conjure Spectral Bear'
+---
+Id: F59B0F:MysticismMagic.esp
+Name: 'Staff - Conjuration IV: Conjure Volkihar Hound'
+---
+Id: E1FB95:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Ancestral Assassin'
+---
+Id: E1FB9A:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Ash Husk'
+---
+Id: 00FFEE:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Dremora Hunter'
+---
+Id: E1FB8F:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Dremora Lord'
+---
+Id: 00FFED:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Dremora Sorcerer'
+---
+Id: E1FB88:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Flame Monarch'
+---
+Id: E1FB8C:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Frost Monarch'
+---
+Id: F59B1D:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Gargoyle Brute'
+---
+Id: E1FB9F:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure High Seeker'
+---
+Id: E1FB92:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Skeleton Champion'
+---
+Id: E7FED8:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Spectral Manbeast'
+---
+Id: E1FB8A:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Storm Monarch'
+---
+Id: 01F2FF:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Wrathman Marksman'
+---
+Id: 01F300:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Wrathman Warlock'
+---
+Id: E1FB9D:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Conjure Wrathman'
+---
+Id: E1FBA3:MysticismMagic.esp
+Name: 'Staff - Conjuration V: Dead Thrall'
+---
+Id: CDB96D:MysticismMagic.esp
+Name: 'Staff - Destruction II: Fire Rune'
+---
+Id: CDB98F:MysticismMagic.esp
+Name: 'Staff - Destruction II: Frost Rune'
+---
+Id: F549C7:MysticismMagic.esp
+Name: 'Staff - Destruction II: Lightning Rune'
+---
+Id: D6459D:MysticismMagic.esp
+Name: 'Staff - Destruction III: Drain Magicka'
+---
+Id: D6459F:MysticismMagic.esp
+Name: 'Staff - Destruction III: Drain Stamina'
+---
+Id: 00FFF1:MysticismMagic.esp
+Name: 'Staff - Destruction III: Fireball'
+---
+Id: CDB971:MysticismMagic.esp
+Name: 'Staff - Destruction III: Greater Flames'
+---
+Id: CDB98C:MysticismMagic.esp
+Name: 'Staff - Destruction III: Greater Frostbite'
+---
+Id: CF9FC1:MysticismMagic.esp
+Name: 'Staff - Destruction III: Greater Sparks'
+---
+Id: D6459B:MysticismMagic.esp
+Name: 'Staff - Destruction III: Life Draining'
+---
+Id: D645A0:MysticismMagic.esp
+Name: 'Staff - Destruction III: Vampiric Bolt'
+---
+Id: CDB975:MysticismMagic.esp
+Name: 'Staff - Destruction IV: Greater Fire Rune'
+---
+Id: CDB995:MysticismMagic.esp
+Name: 'Staff - Destruction IV: Greater Frost Rune'
+---
+Id: CF9FCA:MysticismMagic.esp
+Name: 'Staff - Destruction IV: Greater Lightning Rune'
+---
+Id: D645A1:MysticismMagic.esp
+Name: 'Staff - Destruction IV: Vampiric Blast'
+---
+Id: D645A2:MysticismMagic.esp
+Name: 'Staff - Destruction IV: Vampiric Rune'
+---
+Id: D645A6:MysticismMagic.esp
+Name: 'Staff - Destruction V: Blood Lance'
+---
+Id: CF9FD0:MysticismMagic.esp
+Name: 'Staff - Destruction V: Finger of the Mountain'
+---
+Id: CDB973:MysticismMagic.esp
+Name: 'Staff - Destruction V: Flame Tempest'
+---
+Id: CF9FBA:MysticismMagic.esp
+Name: 'Staff - Destruction V: Hoarfrost'
+---
+Id: 00FFF0:MysticismMagic.esp
+Name: 'Staff - Destruction V: Immolate'
+---
+Id: CDB96B:MysticismMagic.esp
+Name: 'Staff - Destruction V: Immolate'
+---
+Id: D645A3:MysticismMagic.esp
+Name: 'Staff - Destruction V: Leech Life'
+---
+Id: D645A4:MysticismMagic.esp
+Name: 'Staff - Destruction V: Leech Magicka'
+---
+Id: D645A5:MysticismMagic.esp
+Name: 'Staff - Destruction V: Leech Stamina'
+---
+Id: CF9FCD:MysticismMagic.esp
+Name: 'Staff - Destruction V: Lightning Storm'
+---
+Id: CF9FB5:MysticismMagic.esp
+Name: 'Staff - Destruction V: Throat of the World'
+---
+Id: C62046:MysticismMagic.esp
+Name: 'Staff - Illusion I: Calm'
+---
+Id: C6204B:MysticismMagic.esp
+Name: 'Staff - Illusion II: Fury'
+---
+Id: C62060:MysticismMagic.esp
+Name: 'Staff - Illusion III: Command'
+---
+Id: C62048:MysticismMagic.esp
+Name: 'Staff - Illusion III: Pacify'
+---
+Id: C6205A:MysticismMagic.esp
+Name: 'Staff - Illusion III: Panic'
+---
+Id: C6206F:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Calm Rune'
+---
+Id: C62075:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Command Rune'
+---
+Id: C62062:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Control'
+---
+Id: F59B3E:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Fade'
+---
+Id: C62073:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Fear Rune'
+---
+Id: C62071:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Frenzy Rune'
+---
+Id: C6205C:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Immobilize'
+---
+Id: C62053:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Mute'
+---
+Id: C62074:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Paralyze Rune'
+---
+Id: C62072:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Silence Rune'
+---
+Id: C6204E:MysticismMagic.esp
+Name: 'Staff - Illusion IV: Wrath'

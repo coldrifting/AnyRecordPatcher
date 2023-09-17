@@ -1,0 +1,791 @@
+Id: 0B9BD6:Skyrim.esm
+Name: Amphora - Glazed
+---
+Id: 0F08F1:Skyrim.esm
+Name: Amphora - Nordic
+---
+Id: 025C13:Skyrim.esm
+Name: Bowl - Dwemer
+---
+Id: 025C68:Skyrim.esm
+Name: Bowl - Dwemer
+---
+Id: 0E1FC3:Skyrim.esm
+Name: Bowl - Dwemer
+---
+Id: 0B9BCC:Skyrim.esm
+Name: Bowl - Glazed
+---
+Id: 0B9BD8:Skyrim.esm
+Name: Bowl - Glazed
+---
+Id: 0F08FA:Skyrim.esm
+Name: Bowl - Nordic
+---
+Id: 0F08FB:Skyrim.esm
+Name: Bowl - Nordic
+---
+Id: 098626:Skyrim.esm
+Name: Bowl - Silver
+---
+Id: 098627:Skyrim.esm
+Name: Bowl - Silver
+---
+Id: 03199A:Skyrim.esm
+Name: Bowl - Wooden
+---
+Id: 0B9BE0:Skyrim.esm
+Name: Candles - Glazed
+---
+Id: 0E42E0:Skyrim.esm
+Name: Candlestick - Elaborate
+---
+Id: 0AA03E:Skyrim.esm
+Name: Candlestick - Silver
+---
+Id: 0E42DF:Skyrim.esm
+Name: Candlestick - Silver
+---
+Id: 0E42E1:Skyrim.esm
+Name: Candlestick - Silver
+---
+Id: 00D81E:Hearthfires.esm
+Name: Child's Dress - Blue
+---
+Id: 00D81F:Hearthfires.esm
+Name: Child's Dress - Green
+---
+Id: 00D820:Hearthfires.esm
+Name: Child's Dress - Grey
+---
+Id: 00D821:Hearthfires.esm
+Name: Child's Dress - Red
+---
+Id: 00D822:Hearthfires.esm
+Name: Child's Dress - Yellow
+---
+Id: 00C744:Hearthfires.esm
+Name: Child's Tunic - Blue
+---
+Id: 00C743:Hearthfires.esm
+Name: Child's Tunic - Green
+---
+Id: 00C745:Hearthfires.esm
+Name: Child's Tunic - Grey
+---
+Id: 00C742:Hearthfires.esm
+Name: Child's Tunic - Red
+---
+Id: 00C746:Hearthfires.esm
+Name: Child's Tunic - Yellow
+---
+Id: 03AD57:Skyrim.esm
+Name: Chitin - Chaurus
+---
+Id: 02B04E:Dragonborn.esm
+Name: Chitin - Plate
+---
+Id: 0195AA:Dawnguard.esm
+Name: Chitin - Shellbug
+---
+Id: 01171D:Dawnguard.esm
+Name: Crest - Crescent Moon
+---
+Id: 01171E:Dawnguard.esm
+Name: Crest - Full Moon
+---
+Id: 01171F:Dawnguard.esm
+Name: Crest - Half Moon
+---
+Id: 027F07:Skyrim.esm
+Name: Cup - Dwemer
+---
+Id: 027F08:Skyrim.esm
+Name: Cup - Dwemer
+---
+Id: 027F09:Skyrim.esm
+Name: Cup - Dwemer
+---
+Id: 0B9BDC:Skyrim.esm
+Name: Cup - Glazed
+---
+Id: 0F08F8:Skyrim.esm
+Name: Cup - Nordic
+---
+Id: 027F06:Skyrim.esm
+Name: Dish - Dwemer
+---
+Id: 01CAC0:Dragonborn.esm
+Name: Dragon Claw - Amethyst, Left Half
+---
+Id: 01CAC1:Dragonborn.esm
+Name: Dragon Claw - Amethyst, Right Half
+---
+Id: 0B634C:Skyrim.esm
+Name: Dragon Claw - Coral
+---
+Id: 0AB375:Skyrim.esm
+Name: Dragon Claw - Diamond
+---
+Id: 05AF48:Skyrim.esm
+Name: Dragon Claw - Ebony
+---
+Id: 0ED417:Skyrim.esm
+Name: Dragon Claw - Emerald
+---
+Id: 07C260:Skyrim.esm
+Name: Dragon Claw - Glass
+---
+Id: 039647:Skyrim.esm
+Name: Dragon Claw - Gold
+---
+Id: 0999E7:Skyrim.esm
+Name: Dragon Claw - Gold
+---
+Id: 08CDFA:Skyrim.esm
+Name: Dragon Claw - Iron
+---
+Id: 0AB7BB:Skyrim.esm
+Name: Dragon Claw - Ivory
+---
+Id: 04B56C:Skyrim.esm
+Name: Dragon Claw - Ruby
+---
+Id: 0663D7:Skyrim.esm
+Name: Dragon Claw - Sapphire
+---
+Id: 0C886C:Skyrim.esm
+Name: Dwemer Scrap Metal - Bent
+---
+Id: 0AEBF1:Skyrim.esm
+Name: Dwemer Scrap Metal - Cog
+---
+Id: 0C8861:Skyrim.esm
+Name: Dwemer Scrap Metal - Gear
+---
+Id: 0C8868:Skyrim.esm
+Name: Dwemer Scrap Metal - Gyro
+---
+Id: 0C886E:Skyrim.esm
+Name: Dwemer Scrap Metal - Lever, Large
+---
+Id: 0C8870:Skyrim.esm
+Name: Dwemer Scrap Metal - Lever, Small
+---
+Id: 0C8864:Skyrim.esm
+Name: Dwemer Scrap Metal - Plate, Large
+---
+Id: 0C8866:Skyrim.esm
+Name: Dwemer Scrap Metal - Plate, Small
+---
+Id: 0C8874:Skyrim.esm
+Name: Dwemer Scrap Metal - Solid
+---
+Id: 0C8878:Skyrim.esm
+Name: Dwemer Scrap Metal - Strut, Decorative
+---
+Id: 0C8872:Skyrim.esm
+Name: Dwemer Scrap Metal - Strut, Large
+---
+Id: 0C886A:Skyrim.esm
+Name: Dwemer Scrap Metal - Strut, Small
+---
+Id: 0118F9:Dawnguard.esm
+Name: Elder Scroll - Blood
+---
+Id: 0126DC:Dawnguard.esm
+Name: Elder Scroll - Dragon
+---
+Id: 02D513:Skyrim.esm
+Name: Elder Scroll - Dragon
+---
+Id: 048782:Skyrim.esm
+Name: Elder Scroll - Dragon
+---
+Id: 011A13:Dawnguard.esm
+Name: Elder Scroll - Sun
+---
+Id: 0F03F8:Skyrim.esm
+Name: Empty Bottle - Skooma
+---
+Id: 0093F5:Dawnguard.esm
+Name: Empty Bottle - Wine
+---
+Id: 0093F6:Dawnguard.esm
+Name: Empty Bottle - Wine
+---
+Id: 0F2012:Skyrim.esm
+Name: Empty Bottle - Wine
+---
+Id: 0F2013:Skyrim.esm
+Name: Empty Bottle - Wine
+---
+Id: 0F2014:Skyrim.esm
+Name: Empty Bottle - Wine
+---
+Id: 0F2015:Skyrim.esm
+Name: Empty Bottle - Wine
+---
+Id: 0FED17:Skyrim.esm
+Name: Empty Bottle - Wine
+---
+Id: 1092B8:Skyrim.esm
+Name: Eye of the Falmer - Right
+---
+Id: 0AEBF3:Skyrim.esm
+Name: Fork - Dwarven
+---
+Id: 104B3F:Skyrim.esm
+Name: Fork - Tin
+---
+Id: 063B46:Skyrim.esm
+Name: Gem - Amethyst, Common
+---
+Id: 06851E:Skyrim.esm
+Name: Gem - Amethyst, Flawless
+---
+Id: 063B47:Skyrim.esm
+Name: Gem - Diamond, Common
+---
+Id: 06851F:Skyrim.esm
+Name: Gem - Diamond, Flawless
+---
+Id: 063B43:Skyrim.esm
+Name: Gem - Emerald, Common
+---
+Id: 068520:Skyrim.esm
+Name: Gem - Emerald, Flawless
+---
+Id: 063B45:Skyrim.esm
+Name: Gem - Garnet, Common
+---
+Id: 068521:Skyrim.esm
+Name: Gem - Garnet, Flawless
+---
+Id: 063B42:Skyrim.esm
+Name: Gem - Ruby, Common
+---
+Id: 063B44:Skyrim.esm
+Name: Gem - Sapphire, Common
+---
+Id: 039E4E:Dragonborn.esm
+Name: Gem - Sapphire, Exquisite
+---
+Id: 068523:Skyrim.esm
+Name: Gem - Sapphire, Flawless
+---
+Id: 09DFBB:Skyrim.esm
+Name: Gem - Unusual
+---
+Id: 011DB2:Dawnguard.esm
+Name: Goblet - Bloody, Silver
+---
+Id: 011DB3:Dawnguard.esm
+Name: Goblet - Bloody, Silver
+---
+Id: 0B9BDA:Skyrim.esm
+Name: Goblet - Glazed
+---
+Id: 0F08F9:Skyrim.esm
+Name: Goblet - Nordic
+---
+Id: 098620:Skyrim.esm
+Name: Goblet - Silver
+---
+Id: 098621:Skyrim.esm
+Name: Goblet - Silver
+---
+Id: 02C260:Skyrim.esm
+Name: Heart - Briar
+---
+Id: 05AD93:Skyrim.esm
+Name: Ingot - Corundum
+---
+Id: 0DB8A2:Skyrim.esm
+Name: Ingot - Dwarven
+---
+Id: 05AD9D:Skyrim.esm
+Name: Ingot - Ebony
+---
+Id: 05AD9E:Skyrim.esm
+Name: Ingot - Gold
+---
+Id: 05ACE4:Skyrim.esm
+Name: Ingot - Iron
+---
+Id: 05ADA1:Skyrim.esm
+Name: Ingot - Malachite
+---
+Id: 05AD9F:Skyrim.esm
+Name: Ingot - Moonstone
+---
+Id: 05AD99:Skyrim.esm
+Name: Ingot - Orichalcum
+---
+Id: 05ADA0:Skyrim.esm
+Name: Ingot - Quicksilver
+---
+Id: 05ACE3:Skyrim.esm
+Name: Ingot - Silver
+---
+Id: 05ACE5:Skyrim.esm
+Name: Ingot - Steel
+---
+Id: 0DABA9:Skyrim.esm
+Name: Instrument - Drum
+---
+Id: 0DABA7:Skyrim.esm
+Name: Instrument - Flute
+---
+Id: 105177:Skyrim.esm
+Name: Instrument - Flute
+---
+Id: 0DABAB:Skyrim.esm
+Name: Instrument - Lute
+---
+Id: 0B08C7:Skyrim.esm
+Name: Jar with a Bee
+---
+Id: 0FBC3C:Skyrim.esm
+Name: Jar with a Butterfly
+---
+Id: 0FBC3B:Skyrim.esm
+Name: Jar with a Dragonfly
+---
+Id: 0FBC3D:Skyrim.esm
+Name: Jar with a Moth
+---
+Id: 0FBC3A:Skyrim.esm
+Name: Jar with a Torchbug
+---
+Id: 011DB4:Dawnguard.esm
+Name: Jug - Bloody, Silver
+---
+Id: 08632C:Skyrim.esm
+Name: Jug - Glazed
+---
+Id: 098623:Skyrim.esm
+Name: Jug - Glazed
+---
+Id: 0B9BDE:Skyrim.esm
+Name: Jug - Glazed
+---
+Id: 0F08F3:Skyrim.esm
+Name: Jug - Nordic
+---
+Id: 0AEBF7:Skyrim.esm
+Name: Knife - Dwemer
+---
+Id: 104B40:Skyrim.esm
+Name: Knife - Tin
+---
+Id: 01CD7C:Dragonborn.esm
+Name: Leather - Netch
+---
+Id: 03A3D2:Skyrim.esm
+Name: Lexicon - Blank
+---
+Id: 0173BB:Dragonborn.esm
+Name: Lexicon - Control Cube
+---
+Id: 03A3DD:Skyrim.esm
+Name: Lexicon - Runed
+---
+Id: 005A69:Hearthfires.esm
+Name: Material - Glass
+---
+Id: 00303F:Hearthfires.esm
+Name: Material - Goat Horns
+---
+Id: 003011:Hearthfires.esm
+Name: Material - Hinge
+---
+Id: 003035:Hearthfires.esm
+Name: Material - Iron Fittings
+---
+Id: 003012:Hearthfires.esm
+Name: Material - Lock
+---
+Id: 00300F:Hearthfires.esm
+Name: Material - Nails
+---
+Id: 003043:Hearthfires.esm
+Name: Material - Quarried Clay
+---
+Id: 00306C:Hearthfires.esm
+Name: Material - Quarried Stone
+---
+Id: 00300E:Hearthfires.esm
+Name: Material - Sawn Log
+---
+Id: 005A68:Hearthfires.esm
+Name: Material - Straw
+---
+Id: 0240D3:Skyrim.esm
+Name: Mehrunes' Razor - Hilt
+---
+Id: 0240D4:Skyrim.esm
+Name: Mehrunes' Razor - Pommel Stone
+---
+Id: 0240D6:Skyrim.esm
+Name: Mehrunes' Razor - Scabbard
+---
+Id: 0240D5:Skyrim.esm
+Name: Mehrunes' Razor - Shards
+---
+Id: 05ACDB:Skyrim.esm
+Name: Ore - Corundum
+---
+Id: 05ACDC:Skyrim.esm
+Name: Ore - Ebony
+---
+Id: 05ACDE:Skyrim.esm
+Name: Ore - Gold
+---
+Id: 071CF3:Skyrim.esm
+Name: Ore - Iron
+---
+Id: 05ACE1:Skyrim.esm
+Name: Ore - Malachite
+---
+Id: 05ACE0:Skyrim.esm
+Name: Ore - Moonstone
+---
+Id: 05ACDD:Skyrim.esm
+Name: Ore - Orichalcum
+---
+Id: 05ACE2:Skyrim.esm
+Name: Ore - Quicksilver
+---
+Id: 05B2DF:Skyrim.esm
+Name: Ore - Quicksilver
+---
+Id: 05ACDF:Skyrim.esm
+Name: Ore - Silver
+---
+Id: 02B06B:Dragonborn.esm
+Name: Ore - Stalhrim
+---
+Id: 0DA735:Skyrim.esm
+Name: Ornamental Ring - Balwen's
+---
+Id: 0DA733:Skyrim.esm
+Name: Ornamental Ring - Katarina's
+---
+Id: 0DA734:Skyrim.esm
+Name: Ornamental Ring - Pithi's
+---
+Id: 0DA732:Skyrim.esm
+Name: Ornamental Ring - Treoy's
+---
+Id: 027F03:Skyrim.esm
+Name: Pan - Dwemer
+---
+Id: 027F12:Skyrim.esm
+Name: Pan - Dwemer
+---
+Id: 012F97:Dawnguard.esm
+Name: Paragon - Amethyst
+---
+Id: 012FC3:Dawnguard.esm
+Name: Paragon - Diamond
+---
+Id: 019ABC:Dawnguard.esm
+Name: Paragon - Emerald
+---
+Id: 019ABD:Dawnguard.esm
+Name: Paragon - Ruby
+---
+Id: 019ABB:Dawnguard.esm
+Name: Paragon - Sapphire
+---
+Id: 03AD52:Skyrim.esm
+Name: Pelt - Bear
+---
+Id: 03AD53:Skyrim.esm
+Name: Pelt - Bear, Cave
+---
+Id: 03AD54:Skyrim.esm
+Name: Pelt - Bear, Snow
+---
+Id: 03AD8F:Skyrim.esm
+Name: Pelt - Cow
+---
+Id: 0D284D:Skyrim.esm
+Name: Pelt - Deer, Vale
+---
+Id: 0CF89E:Skyrim.esm
+Name: Pelt - Elk
+---
+Id: 03AD90:Skyrim.esm
+Name: Pelt - Elk, Treated
+---
+Id: 0D4B35:Skyrim.esm
+Name: Pelt - Fox
+---
+Id: 0D4BE7:Skyrim.esm
+Name: Pelt - Fox, Snow
+---
+Id: 03AD8E:Skyrim.esm
+Name: Pelt - Goat
+---
+Id: 03AD93:Skyrim.esm
+Name: Pelt - Horse
+---
+Id: 03AD6D:Skyrim.esm
+Name: Pelt - Sabre Cat
+---
+Id: 03AD6E:Skyrim.esm
+Name: Pelt - Sabre Cat, Snow
+---
+Id: 01199A:Dawnguard.esm
+Name: Pelt - Sabre Cat, Vale
+---
+Id: 02AC62:Skyrim.esm
+Name: Pelt - Sinding's Skin
+---
+Id: 0FE6A9:Skyrim.esm
+Name: Pelt - Werewolf
+---
+Id: 03AD74:Skyrim.esm
+Name: Pelt - Wolf
+---
+Id: 03AD75:Skyrim.esm
+Name: Pelt - Wolf, Ice
+---
+Id: 027F15:Skyrim.esm
+Name: Plate - Dwemer
+---
+Id: 0B9BD0:Skyrim.esm
+Name: Plate - Glazed
+---
+Id: 0F08F5:Skyrim.esm
+Name: Plate - Nordic
+---
+Id: 098624:Skyrim.esm
+Name: Plate - Silver
+---
+Id: 0E2617:Skyrim.esm
+Name: Plate - Tin
+---
+Id: 0E2618:Skyrim.esm
+Name: Plate - Tin
+---
+Id: 031941:Skyrim.esm
+Name: Plate - Wooden
+---
+Id: 098625:Skyrim.esm
+Name: Platter - Silver
+---
+Id: 025CFE:Skyrim.esm
+Name: Pot - Dwemer
+---
+Id: 0B9BD2:Skyrim.esm
+Name: Pot - Glazed
+---
+Id: 0F08F6:Skyrim.esm
+Name: Pot - Nordic
+---
+Id: 0D8E43:Skyrim.esm
+Name: Satchel - Moon Sugar
+---
+Id: 0E49F7:Skyrim.esm
+Name: Satchel - Sylgja's
+---
+Id: 0E49F8:Skyrim.esm
+Name: Satchel - Verner's
+---
+Id: 006BAD:Dawnguard.esm
+Name: Schematic: Bolt - Dwarven, Exploding Flame
+---
+Id: 00F1C4:Dawnguard.esm
+Name: Schematic: Bolt - Dwarven, Exploding Frost
+---
+Id: 00F1C5:Dawnguard.esm
+Name: Schematic: Bolt - Dwarven, Exploding Shock
+---
+Id: 00F1C8:Dawnguard.esm
+Name: Schematic: Dwarven Crossbow
+---
+Id: 00F1C9:Dawnguard.esm
+Name: Schematic: Dwarven Crossbow, Enhanced
+---
+Id: 00F1C7:Dawnguard.esm
+Name: Schematic: Steel Crossbow, Enhanced
+---
+Id: 0142C4:Dawnguard.esm
+Name: Schematics: Dwemer
+---
+Id: 00000F:Skyrim.esm
+Name: Septim
+---
+Id: 0F6767:Skyrim.esm
+Name: Skull - Ancient Traveler's
+---
+Id: 002B29:Dawnguard.esm
+Name: Skull - Arvak's
+---
+Id: 075868:Skyrim.esm
+Name: Skull - Habd's
+---
+Id: 0AF5FD:Skyrim.esm
+Name: Skull - Human
+---
+Id: 0247F9:Dragonborn.esm
+Name: Skull - Karstaag's
+---
+Id: 09E01F:Skyrim.esm
+Name: Skull - Potema's
+---
+Id: 0319E4:Skyrim.esm
+Name: Skull - Troll
+---
+Id: 0AADB6:Skyrim.esm
+Name: Skull Key - Saerek's
+---
+Id: 0AADB7:Skyrim.esm
+Name: Skull Key - Torsten's
+---
+Id: 01FE9B:Skyrim.esm
+Name: Soul Gem: Petty
+---
+Id: 0AEBF4:Skyrim.esm
+Name: Spoon - Dwemer
+---
+Id: 06F3AA:Skyrim.esm
+Name: Strange Crystal
+---
+Id: 008E4A:Dawnguard.esm
+Name: Tankard - Bloody
+---
+Id: 02C259:Skyrim.esm
+Name: The White Phial - Cracked
+---
+Id: 02C25A:Skyrim.esm
+Name: The White Phial - Empty
+---
+Id: 05CADF:Skyrim.esm
+Name: Tool - Bellows
+---
+Id: 06717F:Skyrim.esm
+Name: Tool - Broom
+---
+Id: 067180:Skyrim.esm
+Name: Tool - Clothes Iron
+---
+Id: 034CD2:Skyrim.esm
+Name: Tool - Embalming Pick
+---
+Id: 034CCE:Skyrim.esm
+Name: Tool - Embalming Scalpel
+---
+Id: 034CD4:Skyrim.esm
+Name: Tool - Embalming Scissors
+---
+Id: 034CD0:Skyrim.esm
+Name: Tool - Embalming Screw
+---
+Id: 05CAE1:Skyrim.esm
+Name: Tool - Hammer
+---
+Id: 0F5D07:Skyrim.esm
+Name: Tool - Pitchfork, Large
+---
+Id: 0F5D08:Skyrim.esm
+Name: Tool - Pitchfork, Small
+---
+Id: 0F5D0A:Skyrim.esm
+Name: Tool - Saw
+---
+Id: 0F5D05:Skyrim.esm
+Name: Tool - Shovel, Large
+---
+Id: 0F5D06:Skyrim.esm
+Name: Tool - Shovel, Small
+---
+Id: 05CAE0:Skyrim.esm
+Name: Tool - Tongs
+---
+Id: 019954:Skyrim.esm
+Name: Trophy - Bust of the Gray Fox
+---
+Id: 09DFF5:Skyrim.esm
+Name: Trophy - Crown of Barenziah
+---
+Id: 05598C:Skyrim.esm
+Name: Trophy - Dwemer Puzzle Cube
+---
+Id: 01994F:Skyrim.esm
+Name: Trophy - Eye of the Falmer, Left
+---
+Id: 044E8B:Skyrim.esm
+Name: Trophy - Golden Ship Model
+---
+Id: 044E63:Skyrim.esm
+Name: Trophy - Golden Urn
+---
+Id: 019952:Skyrim.esm
+Name: Trophy - Honningbrew Decanter
+---
+Id: 044E6A:Skyrim.esm
+Name: Trophy - Jeweled Candlestick
+---
+Id: 044E67:Skyrim.esm
+Name: Trophy - Jeweled Flagon
+---
+Id: 044E6C:Skyrim.esm
+Name: Trophy - Jeweled Goblet
+---
+Id: 023DF8:Skyrim.esm
+Name: Trophy - Jeweled Pendant
+---
+Id: 044E6E:Skyrim.esm
+Name: Trophy - Jeweled Pitcher
+---
+Id: 06F266:Skyrim.esm
+Name: Trophy - Model Ship
+---
+Id: 044E65:Skyrim.esm
+Name: Trophy - Ornate Drinking Horn
+---
+Id: 019958:Skyrim.esm
+Name: Trophy - Queen Bee Statue
+---
+Id: 03AD68:Skyrim.esm
+Name: Tusk - Horker
+---
+Id: 03AD6C:Skyrim.esm
+Name: Tusk - Mammoth
+---
+Id: 062F5A:Skyrim.esm
+Name: Urn - Burial
+---
+Id: 025D7C:Skyrim.esm
+Name: Urn - Dwemer
+---
+Id: 08632A:Skyrim.esm
+Name: Urn - Glazed
+---
+Id: 0B9BD4:Skyrim.esm
+Name: Vase - Glazed
+---
+Id: 0F08F7:Skyrim.esm
+Name: Vase - Nordic
+---
+Id: 0200BA:Skyrim.esm
+Name: War Horn - Imperial
+---
+Id: 0200B6:Skyrim.esm
+Name: War Horn - Nord
+---
+Id: 0E77BB:Skyrim.esm
+Name: War Horn - Torygg's
+---
+Id: 0E3147:Skyrim.esm
+Name: Werewolf Totem - Brotherhood
+---
+Id: 0E3148:Skyrim.esm
+Name: Werewolf Totem - Fear
+---
+Id: 0E3146:Skyrim.esm
+Name: Werewolf Totem - The Hunt

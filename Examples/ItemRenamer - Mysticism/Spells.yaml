@@ -1,0 +1,557 @@
+Id: 3C2436:MysticismMagic.esp
+Name: 'Alteration I: Open Novice Lock'
+---
+Id: 2ABBDC:MysticismMagic.esp
+Name: 'Alteration II: Dispel'
+---
+Id: 292684:MysticismMagic.esp
+Name: 'Alteration II: Feather'
+---
+Id: 3C753F:MysticismMagic.esp
+Name: 'Alteration II: Open Apprentice Lock'
+---
+Id: 7D0721:MysticismMagic.esp
+Name: 'Alteration II: Swift Swim'
+---
+Id: 3C7547:MysticismMagic.esp
+Name: 'Alteration III: Burden'
+---
+Id: 29C8AB:MysticismMagic.esp
+Name: 'Alteration III: Corrode Armor'
+---
+Id: 844E4A:MysticismMagic.esp
+Name: 'Alteration III: Destroy Construct'
+---
+Id: 7B720C:MysticismMagic.esp
+Name: 'Alteration III: Disintegrate Weapon'
+---
+Id: 29265E:MysticismMagic.esp
+Name: 'Alteration III: Fire Shell'
+---
+Id: 29266B:MysticismMagic.esp
+Name: 'Alteration III: Frost Shell'
+---
+Id: 3C7540:MysticismMagic.esp
+Name: 'Alteration III: Open Adept Lock'
+---
+Id: 292672:MysticismMagic.esp
+Name: 'Alteration III: Poison Shell'
+---
+Id: 1B3907:MysticismMagic.esp
+Name: 'Alteration III: Sea Stride'
+---
+Id: 292664:MysticismMagic.esp
+Name: 'Alteration III: Shock Shell'
+---
+Id: 2977A1:MysticismMagic.esp
+Name: 'Alteration III: Slowfall'
+---
+Id: 1901E5:MysticismMagic.esp
+Name: 'Alteration IV: Ash Cloud'
+---
+Id: AEB598:MysticismMagic.esp
+Name: 'Alteration IV: Burden Rune'
+---
+Id: C857B9:MysticismMagic.esp
+Name: 'Alteration IV: Detect All'
+---
+Id: AC7E8B:MysticismMagic.esp
+Name: 'Alteration IV: Encumber'
+---
+Id: 3C7542:MysticismMagic.esp
+Name: 'Alteration IV: Open Expert Lock'
+---
+Id: 292689:MysticismMagic.esp
+Name: 'Alteration IV: Pack Mule'
+---
+Id: 29267C:MysticismMagic.esp
+Name: 'Alteration IV: Weakness to Frost'
+---
+Id: 292680:MysticismMagic.esp
+Name: 'Alteration IV: Weakness to Poison'
+---
+Id: 29267B:MysticismMagic.esp
+Name: 'Alteration IV: Weakness to Shock'
+---
+Id: 2A19B9:MysticismMagic.esp
+Name: 'Alteration V: Armoreater'
+---
+Id: 4B065B:MysticismMagic.esp
+Name: 'Alteration V: Cinder Storm'
+---
+Id: 2A19B3:MysticismMagic.esp
+Name: 'Alteration V: Dwemerbane'
+---
+Id: 29265D:MysticismMagic.esp
+Name: 'Alteration V: Flame Shield'
+---
+Id: 19A3ED:MysticismMagic.esp
+Name: 'Alteration V: Grand Telekinesis'
+---
+Id: 29266C:MysticismMagic.esp
+Name: 'Alteration V: Ice Shield'
+---
+Id: 292665:MysticismMagic.esp
+Name: 'Alteration V: Lightning Shield'
+---
+Id: FF19E0:MysticismMagic.esp
+Name: 'Alteration V: Symmetry'
+---
+Id: 4B0648:MysticismMagic.esp
+Name: 'Alteration V: The Unwelcome Guest'
+---
+Id: 292673:MysticismMagic.esp
+Name: 'Alteration V: Venom Shield'
+---
+Id: 4B065F:MysticismMagic.esp
+Name: 'Alteration V: Weight of the World'
+---
+Id: 413541:MysticismMagic.esp
+Name: 'Conjuration I: Conjure Skeleton'
+---
+Id: E01500:MysticismMagic.esp
+Name: 'Conjuration II: Bound Mace'
+---
+Id: DC48DA:MysticismMagic.esp
+Name: 'Conjuration II: Bound Shield'
+---
+Id: DD3BED:MysticismMagic.esp
+Name: 'Conjuration II: Bound War Axe'
+---
+Id: E7FEC6:MysticismMagic.esp
+Name: 'Conjuration II: Conjure Death Hound'
+---
+Id: 413545:MysticismMagic.esp
+Name: 'Conjuration II: Conjure Skeleton Archer'
+---
+Id: 43BD62:MysticismMagic.esp
+Name: 'Conjuration II: Conjure Spectral Dire Wolf'
+---
+Id: DC99E1:MysticismMagic.esp
+Name: 'Conjuration III: Bound Greatsword'
+---
+Id: DED0F7:MysticismMagic.esp
+Name: 'Conjuration III: Bound Warhammer'
+---
+Id: 43BD7A:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Ancestral Guardian'
+---
+Id: 41D74F:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Dremora Warrior'
+---
+Id: 446019:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Dwarven Spider'
+---
+Id: E7FED0:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Gargoyle'
+---
+Id: 413549:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Skeleton Mage'
+---
+Id: 43BD66:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Spectral Sabre Cat'
+---
+Id: 43BD6D:MysticismMagic.esp
+Name: 'Conjuration III: Conjure Spectral Steed'
+---
+Id: DB04D0:MysticismMagic.esp
+Name: 'Conjuration III: Daedric Cure'
+---
+Id: 9F8524:MysticismMagic.esp
+Name: 'Conjuration III: Soul Harvest'
+---
+Id: 43BD82:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Ancestral Wizard'
+---
+Id: E7ADBD:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Ash Guardian'
+---
+Id: 42795A:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Dremora Warlock'
+---
+Id: 40933C:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Skeleton Warrior'
+---
+Id: 43BD6C:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Spectral Bear'
+---
+Id: E7FECB:MysticismMagic.esp
+Name: 'Conjuration IV: Conjure Volkihar Hound'
+---
+Id: 45536C:MysticismMagic.esp
+Name: 'Conjuration IV: Mark'
+---
+Id: 4CECE5:MysticismMagic.esp
+Name: 'Conjuration IV: Planar Anchor'
+---
+Id: 45536D:MysticismMagic.esp
+Name: 'Conjuration IV: Recall'
+---
+Id: 455387:MysticismMagic.esp
+Name: "Conjuration IV: Shalidor's Beacon"
+---
+Id: 4CECE6:MysticismMagic.esp
+Name: 'Conjuration IV: Translimination'
+---
+Id: 43BD87:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Ancestral Assassin'
+---
+Id: 45F595:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Ash Husk'
+---
+Id: 00FFF4:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Dremora Hunter'
+---
+Id: 00FFF5:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Dremora Sorcerer'
+---
+Id: E7FED5:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Gargoyle Brute'
+---
+Id: 45538C:MysticismMagic.esp
+Name: 'Conjuration V: Conjure High Seeker'
+---
+Id: 41864C:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Skeleton Champion'
+---
+Id: 43BD72:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Spectral Manbeast'
+---
+Id: 01F2FA:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Wrathman Marksman'
+---
+Id: 01F2FB:MysticismMagic.esp
+Name: 'Conjuration V: Conjure Wrathman Warlock'
+---
+Id: DB04D2:MysticismMagic.esp
+Name: "Conjuration V: Oblivion's Embrace"
+---
+Id: 1AE7FA:MysticismMagic.esp
+Name: 'Destruction II: Burning Touch'
+---
+Id: 1AE800:MysticismMagic.esp
+Name: 'Destruction II: Chilling Touch'
+---
+Id: 1AE801:MysticismMagic.esp
+Name: 'Destruction II: Shocking Touch'
+---
+Id: 445FC4:MysticismMagic.esp
+Name: 'Destruction III: Drain Magicka'
+---
+Id: 2DE656:MysticismMagic.esp
+Name: 'Destruction III: Drain Stamina'
+---
+Id: C43A35:MysticismMagic.esp
+Name: 'Destruction III: Flame Touch'
+---
+Id: 1D7023:MysticismMagic.esp
+Name: 'Destruction III: Greater Flames'
+---
+Id: 1D702B:MysticismMagic.esp
+Name: 'Destruction III: Greater Frostbite'
+---
+Id: 1D702A:MysticismMagic.esp
+Name: 'Destruction III: Greater Sparks'
+---
+Id: CDB97D:MysticismMagic.esp
+Name: 'Destruction III: Icy Touch'
+---
+Id: CF9FAB:MysticismMagic.esp
+Name: 'Destruction III: Static Touch'
+---
+Id: 1B8A15:MysticismMagic.esp
+Name: 'Destruction III: Vampiric Bolt'
+---
+Id: 1B8A10:MysticismMagic.esp
+Name: 'Destruction III: Vampiric Touch'
+---
+Id: 1D702D:MysticismMagic.esp
+Name: 'Destruction IV: Fiery Grasp'
+---
+Id: 1D7031:MysticismMagic.esp
+Name: 'Destruction IV: Freezing Grasp'
+---
+Id: 1FF868:MysticismMagic.esp
+Name: 'Destruction IV: Greater Fire Rune'
+---
+Id: 2FCC83:MysticismMagic.esp
+Name: 'Destruction IV: Greater Frost Rune'
+---
+Id: 2FCC82:MysticismMagic.esp
+Name: 'Destruction IV: Greater Lightning Rune'
+---
+Id: 1D702F:MysticismMagic.esp
+Name: 'Destruction IV: Thundering Grasp'
+---
+Id: 46E8A8:MysticismMagic.esp
+Name: 'Destruction IV: Vampiric Blast'
+---
+Id: 2E8863:MysticismMagic.esp
+Name: 'Destruction IV: Vampiric Grasp'
+---
+Id: 2DE640:MysticismMagic.esp
+Name: 'Destruction IV: Vampiric Rune'
+---
+Id: 1B8A09:MysticismMagic.esp
+Name: 'Destruction V: Blood Lance'
+---
+Id: A0782A:MysticismMagic.esp
+Name: 'Destruction V: Electrocute'
+---
+Id: 1DC141:MysticismMagic.esp
+Name: 'Destruction V: Finger of the Mountain'
+---
+Id: 445FD0:MysticismMagic.esp
+Name: 'Destruction V: Flame Tempest'
+---
+Id: A07827:MysticismMagic.esp
+Name: 'Destruction V: Flash Freeze'
+---
+Id: 445FFD:MysticismMagic.esp
+Name: 'Destruction V: Hoarfrost'
+---
+Id: 1D7020:MysticismMagic.esp
+Name: 'Destruction V: Immolate'
+---
+Id: 440E99:MysticismMagic.esp
+Name: 'Destruction V: Leech Life'
+---
+Id: 440E96:MysticismMagic.esp
+Name: 'Destruction V: Leech Magicka'
+---
+Id: 2DE648:MysticismMagic.esp
+Name: 'Destruction V: Leech Stamina'
+---
+Id: 445FB2:MysticismMagic.esp
+Name: 'Destruction V: Sap Essence'
+---
+Id: 445FA0:MysticismMagic.esp
+Name: "Destruction V: Scion's Embrace"
+---
+Id: 7847E9:MysticismMagic.esp
+Name: 'Destruction V: Scorch'
+---
+Id: 445FA8:MysticismMagic.esp
+Name: 'Destruction V: Siphon Spirit'
+---
+Id: 399C05:MysticismMagic.esp
+Name: 'Destruction V: Stormblast'
+---
+Id: 2E8870:MysticismMagic.esp
+Name: 'Destruction V: Throat of the World'
+---
+Id: A0782D:MysticismMagic.esp
+Name: 'Destruction V: Touch of Death'
+---
+Id: B4B8F4:MysticismMagic.esp
+Name: 'Illusion II: Fury'
+---
+Id: 2CF331:MysticismMagic.esp
+Name: 'Illusion II: Night Eye'
+---
+Id: B467E6:MysticismMagic.esp
+Name: 'Illusion II: Silence'
+---
+Id: 4B063A:MysticismMagic.esp
+Name: 'Illusion II: Soothe'
+---
+Id: 2CA222:MysticismMagic.esp
+Name: 'Illusion III: Chameleon'
+---
+Id: 2B0CEE:MysticismMagic.esp
+Name: 'Illusion III: Command'
+---
+Id: 4AB524:MysticismMagic.esp
+Name: 'Illusion III: Hush'
+---
+Id: 4AB528:MysticismMagic.esp
+Name: 'Illusion III: Panic'
+---
+Id: 2A6AC8:MysticismMagic.esp
+Name: 'Illusion III: Shroud'
+---
+Id: 3E0AC5:MysticismMagic.esp
+Name: 'Illusion IV: Calm Rune'
+---
+Id: 3E5BE1:MysticismMagic.esp
+Name: 'Illusion IV: Command Rune'
+---
+Id: A9A573:MysticismMagic.esp
+Name: 'Illusion IV: Fade'
+---
+Id: 3E5BEE:MysticismMagic.esp
+Name: 'Illusion IV: Fear Rune'
+---
+Id: 4B063B:MysticismMagic.esp
+Name: 'Illusion IV: Hypnotize'
+---
+Id: 176CD0:MysticismMagic.esp
+Name: 'Illusion IV: Immobilize'
+---
+Id: C4DC3A:MysticismMagic.esp
+Name: 'Illusion IV: Invisibility'
+---
+Id: 2B5DFA:MysticismMagic.esp
+Name: 'Illusion IV: Mute'
+---
+Id: 2CF335:MysticismMagic.esp
+Name: 'Illusion IV: Paralyze Rune'
+---
+Id: 3E5BD3:MysticismMagic.esp
+Name: 'Illusion IV: Silence Rune'
+---
+Id: 4AB52F:MysticismMagic.esp
+Name: 'Illusion IV: Wrath'
+---
+Id: 2CA219:MysticismMagic.esp
+Name: 'Illusion V: Domination'
+---
+Id: 2CA226:MysticismMagic.esp
+Name: 'Illusion V: Ghostwalk'
+---
+Id: 2B0CE9:MysticismMagic.esp
+Name: 'Illusion V: Quietude'
+---
+Id: 2A6AC9:MysticismMagic.esp
+Name: 'Illusion V: Sanctuary'
+---
+Id: 705EAF:MysticismMagic.esp
+Name: 'Illusion V: Vanish'
+---
+Id: 8C886D:MysticismMagic.esp
+Name: 'Restoration I: Poison Spray'
+---
+Id: 7388D3:MysticismMagic.esp
+Name: 'Restoration I: Sunbeam'
+---
+Id: 515B97:MysticismMagic.esp
+Name: 'Restoration II: Close Wounds'
+---
+Id: 1E634D:MysticismMagic.esp
+Name: 'Restoration II: Poisonbolt'
+---
+Id: 209A74:MysticismMagic.esp
+Name: 'Restoration II: Poisonous Touch'
+---
+Id: 2559DE:MysticismMagic.esp
+Name: 'Restoration II: Regeneration'
+---
+Id: 890D64:MysticismMagic.esp
+Name: 'Restoration II: Sunlight Rune'
+---
+Id: 20496A:MysticismMagic.esp
+Name: 'Restoration II: Sunlight Touch'
+---
+Id: 274020:MysticismMagic.esp
+Name: 'Restoration III: Attunement'
+---
+Id: F21F4A:MysticismMagic.esp
+Name: 'Restoration III: Circle of Strength'
+---
+Id: F3637F:MysticismMagic.esp
+Name: 'Restoration III: Circle of Vitality'
+---
+Id: 48CEEB:MysticismMagic.esp
+Name: 'Restoration III: Circle of Wisdom'
+---
+Id: 27E242:MysticismMagic.esp
+Name: 'Restoration III: Close Greater Wounds'
+---
+Id: 283346:MysticismMagic.esp
+Name: 'Restoration III: Cure Disease'
+---
+Id: 9420A3:MysticismMagic.esp
+Name: 'Restoration III: Deadly Poison Spray'
+---
+Id: 209A73:MysticismMagic.esp
+Name: 'Restoration III: Poison Cloak'
+---
+Id: 1E6352:MysticismMagic.esp
+Name: 'Restoration III: Poison Cloud'
+---
+Id: 78E9F4:MysticismMagic.esp
+Name: 'Restoration III: Radiant Sunbeam'
+---
+Id: D45F28:MysticismMagic.esp
+Name: 'Restoration III: Radiant Touch'
+---
+Id: 9A74C9:MysticismMagic.esp
+Name: 'Restoration III: Rapid Regeneration'
+---
+Id: D278E3:MysticismMagic.esp
+Name: 'Restoration III: Venomous Touch'
+---
+Id: 27E243:MysticismMagic.esp
+Name: 'Restoration IV: Grand Healing'
+---
+Id: 2559DF:MysticismMagic.esp
+Name: 'Restoration IV: Mutagen'
+---
+Id: 9AC5CE:MysticismMagic.esp
+Name: 'Restoration IV: Radiant Sunlight Rune'
+---
+Id: 2508C9:MysticismMagic.esp
+Name: 'Restoration IV: Reflective Light'
+---
+Id: 2280B0:MysticismMagic.esp
+Name: 'Restoration IV: Searing Grasp'
+---
+Id: 209A76:MysticismMagic.esp
+Name: "Restoration IV: Viper's Grasp"
+---
+Id: 1E634F:MysticismMagic.esp
+Name: 'Restoration IV: Viperbolt'
+---
+Id: 96F9BA:MysticismMagic.esp
+Name: 'Restoration IV: Wall of Poison'
+---
+Id: 9C09E5:MysticismMagic.esp
+Name: 'Restoration IV: Wall of Sunlight'
+---
+Id: 9A74CB:MysticismMagic.esp
+Name: "Restoration V: Arkay's Light"
+---
+Id: 274025:MysticismMagic.esp
+Name: 'Restoration V: Augur of Aetherius'
+---
+Id: 2ED973:MysticismMagic.esp
+Name: 'Restoration V: Black Marsh'
+---
+Id: 25FBFF:MysticismMagic.esp
+Name: 'Restoration V: Charged Nova'
+---
+Id: 7BC311:MysticismMagic.esp
+Name: 'Restoration V: Daybreak'
+---
+Id: 1FA75F:MysticismMagic.esp
+Name: 'Restoration V: Death Cloud'
+---
+Id: 48CF09:MysticismMagic.esp
+Name: 'Restoration V: Eclipse'
+---
+Id: F3635D:MysticismMagic.esp
+Name: 'Restoration V: Font of Strength'
+---
+Id: F3B48D:MysticismMagic.esp
+Name: 'Restoration V: Font of Vitality'
+---
+Id: F3636B:MysticismMagic.esp
+Name: 'Restoration V: Font of Wisdom'
+---
+Id: 7D5826:MysticismMagic.esp
+Name: "Restoration V: Mara's Embrace"
+---
+Id: 9606AC:MysticismMagic.esp
+Name: 'Restoration V: Miasma'
+---
+Id: 2466C0:MysticismMagic.esp
+Name: 'Restoration V: Solar Flare'
+---
+Id: 3DB99C:MysticismMagic.esp
+Name: 'Restoration V: Spelldrinker'
+---
+Id: 482CE4:MysticismMagic.esp
+Name: "Restoration V: Stendarr's Mercy"
+---
+Id: 48CF04:MysticismMagic.esp
+Name: 'Restoration V: Venomfang'

@@ -1,0 +1,509 @@
+Id: C8A8D7:MysticismMagic.esp
+Name: "Scroll - Alteration I: Open Novice Lock"
+---
+Id: F4A7A6:MysticismMagic.esp
+Name: "Scroll - Alteration II: Dispel"
+---
+Id: C8A8ED:MysticismMagic.esp
+Name: "Scroll - Alteration II: Open Apprentice Lock"
+---
+Id: C8A8EF:MysticismMagic.esp
+Name: "Scroll - Alteration II: Swift Swim"
+---
+Id: F4A7AE:MysticismMagic.esp
+Name: "Scroll - Alteration III: Ash Form"
+---
+Id: C8F9F8:MysticismMagic.esp
+Name: "Scroll - Alteration III: Burden"
+---
+Id: C8F9FB:MysticismMagic.esp
+Name: "Scroll - Alteration III: Corrode Armor"
+---
+Id: F4A7A7:MysticismMagic.esp
+Name: "Scroll - Alteration III: Destroy Construct"
+---
+Id: C8F9FA:MysticismMagic.esp
+Name: "Scroll - Alteration III: Disintegrate Weapon"
+---
+Id: C8A8F1:MysticismMagic.esp
+Name: "Scroll - Alteration III: Fire Shell"
+---
+Id: C8F9F3:MysticismMagic.esp
+Name: "Scroll - Alteration III: Frost Shell"
+---
+Id: C8F9FD:MysticismMagic.esp
+Name: "Scroll - Alteration III: Open Adept Lock"
+---
+Id: C8F9F7:MysticismMagic.esp
+Name: "Scroll - Alteration III: Poison Shell"
+---
+Id: C8FA00:MysticismMagic.esp
+Name: "Scroll - Alteration III: Sea Stride"
+---
+Id: C8F9F4:MysticismMagic.esp
+Name: "Scroll - Alteration III: Shock Shell"
+---
+Id: F4A7A9:MysticismMagic.esp
+Name: "Scroll - Alteration III: Slowfall"
+---
+Id: F4A7AA:MysticismMagic.esp
+Name: "Scroll - Alteration III: Whirlwind Cloak"
+---
+Id: F4A7AF:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Ash Cloud"
+---
+Id: F4A7B0:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Ash Rune"
+---
+Id: C8FA0C:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Burden Rune"
+---
+Id: C8FA0A:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Encumber"
+---
+Id: C8FA0E:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Open Expert Lock"
+---
+Id: C8FA15:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Pack Mule"
+---
+Id: C8FA04:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Weakness to Frost"
+---
+Id: C8FA06:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Weakness to Poison"
+---
+Id: C8FA08:MysticismMagic.esp
+Name: "Scroll - Alteration IV: Weakness to Shock"
+---
+Id: C8FA22:MysticismMagic.esp
+Name: "Scroll - Alteration V: Armoreater"
+---
+Id: F4A7B4:MysticismMagic.esp
+Name: "Scroll - Alteration V: Cinder Storm"
+---
+Id: F4A7B3:MysticismMagic.esp
+Name: "Scroll - Alteration V: Dwemerbane"
+---
+Id: C8FA13:MysticismMagic.esp
+Name: "Scroll - Alteration V: Flame Shield"
+---
+Id: C8FA16:MysticismMagic.esp
+Name: "Scroll - Alteration V: Ice Shield"
+---
+Id: C8FA1A:MysticismMagic.esp
+Name: "Scroll - Alteration V: Lightning Shield"
+---
+Id: C8FA20:MysticismMagic.esp
+Name: "Scroll - Alteration V: Swordbreaker"
+---
+Id: C8FA24:MysticismMagic.esp
+Name: "Scroll - Alteration V: The Unwelcome Guest"
+---
+Id: C8FA1C:MysticismMagic.esp
+Name: "Scroll - Alteration V: Venom Shield"
+---
+Id: C8FA1E:MysticismMagic.esp
+Name: "Scroll - Alteration V: Weight of the World"
+---
+Id: E1AA14:MysticismMagic.esp
+Name: "Scroll - Conjuration I: Bound Dagger"
+---
+Id: E1AA13:MysticismMagic.esp
+Name: "Scroll - Conjuration I: Conjure Skeleton"
+---
+Id: E1AA1A:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Bound Mace"
+---
+Id: E1AA16:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Bound Shield"
+---
+Id: E1AA24:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Bound Sword"
+---
+Id: E1AA18:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Bound War Axe"
+---
+Id: F68EA0:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Conjure Death Hound"
+---
+Id: E1AA28:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Conjure Skeleton Archer"
+---
+Id: E1AA26:MysticismMagic.esp
+Name: "Scroll - Conjuration II: Conjure Spectral Dire Wolf"
+---
+Id: E1AA1E:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Bound Battleaxe"
+---
+Id: E1AA22:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Bound Bow"
+---
+Id: E1AA1C:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Bound Greatsword"
+---
+Id: E1AA20:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Bound Warhammer"
+---
+Id: E1AA32:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Ancestral Guardian"
+---
+Id: E1AA36:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Ash Spawn"
+---
+Id: E1AA39:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Boneman"
+---
+Id: E1AA2E:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Dremora Warrior"
+---
+Id: F68E9D:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Gargoyle"
+---
+Id: E1AA38:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Seeker"
+---
+Id: E1AA30:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Skeleton Mage"
+---
+Id: E1AA2A:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Spectral Sabre Cat"
+---
+Id: E1AA2C:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Conjure Spectral Steed"
+---
+Id: E1AA3B:MysticismMagic.esp
+Name: "Scroll - Conjuration III: Soul Harvest"
+---
+Id: E1AA44:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Ancestral Wizard"
+---
+Id: F4A7B6:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Ash Guardian"
+---
+Id: E1AA3F:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Dremora Warlock"
+---
+Id: E1AA46:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Mistman"
+---
+Id: E1AA42:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Skeleton Warrior"
+---
+Id: E1AA3D:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Spectral Bear"
+---
+Id: F68EA2:MysticismMagic.esp
+Name: "Scroll - Conjuration IV: Conjure Volkihar Hound"
+---
+Id: E1AA4E:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Ancestral Assassin"
+---
+Id: E1AA50:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Ash Husk"
+---
+Id: 00FFF2:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Dremora Hunter"
+---
+Id: 00FFF3:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Dremora Sorcerer"
+---
+Id: F68E9E:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Gargoyle Brute"
+---
+Id: E1AA52:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure High Seeker"
+---
+Id: E1AA4C:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Skeleton Champion"
+---
+Id: E1AA48:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Spectral Manbeast"
+---
+Id: 01F306:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Wrathman Marksman"
+---
+Id: 01F307:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Wrathman Warlock"
+---
+Id: E1AA54:MysticismMagic.esp
+Name: "Scroll - Conjuration V: Conjure Wrathman"
+---
+Id: CDB95C:MysticismMagic.esp
+Name: "Scroll - Destruction II: Burning Touch"
+---
+Id: CDB981:MysticismMagic.esp
+Name: "Scroll - Destruction II: Chilling Touch"
+---
+Id: CF9FBC:MysticismMagic.esp
+Name: "Scroll - Destruction II: Shocking Touch"
+---
+Id: CDB95D:MysticismMagic.esp
+Name: "Scroll - Destruction III: Flame Touch"
+---
+Id: CDB984:MysticismMagic.esp
+Name: "Scroll - Destruction III: Icy Touch"
+---
+Id: CF9FBD:MysticismMagic.esp
+Name: "Scroll - Destruction III: Static Touch"
+---
+Id: D64575:MysticismMagic.esp
+Name: "Scroll - Destruction III: Vampiric Bolt"
+---
+Id: D64576:MysticismMagic.esp
+Name: "Scroll - Destruction III: Vampiric Touch"
+---
+Id: CDB960:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Fiery Grasp"
+---
+Id: CDB991:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Freezing Grasp"
+---
+Id: CDB962:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Greater Fire Rune"
+---
+Id: CDB982:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Greater Frost Rune"
+---
+Id: CF9FC6:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Greater Lightning Rune"
+---
+Id: CDB990:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Icy Spear"
+---
+Id: CDB95E:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Incinerate"
+---
+Id: CF9FC3:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Thunderbolt"
+---
+Id: CF9FC4:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Thundering Grasp"
+---
+Id: D64579:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Vampiric Blast"
+---
+Id: D64577:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Vampiric Grasp"
+---
+Id: D6457A:MysticismMagic.esp
+Name: "Scroll - Destruction IV: Vampiric Rune"
+---
+Id: D6457F:MysticismMagic.esp
+Name: "Scroll - Destruction V: Blood Lance"
+---
+Id: CF9FD3:MysticismMagic.esp
+Name: "Scroll - Destruction V: Electrocute"
+---
+Id: CF9FD2:MysticismMagic.esp
+Name: "Scroll - Destruction V: Finger of the Mountain"
+---
+Id: CF9FB7:MysticismMagic.esp
+Name: "Scroll - Destruction V: Flash Freeze"
+---
+Id: CDB965:MysticismMagic.esp
+Name: "Scroll - Destruction V: Immolate"
+---
+Id: D64585:MysticismMagic.esp
+Name: "Scroll - Destruction V: Sap Essence"
+---
+Id: D64581:MysticismMagic.esp
+Name: "Scroll - Destruction V: Scion's Embrace"
+---
+Id: CDB966:MysticismMagic.esp
+Name: "Scroll - Destruction V: Scorch"
+---
+Id: D64584:MysticismMagic.esp
+Name: "Scroll - Destruction V: Siphon Spirit"
+---
+Id: CF9FD5:MysticismMagic.esp
+Name: "Scroll - Destruction V: Stormblast"
+---
+Id: CF9FB3:MysticismMagic.esp
+Name: "Scroll - Destruction V: Throat of the World"
+---
+Id: D6457D:MysticismMagic.esp
+Name: "Scroll - Destruction V: Touch of Death"
+---
+Id: C62078:MysticismMagic.esp
+Name: "Scroll - Illusion II: Silence"
+---
+Id: C62077:MysticismMagic.esp
+Name: "Scroll - Illusion II: Soothe"
+---
+Id: C62084:MysticismMagic.esp
+Name: "Scroll - Illusion III: Chameleon"
+---
+Id: C6207F:MysticismMagic.esp
+Name: "Scroll - Illusion III: Command"
+---
+Id: C6207D:MysticismMagic.esp
+Name: "Scroll - Illusion III: Hush"
+---
+Id: C6207B:MysticismMagic.esp
+Name: "Scroll - Illusion III: Panic"
+---
+Id: C62081:MysticismMagic.esp
+Name: "Scroll - Illusion III: Paralyze"
+---
+Id: C62083:MysticismMagic.esp
+Name: "Scroll - Illusion III: Rage"
+---
+Id: C62087:MysticismMagic.esp
+Name: "Scroll - Illusion III: Shroud"
+---
+Id: C62095:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Calm Rune"
+---
+Id: C620A0:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Command Rune"
+---
+Id: C62092:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Control"
+---
+Id: C62094:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Fade"
+---
+Id: C6209C:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Fear Rune"
+---
+Id: C62097:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Frenzy Rune"
+---
+Id: C62089:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Hypnotize"
+---
+Id: C62090:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Mute"
+---
+Id: C6209E:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Paralyze Rune"
+---
+Id: C6209A:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Silence Rune"
+---
+Id: C6208E:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Terror"
+---
+Id: C6208B:MysticismMagic.esp
+Name: "Scroll - Illusion IV: Wrath"
+---
+Id: C671A5:MysticismMagic.esp
+Name: "Scroll - Illusion V: Domination"
+---
+Id: C671A8:MysticismMagic.esp
+Name: "Scroll - Illusion V: Ghostwalk"
+---
+Id: C620A2:MysticismMagic.esp
+Name: "Scroll - Illusion V: Quietude"
+---
+Id: C671A7:MysticismMagic.esp
+Name: "Scroll - Illusion V: Sanctuary"
+---
+Id: C671AB:MysticismMagic.esp
+Name: "Scroll - Illusion V: Vanish"
+---
+Id: D36C0F:MysticismMagic.esp
+Name: "Scroll - Restoration II: Poison Rune"
+---
+Id: D36C0C:MysticismMagic.esp
+Name: "Scroll - Restoration II: Poisonbolt"
+---
+Id: D36C0D:MysticismMagic.esp
+Name: "Scroll - Restoration II: Poisonous Touch"
+---
+Id: CD1745:MysticismMagic.esp
+Name: "Scroll - Restoration II: Regeneration"
+---
+Id: D4B032:MysticismMagic.esp
+Name: "Scroll - Restoration II: Sunlight Rune"
+---
+Id: D4B031:MysticismMagic.esp
+Name: "Scroll - Restoration II: Sunlight Touch"
+---
+Id: CD174F:MysticismMagic.esp
+Name: "Scroll - Restoration III: Attunement"
+---
+Id: F3B4A0:MysticismMagic.esp
+Name: "Scroll - Restoration III: Circle of Strength"
+---
+Id: F3B491:MysticismMagic.esp
+Name: "Scroll - Restoration III: Circle of Vitality"
+---
+Id: F3B49D:MysticismMagic.esp
+Name: "Scroll - Restoration III: Circle of Wisdom"
+---
+Id: CD174D:MysticismMagic.esp
+Name: "Scroll - Restoration III: Cure Disease"
+---
+Id: D36C15:MysticismMagic.esp
+Name: "Scroll - Restoration III: Poison Cloak"
+---
+Id: D36C11:MysticismMagic.esp
+Name: "Scroll - Restoration III: Poison Cloud"
+---
+Id: D4B04D:MysticismMagic.esp
+Name: "Scroll - Restoration III: Radiant Touch"
+---
+Id: CD1747:MysticismMagic.esp
+Name: "Scroll - Restoration III: Rapid Regeneration"
+---
+Id: D4B04C:MysticismMagic.esp
+Name: "Scroll - Restoration III: Stendarr's Aura"
+---
+Id: D4B049:MysticismMagic.esp
+Name: "Scroll - Restoration III: Vampire's Bane"
+---
+Id: D36C13:MysticismMagic.esp
+Name: "Scroll - Restoration III: Venomous Touch"
+---
+Id: CD1749:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Mutagen"
+---
+Id: D4B056:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Radiant Sunlight Rune"
+---
+Id: D4B053:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Reflective Light"
+---
+Id: D4B04F:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Searing Grasp"
+---
+Id: D36C17:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Viper's Grasp"
+---
+Id: D36C19:MysticismMagic.esp
+Name: "Scroll - Restoration IV: Viperbolt"
+---
+Id: CD174C:MysticismMagic.esp
+Name: "Scroll - Restoration V: Arkay's Light"
+---
+Id: CD1751:MysticismMagic.esp
+Name: "Scroll - Restoration V: Augur of Aetherius"
+---
+Id: D36C21:MysticismMagic.esp
+Name: "Scroll - Restoration V: Black Marsh"
+---
+Id: D4B05F:MysticismMagic.esp
+Name: "Scroll - Restoration V: Charged Nova"
+---
+Id: D36C1F:MysticismMagic.esp
+Name: "Scroll - Restoration V: Death Cloud"
+---
+Id: D4B051:MysticismMagic.esp
+Name: "Scroll - Restoration V: Eclipse"
+---
+Id: F3B49E:MysticismMagic.esp
+Name: "Scroll - Restoration V: Font of Strength"
+---
+Id: F3B492:MysticismMagic.esp
+Name: "Scroll - Restoration V: Font of Wisdom"
+---
+Id: D4B059:MysticismMagic.esp
+Name: "Scroll - Restoration V: Solar Flare"
+---
+Id: CD1744:MysticismMagic.esp
+Name: "Scroll - Restoration V: Stendarr's Mercy"
+---
+Id: D36C1D:MysticismMagic.esp
+Name: "Scroll - Restoration V: Venomfang"

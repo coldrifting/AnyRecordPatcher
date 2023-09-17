@@ -2,6 +2,7 @@
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
 using Mutagen.Bethesda.Skyrim;
+using Noggog;
 using YamlDotNet.Serialization;
 
 namespace AnyRecordExporter;

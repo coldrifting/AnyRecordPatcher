@@ -12,9 +12,11 @@ using AnyRecordData.DataTypes;
 
 public static class Patcher
 {
-    private static string _patchDataPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+    private static string _patchDataPath = "";
     private const string PatchIdentifier = "AnyRecordPatcher.esp";
     private static bool _errors;
+
+    private static readonly List<string> Errors = new();
 
     private static readonly Dictionary<FormKey, DataAmmo> Ammo = new();
     private static readonly Dictionary<FormKey, DataArmor> Armors = new();
@@ -47,6 +49,12 @@ public static class Patcher
                 return;
             
             _patchDataPath = state.ExtraSettingsDataPath;
+        }
+
+        if (!Directory.Exists(_patchDataPath))
+        {
+            Console.WriteLine($"Could not find patch directory: {_patchDataPath}. Exiting...");
+            return;
         }
         
         // Iterate over all patches
@@ -89,6 +97,17 @@ public static class Patcher
             Patch(state, Weapons);
         }
 
+        if (Errors.Count > 0)
+        {
+            Console.WriteLine("The following FormKeys could not be patched. \r\n" +
+                              "They could be in the wrong file or quotes might be not properly escaped. \r\n" +
+                              "Please check your config for errors");
+            foreach (string f in Errors)
+            {
+                Console.WriteLine(f);
+            }
+        }
+        
         if (!_errors) 
             return;
         
@@ -114,21 +133,40 @@ public static class Patcher
         {
             if (yaml.Trim().Length == 0)
                 continue;
-            
-            using StreamReader input = new(yaml.ToStream());
-                        
-            IDeserializer deserializer = new DeserializerBuilder()
-               .WithNamingConvention(PascalCaseNamingConvention.Instance)
-               .Build();
-            T item = deserializer.Deserialize<T>(input);
 
-            if (item.Id is null)
+            try
             {
-                _errors = true;
-                continue;
-            }
+                using StreamReader input = new(yaml.ToStream());
+                        
+                IDeserializer deserializer = new DeserializerBuilder()
+                    .WithNamingConvention(PascalCaseNamingConvention.Instance)
+                    .Build();
+                T item = deserializer.Deserialize<T>(input);
 
-            dictionary.Add(item.Id.ToFormKey(), item);
+                if (item.Id is null)
+                {
+                    _errors = true;
+                    continue;
+                }
+
+                dictionary.Add(item.Id.ToFormKey(), item);
+            }
+            catch
+            {
+                if (!yaml.Contains("Id:", StringComparison.InvariantCultureIgnoreCase))
+                    continue;
+
+                
+                
+                int indexStart = yaml.IndexOf("Id:", StringComparison.Ordinal) + 3;
+                int indexEnd = yaml.IndexOf("\n", StringComparison.Ordinal);
+
+                string errorId = yaml[indexStart..indexEnd].Trim();
+
+                string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
+                if (errorId.Length > 0)
+                    Errors.Add(errorId + $" ({patchType}) [Quote Error Likely]");
+            }
         }
     }
 
@@ -138,46 +176,55 @@ public static class Patcher
         bool first = true;
         foreach ((FormKey f, DataBaseItem data) in dict)
         {
-            ISkyrimMajorRecord? recOverride = data switch
+            try
             {
-                DataAmmo => state.PatchMod.Ammunitions.GetOrAddAsOverride(
-                    state.LinkCache.Resolve<IAmmunitionGetter>(f)),
-                DataArmor => state.PatchMod.Armors.GetOrAddAsOverride(
-                    state.LinkCache.Resolve<IArmorGetter>(f)),
-                DataBook => state.PatchMod.Books.GetOrAddAsOverride(
-                    state.LinkCache.Resolve<IBookGetter>(f)),
-                DataCell => state.LinkCache.ResolveContext<ICell, ICellGetter>(f).GetOrAddAsOverride(state.PatchMod),
-                DataIngestible => state.PatchMod.Ingestibles.GetOrAddAsOverride(
-                    state.LinkCache.Resolve<IIngestibleGetter>(f)),
-                DataIngredient => state.PatchMod.Ingredients.GetOrAddAsOverride(
-                    state.LinkCache.Resolve<IIngredientGetter>(f)),
-                DataLight => state.PatchMod.Lights.GetOrAddAsOverride(
-                state.LinkCache.Resolve<ILightGetter>(f)),
-                DataMisc => state.PatchMod.MiscItems.GetOrAddAsOverride(
-                state.LinkCache.Resolve<IMiscItemGetter>(f)),
-                DataPerk => state.PatchMod.Perks.GetOrAddAsOverride(
-                state.LinkCache.Resolve<IPerkGetter>(f)),
-                DataScroll => state.PatchMod.Scrolls.GetOrAddAsOverride(
-                state.LinkCache.Resolve<IScrollGetter>(f)),
-                DataSoulGem => state.PatchMod.SoulGems.GetOrAddAsOverride(
-                state.LinkCache.Resolve<ISoulGemGetter>(f)),
-                DataShout => state.PatchMod.Shouts.GetOrAddAsOverride(
-                state.LinkCache.Resolve<IShoutGetter>(f)),
-                DataSpell => state.PatchMod.Spells.GetOrAddAsOverride(
-                state.LinkCache.Resolve<ISpellGetter>(f)),
-                DataWeapon => state.PatchMod.Weapons.GetOrAddAsOverride(
-                state.LinkCache.Resolve<IWeaponGetter>(f)),
-                _ => null
-            };
-            
-            if (first)
-            {
-                Console.WriteLine($"Patching {data.PatchFileName}...");
-                first = false;
-            }
+                ISkyrimMajorRecord? recOverride = data switch
+                {
+                    DataAmmo => state.PatchMod.Ammunitions.GetOrAddAsOverride(
+                        state.LinkCache.Resolve<IAmmunitionGetter>(f)),
+                    DataArmor => state.PatchMod.Armors.GetOrAddAsOverride(
+                        state.LinkCache.Resolve<IArmorGetter>(f)),
+                    DataBook => state.PatchMod.Books.GetOrAddAsOverride(
+                        state.LinkCache.Resolve<IBookGetter>(f)),
+                    DataCell => state.LinkCache.ResolveContext<ICell, ICellGetter>(f).GetOrAddAsOverride(state.PatchMod),
+                    DataIngestible => state.PatchMod.Ingestibles.GetOrAddAsOverride(
+                        state.LinkCache.Resolve<IIngestibleGetter>(f)),
+                    DataIngredient => state.PatchMod.Ingredients.GetOrAddAsOverride(
+                        state.LinkCache.Resolve<IIngredientGetter>(f)),
+                    DataLight => state.PatchMod.Lights.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<ILightGetter>(f)),
+                    DataMisc => state.PatchMod.MiscItems.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IMiscItemGetter>(f)),
+                    DataPerk => state.PatchMod.Perks.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IPerkGetter>(f)),
+                    DataScroll => state.PatchMod.Scrolls.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IScrollGetter>(f)),
+                    DataSoulGem => state.PatchMod.SoulGems.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<ISoulGemGetter>(f)),
+                    DataShout => state.PatchMod.Shouts.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IShoutGetter>(f)),
+                    DataSpell => state.PatchMod.Spells.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<ISpellGetter>(f)),
+                    DataWeapon => state.PatchMod.Weapons.GetOrAddAsOverride(
+                    state.LinkCache.Resolve<IWeaponGetter>(f)),
+                    _ => null
+                };
+                
+                if (first)
+                {
+                    Console.WriteLine($"Patching {data.PatchFileName}...");
+                    first = false;
+                }
 
-            if (recOverride is not null)
-                data.Patch(recOverride);
+                if (recOverride is not null)
+                    data.Patch(recOverride);
+                
+
+            }
+            catch
+            {
+                Errors.Add(f.ToString() + $" ({data.PatchFileName}) [Patch in wrong file likely]");
+            }
         }
 
         // Clear database for next patch
