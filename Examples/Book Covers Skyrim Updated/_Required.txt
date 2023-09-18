@@ -1,0 +1,5 @@
+# You can remove all book records from the original plugin
+# If you want to reduce the number of conflicts you see in xedit
+# This patch still requires the textures sets and BSA assets defined in the
+# original plugin though.
+Book Covers Skyrim Updated.esp

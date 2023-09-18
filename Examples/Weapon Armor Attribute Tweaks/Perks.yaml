@@ -1,0 +1,107 @@
+Effects:
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 0
+    Conditions:
+    - Type: Subject
+      Function: EPMagic_IsAdvanceSkill
+      Parameter1: Smithing
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: OR
+      Reference: Null
+  EntryPointType: ModSkillUse
+  TabCount: 1
+  ModType: Multiply
+  ModValue: 1.15
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 1
+    Conditions:
+    - Type: Subject
+      Function: HasKeyword
+      Parameter1: 01E71A:Skyrim.esm
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: AND
+      Reference: Null
+  EntryPointType: ModAttackDamage
+  TabCount: 3
+  ModType: Multiply
+  ModValue: 1.25
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 1
+    Conditions:
+    - Type: Subject
+      Function: HasKeyword
+      Parameter1: 06BBD7:Skyrim.esm
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: AND
+      Reference: Null
+  EntryPointType: ModArmorRating
+  TabCount: 2
+  ModType: Multiply
+  ModValue: 1.25
+Id: 0009D4:Update.esm
+---
+Effects:
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 0
+    Conditions:
+    - Type: Subject
+      Function: EPMagic_IsAdvanceSkill
+      Parameter1: Smithing
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: OR
+      Reference: Null
+  EntryPointType: ModSkillUse
+  TabCount: 1
+  ModType: Multiply
+  ModValue: 1.15
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 1
+    Conditions:
+    - Type: Subject
+      Function: HasKeyword
+      Parameter1: 01E71A:Skyrim.esm
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: AND
+      Reference: Null
+  EntryPointType: ModAttackDamage
+  TabCount: 3
+  ModType: Multiply
+  ModValue: 1.25
+- Type: PerkEntryPointModifyValue
+  Rank: 0
+  Priority: 0
+  PerkEffectConditions:
+  - RunOnTabIndex: 1
+    Conditions:
+    - Type: Subject
+      Function: HasKeyword
+      Parameter1: 06BBD7:Skyrim.esm
+      CompareType: EqualTo
+      CompareResult: 1
+      CompareLink: AND
+      Reference: Null
+  EntryPointType: ModArmorRating
+  TabCount: 2
+  ModType: Multiply
+  ModValue: 1.25
+Id: 0009D4:Update.esm
