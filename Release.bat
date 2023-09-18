@@ -1,7 +1,11 @@
-cd AnyRecordExporter
-dotnet publish -c Release -r win10-x64 --no-self-contained -o ..\Exporter -p:PublishSingleFile=true -p:PublishSingleFile=True
+set version=0.9.5
+set patcher=AnyRecordPatcher-v%version%
+set exporter=AnyRecordExporter-v%version%
 
-cd ..\Exporter
+cd AnyRecordExporter
+dotnet publish -c Release -r win10-x64 --no-self-contained -o ..\%exporter% -p:PublishSingleFile=true -p:PublishSingleFile=True
+
+cd ..\%exporter%
 
 del *.pdb
 
@@ -19,3 +23,22 @@ echo Plugin: Unofficial Skyrim Special Edition Patch.esp>>settings.yaml
 echo.>>settings.yaml
 echo # Book text can bloat a config file, and it's usually not needed>>settings.yaml
 echo IgnoreBookText: true>>settings.yaml 
+
+"C:\Program Files\7-Zip\7z.exe" a "..\%exporter%.zip" "*"
+cd ..
+rd /S /Q %exporter%
+
+mkdir %patcher%
+copy *.sln %patcher%\
+robocopy /S Examples %patcher%\Examples\ > nul
+robocopy /S AnyRecordData %patcher%\AnyRecordData\ /xd "bin" "obj" > nul
+robocopy /S AnyRecordPatcher %patcher%\AnyRecordPatcher\ /xd "bin" "obj" > nul
+robocopy /S AnyRecordExporter %patcher%\AnyRecordExporter\ /xd "bin" "obj" > nul
+xcopy Directory.Build.props %patcher%\
+xcopy LICENSE %patcher%\
+xcopy README.md %patcher%\
+
+cd %patcher%
+"C:\Program Files\7-Zip\7z.exe" a "..\%patcher%.zip" "*"
+cd ..
+rd /S /Q %patcher%
