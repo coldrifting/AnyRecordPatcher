@@ -1,2 +1,0 @@
-# Complete Replacer for Weapon Armor Attribute Tweaks and the USLEEP Addon.
-Unofficial Skyrim Special Edition Patch.esp
