@@ -3,6 +3,7 @@ using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
 using Mutagen.Bethesda.Skyrim;
 using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace AnyRecordExporter;
 using AnyRecordData.DataTypes;
@@ -31,7 +32,9 @@ public static partial class Exporter
             }
             // Read config
             string config = File.ReadAllText(configFilePath);
-            IDeserializer deserializer = new Deserializer();
+            IDeserializer deserializer = new DeserializerBuilder()
+                .WithNamingConvention(PascalCaseNamingConvention.Instance)
+                .Build();
             Config c = deserializer.Deserialize<Config>(config);
             
             // Edit program variables
@@ -39,7 +42,7 @@ public static partial class Exporter
             _parentFolder = c.Path;
             _ignoreBookText = c.IgnoreBookText;
         }
-        catch(Exception)
+        catch
         {
             Console.Error.WriteLine($"ERR: Invalid or nonexistent config file: {configFilePath}");
             WaitToExit();
