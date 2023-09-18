@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
-using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Skyrim;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -11,6 +10,20 @@ using AnyRecordData.DataTypes;
 
 public static partial class Exporter
 {
+    private static readonly HashSet<string> RequiredMods = new();
+    private static readonly HashSet<string> DefaultMasters = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "Skyrim.esm", 
+        "Update.esm", 
+        "Dawnguard.esm", 
+        "HearthFires.esm", 
+        "Dragonborn.esm", 
+        "ccBGSSSE001-Fish.esm", 
+        "ccQDRSSE001-SurvivalMode.esl", 
+        "ccBGSSSE025-AdvDSGS.esm", 
+        "ccBGSSSE037-Curios.esl"
+    };
+    
     private static string _pluginName = "Skyrim.esm";
     private static string _parentFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
     private static string _patchFolder = "";
@@ -84,6 +97,8 @@ public static partial class Exporter
         PatchChanges<DataSpell, ISpellGetter>(env);
         PatchChanges<DataWeapon, IWeaponGetter>(env);
         
+        File.WriteAllText($@"{_patchFolder}\_Required.txt", string.Join("\r\n", RequiredMods) + "\r\n");
+        
         Console.WriteLine("INFO: Done!");
         Thread.Sleep(500);
     }
@@ -135,6 +150,17 @@ public static partial class Exporter
             if (cereal.Trim().Length > 0)
             {
                 strings.Add(cereal);
+            }
+        }
+
+        foreach (string s in strings)
+        {
+            MatchCollection m = FormKeyRegex().Matches(s);
+            foreach (Match mx in m)
+            {
+                string master = mx.Value[7..];
+                if (!DefaultMasters.Contains(master))
+                    RequiredMods.Add(master);
             }
         }
 
@@ -203,4 +229,7 @@ public static partial class Exporter
 
     [GeneratedRegex("\\.es(p|m)", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex StripPluginExtension();
+    
+    [GeneratedRegex("([a-f0-9]{6}:.*?\\.es[mp])", RegexOptions.IgnoreCase, "en-US")]
+    private static partial Regex FormKeyRegex();
 }
