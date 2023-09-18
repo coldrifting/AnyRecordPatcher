@@ -82,20 +82,20 @@ public static partial class Exporter
         if (_ignoreBookText)
             Console.WriteLine("INFO: Saving of Book Text to config file disabled in config file");
 
-        PatchChanges<DataAmmo, IAmmunitionGetter>(env); 
-        PatchChanges<DataArmor, IArmorGetter>(env);
-        PatchChanges<DataBook, IBookGetter>(env);
-        PatchChanges<DataCell, ICellGetter>(env);
-        PatchChanges<DataIngestible, IIngestibleGetter>(env);
-        PatchChanges<DataIngredient, IIngredientGetter>(env);
-        PatchChanges<DataLight, ILightGetter>(env);
-        PatchChanges<DataMisc, IMiscItemGetter>(env);
-        PatchChanges<DataPerk, IPerkGetter>(env);
-        PatchChanges<DataScroll, IScrollGetter>(env);
-        PatchChanges<DataSoulGem, ISoulGemGetter>(env);
-        PatchChanges<DataShout, IShoutGetter>(env);
-        PatchChanges<DataSpell, ISpellGetter>(env);
-        PatchChanges<DataWeapon, IWeaponGetter>(env);
+        GetChanges<DataAmmo, IAmmunitionGetter>(env); 
+        GetChanges<DataArmor, IArmorGetter>(env);
+        GetChanges<DataBook, IBookGetter>(env);
+        GetChanges<DataCell, ICellGetter>(env);
+        GetChanges<DataIngestible, IIngestibleGetter>(env);
+        GetChanges<DataIngredient, IIngredientGetter>(env);
+        GetChanges<DataLight, ILightGetter>(env);
+        GetChanges<DataMisc, IMiscItemGetter>(env);
+        GetChanges<DataPerk, IPerkGetter>(env);
+        GetChanges<DataScroll, IScrollGetter>(env);
+        GetChanges<DataSoulGem, ISoulGemGetter>(env);
+        GetChanges<DataShout, IShoutGetter>(env);
+        GetChanges<DataSpell, ISpellGetter>(env);
+        GetChanges<DataWeapon, IWeaponGetter>(env);
         
         if (RequiredMods.Count > 0)
             File.WriteAllText($@"{_patchFolder}\_Required.txt", string.Join("\r\n", RequiredMods) + "\r\n");
@@ -105,7 +105,7 @@ public static partial class Exporter
     }
 
     // Go through the list of comparable records and serialize the modifications to disk.
-    private static void PatchChanges<TData, TMajorGetter>(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
+    private static void GetChanges<TData, TMajorGetter>(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
         where TMajorGetter : class, ISkyrimMajorRecordGetter
         where TData : DataBaseItem, new()
     {
@@ -199,9 +199,7 @@ public static partial class Exporter
             if (!reached || prevMod.Mod is null) 
                 continue;
 
-            var modRecords = typeof(TMajorGetter) == typeof(ICellGetter) 
-                ? prevMod.Mod.Cells.EnumerateMajorRecords<TMajorGetter>()
-                : prevMod.Mod.EnumerateMajorRecords<TMajorGetter>();
+            var modRecords = prevMod.Mod.EnumerateMajorRecords<TMajorGetter>();
 
             foreach (TMajorGetter record in modRecords)
             {
