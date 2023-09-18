@@ -52,9 +52,9 @@ public static partial class Exporter
             Config c = deserializer.Deserialize<Config>(config);
             
             // Edit program variables
-            _pluginName = c.Plugin;
-            _parentFolder = c.Path;
             _ignoreBookText = c.IgnoreBookText;
+            _parentFolder = c.Path;
+            _pluginName = c.Plugin;
         }
         catch
         {
@@ -63,13 +63,25 @@ public static partial class Exporter
             return;
         }
 
-        _patchFolder = _parentFolder + Path.DirectorySeparatorChar + StripPluginExtension().Replace(_pluginName, "");
-        
         GetChanges(GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE));
     }
     
     private static void GetChanges(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env)
     {
+        if (_pluginName.Equals("LastEnabled"))
+        {
+            foreach (var x in env.LoadOrder.PriorityOrder)
+            {
+                if (!x.Enabled) 
+                    continue;
+                
+                _pluginName = x.FileName;
+                break;
+            }
+        }
+        
+        _patchFolder = _parentFolder + Path.DirectorySeparatorChar + StripPluginExtension().Replace(_pluginName, "");
+        
         if (!CheckForMod(env, _pluginName))
         {
             Console.WriteLine($"ERR: Mod: {_pluginName} not found or not enabled.");

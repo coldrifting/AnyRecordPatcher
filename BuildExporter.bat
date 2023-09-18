@@ -14,6 +14,7 @@ echo.>>settings.yaml
 echo #Path: Your Path Here. Defaults to User Desktop folder>>settings.yaml
 echo.>>settings.yaml
 echo # The plugin to patch changes overrides against. The next previous override/definition will be compared and the differences exported>>settings.yaml
+echo # You can also set this to LastEnabled to always check overrides against the last enabled mod in the load order>>settings.yaml
 echo Plugin: Unofficial Skyrim Special Edition Patch.esp>>settings.yaml 
 echo.>>settings.yaml
 echo # Book text can bloat a config file, and it's usually not needed>>settings.yaml
