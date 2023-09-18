@@ -1,320 +1,323 @@
 Id: 043324:Skyrim.esm
-Name: Alteration I: Candlelight
+Name: 'Alteration I: Candlelight'
 ---
 Id: 05AD5C:Skyrim.esm
-Name: Alteration I: Oakflesh
+Name: 'Alteration I: Oakflesh'
 ---
 Id: 05D175:Skyrim.esm
-Name: Alteration I: Waterbreathing
+Name: 'Alteration I: Waterbreathing'
 ---
 Id: 0211EE:Skyrim.esm
-Name: Alteration II: Detect Life
+Name: 'Alteration II: Detect Life'
 ---
 Id: 043323:Skyrim.esm
-Name: Alteration II: Magelight
+Name: 'Alteration II: Magelight'
 ---
 Id: 05AD5D:Skyrim.esm
-Name: Alteration II: Stoneflesh
+Name: 'Alteration II: Stoneflesh'
 ---
 Id: 017731:Dragonborn.esm
-Name: Alteration III: Ash Form
+Name: 'Alteration III: Ash Form'
 ---
 Id: 0211EF:Skyrim.esm
-Name: Alteration III: Detect Dead
+Name: 'Alteration III: Detect Dead'
 ---
 Id: 0DA746:Skyrim.esm
-Name: Alteration III: Equilibrium
+Name: 'Alteration III: Equilibrium'
 ---
 Id: 051B16:Skyrim.esm
-Name: Alteration III: Ironflesh
+Name: 'Alteration III: Ironflesh'
 ---
 Id: 01A4CC:Skyrim.esm
-Name: Alteration III: Telekinesis
+Name: 'Alteration III: Telekinesis'
 ---
 Id: 109111:Skyrim.esm
-Name: Alteration III: Transmute Ore
+Name: 'Alteration III: Transmute Ore'
 ---
 Id: 0177AF:Dragonborn.esm
-Name: Alteration IV: Ash Rune
+Name: 'Alteration IV: Ash Rune'
 ---
 Id: 05AD5E:Skyrim.esm
-Name: Alteration IV: Ebonyflesh
+Name: 'Alteration IV: Ebonyflesh'
 ---
 Id: 0CDB70:Skyrim.esm
-Name: Alteration V: Dragonhide
+Name: 'Alteration V: Dragonhide'
 ---
 Id: 01CE06:Dragonborn.esm
-Name: Conjuration I: Bound Dagger
+Name: 'Conjuration I: Bound Dagger'
 ---
 Id: 0640B6:Skyrim.esm
-Name: Conjuration I: Conjure Spectral Wolf
+Name: 'Conjuration I: Conjure Spectral Wolf'
 ---
 Id: 099F39:Skyrim.esm
-Name: Conjuration I: Conjure Unbound Dremora
+Name: 'Conjuration I: Conjure Unbound Dremora'
 ---
 Id: 07E8E1:Skyrim.esm
-Name: Conjuration I: Raise Zombie
+Name: 'Conjuration I: Raise Zombie'
 ---
 Id: 04DBA4:Skyrim.esm
-Name: Conjuration I: Soul Trap
+Name: 'Conjuration I: Soul Trap'
 ---
 Id: 0211EB:Skyrim.esm
-Name: Conjuration II: Bound Sword
+Name: 'Conjuration II: Bound Sword'
 ---
 Id: 0204C3:Skyrim.esm
-Name: Conjuration II: Conjure Flame Atronach
+Name: 'Conjuration II: Conjure Flame Atronach'
 ---
 Id: 065BD7:Skyrim.esm
-Name: Conjuration II: Reanimate Corpse
+Name: 'Conjuration II: Reanimate Corpse'
+---
+Id: 0AB23D:Skyrim.esm
+Name: 'Conjuration II: Spectral Arrow'
 ---
 Id: 06D22C:Skyrim.esm
-Name: Conjuration III: Banish Daedra
+Name: 'Conjuration III: Banish Daedra'
 ---
 Id: 0211ED:Skyrim.esm
-Name: Conjuration III: Bound Bow
+Name: 'Conjuration III: Bound Bow'
 ---
 Id: 01CDF6:Dragonborn.esm
-Name: Conjuration III: Conjure Ash Spawn
+Name: 'Conjuration III: Conjure Ash Spawn'
 ---
 Id: 0045BA:Dawnguard.esm
-Name: Conjuration III: Conjure Boneman
+Name: 'Conjuration III: Conjure Boneman'
 ---
 Id: 09CE26:Skyrim.esm
-Name: Conjuration III: Conjure Flaming Familiar
+Name: 'Conjuration III: Conjure Flaming Familiar'
 ---
 Id: 0204C4:Skyrim.esm
-Name: Conjuration III: Conjure Frost Atronach
+Name: 'Conjuration III: Conjure Frost Atronach'
 ---
 Id: 033C66:Dragonborn.esm
-Name: Conjuration III: Conjure Seeker
+Name: 'Conjuration III: Conjure Seeker'
 ---
 Id: 096D94:Skyrim.esm
-Name: Conjuration III: Revenant
+Name: 'Conjuration III: Revenant'
 ---
 Id: 017782:Dragonborn.esm
-Name: Conjuration IV: Conjure Ash Guardian
+Name: 'Conjuration IV: Conjure Ash Guardian'
 ---
 Id: 10FC16:Skyrim.esm
-Name: Conjuration IV: Conjure Dragon Priest
+Name: 'Conjuration IV: Conjure Dragon Priest'
 ---
 Id: 0045B8:Dawnguard.esm
-Name: Conjuration IV: Conjure Mistman
+Name: 'Conjuration IV: Conjure Mistman'
 ---
 Id: 0204C5:Skyrim.esm
-Name: Conjuration IV: Conjure Storm Atronach
+Name: 'Conjuration IV: Conjure Storm Atronach'
 ---
 Id: 096D95:Skyrim.esm
-Name: Conjuration IV: Raise Zombie
+Name: 'Conjuration IV: Raise Zombie'
 ---
 Id: 10DDEC:Skyrim.esm
-Name: Conjuration V: Conjure Dremora Lord
+Name: 'Conjuration V: Conjure Dremora Lord'
 ---
 Id: 07E5D5:Skyrim.esm
-Name: Conjuration V: Conjure Flame Monarch
+Name: 'Conjuration V: Conjure Flame Monarch'
 ---
 Id: 07E5D6:Skyrim.esm
-Name: Conjuration V: Conjure Frost Monarch
+Name: 'Conjuration V: Conjure Frost Monarch'
 ---
 Id: 07E5D7:Skyrim.esm
-Name: Conjuration V: Conjure Storm Monarch
+Name: 'Conjuration V: Conjure Storm Monarch'
 ---
 Id: 0045B3:Dawnguard.esm
-Name: Conjuration V: Conjure Wrathman
+Name: 'Conjuration V: Conjure Wrathman'
 ---
 Id: 07E8DF:Skyrim.esm
-Name: Conjuration V: Dead Thrall
+Name: 'Conjuration V: Dead Thrall'
 ---
 Id: 06F952:Skyrim.esm
-Name: Conjuration V: Expel Daedra
+Name: 'Conjuration V: Expel Daedra'
 ---
 Id: 06A104:Skyrim.esm
-Name: Destruction I: Arniel's Convection
+Name: "Destruction I: Arniel's Convection"
 ---
 Id: 012FCD:Skyrim.esm
-Name: Destruction I: Flames
+Name: 'Destruction I: Flames'
 ---
 Id: 02B96B:Skyrim.esm
-Name: Destruction I: Frostbite
+Name: 'Destruction I: Frostbite'
 ---
 Id: 02DD2A:Skyrim.esm
-Name: Destruction I: Sparks
+Name: 'Destruction I: Sparks'
 ---
 Id: 05DB90:Skyrim.esm
-Name: Destruction II: Fire Rune
+Name: 'Destruction II: Fire Rune'
 ---
 Id: 012FD0:Skyrim.esm
-Name: Destruction II: Firebolt
+Name: 'Destruction II: Firebolt'
 ---
 Id: 02732B:Dragonborn.esm
-Name: Destruction II: Flame, Ignite
+Name: 'Destruction II: Flame, Ignite'
 ---
 Id: 06796F:Skyrim.esm
-Name: Destruction II: Frost Rune
+Name: 'Destruction II: Frost Rune'
 ---
 Id: 02732D:Dragonborn.esm
-Name: Destruction II: Frost, Freeze
+Name: 'Destruction II: Frost, Freeze'
 ---
 Id: 02B96C:Skyrim.esm
-Name: Destruction II: Ice Spike
+Name: 'Destruction II: Ice Spike'
 ---
 Id: 02DD29:Skyrim.esm
-Name: Destruction II: Lightning Bolt
+Name: 'Destruction II: Lightning Bolt'
 ---
 Id: 067970:Skyrim.esm
-Name: Destruction II: Lightning Rune
+Name: 'Destruction II: Lightning Rune'
 ---
 Id: 045F9D:Skyrim.esm
-Name: Destruction III: Chain Lightning
+Name: 'Destruction III: Chain Lightning'
 ---
 Id: 01C789:Skyrim.esm
-Name: Destruction III: Fireball
+Name: 'Destruction III: Fireball'
 ---
 Id: 03AEA2:Skyrim.esm
-Name: Destruction III: Frost Cloak
+Name: 'Destruction III: Frost Cloak'
 ---
 Id: 045F9C:Skyrim.esm
-Name: Destruction III: Ice Storm
+Name: 'Destruction III: Ice Storm'
 ---
 Id: 03AEA3:Skyrim.esm
-Name: Destruction III: Lightning Cloak
+Name: 'Destruction III: Lightning Cloak'
 ---
 Id: 10F7EC:Skyrim.esm
-Name: Destruction IV: Icy Spear
+Name: 'Destruction IV: Icy Spear'
 ---
 Id: 10F7ED:Skyrim.esm
-Name: Destruction IV: Incinerate
+Name: 'Destruction IV: Incinerate'
 ---
 Id: 10F7EE:Skyrim.esm
-Name: Destruction IV: Thunderbolt
+Name: 'Destruction IV: Thunderbolt'
 ---
 Id: 035D7F:Skyrim.esm
-Name: Destruction IV: Wall of Flames
+Name: 'Destruction IV: Wall of Flames'
 ---
 Id: 035D80:Skyrim.esm
-Name: Destruction IV: Wall of Frost
+Name: 'Destruction IV: Wall of Frost'
 ---
 Id: 035D81:Skyrim.esm
-Name: Destruction IV: Wall of Storms
+Name: 'Destruction IV: Wall of Storms'
 ---
 Id: 07E8E4:Skyrim.esm
-Name: Destruction V: Blizzard
+Name: 'Destruction V: Blizzard'
 ---
 Id: 07A82B:Skyrim.esm
-Name: Destruction V: Fire Storm
+Name: 'Destruction V: Fire Storm'
 ---
 Id: 07E8E5:Skyrim.esm
-Name: Destruction V: Lightning Storm
+Name: 'Destruction V: Lightning Storm'
 ---
 Id: 04DEE9:Skyrim.esm
-Name: Illusion I: Calm
+Name: 'Illusion I: Calm'
 ---
 Id: 021143:Skyrim.esm
-Name: Illusion I: Clairvoyance
+Name: 'Illusion I: Clairvoyance'
 ---
 Id: 04DEE8:Skyrim.esm
-Name: Illusion I: Courage
+Name: 'Illusion I: Courage'
 ---
 Id: 04DEEB:Skyrim.esm
-Name: Illusion I: Frenzy
+Name: 'Illusion I: Frenzy'
 ---
 Id: 0B323E:Skyrim.esm
-Name: Illusion I: Vision of the Tenth Eye
+Name: 'Illusion I: Vision of the Tenth Eye'
 ---
 Id: 04DEEA:Skyrim.esm
-Name: Illusion II: Fear
+Name: 'Illusion II: Fear'
 ---
 Id: 08F3EB:Skyrim.esm
-Name: Illusion II: Muffle
+Name: 'Illusion II: Muffle'
 ---
 Id: 04DEED:Skyrim.esm
-Name: Illusion III: Pacify
+Name: 'Illusion III: Pacify'
 ---
 Id: 05AD5F:Skyrim.esm
-Name: Illusion III: Paralyze
+Name: 'Illusion III: Paralyze'
 ---
 Id: 04DEEE:Skyrim.esm
-Name: Illusion III: Rage
+Name: 'Illusion III: Rage'
 ---
 Id: 04DEEC:Skyrim.esm
-Name: Illusion III: Rally
+Name: 'Illusion III: Rally'
 ---
 Id: 0177B7:Dragonborn.esm
-Name: Illusion IV: Frenzy Rune
+Name: 'Illusion IV: Frenzy Rune'
 ---
 Id: 04DEEF:Skyrim.esm
-Name: Illusion IV: Terror
+Name: 'Illusion IV: Terror'
 ---
 Id: 07E8DD:Skyrim.esm
-Name: Illusion V: Call To Arms
+Name: 'Illusion V: Call To Arms'
 ---
 Id: 0B62E6:Skyrim.esm
-Name: Illusion V: Debilitation
+Name: 'Illusion V: Debilitation'
 ---
 Id: 07E8DB:Skyrim.esm
-Name: Illusion V: Harmony
+Name: 'Illusion V: Harmony'
 ---
 Id: 07E8DE:Skyrim.esm
-Name: Illusion V: Hysteria
+Name: 'Illusion V: Hysteria'
 ---
 Id: 07E8DA:Skyrim.esm
-Name: Illusion V: Mayhem
+Name: 'Illusion V: Mayhem'
 ---
 Id: 012FCC:Skyrim.esm
-Name: Restoration I: Healing
+Name: 'Restoration I: Healing'
 ---
 Id: 013018:Skyrim.esm
-Name: Restoration I: Lesser Ward
+Name: 'Restoration I: Lesser Ward'
 ---
 Id: 04D3F8:Skyrim.esm
-Name: Restoration I: Turn Lesser Undead
+Name: 'Restoration I: Turn Lesser Undead'
 ---
 Id: 02F3B8:Skyrim.esm
-Name: Restoration II: Fast Healing
+Name: 'Restoration II: Fast Healing'
 ---
 Id: 012FD2:Skyrim.esm
-Name: Restoration II: Heal Other
+Name: 'Restoration II: Heal Other'
 ---
 Id: 04D3F2:Skyrim.esm
-Name: Restoration II: Healing Hands
+Name: 'Restoration II: Healing Hands'
 ---
 Id: 00E8D2:Dawnguard.esm
-Name: Restoration II: Necromantic Healing
+Name: 'Restoration II: Necromantic Healing'
 ---
 Id: 01D74B:Dragonborn.esm
-Name: Restoration II: Poison Rune
+Name: 'Restoration II: Poison Rune'
 ---
 Id: 0211F1:Skyrim.esm
-Name: Restoration II: Steadfast Ward
+Name: 'Restoration II: Steadfast Ward'
 ---
 Id: 003F52:Dawnguard.esm
-Name: Restoration II: Sun Fire
+Name: 'Restoration II: Sun Fire'
 ---
 Id: 04B146:Skyrim.esm
-Name: Restoration II: Turn Undead
+Name: 'Restoration II: Turn Undead'
 ---
 Id: 0B62EF:Skyrim.esm
-Name: Restoration III: Greater Healing
+Name: 'Restoration III: Greater Healing'
 ---
 Id: 00E8D4:Dawnguard.esm
-Name: Restoration III: Heal Undead
+Name: 'Restoration III: Heal Undead'
 ---
 Id: 0038B5:Dawnguard.esm
-Name: Restoration III: Stendarr's Aura
+Name: "Restoration III: Stendarr's Aura"
 ---
 Id: 05DD5D:Skyrim.esm
-Name: Restoration III: Turn Greater Undead
+Name: 'Restoration III: Turn Greater Undead'
 ---
 Id: 0038B6:Dawnguard.esm
-Name: Restoration III: Vampire's Bane
+Name: "Restoration III: Vampire's Bane"
 ---
 Id: 0B62EE:Skyrim.esm
-Name: Restoration IV: Breath of Life
+Name: 'Restoration IV: Breath of Life'
 ---
 Id: 05312D:Skyrim.esm
-Name: Restoration IV: Circle of Protection
+Name: 'Restoration IV: Circle of Protection'
 ---
 Id: 05DD5E:Skyrim.esm
-Name: Restoration IV: Repel Undead
+Name: 'Restoration IV: Repel Undead'
 ---
 Id: 0E0CCF:Skyrim.esm
-Name: Restoration V: Guardian Circle
+Name: 'Restoration V: Guardian Circle'

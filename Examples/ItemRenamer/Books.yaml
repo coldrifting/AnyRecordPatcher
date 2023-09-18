@@ -26,31 +26,31 @@ Id: 01AFB3:Skyrim.esm
 Name: 16 Accords of Madness, Vol. 09
 ---
 Id: 01AFD9:Skyrim.esm
-Name: 2920, Vol. 01: Morning Star
+Name: "2920, Vol. 01: Morning' Star"
 ---
 Id: 01B010:Skyrim.esm
-Name: 2920, Vol. 02: Sun's Dawn
+Name: "2920, Vol. 02: Sun's Dawn"
 ---
 Id: 01ACE5:Skyrim.esm
-Name: 2920, Vol. 03: First Seed
+Name: "2920, Vol. 03: First Seed"
 ---
 Id: 01B017:Skyrim.esm
-Name: 2920, Vol. 04: Rain's Hand
+Name: "2920, Vol. 04: Rain's Hand"
 ---
 Id: 01B025:Skyrim.esm
-Name: 2920, Vol. 05: Second Seed
+Name: '2920, Vol. 05: Second Seed'
 ---
 Id: 01AFF7:Skyrim.esm
-Name: 2920, Vol. 06: MidYear
+Name: '2920, Vol. 06: MidYear'
 ---
 Id: 01B00C:Skyrim.esm
-Name: 2920, Vol. 07: Sun's Height
+Name: "2920, Vol. 07: Sun's Height"
 ---
 Id: 01B01F:Skyrim.esm
-Name: 2920, Vol. 08: Last Seed
+Name: '2920, Vol. 08: Last Seed'
 ---
 Id: 01AFE9:Skyrim.esm
-Name: 2920, Vol. 09: Hearth Fire
+Name: '2920, Vol. 09: Hearth Fire'
 ---
 Id: 03031F:Skyrim.esm
 Name: A Note from Delphine
@@ -74,16 +74,7 @@ Id: 016E22:Dragonborn.esm
 Name: Black Book - Waking Dreams
 ---
 Id: 0403AF:Skyrim.esm
-Name: Book - Adonato's
----
-Id: 0E3CB7:Skyrim.esm
-Name: Book - Burnt
----
-Id: 0CE70B:Skyrim.esm
-Name: Book - Ruined
----
-Id: 0E4897:Skyrim.esm
-Name: Book - Ruined
+Name: "Book - Adonato's"
 ---
 Id: 026700:Skyrim.esm
 Name: Book - Tolfdir's
@@ -821,181 +812,181 @@ Id: 0F5CBC:Skyrim.esm
 Name: Recipe - Potion, Restore Magicka
 ---
 Id: 10F785:Skyrim.esm
-Name: Recipe, Atronach Forge: Conjure Random Dremora
+Name: 'Recipe, Atronach Forge: Conjure Random Dremora'
 ---
 Id: 10F771:Skyrim.esm
-Name: Recipe, Atronach Forge: Conjurer's Elixir
+Name: "Recipe, Atronach Forge: Conjurer's Elixir"
 ---
 Id: 10F777:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Armor
+Name: 'Recipe, Atronach Forge: Daedric Armor'
 ---
 Id: 10F77B:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Battleaxe
+Name: 'Recipe, Atronach Forge: Daedric Battleaxe'
 ---
 Id: 10F779:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Boots
+Name: 'Recipe, Atronach Forge: Daedric Boots'
 ---
 Id: 10F782:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Bow
+Name: 'Recipe, Atronach Forge: Daedric Bow'
 ---
 Id: 10F780:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Dagger
+Name: 'Recipe, Atronach Forge: Daedric Dagger'
 ---
 Id: 10F778:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Gauntlets
+Name: 'Recipe, Atronach Forge: Daedric Gauntlets'
 ---
 Id: 10F77F:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Greatsword
+Name: 'Recipe, Atronach Forge: Daedric Greatsword'
 ---
 Id: 10F776:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Helmet
+Name: 'Recipe, Atronach Forge: Daedric Helmet'
 ---
 Id: 10F781:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Mace
+Name: 'Recipe, Atronach Forge: Daedric Mace'
 ---
 Id: 10F77A:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Shield
+Name: 'Recipe, Atronach Forge: Daedric Shield'
 ---
 Id: 10F77E:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Sword
+Name: 'Recipe, Atronach Forge: Daedric Sword'
 ---
 Id: 10F77C:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Waraxe
+Name: 'Recipe, Atronach Forge: Daedric Waraxe'
 ---
 Id: 10F77D:Skyrim.esm
-Name: Recipe, Atronach Forge: Daedric Warhammer
+Name: 'Recipe, Atronach Forge: Daedric Warhammer'
 ---
 Id: 10F772:Skyrim.esm
-Name: Recipe, Atronach Forge: Fire Salts
+Name: 'Recipe, Atronach Forge: Fire Salts'
 ---
 Id: 10F773:Skyrim.esm
-Name: Recipe, Atronach Forge: Frost Salts
+Name: 'Recipe, Atronach Forge: Frost Salts'
 ---
 Id: 10F786:Skyrim.esm
-Name: Recipe, Atronach Forge: Heart - Daedra
+Name: 'Recipe, Atronach Forge: Heart - Daedra'
 ---
 Id: 10F783:Skyrim.esm
-Name: Recipe, Atronach Forge: Random Enchanted Armor
+Name: 'Recipe, Atronach Forge: Random Enchanted Armor'
 ---
 Id: 10F784:Skyrim.esm
-Name: Recipe, Atronach Forge: Random Enchanted Weapon
+Name: 'Recipe, Atronach Forge: Random Enchanted Weapon'
 ---
 Id: 10F76E:Skyrim.esm
-Name: Recipe, Atronach Forge: Scroll - Conjure Flame Atronach
+Name: 'Recipe, Atronach Forge: Scroll - Conjure Flame Atronach'
 ---
 Id: 10F76F:Skyrim.esm
-Name: Recipe, Atronach Forge: Scroll - Conjure Frost Atronach
+Name: 'Recipe, Atronach Forge: Scroll - Conjure Frost Atronach'
 ---
 Id: 10F770:Skyrim.esm
-Name: Recipe, Atronach Forge: Scroll - Conjure Shock Atronach
+Name: 'Recipe, Atronach Forge: Scroll - Conjure Shock Atronach'
 ---
 Id: 10F76B:Skyrim.esm
-Name: Recipe, Atronach Forge: Spell Tome - Conjure Flame Atronach
+Name: 'Recipe, Atronach Forge: Spell Tome - Conjure Flame Atronach'
 ---
 Id: 10F76C:Skyrim.esm
-Name: Recipe, Atronach Forge: Spell Tome - Conjure Frost Atronach
+Name: 'Recipe, Atronach Forge: Spell Tome - Conjure Frost Atronach'
 ---
 Id: 10F76D:Skyrim.esm
-Name: Recipe, Atronach Forge: Spell Tome - Conjure Shock Atronach
+Name: 'Recipe, Atronach Forge: Spell Tome - Conjure Shock Atronach'
 ---
 Id: 10F775:Skyrim.esm
-Name: Recipe, Atronach Forge: Spell Tome - Soul Trap
+Name: 'Recipe, Atronach Forge: Spell Tome - Soul Trap'
 ---
 Id: 10F766:Skyrim.esm
-Name: Recipe, Atronach Forge: Staff - Conjure Flame Atronach
+Name: 'Recipe, Atronach Forge: Staff - Conjure Flame Atronach'
 ---
 Id: 10F769:Skyrim.esm
-Name: Recipe, Atronach Forge: Staff - Conjure Frost Atronach
+Name: 'Recipe, Atronach Forge: Staff - Conjure Frost Atronach'
 ---
 Id: 10F76A:Skyrim.esm
-Name: Recipe, Atronach Forge: Staff - Conjure Shock Atronach
+Name: 'Recipe, Atronach Forge: Staff - Conjure Shock Atronach'
 ---
 Id: 10F774:Skyrim.esm
-Name: Recipe, Atronach Forge: Void Salts
+Name: 'Recipe, Atronach Forge: Void Salts'
 ---
 Id: 01DA11:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Flame x1
+Name: 'Recipe, Spider: Cloaked Flame x1'
 ---
 Id: 01DA12:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Flame x2
+Name: 'Recipe, Spider: Cloaked Flame x2'
 ---
 Id: 026D41:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Frost x1
+Name: 'Recipe, Spider: Cloaked Frost x1'
 ---
 Id: 026D42:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Frost x2
+Name: 'Recipe, Spider: Cloaked Frost x2'
 ---
 Id: 01DA19:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Poison x1
+Name: 'Recipe, Spider: Cloaked Poison x1'
 ---
 Id: 01DA1A:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Poison x2
+Name: 'Recipe, Spider: Cloaked Poison x2'
 ---
 Id: 026D57:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Shock x1
+Name: 'Recipe, Spider: Cloaked Shock x1'
 ---
 Id: 026D58:Dragonborn.esm
-Name: Recipe, Spider: Cloaked Shock x2
+Name: 'Recipe, Spider: Cloaked Shock x2'
 ---
 Id: 01DA0F:Dragonborn.esm
-Name: Recipe, Spider: Exploding Flame x1
+Name: 'Recipe, Spider: Exploding Flame x1'
 ---
 Id: 01DA10:Dragonborn.esm
-Name: Recipe, Spider: Exploding Flame x2
+Name: 'Recipe, Spider: Exploding Flame x2'
 ---
 Id: 026D3F:Dragonborn.esm
-Name: Recipe, Spider: Exploding Frost x1
+Name: 'Recipe, Spider: Exploding Frost x1'
 ---
 Id: 026D40:Dragonborn.esm
-Name: Recipe, Spider: Exploding Frost x2
+Name: 'Recipe, Spider: Exploding Frost x2'
 ---
 Id: 01DA15:Dragonborn.esm
-Name: Recipe, Spider: Exploding Poison x1
+Name: 'Recipe, Spider: Exploding Poison x1'
 ---
 Id: 01DA16:Dragonborn.esm
-Name: Recipe, Spider: Exploding Poison x2
+Name: 'Recipe, Spider: Exploding Poison x2'
 ---
 Id: 026D55:Dragonborn.esm
-Name: Recipe, Spider: Exploding Shock x1
+Name: 'Recipe, Spider: Exploding Shock x1'
 ---
 Id: 026D56:Dragonborn.esm
-Name: Recipe, Spider: Exploding Shock x2
+Name: 'Recipe, Spider: Exploding Shock x2'
 ---
 Id: 01DA13:Dragonborn.esm
-Name: Recipe, Spider: Jumping Flame x1
+Name: 'Recipe, Spider: Jumping Flame x1'
 ---
 Id: 01DA14:Dragonborn.esm
-Name: Recipe, Spider: Jumping Flame x2
+Name: 'Recipe, Spider: Jumping Flame x2'
 ---
 Id: 026D43:Dragonborn.esm
-Name: Recipe, Spider: Jumping Frost x1
+Name: 'Recipe, Spider: Jumping Frost x1'
 ---
 Id: 026D44:Dragonborn.esm
-Name: Recipe, Spider: Jumping Frost x2
+Name: 'Recipe, Spider: Jumping Frost x2'
 ---
 Id: 01DA17:Dragonborn.esm
-Name: Recipe, Spider: Jumping Poison x1
+Name: 'Recipe, Spider: Jumping Poison x1'
 ---
 Id: 01DA18:Dragonborn.esm
-Name: Recipe, Spider: Jumping Poison x2
+Name: 'Recipe, Spider: Jumping Poison x2'
 ---
 Id: 026D59:Dragonborn.esm
-Name: Recipe, Spider: Jumping Shock x1
+Name: 'Recipe, Spider: Jumping Shock x1'
 ---
 Id: 026D5A:Dragonborn.esm
-Name: Recipe, Spider: Jumping Shock x2
+Name: 'Recipe, Spider: Jumping Shock x2'
 ---
 Id: 027496:Dragonborn.esm
-Name: Recipe, Spider: Unique Glowing x1
+Name: 'Recipe, Spider: Unique Glowing x1'
 ---
 Id: 01DA1C:Dragonborn.esm
-Name: Recipe, Spider: Unique Mind Control x1
+Name: 'Recipe, Spider: Unique Mind Control x1'
 ---
 Id: 027498:Dragonborn.esm
-Name: Recipe, Spider: Unique Oil x1
+Name: 'Recipe, Spider: Unique Oil x1'
 ---
 Id: 0274A1:Dragonborn.esm
-Name: Recipe, Spider: Unique Pack x1
+Name: 'Recipe, Spider: Unique Pack x1'
 ---
 Id: 0ED5F4:Skyrim.esm
 Name: Rising Threat, Vol. 1
@@ -1016,331 +1007,331 @@ Id: 0ED045:Skyrim.esm
 Name: Songs of the Return, Vol. 07
 ---
 Id: 09E2A7:Skyrim.esm
-Name: Spell Tome - Alteration I: Candlelight
+Name: 'Spell Tome - Alteration I: Candlelight'
 ---
 Id: 09E2A8:Skyrim.esm
-Name: Spell Tome - Alteration I: Oakflesh
+Name: 'Spell Tome - Alteration I: Oakflesh'
 ---
 Id: 0A26E6:Skyrim.esm
-Name: Spell Tome - Alteration I: Waterbreathing
+Name: 'Spell Tome - Alteration I: Waterbreathing'
 ---
 Id: 0A26E7:Skyrim.esm
-Name: Spell Tome - Alteration II: Detect Life
+Name: 'Spell Tome - Alteration II: Detect Life'
 ---
 Id: 0A26E2:Skyrim.esm
-Name: Spell Tome - Alteration II: Magelight
+Name: 'Spell Tome - Alteration II: Magelight'
 ---
 Id: 0A26E3:Skyrim.esm
-Name: Spell Tome - Alteration II: Stoneflesh
+Name: 'Spell Tome - Alteration II: Stoneflesh'
 ---
 Id: 0177AC:Dragonborn.esm
-Name: Spell Tome - Alteration III: Ash Form
+Name: 'Spell Tome - Alteration III: Ash Form'
 ---
 Id: 0A26EA:Skyrim.esm
-Name: Spell Tome - Alteration III: Detect Dead
+Name: 'Spell Tome - Alteration III: Detect Dead'
 ---
 Id: 0F4997:Skyrim.esm
-Name: Spell Tome - Alteration III: Equilibrium
+Name: 'Spell Tome - Alteration III: Equilibrium'
 ---
 Id: 0A26E4:Skyrim.esm
-Name: Spell Tome - Alteration III: Ironflesh
+Name: 'Spell Tome - Alteration III: Ironflesh'
 ---
 Id: 0A26E5:Skyrim.esm
-Name: Spell Tome - Alteration III: Telekinesis
+Name: 'Spell Tome - Alteration III: Telekinesis'
 ---
 Id: 109112:Skyrim.esm
-Name: Spell Tome - Alteration III: Transmute Ore
+Name: 'Spell Tome - Alteration III: Transmute Ore'
 ---
 Id: 0177AD:Dragonborn.esm
-Name: Spell Tome - Alteration III: Whirlwind Cloak
+Name: 'Spell Tome - Alteration III: Whirlwind Cloak'
 ---
 Id: 0177B5:Dragonborn.esm
-Name: Spell Tome - Alteration IV: Ash Rune
+Name: 'Spell Tome - Alteration IV: Ash Rune'
 ---
 Id: 0A26E9:Skyrim.esm
-Name: Spell Tome - Alteration IV: Ebonyflesh
+Name: 'Spell Tome - Alteration IV: Ebonyflesh'
 ---
 Id: 0D2B4E:Skyrim.esm
-Name: Spell Tome - Alteration V: Dragonhide
+Name: 'Spell Tome - Alteration V: Dragonhide'
 ---
 Id: 0DD646:Skyrim.esm
-Name: Spell Tome - Alteration V: Grand Telekinesis
+Name: 'Spell Tome - Alteration V: Grand Telekinesis'
 ---
 Id: 01CE07:Dragonborn.esm
-Name: Spell Tome - Conjuration I: Bound Dagger
+Name: 'Spell Tome - Conjuration I: Bound Dagger'
 ---
 Id: 09E2AB:Skyrim.esm
-Name: Spell Tome - Conjuration I: Conjure Spectral Wolf
+Name: 'Spell Tome - Conjuration I: Conjure Spectral Wolf'
 ---
 Id: 09E2AA:Skyrim.esm
-Name: Spell Tome - Conjuration I: Raise Zombie
+Name: 'Spell Tome - Conjuration I: Raise Zombie'
 ---
 Id: 09CD54:Skyrim.esm
-Name: Spell Tome - Conjuration I: Soul Trap
+Name: 'Spell Tome - Conjuration I: Soul Trap'
 ---
 Id: 09E2A9:Skyrim.esm
-Name: Spell Tome - Conjuration II: Bound Sword
+Name: 'Spell Tome - Conjuration II: Bound Sword'
 ---
 Id: 0A26EC:Skyrim.esm
-Name: Spell Tome - Conjuration II: Conjure Flame Atronach
+Name: 'Spell Tome - Conjuration II: Conjure Flame Atronach'
 ---
 Id: 0A26EB:Skyrim.esm
-Name: Spell Tome - Conjuration II: Reanimate Corpse
+Name: 'Spell Tome - Conjuration II: Reanimate Corpse'
 ---
 Id: 0A26EE:Skyrim.esm
-Name: Spell Tome - Conjuration III: Banish Daedra
+Name: 'Spell Tome - Conjuration III: Banish Daedra'
 ---
 Id: 0A26ED:Skyrim.esm
-Name: Spell Tome - Conjuration III: Bound Battleaxe
+Name: 'Spell Tome - Conjuration III: Bound Battleaxe'
 ---
 Id: 0A26F1:Skyrim.esm
-Name: Spell Tome - Conjuration III: Bound Bow
+Name: 'Spell Tome - Conjuration III: Bound Bow'
 ---
 Id: 01E2B1:Dragonborn.esm
-Name: Spell Tome - Conjuration III: Conjure Ash Spawn
+Name: 'Spell Tome - Conjuration III: Conjure Ash Spawn'
 ---
 Id: 0045B0:Dawnguard.esm
-Name: Spell Tome - Conjuration III: Conjure Boneman
+Name: 'Spell Tome - Conjuration III: Conjure Boneman'
 ---
 Id: 0B45F7:Skyrim.esm
-Name: Spell Tome - Conjuration III: Conjure Flaming Familiar
+Name: 'Spell Tome - Conjuration III: Conjure Flaming Familiar'
 ---
 Id: 0A26EF:Skyrim.esm
-Name: Spell Tome - Conjuration III: Conjure Frost Atronach
+Name: 'Spell Tome - Conjuration III: Conjure Frost Atronach'
 ---
 Id: 033C67:Dragonborn.esm
-Name: Spell Tome - Conjuration III: Conjure Seeker
+Name: 'Spell Tome - Conjuration III: Conjure Seeker'
 ---
 Id: 00E8D5:Dawnguard.esm
-Name: Spell Tome - Conjuration III: Daedric Cure
+Name: 'Spell Tome - Conjuration III: Daedric Cure'
 ---
 Id: 0A26F2:Skyrim.esm
-Name: Spell Tome - Conjuration III: Revenant
+Name: 'Spell Tome - Conjuration III: Revenant'
 ---
 Id: 0A26F6:Skyrim.esm
-Name: Spell Tome - Conjuration III: Soul Harvest
+Name: 'Spell Tome - Conjuration III: Soul Harvest'
 ---
 Id: 01AABA:Dragonborn.esm
-Name: Spell Tome - Conjuration IV: Conjure Ash Guardian
+Name: 'Spell Tome - Conjuration IV: Conjure Ash Guardian'
 ---
 Id: 0045B1:Dawnguard.esm
-Name: Spell Tome - Conjuration IV: Conjure Mistman
+Name: 'Spell Tome - Conjuration IV: Conjure Mistman'
 ---
 Id: 0A26F0:Skyrim.esm
-Name: Spell Tome - Conjuration IV: Conjure Storm Atronach
+Name: 'Spell Tome - Conjuration IV: Conjure Storm Atronach'
 ---
 Id: 0A26F7:Skyrim.esm
-Name: Spell Tome - Conjuration IV: Raise Zombie
+Name: 'Spell Tome - Conjuration IV: Raise Zombie'
 ---
 Id: 10FD60:Skyrim.esm
-Name: Spell Tome - Conjuration V: Conjure Dremora Lord
+Name: 'Spell Tome - Conjuration V: Conjure Dremora Lord'
 ---
 Id: 0A26FA:Skyrim.esm
-Name: Spell Tome - Conjuration V: Conjure Flame Monarch
+Name: 'Spell Tome - Conjuration V: Conjure Flame Monarch'
 ---
 Id: 0A26FB:Skyrim.esm
-Name: Spell Tome - Conjuration V: Conjure Frost Monarch
+Name: 'Spell Tome - Conjuration V: Conjure Frost Monarch'
 ---
 Id: 0A26FC:Skyrim.esm
-Name: Spell Tome - Conjuration V: Conjure Storm Monarch
+Name: 'Spell Tome - Conjuration V: Conjure Storm Monarch'
 ---
 Id: 0045B2:Dawnguard.esm
-Name: Spell Tome - Conjuration V: Conjure Wrathman
+Name: 'Spell Tome - Conjuration V: Conjure Wrathman'
 ---
 Id: 0A26F9:Skyrim.esm
-Name: Spell Tome - Conjuration V: Dead Thrall
+Name: 'Spell Tome - Conjuration V: Dead Thrall'
 ---
 Id: 0A26F8:Skyrim.esm
-Name: Spell Tome - Conjuration V: Expel Daedra
+Name: 'Spell Tome - Conjuration V: Expel Daedra'
 ---
 Id: 00E8D6:Dawnguard.esm
-Name: Spell Tome - Conjuration V: Oblivion's Embrace
+Name: "Spell Tome - Conjuration V: Oblivion's Embrace"
 ---
 Id: 09CD51:Skyrim.esm
-Name: Spell Tome - Destruction I: Flames
+Name: 'Spell Tome - Destruction I: Flames'
 ---
 Id: 09CD52:Skyrim.esm
-Name: Spell Tome - Destruction I: Frostbite
+Name: 'Spell Tome - Destruction I: Frostbite'
 ---
 Id: 09CD53:Skyrim.esm
-Name: Spell Tome - Destruction I: Sparks
+Name: 'Spell Tome - Destruction I: Sparks'
 ---
 Id: 0A2700:Skyrim.esm
-Name: Spell Tome - Destruction II: Fire Rune
+Name: 'Spell Tome - Destruction II: Fire Rune'
 ---
 Id: 0A26FD:Skyrim.esm
-Name: Spell Tome - Destruction II: Firebolt
+Name: 'Spell Tome - Destruction II: Firebolt'
 ---
 Id: 0A2701:Skyrim.esm
-Name: Spell Tome - Destruction II: Frost Rune
+Name: 'Spell Tome - Destruction II: Frost Rune'
 ---
 Id: 0A26FE:Skyrim.esm
-Name: Spell Tome - Destruction II: Ice Spike
+Name: 'Spell Tome - Destruction II: Ice Spike'
 ---
 Id: 0A26FF:Skyrim.esm
-Name: Spell Tome - Destruction II: Lightning Bolt
+Name: 'Spell Tome - Destruction II: Lightning Bolt'
 ---
 Id: 0A2702:Skyrim.esm
-Name: Spell Tome - Destruction II: Lightning Rune
+Name: 'Spell Tome - Destruction II: Lightning Rune'
 ---
 Id: 0A2708:Skyrim.esm
-Name: Spell Tome - Destruction III: Chain Lightning
+Name: 'Spell Tome - Destruction III: Chain Lightning'
 ---
 Id: 0A2706:Skyrim.esm
-Name: Spell Tome - Destruction III: Fireball
+Name: 'Spell Tome - Destruction III: Fireball'
 ---
 Id: 0A2703:Skyrim.esm
-Name: Spell Tome - Destruction III: Flame Cloak
+Name: 'Spell Tome - Destruction III: Flame Cloak'
 ---
 Id: 0A2704:Skyrim.esm
-Name: Spell Tome - Destruction III: Frost Cloak
+Name: 'Spell Tome - Destruction III: Frost Cloak'
 ---
 Id: 0A2707:Skyrim.esm
-Name: Spell Tome - Destruction III: Ice Storm
+Name: 'Spell Tome - Destruction III: Ice Storm'
 ---
 Id: 0A2705:Skyrim.esm
-Name: Spell Tome - Destruction III: Lightning Cloak
+Name: 'Spell Tome - Destruction III: Lightning Cloak'
 ---
 Id: 10F7F3:Skyrim.esm
-Name: Spell Tome - Destruction IV: Icy Spear
+Name: 'Spell Tome - Destruction IV: Icy Spear'
 ---
 Id: 10F7F4:Skyrim.esm
-Name: Spell Tome - Destruction IV: Incinerate
+Name: 'Spell Tome - Destruction IV: Incinerate'
 ---
 Id: 10F7F5:Skyrim.esm
-Name: Spell Tome - Destruction IV: Thunderbolt
+Name: 'Spell Tome - Destruction IV: Thunderbolt'
 ---
 Id: 0A2709:Skyrim.esm
-Name: Spell Tome - Destruction IV: Wall of Flames
+Name: 'Spell Tome - Destruction IV: Wall of Flames'
 ---
 Id: 0A270A:Skyrim.esm
-Name: Spell Tome - Destruction IV: Wall of Frost
+Name: 'Spell Tome - Destruction IV: Wall of Frost'
 ---
 Id: 0A270B:Skyrim.esm
-Name: Spell Tome - Destruction IV: Wall of Storms
+Name: 'Spell Tome - Destruction IV: Wall of Storms'
 ---
 Id: 0A270D:Skyrim.esm
-Name: Spell Tome - Destruction V: Blizzard
+Name: 'Spell Tome - Destruction V: Blizzard'
 ---
 Id: 0A270C:Skyrim.esm
-Name: Spell Tome - Destruction V: Fire Storm
+Name: 'Spell Tome - Destruction V: Fire Storm'
 ---
 Id: 0A270E:Skyrim.esm
-Name: Spell Tome - Destruction V: Lightning Storm
+Name: 'Spell Tome - Destruction V: Lightning Storm'
 ---
 Id: 0A2711:Skyrim.esm
-Name: Spell Tome - Illusion I: Calm
+Name: 'Spell Tome - Illusion I: Calm'
 ---
 Id: 0FF7D1:Skyrim.esm
-Name: Spell Tome - Illusion I: Clairvoyance
+Name: 'Spell Tome - Illusion I: Clairvoyance'
 ---
 Id: 09E2AD:Skyrim.esm
-Name: Spell Tome - Illusion I: Courage
+Name: 'Spell Tome - Illusion I: Courage'
 ---
 Id: 09E2AC:Skyrim.esm
-Name: Spell Tome - Illusion I: Frenzy
+Name: 'Spell Tome - Illusion I: Frenzy'
 ---
 Id: 0A2712:Skyrim.esm
-Name: Spell Tome - Illusion II: Fear
+Name: 'Spell Tome - Illusion II: Fear'
 ---
 Id: 0A270F:Skyrim.esm
-Name: Spell Tome - Illusion II: Muffle
+Name: 'Spell Tome - Illusion II: Muffle'
 ---
 Id: 0A2717:Skyrim.esm
-Name: Spell Tome - Illusion III: Pacify
+Name: 'Spell Tome - Illusion III: Pacify'
 ---
 Id: 0A26E8:Skyrim.esm
-Name: Spell Tome - Illusion III: Paralyze
+Name: 'Spell Tome - Illusion III: Paralyze'
 ---
 Id: 0A2714:Skyrim.esm
-Name: Spell Tome - Illusion III: Rage
+Name: 'Spell Tome - Illusion III: Rage'
 ---
 Id: 0A2713:Skyrim.esm
-Name: Spell Tome - Illusion III: Rally
+Name: 'Spell Tome - Illusion III: Rally'
 ---
 Id: 0177BD:Dragonborn.esm
-Name: Spell Tome - Illusion IV: Frenzy Rune
+Name: 'Spell Tome - Illusion IV: Frenzy Rune'
 ---
 Id: 0A2715:Skyrim.esm
-Name: Spell Tome - Illusion IV: Invisibility
+Name: 'Spell Tome - Illusion IV: Invisibility'
 ---
 Id: 0A2718:Skyrim.esm
-Name: Spell Tome - Illusion IV: Terror
+Name: 'Spell Tome - Illusion IV: Terror'
 ---
 Id: 0A271B:Skyrim.esm
-Name: Spell Tome - Illusion V: Call To Arms
+Name: 'Spell Tome - Illusion V: Call To Arms'
 ---
 Id: 0A271A:Skyrim.esm
-Name: Spell Tome - Illusion V: Harmony
+Name: 'Spell Tome - Illusion V: Harmony'
 ---
 Id: 0A271C:Skyrim.esm
-Name: Spell Tome - Illusion V: Hysteria
+Name: 'Spell Tome - Illusion V: Hysteria'
 ---
 Id: 0A2719:Skyrim.esm
-Name: Spell Tome - Illusion V: Mayhem
+Name: 'Spell Tome - Illusion V: Mayhem'
 ---
 Id: 09E2AF:Skyrim.esm
-Name: Spell Tome - Restoration I: Healing
+Name: 'Spell Tome - Restoration I: Healing'
 ---
 Id: 09E2AE:Skyrim.esm
-Name: Spell Tome - Restoration I: Lesser Ward
+Name: 'Spell Tome - Restoration I: Lesser Ward'
 ---
 Id: 0A271F:Skyrim.esm
-Name: Spell Tome - Restoration I: Turn Lesser Undead
+Name: 'Spell Tome - Restoration I: Turn Lesser Undead'
 ---
 Id: 0A271D:Skyrim.esm
-Name: Spell Tome - Restoration II: Fast Healing
+Name: 'Spell Tome - Restoration II: Fast Healing'
 ---
 Id: 0A2727:Skyrim.esm
-Name: Spell Tome - Restoration II: Heal Other
+Name: 'Spell Tome - Restoration II: Heal Other'
 ---
 Id: 0A271E:Skyrim.esm
-Name: Spell Tome - Restoration II: Healing Hands
+Name: 'Spell Tome - Restoration II: Healing Hands'
 ---
 Id: 020685:Dragonborn.esm
-Name: Spell Tome - Restoration II: Poison Rune
+Name: 'Spell Tome - Restoration II: Poison Rune'
 ---
 Id: 0A2720:Skyrim.esm
-Name: Spell Tome - Restoration II: Steadfast Ward
+Name: 'Spell Tome - Restoration II: Steadfast Ward'
 ---
 Id: 003F51:Dawnguard.esm
-Name: Spell Tome - Restoration II: Sun Fire
+Name: 'Spell Tome - Restoration II: Sun Fire'
 ---
 Id: 0A2725:Skyrim.esm
-Name: Spell Tome - Restoration II: Sunlight Rune
+Name: 'Spell Tome - Restoration II: Sunlight Rune'
 ---
 Id: 0A2721:Skyrim.esm
-Name: Spell Tome - Restoration II: Turn Undead
+Name: 'Spell Tome - Restoration II: Turn Undead'
 ---
 Id: 10F64D:Skyrim.esm
-Name: Spell Tome - Restoration III: Greater Healing
+Name: 'Spell Tome - Restoration III: Greater Healing'
 ---
 Id: 0A2722:Skyrim.esm
-Name: Spell Tome - Restoration III: Greater Ward
+Name: 'Spell Tome - Restoration III: Greater Ward'
 ---
 Id: 003F4E:Dawnguard.esm
-Name: Spell Tome - Restoration III: Stendarr's Aura
+Name: "Spell Tome - Restoration III: Stendarr's Aura"
 ---
 Id: 0A2729:Skyrim.esm
-Name: Spell Tome - Restoration III: Turn Greater Undead
+Name: 'Spell Tome - Restoration III: Turn Greater Undead'
 ---
 Id: 003F4D:Dawnguard.esm
-Name: Spell Tome - Restoration III: Vampire's Bane
+Name: "Spell Tome - Restoration III: Vampire's Bane"
 ---
 Id: 0DD643:Skyrim.esm
-Name: Spell Tome - Restoration IV: Breath of Life
+Name: 'Spell Tome - Restoration IV: Breath of Life'
 ---
 Id: 0A2728:Skyrim.esm
-Name: Spell Tome - Restoration IV: Circle of Protection
+Name: 'Spell Tome - Restoration IV: Circle of Protection'
 ---
 Id: 0A2726:Skyrim.esm
-Name: Spell Tome - Restoration IV: Repel Undead
+Name: 'Spell Tome - Restoration IV: Repel Undead'
 ---
 Id: 0DD647:Skyrim.esm
-Name: Spell Tome - Restoration V: Bane of the Undead
+Name: 'Spell Tome - Restoration V: Bane of the Undead'
 ---
 Id: 0FDE7B:Skyrim.esm
-Name: Spell Tome - Restoration V: Mara's Embrace
+Name: "Spell Tome - Restoration V: Mara's Embrace"
 ---
 Id: 0F6845:Skyrim.esm
 Name: Thalmor Dossier - Delphine
@@ -1402,9 +1393,6 @@ Name: The Red Year, Vol. 2
 Id: 006925:Dawnguard.esm
 Name: The Sultry Argonian Bard, Vol. 1
 ---
-Id: 02BAAE:Dragonborn.esm
-Name: Treasure Map - Deathbrand
----
 Id: 0F33D2:Skyrim.esm
 Name: Treasure Map - Fort Neugrad
 ---
@@ -1444,9 +1432,6 @@ Name: Treasure Map 09 - Broken Helm Hollow
 Id: 0F33E0:Skyrim.esm
 Name: Treasure Map 10 - The Lady Stone
 ---
-Id: 060CC2:Skyrim.esm
-Name: Trophy - East Empire Shipping Map
----
 Id: 01A3E0:Dawnguard.esm
 Name: Unknown Book, Vol. 1
 ---
@@ -1470,3 +1455,18 @@ Name: Writ of Sealing - Mikrul
 ---
 Id: 0F1C19:Skyrim.esm
 Name: Writ of Sealing - Sigdis
+---
+Id: 0118F9:Dawnguard.esm
+Name: Elder Scroll - Blood
+---
+Id: 0126DC:Dawnguard.esm
+Name: Elder Scroll - Dragon
+---
+Id: 02D513:Skyrim.esm
+Name: Elder Scroll - Dragon
+---
+Id: 048782:Skyrim.esm
+Name: Elder Scroll - Dragon
+---
+Id: 011A13:Dawnguard.esm
+Name: Elder Scroll - Sun

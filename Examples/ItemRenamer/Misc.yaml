@@ -34,6 +34,15 @@ Name: Bowl - Silver
 Id: 03199A:Skyrim.esm
 Name: Bowl - Wooden
 ---
+Id: 0E3CB7:Skyrim.esm
+Name: Book - Burnt
+---
+Id: 0CE70B:Skyrim.esm
+Name: Book - Ruined
+---
+Id: 0E4897:Skyrim.esm
+Name: Book - Ruined
+---
 Id: 0B9BE0:Skyrim.esm
 Name: Candles - Glazed
 ---
@@ -189,21 +198,6 @@ Name: Dwemer Scrap Metal - Strut, Large
 ---
 Id: 0C886A:Skyrim.esm
 Name: Dwemer Scrap Metal - Strut, Small
----
-Id: 0118F9:Dawnguard.esm
-Name: Elder Scroll - Blood
----
-Id: 0126DC:Dawnguard.esm
-Name: Elder Scroll - Dragon
----
-Id: 02D513:Skyrim.esm
-Name: Elder Scroll - Dragon
----
-Id: 048782:Skyrim.esm
-Name: Elder Scroll - Dragon
----
-Id: 011A13:Dawnguard.esm
-Name: Elder Scroll - Sun
 ---
 Id: 0F03F8:Skyrim.esm
 Name: Empty Bottle - Skooma
@@ -596,25 +590,25 @@ Id: 0E49F8:Skyrim.esm
 Name: Satchel - Verner's
 ---
 Id: 006BAD:Dawnguard.esm
-Name: Schematic: Bolt - Dwarven, Exploding Flame
+Name: 'Schematic: Bolt - Dwarven, Exploding Flame'
 ---
 Id: 00F1C4:Dawnguard.esm
-Name: Schematic: Bolt - Dwarven, Exploding Frost
+Name: 'Schematic: Bolt - Dwarven, Exploding Frost'
 ---
 Id: 00F1C5:Dawnguard.esm
-Name: Schematic: Bolt - Dwarven, Exploding Shock
+Name: 'Schematic: Bolt - Dwarven, Exploding Shock'
 ---
 Id: 00F1C8:Dawnguard.esm
-Name: Schematic: Dwarven Crossbow
+Name: 'Schematic: Dwarven Crossbow'
 ---
 Id: 00F1C9:Dawnguard.esm
-Name: Schematic: Dwarven Crossbow, Enhanced
+Name: 'Schematic: Dwarven Crossbow, Enhanced'
 ---
 Id: 00F1C7:Dawnguard.esm
-Name: Schematic: Steel Crossbow, Enhanced
+Name: 'Schematic: Steel Crossbow, Enhanced'
 ---
 Id: 0142C4:Dawnguard.esm
-Name: Schematics: Dwemer
+Name: 'Schematics: Dwemer'
 ---
 Id: 00000F:Skyrim.esm
 Name: Septim
@@ -647,7 +641,7 @@ Id: 0AADB7:Skyrim.esm
 Name: Skull Key - Torsten's
 ---
 Id: 01FE9B:Skyrim.esm
-Name: Soul Gem: Petty
+Name: 'Soul Gem: Petty'
 ---
 Id: 0AEBF4:Skyrim.esm
 Name: Spoon - Dwemer
@@ -714,6 +708,9 @@ Name: Trophy - Crown of Barenziah
 ---
 Id: 05598C:Skyrim.esm
 Name: Trophy - Dwemer Puzzle Cube
+---
+Id: 060CC2:Skyrim.esm
+Name: Trophy - East Empire Shipping Map
 ---
 Id: 01994F:Skyrim.esm
 Name: Trophy - Eye of the Falmer, Left
@@ -789,3 +786,6 @@ Name: Werewolf Totem - Fear
 ---
 Id: 0E3146:Skyrim.esm
 Name: Werewolf Totem - The Hunt
+---
+Id: 02BAAE:Dragonborn.esm
+Name: Treasure Map - Deathbrand

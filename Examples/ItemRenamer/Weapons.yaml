@@ -1,212 +1,212 @@
 Id: 029B94:Skyrim.esm
-Name: Staff - Alteration I: Turn Lesser Undead
+Name: 'Staff - Alteration I: Turn Lesser Undead'
 ---
 Id: 029B99:Skyrim.esm
-Name: Staff - Alteration II: Heal Other
+Name: 'Staff - Alteration II: Heal Other'
 ---
 Id: 029B93:Skyrim.esm
-Name: Staff - Alteration II: Healing Hands
+Name: 'Staff - Alteration II: Healing Hands'
 ---
 Id: 0BE121:Skyrim.esm
-Name: Staff - Alteration II: Magelight
+Name: 'Staff - Alteration II: Magelight'
 ---
 Id: 029B95:Skyrim.esm
-Name: Staff - Alteration II: Turn Undead
+Name: 'Staff - Alteration II: Turn Undead'
 ---
 Id: 029B97:Skyrim.esm
-Name: Staff - Alteration III: Turn Greater Undead
+Name: 'Staff - Alteration III: Turn Greater Undead'
 ---
 Id: 029B9A:Skyrim.esm
-Name: Staff - Alteration III: Vampire's Bane
+Name: "Staff - Alteration III: Vampire's Bane"
 ---
 Id: 029B9B:Skyrim.esm
-Name: Staff - Alteration IV: Repulsion
+Name: 'Staff - Alteration IV: Repulsion'
 ---
 Id: 029B75:Skyrim.esm
-Name: Staff - Conjuration I: Conjure Spectral Wolf
+Name: 'Staff - Conjuration I: Conjure Spectral Wolf'
 ---
 Id: 029B74:Skyrim.esm
-Name: Staff - Conjuration I: Raise Zombie
+Name: 'Staff - Conjuration I: Raise Zombie'
 ---
 Id: 0BE122:Skyrim.esm
-Name: Staff - Conjuration I: Soul Trap
+Name: 'Staff - Conjuration I: Soul Trap'
 ---
 Id: 029B78:Skyrim.esm
-Name: Staff - Conjuration II: Conjure Flame Atronach
+Name: 'Staff - Conjuration II: Conjure Flame Atronach'
 ---
 Id: 029B76:Skyrim.esm
-Name: Staff - Conjuration II: Reanimate Corpse
+Name: 'Staff - Conjuration II: Reanimate Corpse'
 ---
 Id: 029B79:Skyrim.esm
-Name: Staff - Conjuration III: Banish Daedra
+Name: 'Staff - Conjuration III: Banish Daedra'
 ---
 Id: 0BE120:Skyrim.esm
-Name: Staff - Conjuration III: Conjure Frost Atronach
+Name: 'Staff - Conjuration III: Conjure Frost Atronach'
 ---
 Id: 029B7A:Skyrim.esm
-Name: Staff - Conjuration III: Revenant
+Name: 'Staff - Conjuration III: Revenant'
 ---
 Id: 029B7B:Skyrim.esm
-Name: Staff - Conjuration IV: Conjure Dremora Warlock
+Name: 'Staff - Conjuration IV: Conjure Dremora Warlock'
 ---
 Id: 029B7D:Skyrim.esm
-Name: Staff - Conjuration IV: Conjure Storm Atronach
+Name: 'Staff - Conjuration IV: Conjure Storm Atronach'
 ---
 Id: 029B7C:Skyrim.esm
-Name: Staff - Conjuration IV: Raise Dread Zombie
+Name: 'Staff - Conjuration IV: Raise Dread Zombie'
 ---
 Id: 029B7E:Skyrim.esm
-Name: Staff - Conjuration V: Expel Daedra
+Name: 'Staff - Conjuration V: Expel Daedra'
 ---
 Id: 04DEE0:Skyrim.esm
-Name: Staff - Destruction I: Flames
+Name: 'Staff - Destruction I: Flames'
 ---
 Id: 04DEE1:Skyrim.esm
-Name: Staff - Destruction I: Frostbite
+Name: 'Staff - Destruction I: Frostbite'
 ---
 Id: 04DEE2:Skyrim.esm
-Name: Staff - Destruction I: Sparks
+Name: 'Staff - Destruction I: Sparks'
 ---
 Id: 04C6CA:Skyrim.esm
-Name: Staff - Destruction II: Firebolt
+Name: 'Staff - Destruction II: Firebolt'
 ---
 Id: 04DED8:Skyrim.esm
-Name: Staff - Destruction II: Ice Spike
+Name: 'Staff - Destruction II: Ice Spike'
 ---
 Id: 04DEE3:Skyrim.esm
-Name: Staff - Destruction II: Lightning Bolt
+Name: 'Staff - Destruction II: Lightning Bolt'
 ---
 Id: 029B84:Skyrim.esm
-Name: Staff - Destruction III: Chain Lightning
+Name: 'Staff - Destruction III: Chain Lightning'
 ---
 Id: 029B82:Skyrim.esm
-Name: Staff - Destruction III: Fireball
+Name: 'Staff - Destruction III: Fireball'
 ---
 Id: 029B83:Skyrim.esm
-Name: Staff - Destruction III: Ice Storm
+Name: 'Staff - Destruction III: Ice Storm'
 ---
 Id: 10FCF7:Skyrim.esm
-Name: Staff - Destruction IV: Icy Spear
+Name: 'Staff - Destruction IV: Icy Spear'
 ---
 Id: 10FCF2:Skyrim.esm
-Name: Staff - Destruction IV: Incinerate
+Name: 'Staff - Destruction IV: Incinerate'
 ---
 Id: 10FCF4:Skyrim.esm
-Name: Staff - Destruction IV: Thunderbolt
+Name: 'Staff - Destruction IV: Thunderbolt'
 ---
 Id: 029B85:Skyrim.esm
-Name: Staff - Destruction IV: Wall of Flames
+Name: 'Staff - Destruction IV: Wall of Flames'
 ---
 Id: 029B86:Skyrim.esm
-Name: Staff - Destruction IV: Wall of Frost
+Name: 'Staff - Destruction IV: Wall of Frost'
 ---
 Id: 029B87:Skyrim.esm
-Name: Staff - Destruction IV: Wall of Storms
+Name: 'Staff - Destruction IV: Wall of Storms'
 ---
 Id: 029B89:Skyrim.esm
-Name: Staff - Illusion I: Frenzy
+Name: 'Staff - Illusion I: Frenzy'
 ---
 Id: 029B8C:Skyrim.esm
-Name: Staff - Illusion II: Fear
+Name: 'Staff - Illusion II: Fear'
 ---
 Id: 029B88:Skyrim.esm
-Name: Staff - Illusion II: Silence
+Name: 'Staff - Illusion II: Silence'
 ---
 Id: 029B8B:Skyrim.esm
-Name: Staff - Illusion II: Soothe
+Name: 'Staff - Illusion II: Soothe'
 ---
 Id: 029B8E:Skyrim.esm
-Name: Staff - Illusion III: Hush
+Name: 'Staff - Illusion III: Hush'
 ---
 Id: 029B73:Skyrim.esm
-Name: Staff - Illusion III: Paralyze
+Name: 'Staff - Illusion III: Paralyze'
 ---
 Id: 029B8F:Skyrim.esm
-Name: Staff - Illusion III: Rage
+Name: 'Staff - Illusion III: Rage'
 ---
 Id: 029B91:Skyrim.esm
-Name: Staff - Illusion IV: Hypnotize
+Name: 'Staff - Illusion IV: Hypnotize'
 ---
 Id: 029B92:Skyrim.esm
-Name: Staff - Illusion IV: Terror
+Name: 'Staff - Illusion IV: Terror'
 ---
 Id: 00575E:Dawnguard.esm
-Name: Staff, Aetherial
+Name: 'Staff, Aetherial'
 ---
 Id: 0940D8:Skyrim.esm
-Name: Staff, Arcane Authority
+Name: 'Staff, Arcane Authority'
 ---
 Id: 10076D:Skyrim.esm
-Name: Staff, Dragon Priest - Hevnoraak's
+Name: "Staff, Dragon Priest - Hevnoraak's"
 ---
 Id: 04DE5B:Skyrim.esm
-Name: Staff, Dragon Priest - Nahkriin's
+Name: "Staff, Dragon Priest - Nahkriin's"
 ---
 Id: 07E5BB:Skyrim.esm
-Name: Staff, Dragon Priest - Rahgot's
+Name: "Staff, Dragon Priest - Rahgot's"
 ---
 Id: 0B3DFA:Skyrim.esm
-Name: Staff, Eye of Melka
+Name: 'Staff, Eye of Melka'
 ---
 Id: 011D58:Dawnguard.esm
-Name: Staff, Falmer - Conjuration II: Conjure Flame Atronach
+Name: 'Staff, Falmer - Conjuration II: Conjure Flame Atronach'
 ---
 Id: 011D59:Dawnguard.esm
-Name: Staff, Falmer - Conjuration III: Conjure Frost Atronach
+Name: 'Staff, Falmer - Conjuration III: Conjure Frost Atronach'
 ---
 Id: 011D5D:Dawnguard.esm
-Name: Staff, Falmer - Destruction II: Flame, Firebolt
+Name: 'Staff, Falmer - Destruction II: Flame, Firebolt'
 ---
 Id: 011D5E:Dawnguard.esm
-Name: Staff, Falmer - Destruction II: Frost, Ice Spike
+Name: 'Staff, Falmer - Destruction II: Frost, Ice Spike'
 ---
 Id: 011D60:Dawnguard.esm
-Name: Staff, Falmer - Destruction II: Shock, Lightning Bolt
+Name: 'Staff, Falmer - Destruction II: Shock, Lightning Bolt'
 ---
 Id: 011D57:Dawnguard.esm
-Name: Staff, Falmer - Destruction III: Flame, Fireball
+Name: 'Staff, Falmer - Destruction III: Flame, Fireball'
 ---
 Id: 011D5F:Dawnguard.esm
-Name: Staff, Falmer - Destruction III: Frost, Ice Storm
+Name: 'Staff, Falmer - Destruction III: Frost, Ice Storm'
 ---
 Id: 011D56:Dawnguard.esm
-Name: Staff, Falmer - Destruction III: Shock, Chain Lightning
+Name: 'Staff, Falmer - Destruction III: Shock, Chain Lightning'
 ---
 Id: 046E0B:Skyrim.esm
-Name: Staff, Gadnor's Charm
+Name: "Staff, Gadnor's Charm"
 ---
 Id: 07A4FB:Skyrim.esm
-Name: Staff, Hag's Wrath
+Name: "Staff, Hag's Wrath"
 ---
 Id: 0AB704:Skyrim.esm
-Name: Staff, Halldir's
+Name: "Staff, Halldir's"
 ---
 Id: 0E5F43:Skyrim.esm
-Name: Staff, Jyrik Gauldurson's
+Name: "Staff, Jyrik Gauldurson's"
 ---
 Id: 035369:Skyrim.esm
-Name: Staff, Magnus'
+Name: "Staff, Magnus'"
 ---
 Id: 01958C:Dawnguard.esm
-Name: Staff, Ruunvald
+Name: 'Staff, Ruunvald'
 ---
 Id: 01CB36:Skyrim.esm
-Name: Staff, Sanguine Rose
+Name: 'Staff, Sanguine Rose'
 ---
 Id: 035066:Skyrim.esm
-Name: Staff, Skull of Corruption
+Name: 'Staff, Skull of Corruption'
 ---
 Id: 0C19FF:Skyrim.esm
-Name: Staff, Spider Control Rod
+Name: 'Staff, Spider Control Rod'
 ---
 Id: 0E57F0:Skyrim.esm
-Name: Staff, Spider Control Rod
+Name: 'Staff, Spider Control Rod'
 ---
 Id: 06A093:Skyrim.esm
-Name: Staff, Tandil's
+Name: "Staff, Tandil's"
 ---
 Id: 0BE11F:Skyrim.esm
-Name: Staff, Unenchanted (Destruction)
+Name: 'Staff, Unenchanted (Destruction)'
 ---
 Id: 02AC6F:Skyrim.esm
-Name: Staff, Wabbajack
+Name: 'Staff, Wabbajack'

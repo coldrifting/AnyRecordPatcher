@@ -20,448 +20,448 @@ Id: 064B35:Skyrim.esm
 Name: Cheese - Sliced Goat
 ---
 Id: 034C5E:Skyrim.esm
-Name: Drink - Ale
+Name: Ale
 ---
 Id: 09380D:Skyrim.esm
-Name: Drink - Ale, Argonian
+Name: Ale, Argonian
 ---
 Id: 036D53:Skyrim.esm
-Name: Drink - Brandy, Colovian
+Name: Brandy, Colovian
 ---
 Id: 0B91D7:Skyrim.esm
-Name: Drink - Brandy, Cyrodilic
+Name: Brandy, Cyrodilic
 ---
 Id: 03572F:Dragonborn.esm
-Name: Drink - Mead, Ashfire
+Name: Mead, Ashfire
 ---
 Id: 0F693F:Skyrim.esm
-Name: Drink - Mead, Black-Briar Reserve
+Name: Mead, Black-Briar Reserve
 ---
 Id: 02C35A:Skyrim.esm
-Name: Drink - Mead, Black-Briar
+Name: Mead, Black-Briar
 ---
 Id: 0555E8:Skyrim.esm
-Name: Drink - Mead, Dragon's Breath
+Name: Mead, Dragon's Breath
 ---
 Id: 0508CA:Skyrim.esm
-Name: Drink - Mead, Honningbrew
+Name: Mead, Honningbrew
 ---
 Id: 107A8A:Skyrim.esm
-Name: Drink - Mead, Juniper Berry
+Name: Mead, Juniper Berry
 ---
 Id: 034C5D:Skyrim.esm
-Name: Drink - Mead, Nord
+Name: Mead, Nord
 ---
 Id: 0DC172:Skyrim.esm
-Name: Drink - Mixed, Balmora Blue
+Name: Mixed, Balmora Blue
 ---
 Id: 065C39:Skyrim.esm
-Name: Drink - Mixed, Cliff Racer
+Name: Mixed, Cliff Racer
 ---
 Id: 065C37:Skyrim.esm
-Name: Drink - Mixed, Velvet LeChance
+Name: Mixed, Velvet LeChance
 ---
 Id: 065C38:Skyrim.esm
-Name: Drink - Mixed, White-Gold Tower
+Name: Mixed, White-Gold Tower
 ---
 Id: 0D055E:Skyrim.esm
-Name: Drink - Rum, Stros M'Kai
+Name: Rum, Stros M'Kai
 ---
 Id: 057A7A:Skyrim.esm
-Name: Drink - Skooma
+Name: Skooma
 ---
 Id: 03F4BD:Skyrim.esm
-Name: Drink - Skooma, Double-Distilled
+Name: Skooma, Double-Distilled
 ---
 Id: 057A7B:Skyrim.esm
-Name: Drink - Skooma, Kordir's
+Name: Skooma, Kordir's
 ---
 Id: 01391D:Dawnguard.esm
-Name: Drink - Skooma, Redwater
+Name: Skooma, Redwater
 ---
 Id: 03133C:Skyrim.esm
-Name: Drink - Wine
+Name: Wine
 ---
 Id: 0C5348:Skyrim.esm
-Name: Drink - Wine
+Name: Wine
 ---
 Id: 03133B:Skyrim.esm
-Name: Drink - Wine, Alto
+Name: Wine, Alto
 ---
 Id: 0C5349:Skyrim.esm
-Name: Drink - Wine, Alto
+Name: Wine, Alto
 ---
 Id: 003535:HearthFires.esm
-Name: Drink - Wine, Argonian Blood
+Name: Wine, Argonian Blood
 ---
 Id: 0320DF:Dragonborn.esm
-Name: Drink - Wine, Emberbrand
+Name: Wine, Emberbrand
 ---
 Id: 01895F:Skyrim.esm
-Name: Drink - Wine, Firebrand
+Name: Wine, Firebrand
 ---
 Id: 0F257E:Skyrim.esm
-Name: Drink - Wine, Jessica's
+Name: Wine, Jessica's
 ---
 Id: 085368:Skyrim.esm
-Name: Drink - Wine, Spiced
+Name: Wine, Spiced
 ---
 Id: 003536:HearthFires.esm
-Name: Drink - Wine, Surilie Brothers
+Name: Wine, Surilie Brothers
 ---
 Id: 0207E5:Dragonborn.esm
-Name: Drink, Flin
+Name: Flin
 ---
 Id: 000C2D:ccBGSSSE001-Fish.esm
-Name: Drink, Flin, Aged
+Name: Flin, Aged
 ---
 Id: 0248CE:Dragonborn.esm
-Name: Drink, Mazte
+Name: Mazte
 ---
 Id: 0248CC:Dragonborn.esm
-Name: Drink, Shein
+Name: Shein
 ---
 Id: 0207E6:Dragonborn.esm
-Name: Drink, Sujamma
+Name: Sujamma
 ---
 Id: 024E0B:Dragonborn.esm
-Name: Drink, Sujamma, Sadri's
+Name: Sujamma, Sadri's
 ---
 Id: 000881:ccBGSSSE001-Fish.esm
-Name: Fish - Angelfish, Cooked
+Name: Angelfish, Cooked
 ---
 Id: 00088E:ccBGSSSE001-Fish.esm
-Name: Fish - Angler Larvae, Cooked
+Name: Angler Larvae, Cooked
 ---
 Id: 000890:ccBGSSSE001-Fish.esm
-Name: Fish - Angler
+Name: Angler
 ---
 Id: 0008A5:ccBGSSSE001-Fish.esm
-Name: Fish - Angler, Cooked
+Name: Angler, Cooked
 ---
 Id: 0008A4:ccBGSSSE001-Fish.esm
-Name: Fish - Arctic Char
+Name: Arctic Char
 ---
 Id: 00088D:ccBGSSSE001-Fish.esm
-Name: Fish - Arctic Char, Cooked
+Name: Arctic Char, Cooked
 ---
 Id: 0008A3:ccBGSSSE001-Fish.esm
-Name: Fish - Arctic Grayling
+Name: Arctic Grayling
 ---
 Id: 00088C:ccBGSSSE001-Fish.esm
-Name: Fish - Arctic Grayling, Cooked
+Name: Arctic Grayling, Cooked
 ---
 Id: 00089C:ccBGSSSE001-Fish.esm
-Name: Fish - Brook Bass
+Name: Brook Bass
 ---
 Id: 00087C:ccBGSSSE001-Fish.esm
-Name: Fish - Brook Bass, Cooked
+Name: Brook Bass, Cooked
 ---
 Id: 000898:ccBGSSSE001-Fish.esm
-Name: Fish - Carp
+Name: Carp
 ---
 Id: 00087E:ccBGSSSE001-Fish.esm
-Name: Fish - Carp, Cooked
+Name: Carp, Cooked
 ---
 Id: 000897:ccBGSSSE001-Fish.esm
-Name: Fish - Catfish
+Name: Catfish
 ---
 Id: 00087F:ccBGSSSE001-Fish.esm
-Name: Fish - Catfish, Cooked
+Name: Catfish, Cooked
 ---
 Id: 0008A2:ccBGSSSE001-Fish.esm
-Name: Fish - Cod
+Name: Cod
 ---
 Id: 00087A:ccBGSSSE001-Fish.esm
-Name: Fish - Cod, Cooked
+Name: Cod, Cooked
 ---
 Id: 000896:ccBGSSSE001-Fish.esm
-Name: Fish - Direfish
+Name: Direfish
 ---
 Id: 000880:ccBGSSSE001-Fish.esm
-Name: Fish - Direfish, Cooked
+Name: Direfish, Cooked
 ---
 Id: 0008A0:ccBGSSSE001-Fish.esm
-Name: Fish - Glass Catfish
+Name: Glass Catfish
 ---
 Id: 000882:ccBGSSSE001-Fish.esm
-Name: Fish - Glass Catfish, Cooked
+Name: Glass Catfish, Cooked
 ---
 Id: 00088F:ccBGSSSE001-Fish.esm
-Name: Fish - Glassfish, Cooked
+Name: Glassfish, Cooked
 ---
 Id: 000883:ccBGSSSE001-Fish.esm
-Name: Fish - Goldfish, Cooked
+Name: Goldfish, Cooked
 ---
 Id: 00087B:ccBGSSSE001-Fish.esm
-Name: Fish - Pearlfish, Cooked
+Name: Pearlfish, Cooked
 ---
 Id: 000891:ccBGSSSE001-Fish.esm
-Name: Fish - Pogfish
+Name: Pogfish
 ---
 Id: 00088A:ccBGSSSE001-Fish.esm
-Name: Fish - Pogfish, Cooked
+Name: Pogfish, Cooked
 ---
 Id: 000885:ccBGSSSE001-Fish.esm
-Name: Fish - Pygmy Sunfish, Cooked
+Name: Pygmy Sunfish, Cooked
 ---
 Id: 065C9F:Skyrim.esm
-Name: Fish - Salmon Meat
+Name: Salmon Meat
 ---
 Id: 003541:HearthFires.esm
-Name: Fish - Salmon Steak
+Name: Salmon Steak
 ---
 Id: 064B3B:Skyrim.esm
-Name: Fish - Salmon Steak
+Name: Salmon Steak
 ---
 Id: 00089B:ccBGSSSE001-Fish.esm
-Name: Fish - Salmon
+Name: Salmon
 ---
 Id: 0008A1:ccBGSSSE001-Fish.esm
-Name: Fish - Scorpion Fish
+Name: Scorpion Fish
 ---
 Id: 00087D:ccBGSSSE001-Fish.esm
-Name: Fish - Scorpion Fish, Cooked
+Name: Scorpion Fish, Cooked
 ---
 Id: 064B3C:Skyrim.esm
-Name: Fish - Seared Slaughterfish
+Name: Seared Slaughterfish
 ---
 Id: 000F25:ccBGSSSE001-Fish.esm
-Name: Fish - Slaughterfish
+Name: Slaughterfish
 ---
 Id: 000886:ccBGSSSE001-Fish.esm
-Name: Fish - Spadefish, Cooked
+Name: Spadefish, Cooked
 ---
 Id: 00089E:ccBGSSSE001-Fish.esm
-Name: Fish - Tripod Spiderfish
+Name: Tripod Spiderfish
 ---
 Id: 000887:ccBGSSSE001-Fish.esm
-Name: Fish - Tripod Spiderfish, Cooked
+Name: Tripod Spiderfish, Cooked
 ---
 Id: 00088B:ccBGSSSE001-Fish.esm
-Name: Fish - Vampire Fish
+Name: Vampire Fish
 ---
 Id: 000888:ccBGSSSE001-Fish.esm
-Name: Fish - Vampire Fish, Cooked
+Name: Vampire Fish, Cooked
 ---
 Id: 003533:HearthFires.esm
-Name: Food - Apple Dumpling
+Name: Apple Dumpling
 ---
 Id: 064B43:Skyrim.esm
-Name: Food - Apple Pie
+Name: Apple Pie
 ---
 Id: 000849:ccBGSSSE037-Curios.esl
-Name: Food - Apple, Green (Poisoned)
+Name: Apple, Green (Poisoned)
 ---
 Id: 064B2F:Skyrim.esm
-Name: Food - Apple, Green
+Name: Apple, Green
 ---
 Id: 000D98:ccBGSSSE037-Curios.esl
-Name: Food - Apple, Red (Poisoned)
+Name: Apple, Red (Poisoned)
 ---
 Id: 064B2E:Skyrim.esm
-Name: Food - Apple, Red
+Name: Apple, Red
 ---
 Id: 03D125:Dragonborn.esm
-Name: Food - Ash Hopper Leg
+Name: Ash Hopper Leg
 ---
 Id: 03BD15:Dragonborn.esm
-Name: Food - Ash Hopper Meat
+Name: Ash Hopper Meat
 ---
 Id: 0206E7:Dragonborn.esm
-Name: Food - Ash Yam
+Name: Ash Yam
 ---
 Id: 064B3A:Skyrim.esm
-Name: Food - Baked Potatoes
+Name: Baked Potatoes
 ---
 Id: 03BD14:Dragonborn.esm
-Name: Food - Boar Meat
+Name: Boar Meat
 ---
 Id: 064B30:Skyrim.esm
-Name: Food - Boiled Creme Treat
+Name: Boiled Creme Treat
 ---
 Id: 0009DB:HearthFires.esm
-Name: Food - Braided Bread
+Name: Braided Bread
 ---
 Id: 065C97:Skyrim.esm
-Name: Food - Bread
+Name: Bread
 ---
 Id: 065C98:Skyrim.esm
-Name: Food - Bread
+Name: Bread
 ---
 Id: 00353C:HearthFires.esm
-Name: Food - Butter
+Name: Butter
 ---
 Id: 064B3F:Skyrim.esm
-Name: Food - Cabbage
+Name: Cabbage
 ---
 Id: 064B40:Skyrim.esm
-Name: Food - Carrot
+Name: Carrot
 ---
 Id: 0E8448:Skyrim.esm
-Name: Food - Charred Skeever Meat
+Name: Charred Skeever Meat
 ---
 Id: 0F2011:Skyrim.esm
-Name: Food - Chicken Breast
+Name: Chicken Breast
 ---
 Id: 0117FF:HearthFires.esm
-Name: Food - Chicken Dumpling
+Name: Chicken Dumpling
 ---
 Id: 00353E:HearthFires.esm
-Name: Food - Clam Chowder
+Name: Clam Chowder
 ---
 Id: 0EBA03:Skyrim.esm
-Name: Food - Clam Meat
+Name: Clam Meat
 ---
 Id: 0721E8:Skyrim.esm
-Name: Food - Cooked Beef
+Name: Cooked Beef
 ---
 Id: 03CF72:Dragonborn.esm
-Name: Food - Cooked Boar Meat
+Name: Cooked Boar Meat
 ---
 Id: 000F78:ccBGSSSE001-Fish.esm
-Name: Food - Crab Cakes
+Name: Crab Cakes
 ---
 Id: 000EFE:ccBGSSSE001-Fish.esm
-Name: Food - Crab Meat
+Name: Crab Meat
 ---
 Id: 000F02:ccBGSSSE001-Fish.esm
-Name: Food - Creamy Crab Bisque
+Name: Creamy Crab Bisque
 ---
 Id: 0009DC:HearthFires.esm
-Name: Food - Garlic Bread
+Name: Garlic Bread
 ---
 Id: 10D666:Skyrim.esm
-Name: Food - Gourd
+Name: Gourd
 ---
 Id: 0E8947:Skyrim.esm
-Name: Food - Grilled Chicken Breast
+Name: Grilled Chicken Breast
 ---
 Id: 064B3E:Skyrim.esm
-Name: Food - Grilled Leeks
+Name: Grilled Leeks
 ---
 Id: 0A9661:Skyrim.esm
-Name: Food - Holy Water
+Name: Holy Water
 ---
 Id: 0CD614:Skyrim.esm
-Name: Food - Homecooked Meal
+Name: Homecooked Meal
 ---
 Id: 064B38:Skyrim.esm
-Name: Food - Honey Nut Treat
+Name: Honey Nut Treat
 ---
 Id: 10394D:Skyrim.esm
-Name: Food - Honey
+Name: Honey
 ---
 Id: 07224E:Skyrim.esm
-Name: Food - Horker Loaf
+Name: Horker Loaf
 ---
 Id: 065C9B:Skyrim.esm
-Name: Food - Horker Meat
+Name: Horker Meat
 ---
 Id: 0722B0:Skyrim.esm
-Name: Food - Horse Haunch
+Name: Horse Haunch
 ---
 Id: 00353A:HearthFires.esm
-Name: Food - Jazbay Crostata
+Name: Jazbay Crostata
 ---
 Id: 003534:HearthFires.esm
-Name: Food - Jug of Milk
+Name: Jug of Milk
 ---
 Id: 003539:HearthFires.esm
-Name: Food - Juniper Berry Crostata
+Name: Juniper Berry Crostata
 ---
 Id: 00089A:ccBGSSSE001-Fish.esm
-Name: Food - Juvenile Mudcrab, Cooked
+Name: Juvenile Mudcrab, Cooked
 ---
 Id: 011801:HearthFires.esm
-Name: Food - Lavender Dumpling
+Name: Lavender Dumpling
 ---
 Id: 0669A5:Skyrim.esm
-Name: Food - Leek
+Name: Leek
 ---
 Id: 07224C:Skyrim.esm
-Name: Food - Leg of Goat Roast
+Name: Leg of Goat Roast
 ---
 Id: 065C9A:Skyrim.esm
-Name: Food - Leg of Goat
+Name: Leg of Goat
 ---
 Id: 064B39:Skyrim.esm
-Name: Food - Long Taffy Treat
+Name: Long Taffy Treat
 ---
 Id: 000884:ccBGSSSE001-Fish.esm
-Name: Food - Lyretail Anthias, Cooked
+Name: Lyretail Anthias, Cooked
 ---
 Id: 0669A4:Skyrim.esm
-Name: Food - Mammoth Snout
+Name: Mammoth Snout
 ---
 Id: 10211A:Skyrim.esm
-Name: Food - Mammoth Snout
+Name: Mammoth Snout
 ---
 Id: 0722BB:Skyrim.esm
-Name: Food - Mammoth Steak
+Name: Mammoth Steak
 ---
 Id: 000801:Unofficial Skyrim Special Edition Patch.esp
-Name: Food - Meat Pie
+Name: Meat Pie
 ---
 Id: 003540:HearthFires.esm
-Name: Food - Mudcrab Legs
+Name: Mudcrab Legs
 ---
 Id: 0CD883:Skyrim.esm
-Name: Food - Nightshade Extract
+Name: Nightshade Extract
 ---
 Id: 065C9D:Skyrim.esm
-Name: Food - Pheasant Breast
+Name: Pheasant Breast
 ---
 Id: 0722C7:Skyrim.esm
-Name: Food - Pheasant Roast
+Name: Pheasant Roast
 ---
 Id: 003537:HearthFires.esm
-Name: Food - Potato Bread
+Name: Potato Bread
 ---
 Id: 000F06:ccBGSSSE001-Fish.esm
-Name: Food - Potato Crab Chowder
+Name: Potato Crab Chowder
 ---
 Id: 064B41:Skyrim.esm
-Name: Food - Potato
+Name: Potato
 ---
 Id: 0722C2:Skyrim.esm
-Name: Food - Rabbit Haunch
+Name: Rabbit Haunch
 ---
 Id: 065C99:Skyrim.esm
-Name: Food - Raw Beef
+Name: Raw Beef
 ---
 Id: 065C9E:Skyrim.esm
-Name: Food - Raw Rabbit Leg
+Name: Raw Rabbit Leg
 ---
 Id: 000F04:ccBGSSSE001-Fish.esm
-Name: Food - Roasted Tomato Crab Bisque
+Name: Roasted Tomato Crab Bisque
 ---
 Id: 003538:HearthFires.esm
-Name: Food - Sack of Flour
+Name: Sack of Flour
 ---
 Id: 0CADFB:Skyrim.esm
-Name: Food - Spiced Beef
+Name: Spiced Beef
 ---
 Id: 00353F:HearthFires.esm
-Name: Food - Steamed Mudcrab Legs
+Name: Steamed Mudcrab Legs
 ---
 Id: 064B3D:Skyrim.esm
-Name: Food - Sweet Roll
+Name: Sweet Roll
 ---
 Id: 064B42:Skyrim.esm
-Name: Food - Tomato
+Name: Tomato
 ---
 Id: 0722BD:Skyrim.esm
-Name: Food - Venison Chop
+Name: Venison Chop
 ---
 Id: 0669A2:Skyrim.esm
-Name: Food - Venison
+Name: Venison
 ---
 Id: 0EDB2E:Skyrim.esm
-Name: Meat - Dog
+Name: Dog Meat
 ---
 Id: 065C9C:Skyrim.esm
-Name: Meat - Horse
+Name: Horse Meat
 ---
 Id: 03A5A4:Skyrim.esm
 Name: Poison - Damage Health I
@@ -803,220 +803,220 @@ Id: 076F17:Skyrim.esm
 Name: Potion - Falmer Blood Elixir
 ---
 Id: 03EB36:Skyrim.esm
-Name: Potion - Fortify Ability: Alteration I
+Name: 'Potion - Fortify Ability: Alteration I'
 ---
 Id: 03988E:Skyrim.esm
-Name: Potion - Fortify Ability: Alteration II
+Name: 'Potion - Fortify Ability: Alteration II'
 ---
 Id: 039899:Skyrim.esm
-Name: Potion - Fortify Ability: Alteration III
+Name: 'Potion - Fortify Ability: Alteration III'
 ---
 Id: 03989A:Skyrim.esm
-Name: Potion - Fortify Ability: Alteration IV
+Name: 'Potion - Fortify Ability: Alteration IV'
 ---
 Id: 03EB2C:Skyrim.esm
-Name: Potion - Fortify Ability: Archery I
+Name: 'Potion - Fortify Ability: Archery I'
 ---
 Id: 039949:Skyrim.esm
-Name: Potion - Fortify Ability: Archery II
+Name: 'Potion - Fortify Ability: Archery II'
 ---
 Id: 03994B:Skyrim.esm
-Name: Potion - Fortify Ability: Archery III
+Name: 'Potion - Fortify Ability: Archery III'
 ---
 Id: 03994E:Skyrim.esm
-Name: Potion - Fortify Ability: Archery IV
+Name: 'Potion - Fortify Ability: Archery IV'
 ---
 Id: 03EB35:Skyrim.esm
-Name: Potion - Fortify Ability: Barter I
+Name: 'Potion - Fortify Ability: Barter I'
 ---
 Id: 039970:Skyrim.esm
-Name: Potion - Fortify Ability: Barter II
+Name: 'Potion - Fortify Ability: Barter II'
 ---
 Id: 039971:Skyrim.esm
-Name: Potion - Fortify Ability: Barter III
+Name: 'Potion - Fortify Ability: Barter III'
 ---
 Id: 039973:Skyrim.esm
-Name: Potion - Fortify Ability: Barter IV
+Name: 'Potion - Fortify Ability: Barter IV'
 ---
 Id: 03EB32:Skyrim.esm
-Name: Potion - Fortify Ability: Block I
+Name: 'Potion - Fortify Ability: Block I'
 ---
 Id: 03989B:Skyrim.esm
-Name: Potion - Fortify Ability: Block II
+Name: 'Potion - Fortify Ability: Block II'
 ---
 Id: 0398AB:Skyrim.esm
-Name: Potion - Fortify Ability: Block III
+Name: 'Potion - Fortify Ability: Block III'
 ---
 Id: 0398AC:Skyrim.esm
-Name: Potion - Fortify Ability: Block V
+Name: 'Potion - Fortify Ability: Block V'
 ---
 Id: 03EB37:Skyrim.esm
-Name: Potion - Fortify Ability: Conjuration I
+Name: 'Potion - Fortify Ability: Conjuration I'
 ---
 Id: 0398AD:Skyrim.esm
-Name: Potion - Fortify Ability: Conjuration II
+Name: 'Potion - Fortify Ability: Conjuration II'
 ---
 Id: 0398EC:Skyrim.esm
-Name: Potion - Fortify Ability: Conjuration III
+Name: 'Potion - Fortify Ability: Conjuration III'
 ---
 Id: 0398ED:Skyrim.esm
-Name: Potion - Fortify Ability: Conjuration IV
+Name: 'Potion - Fortify Ability: Conjuration IV'
 ---
 Id: 03EB38:Skyrim.esm
-Name: Potion - Fortify Ability: Destruction I
+Name: 'Potion - Fortify Ability: Destruction I'
 ---
 Id: 0398EE:Skyrim.esm
-Name: Potion - Fortify Ability: Destruction II
+Name: 'Potion - Fortify Ability: Destruction II'
 ---
 Id: 0398F1:Skyrim.esm
-Name: Potion - Fortify Ability: Destruction III
+Name: 'Potion - Fortify Ability: Destruction III'
 ---
 Id: 0398F3:Skyrim.esm
-Name: Potion - Fortify Ability: Destruction IV
+Name: 'Potion - Fortify Ability: Destruction IV'
 ---
 Id: 039CFB:Skyrim.esm
-Name: Potion - Fortify Ability: Enchanting I
+Name: 'Potion - Fortify Ability: Enchanting I'
 ---
 Id: 039D02:Skyrim.esm
-Name: Potion - Fortify Ability: Enchanting II
+Name: 'Potion - Fortify Ability: Enchanting II'
 ---
 Id: 039D0A:Skyrim.esm
-Name: Potion - Fortify Ability: Enchanting III
+Name: 'Potion - Fortify Ability: Enchanting III'
 ---
 Id: 039D12:Skyrim.esm
-Name: Potion - Fortify Ability: Enchanting IV
+Name: 'Potion - Fortify Ability: Enchanting IV'
 ---
 Id: 03EB2F:Skyrim.esm
-Name: Potion - Fortify Ability: Heavy Armor I
+Name: 'Potion - Fortify Ability: Heavy Armor I'
 ---
 Id: 0398F4:Skyrim.esm
-Name: Potion - Fortify Ability: Heavy Armor II
+Name: 'Potion - Fortify Ability: Heavy Armor II'
 ---
 Id: 0398F5:Skyrim.esm
-Name: Potion - Fortify Ability: Heavy Armor III
+Name: 'Potion - Fortify Ability: Heavy Armor III'
 ---
 Id: 0398F6:Skyrim.esm
-Name: Potion - Fortify Ability: Heavy Armor IV
+Name: 'Potion - Fortify Ability: Heavy Armor IV'
 ---
 Id: 03EB39:Skyrim.esm
-Name: Potion - Fortify Ability: Illusion I
+Name: 'Potion - Fortify Ability: Illusion I'
 ---
 Id: 03994F:Skyrim.esm
-Name: Potion - Fortify Ability: Illusion II
+Name: 'Potion - Fortify Ability: Illusion II'
 ---
 Id: 039950:Skyrim.esm
-Name: Potion - Fortify Ability: Illusion III
+Name: 'Potion - Fortify Ability: Illusion III'
 ---
 Id: 039951:Skyrim.esm
-Name: Potion - Fortify Ability: Illusion IV
+Name: 'Potion - Fortify Ability: Illusion IV'
 ---
 Id: 03EB30:Skyrim.esm
-Name: Potion - Fortify Ability: Light Armor I
+Name: 'Potion - Fortify Ability: Light Armor I'
 ---
 Id: 0398FD:Skyrim.esm
-Name: Potion - Fortify Ability: Light Armor II
+Name: 'Potion - Fortify Ability: Light Armor II'
 ---
 Id: 039903:Skyrim.esm
-Name: Potion - Fortify Ability: Light Armor III
+Name: 'Potion - Fortify Ability: Light Armor III'
 ---
 Id: 039904:Skyrim.esm
-Name: Potion - Fortify Ability: Light Armor IV
+Name: 'Potion - Fortify Ability: Light Armor IV'
 ---
 Id: 039930:Skyrim.esm
-Name: Potion - Fortify Ability: Lockpicking I
+Name: 'Potion - Fortify Ability: Lockpicking I'
 ---
 Id: 039945:Skyrim.esm
-Name: Potion - Fortify Ability: Lockpicking II
+Name: 'Potion - Fortify Ability: Lockpicking II'
 ---
 Id: 039946:Skyrim.esm
-Name: Potion - Fortify Ability: Lockpicking III
+Name: 'Potion - Fortify Ability: Lockpicking III'
 ---
 Id: 039948:Skyrim.esm
-Name: Potion - Fortify Ability: Lockpicking IV
+Name: 'Potion - Fortify Ability: Lockpicking IV'
 ---
 Id: 03EB2A:Skyrim.esm
-Name: Potion - Fortify Ability: One-Handed I
+Name: 'Potion - Fortify Ability: One-Handed I'
 ---
 Id: 039954:Skyrim.esm
-Name: Potion - Fortify Ability: One-Handed II
+Name: 'Potion - Fortify Ability: One-Handed II'
 ---
 Id: 039955:Skyrim.esm
-Name: Potion - Fortify Ability: One-Handed III
+Name: 'Potion - Fortify Ability: One-Handed III'
 ---
 Id: 039956:Skyrim.esm
-Name: Potion - Fortify Ability: One-Handed IV
+Name: 'Potion - Fortify Ability: One-Handed IV'
 ---
 Id: 0D6948:Skyrim.esm
-Name: Potion - Fortify Ability: Persuasion I
+Name: 'Potion - Fortify Ability: Persuasion I'
 ---
 Id: 0D6949:Skyrim.esm
-Name: Potion - Fortify Ability: Persuasion II
+Name: 'Potion - Fortify Ability: Persuasion II'
 ---
 Id: 0D697F:Skyrim.esm
-Name: Potion - Fortify Ability: Persuasion III
+Name: 'Potion - Fortify Ability: Persuasion III'
 ---
 Id: 0D6980:Skyrim.esm
-Name: Potion - Fortify Ability: Persuasion IV
+Name: 'Potion - Fortify Ability: Persuasion IV'
 ---
 Id: 03EB31:Skyrim.esm
-Name: Potion - Fortify Ability: Pickpocket I
+Name: 'Potion - Fortify Ability: Pickpocket I'
 ---
 Id: 039957:Skyrim.esm
-Name: Potion - Fortify Ability: Pickpocket II
+Name: 'Potion - Fortify Ability: Pickpocket II'
 ---
 Id: 039959:Skyrim.esm
-Name: Potion - Fortify Ability: Pickpocket III
+Name: 'Potion - Fortify Ability: Pickpocket III'
 ---
 Id: 039958:Skyrim.esm
-Name: Potion - Fortify Ability: Pickpocket IV
+Name: 'Potion - Fortify Ability: Pickpocket IV'
 ---
 Id: 03EB3A:Skyrim.esm
-Name: Potion - Fortify Ability: Restoration I
+Name: 'Potion - Fortify Ability: Restoration I'
 ---
 Id: 03995A:Skyrim.esm
-Name: Potion - Fortify Ability: Restoration II
+Name: 'Potion - Fortify Ability: Restoration II'
 ---
 Id: 03995B:Skyrim.esm
-Name: Potion - Fortify Ability: Restoration III
+Name: 'Potion - Fortify Ability: Restoration III'
 ---
 Id: 03995C:Skyrim.esm
-Name: Potion - Fortify Ability: Restoration IV
+Name: 'Potion - Fortify Ability: Restoration IV'
 ---
 Id: 03EB2E:Skyrim.esm
-Name: Potion - Fortify Ability: Smithing I
+Name: 'Potion - Fortify Ability: Smithing I'
 ---
 Id: 03995D:Skyrim.esm
-Name: Potion - Fortify Ability: Smithing II
+Name: 'Potion - Fortify Ability: Smithing II'
 ---
 Id: 039962:Skyrim.esm
-Name: Potion - Fortify Ability: Smithing III
+Name: 'Potion - Fortify Ability: Smithing III'
 ---
 Id: 039967:Skyrim.esm
-Name: Potion - Fortify Ability: Smithing IV
+Name: 'Potion - Fortify Ability: Smithing IV'
 ---
 Id: 03EB33:Skyrim.esm
-Name: Potion - Fortify Ability: Sneak I
+Name: 'Potion - Fortify Ability: Sneak I'
 ---
 Id: 039968:Skyrim.esm
-Name: Potion - Fortify Ability: Sneak II
+Name: 'Potion - Fortify Ability: Sneak II'
 ---
 Id: 039969:Skyrim.esm
-Name: Potion - Fortify Ability: Sneak III
+Name: 'Potion - Fortify Ability: Sneak III'
 ---
 Id: 03996F:Skyrim.esm
-Name: Potion - Fortify Ability: Sneak IV
+Name: 'Potion - Fortify Ability: Sneak IV'
 ---
 Id: 03EB2B:Skyrim.esm
-Name: Potion - Fortify Ability: Two-Handed I
+Name: 'Potion - Fortify Ability: Two-Handed I'
 ---
 Id: 039974:Skyrim.esm
-Name: Potion - Fortify Ability: Two-Handed II
+Name: 'Potion - Fortify Ability: Two-Handed II'
 ---
 Id: 039980:Skyrim.esm
-Name: Potion - Fortify Ability: Two-Handed III
+Name: 'Potion - Fortify Ability: Two-Handed III'
 ---
 Id: 039AA6:Skyrim.esm
-Name: Potion - Fortify Ability: Two-Handed IV
+Name: 'Potion - Fortify Ability: Two-Handed IV'
 ---
 Id: 03EB02:Skyrim.esm
 Name: Potion - Fortify Carry Weight I
@@ -1303,17 +1303,8 @@ Name: Potion - White Phial (Full)
 Id: 018EF3:Dawnguard.esm
 Name: Potion of Blood
 ---
-Id: 0AED90:Skyrim.esm
-Name: Sleeping Tree Sap
----
 Id: 00353B:HearthFires.esm
 Name: Snowberry Crostata
----
-Id: 015A1E:Dawnguard.esm
-Name: Soul Husk Extract
----
-Id: 014DC4:Dawnguard.esm
-Name: Soul Husk
 ---
 Id: 0F431B:Skyrim.esm
 Name: Soup - Cabbage Potato
@@ -1398,6 +1389,3 @@ Name: Stew - Venison
 ---
 Id: 0009E9:ccQDRSSE001-SurvivalMode.esl
 Name: Stew - Venison, Hot
----
-Id: 05F6DF:Skyrim.esm
-Name: Vaermina's Torpor

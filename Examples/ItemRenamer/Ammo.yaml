@@ -10,7 +10,7 @@ Name: Arrow - Orcish
 Id: 0139BC:Skyrim.esm
 Name: Arrow - Dwarven
 ---
-Id: 0139BD:Skyrim.esm`
+Id: 0139BD:Skyrim.esm
 Name: Arrow - Elven
 ---
 Id: 0139BE:Skyrim.esm
@@ -45,9 +45,6 @@ Name: Arrow - Bound
 ---
 Id: 10E2DE:Skyrim.esm
 Name: Arrow - Iron
----
-Id: 0AB23D:Skyrim.esm
-Name: Conjuration II: Spectral Arrow
 ---
 Id: 0098A0:Dawnguard.esm
 Name: Arrow - Elven, Bloodcursed
