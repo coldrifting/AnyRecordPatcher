@@ -260,7 +260,7 @@ public static partial class Patcher
             if (state.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(reqModTrim))) 
                 continue;
 
-            Console.WriteLine($"Skipping: {new DirectoryInfo(patchDir).Name} (A Required Mod was not found)");
+            Console.WriteLine($"Skipping: {new DirectoryInfo(patchDir).Name} [Required Mod not found]");
             return false;
         }
 
@@ -273,16 +273,22 @@ public static partial class Patcher
             return;
 
         int indexStart = yaml.IndexOf("Id:", StringComparison.Ordinal) + 3;
-        int indexEnd = yaml.IndexOf("\n", StringComparison.Ordinal);
+        int indexEnd = yaml.IndexOf("\n", indexStart, StringComparison.Ordinal);
 
+        if (indexEnd == -1)
+            indexEnd = yaml.Length;
+        
         string errorId = yaml[indexStart..indexEnd].Trim();
 
         string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
-        string patchFolder = Path.GetDirectoryName(patchFileFullPath) ?? "";
+        string? patchFolder = new FileInfo(patchFileFullPath).Directory?.Name;
         
         string errorKey = $"{patchFolder}\\{patchType}.yaml";
+
+        if (!Errors.ContainsKey(errorKey))
+            Errors[errorKey] = new List<string>();
         
-        Errors[errorKey].Add($"{errorId} [Quote Error Likely]");
+        Errors[errorKey].Add($"{errorId} [Quote Error or Duplicate Entry Likely]");
     }
 
     private static Stream ToStream(this string str)

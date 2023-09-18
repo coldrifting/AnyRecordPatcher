@@ -1,6 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
+using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Skyrim;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
@@ -150,6 +151,7 @@ public static partial class Exporter
         where TMajorGetter : class, ISkyrimMajorRecordGetter
     {
         Stack<(TMajorGetter, TMajorGetter)> compares = new();
+        HashSet<string> seen = new();
 
         // Get override version of record we care about
         var targetMod = env.LoadOrder[_pluginName];
@@ -176,10 +178,12 @@ public static partial class Exporter
 
             foreach (TMajorGetter record in modRecords)
             {
-                if (newRefs.TryGetValue(record.FormKey, out TMajorGetter? @ref))
-                {
-                    compares.Push((@ref, record));
-                }
+                string formKey = record.FormKey.ToString();
+                if (!newRefs.TryGetValue(record.FormKey, out TMajorGetter? @ref) || seen.Contains(formKey)) 
+                    continue;
+                
+                compares.Push((@ref, record));
+                seen.Add(formKey);
             }
         }
         
