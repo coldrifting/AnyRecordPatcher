@@ -1,554 +1,554 @@
 Id: 3C756C:MysticismMagic.esp
-Name: Spell Tome - Alteration I: Open Novice Lock
+Name: "Spell Tome - Alteration I: Open Novice Lock"
 ---
 Id: C671AD:MysticismMagic.esp
-Name: Spell Tome - Alteration II: Dispel
+Name: "Spell Tome - Alteration II: Dispel"
 ---
 Id: 3C7571:MysticismMagic.esp
-Name: Spell Tome - Alteration II: Feather
+Name: "Spell Tome - Alteration II: Feather"
 ---
 Id: 3C756D:MysticismMagic.esp
-Name: Spell Tome - Alteration II: Open Apprentice Lock
+Name: "Spell Tome - Alteration II: Open Apprentice Lock"
 ---
 Id: 8AF367:MysticismMagic.esp
-Name: Spell Tome - Alteration II: Swift Swim
+Name: "Spell Tome - Alteration II: Swift Swim"
 ---
 Id: 3C7584:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Burden
+Name: "Spell Tome - Alteration III: Burden"
 ---
 Id: 3C7577:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Corrode Armor
+Name: "Spell Tome - Alteration III: Corrode Armor"
 ---
 Id: 8C3768:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Destroy Construct
+Name: "Spell Tome - Alteration III: Destroy Construct"
 ---
 Id: 7DA929:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Disintegrate Weapon
+Name: "Spell Tome - Alteration III: Disintegrate Weapon"
 ---
 Id: 3C7573:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Fire Shell
+Name: "Spell Tome - Alteration III: Fire Shell"
 ---
 Id: 3C7574:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Frost Shell
+Name: "Spell Tome - Alteration III: Frost Shell"
 ---
 Id: 3C756E:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Open Adept Lock
+Name: "Spell Tome - Alteration III: Open Adept Lock"
 ---
 Id: 3C7576:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Poison Shell
+Name: "Spell Tome - Alteration III: Poison Shell"
 ---
 Id: 3C7579:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Sea Stride
+Name: "Spell Tome - Alteration III: Sea Stride"
 ---
 Id: 3C7575:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Shock Shell
+Name: "Spell Tome - Alteration III: Shock Shell"
 ---
 Id: 3C7582:MysticismMagic.esp
-Name: Spell Tome - Alteration III: Slowfall
+Name: "Spell Tome - Alteration III: Slowfall"
 ---
 Id: 1901E6:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Ash Cloud
+Name: "Spell Tome - Alteration IV: Ash Cloud"
 ---
 Id: C857B4:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Burden Rune
+Name: "Spell Tome - Alteration IV: Burden Rune"
 ---
 Id: 4F758F:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Detect All
+Name: "Spell Tome - Alteration IV: Detect All"
 ---
 Id: AC7E8C:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Encumber
+Name: "Spell Tome - Alteration IV: Encumber"
 ---
 Id: 3C756F:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Open Expert Lock
+Name: "Spell Tome - Alteration IV: Open Expert Lock"
 ---
 Id: 3C7583:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Pack Mule
+Name: "Spell Tome - Alteration IV: Pack Mule"
 ---
 Id: 3C757C:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Weakness to Fire
+Name: "Spell Tome - Alteration IV: Weakness to Fire"
 ---
 Id: 3C757D:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Weakness to Frost
+Name: "Spell Tome - Alteration IV: Weakness to Frost"
 ---
 Id: 3C757F:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Weakness to Poison
+Name: "Spell Tome - Alteration IV: Weakness to Poison"
 ---
 Id: 3C757E:MysticismMagic.esp
-Name: Spell Tome - Alteration IV: Weakness to Shock
+Name: "Spell Tome - Alteration IV: Weakness to Shock"
 ---
 Id: 3C7589:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Armoreater
+Name: "Spell Tome - Alteration V: Armoreater"
 ---
 Id: 4B0684:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Cinder Storm
+Name: "Spell Tome - Alteration V: Cinder Storm"
 ---
 Id: 3C758B:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Dwemerbane
+Name: "Spell Tome - Alteration V: Dwemerbane"
 ---
 Id: 3C7585:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Flame Shield
+Name: "Spell Tome - Alteration V: Flame Shield"
 ---
 Id: 3C7586:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Ice Shield
+Name: "Spell Tome - Alteration V: Ice Shield"
 ---
 Id: 3C7587:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Lightning Shield
+Name: "Spell Tome - Alteration V: Lightning Shield"
 ---
 Id: 9E9214:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Swordbreaker
+Name: "Spell Tome - Alteration V: Swordbreaker"
 ---
 Id: FF19E1:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Symmetr
+Name: "Spell Tome - Alteration V: Symmetr"
 ---
 Id: 4B0649:MysticismMagic.esp
-Name: Spell Tome - Alteration V: The Unwelcome Guest
+Name: "Spell Tome - Alteration V: The Unwelcome Guest"
 ---
 Id: 3C7588:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Venom Shield
+Name: "Spell Tome - Alteration V: Venom Shield"
 ---
 Id: 4B0683:MysticismMagic.esp
-Name: Spell Tome - Alteration V: Weight of the World
+Name: "Spell Tome - Alteration V: Weight of the World"
 ---
 Id: 4E312A:MysticismMagic.esp
-Name: Spell Tome - Conjuration I: Conjure Skeleton
+Name: "Spell Tome - Conjuration I: Conjure Skeleton"
 ---
 Id: E01501:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Bound Mace
+Name: "Spell Tome - Conjuration II: Bound Mace"
 ---
 Id: DC48DD:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Bound Shield
+Name: "Spell Tome - Conjuration II: Bound Shield"
 ---
 Id: DD3BEE:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Bound War Axe
+Name: "Spell Tome - Conjuration II: Bound War Axe"
 ---
 Id: E7FEC7:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Conjure Death Hound
+Name: "Spell Tome - Conjuration II: Conjure Death Hound"
 ---
 Id: 4E312D:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Conjure Skeleton Archer
+Name: "Spell Tome - Conjuration II: Conjure Skeleton Archer"
 ---
 Id: 4E312B:MysticismMagic.esp
-Name: Spell Tome - Conjuration II: Conjure Spectral Dire Wolf
+Name: "Spell Tome - Conjuration II: Conjure Spectral Dire Wolf"
 ---
 Id: DC99E2:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Bound Greatsword
+Name: "Spell Tome - Conjuration III: Bound Greatsword"
 ---
 Id: DED0F8:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Bound Warhammer
+Name: "Spell Tome - Conjuration III: Bound Warhammer"
 ---
 Id: 4E3133:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Ancestral Guardian
+Name: "Spell Tome - Conjuration III: Conjure Ancestral Guardian"
 ---
 Id: 4E312C:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Dremora Warrior
+Name: "Spell Tome - Conjuration III: Conjure Dremora Warrior"
 ---
 Id: 4E3134:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Dwarven Spider
+Name: "Spell Tome - Conjuration III: Conjure Dwarven Spider"
 ---
 Id: E7FED1:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Gargoyle
+Name: "Spell Tome - Conjuration III: Conjure Gargoyle"
 ---
 Id: 4E3131:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Skeleton Mage
+Name: "Spell Tome - Conjuration III: Conjure Skeleton Mage"
 ---
 Id: 4E312F:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Spectral Sabre Cat
+Name: "Spell Tome - Conjuration III: Conjure Spectral Sabre Cat"
 ---
 Id: 4E3138:MysticismMagic.esp
-Name: Spell Tome - Conjuration III: Conjure Spectral Steed
+Name: "Spell Tome - Conjuration III: Conjure Spectral Steed"
 ---
 Id: 4E313D:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Conjure Ancestral Wizard
+Name: "Spell Tome - Conjuration IV: Conjure Ancestral Wizard"
 ---
 Id: 4E3139:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Conjure Dremora Warlock
+Name: "Spell Tome - Conjuration IV: Conjure Dremora Warlock"
 ---
 Id: 4E313A:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Conjure Skeleton Warrior
+Name: "Spell Tome - Conjuration IV: Conjure Skeleton Warrior"
 ---
 Id: 4E3137:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Conjure Spectral Bear
+Name: "Spell Tome - Conjuration IV: Conjure Spectral Bear"
 ---
 Id: E7FECC:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Conjure Volkihar Hound
+Name: "Spell Tome - Conjuration IV: Conjure Volkihar Hound"
 ---
 Id: 45536F:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Mark
+Name: "Spell Tome - Conjuration IV: Mark"
 ---
 Id: 4E314C:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Planar Anchor
+Name: "Spell Tome - Conjuration IV: Planar Anchor"
 ---
 Id: 455371:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Recall
+Name: "Spell Tome - Conjuration IV: Recall"
 ---
 Id: 4B067E:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Shalidor's Beacon
+Name: "Spell Tome - Conjuration IV: Shalidor's Beacon"
 ---
 Id: 4E314D:MysticismMagic.esp
-Name: Spell Tome - Conjuration IV: Translimination
+Name: "Spell Tome - Conjuration IV: Translimination"
 ---
 Id: 4E3146:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Ancestral Assassin
+Name: "Spell Tome - Conjuration V: Conjure Ancestral Assassin"
 ---
 Id: 4E3145:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Ash Husk
+Name: "Spell Tome - Conjuration V: Conjure Ash Husk"
 ---
 Id: 00FFFF:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Dremora Hunter
+Name: "Spell Tome - Conjuration V: Conjure Dremora Hunter"
 ---
 Id: 010000:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Dremora Sorcerer
+Name: "Spell Tome - Conjuration V: Conjure Dremora Sorcerer"
 ---
 Id: E7FEDA:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Gargoyle Brute
+Name: "Spell Tome - Conjuration V: Conjure Gargoyle Brute"
 ---
 Id: 4E313C:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure High Seeker
+Name: "Spell Tome - Conjuration V: Conjure High Seeker"
 ---
 Id: 4E3142:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Skeleton Champion
+Name: "Spell Tome - Conjuration V: Conjure Skeleton Champion"
 ---
 Id: 4E314F:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Spectral Manbeast
+Name: "Spell Tome - Conjuration V: Conjure Spectral Manbeast"
 ---
 Id: 01F2F8:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Wrathman Marksman
+Name: "Spell Tome - Conjuration V: Conjure Wrathman Marksman"
 ---
 Id: 01F2F9:MysticismMagic.esp
-Name: Spell Tome - Conjuration V: Conjure Wrathman Warlock
+Name: "Spell Tome - Conjuration V: Conjure Wrathman Warlock"
 ---
 Id: 1A96F7:MysticismMagic.esp
-Name: Spell Tome - Destruction II: Burning Touch
+Name: "Spell Tome - Destruction II: Burning Touch"
 ---
 Id: 1AE803:MysticismMagic.esp
-Name: Spell Tome - Destruction II: Chilling Touch
+Name: "Spell Tome - Destruction II: Chilling Touch"
 ---
 Id: 1AE805:MysticismMagic.esp
-Name: Spell Tome - Destruction II: Shocking Touch
+Name: "Spell Tome - Destruction II: Shocking Touch"
 ---
 Id: 478AB3:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Drain Life
+Name: "Spell Tome - Destruction III: Drain Life"
 ---
 Id: 478AB4:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Drain Magicka
+Name: "Spell Tome - Destruction III: Drain Magicka"
 ---
 Id: 478AAE:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Drain Stamina
+Name: "Spell Tome - Destruction III: Drain Stamina"
 ---
 Id: C4DC38:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Flame Touch
+Name: "Spell Tome - Destruction III: Flame Touch"
 ---
 Id: 1D7033:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Greater Flames
+Name: "Spell Tome - Destruction III: Greater Flames"
 ---
 Id: 1D7035:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Greater Frostbite
+Name: "Spell Tome - Destruction III: Greater Frostbite"
 ---
 Id: 1D7036:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Greater Sparks
+Name: "Spell Tome - Destruction III: Greater Sparks"
 ---
 Id: CDB97E:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Icy Touch
+Name: "Spell Tome - Destruction III: Icy Touch"
 ---
 Id: CF9FB0:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Static Touch
+Name: "Spell Tome - Destruction III: Static Touch"
 ---
 Id: 1B8A16:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Vampiric Bolt
+Name: "Spell Tome - Destruction III: Vampiric Bolt"
 ---
 Id: 1B8A13:MysticismMagic.esp
-Name: Spell Tome - Destruction III: Vampiric Touch
+Name: "Spell Tome - Destruction III: Vampiric Touch"
 ---
 Id: 1D7038:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Fiery Grasp
+Name: "Spell Tome - Destruction IV: Fiery Grasp"
 ---
 Id: 2A19B1:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Freezing Grasp
+Name: "Spell Tome - Destruction IV: Freezing Grasp"
 ---
 Id: 36C2DC:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Greater Fire Rune
+Name: "Spell Tome - Destruction IV: Greater Fire Rune"
 ---
 Id: 3A3E0B:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Greater Frost Rune
+Name: "Spell Tome - Destruction IV: Greater Frost Rune"
 ---
 Id: 3A3E0C:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Greater Lightning Rune
+Name: "Spell Tome - Destruction IV: Greater Lightning Rune"
 ---
 Id: 1D7037:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Thundering Grasp
+Name: "Spell Tome - Destruction IV: Thundering Grasp"
 ---
 Id: 478AAA:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Vampiric Blast
+Name: "Spell Tome - Destruction IV: Vampiric Blast"
 ---
 Id: 36C2DD:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Vampiric Grasp
+Name: "Spell Tome - Destruction IV: Vampiric Grasp"
 ---
 Id: 36C2DE:MysticismMagic.esp
-Name: Spell Tome - Destruction IV: Vampiric Rune
+Name: "Spell Tome - Destruction IV: Vampiric Rune"
 ---
 Id: 36C2E0:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Blood Lance
+Name: "Spell Tome - Destruction V: Blood Lance"
 ---
 Id: 9F851F:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Electrocute
+Name: "Spell Tome - Destruction V: Electrocute"
 ---
 Id: 3A3E10:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Finger of the Mountain
+Name: "Spell Tome - Destruction V: Finger of the Mountain"
 ---
 Id: 46469C:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Flame Tempest
+Name: "Spell Tome - Destruction V: Flame Tempest"
 ---
 Id: 9F851E:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Flash Freeze
+Name: "Spell Tome - Destruction V: Flash Freeze"
 ---
 Id: 478AB8:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Hoarfrost
+Name: "Spell Tome - Destruction V: Hoarfrost"
 ---
 Id: 1DC13A:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Immolate
+Name: "Spell Tome - Destruction V: Immolate"
 ---
 Id: 478AAC:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Leech Life
+Name: "Spell Tome - Destruction V: Leech Life"
 ---
 Id: 478AB7:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Leech Magicka
+Name: "Spell Tome - Destruction V: Leech Magicka"
 ---
 Id: 36C2E8:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Leech Stamina
+Name: "Spell Tome - Destruction V: Leech Stamina"
 ---
 Id: 478AAD:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Sap Essence
+Name: "Spell Tome - Destruction V: Sap Essence"
 ---
 Id: 478AAB:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Scion's Embrace
+Name: "Spell Tome - Destruction V: Scion's Embrace"
 ---
 Id: 9F851D:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Scorch
+Name: "Spell Tome - Destruction V: Scorch"
 ---
 Id: 478AB5:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Siphon Spirit
+Name: "Spell Tome - Destruction V: Siphon Spirit"
 ---
 Id: 46469D:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Stormblast
+Name: "Spell Tome - Destruction V: Stormblast"
 ---
 Id: 2E8871:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Throat of the World
+Name: "Spell Tome - Destruction V: Throat of the World"
 ---
 Id: A30050:MysticismMagic.esp
-Name: Spell Tome - Destruction V: Touch of Death
+Name: "Spell Tome - Destruction V: Touch of Death"
 ---
 Id: B4B8F8:MysticismMagic.esp
-Name: Spell Tome - Illusion II: Fury
+Name: "Spell Tome - Illusion II: Fury"
 ---
 Id: 3E5C0C:MysticismMagic.esp
-Name: Spell Tome - Illusion II: Night Eye
+Name: "Spell Tome - Illusion II: Night Eye"
 ---
 Id: B467E4:MysticismMagic.esp
-Name: Spell Tome - Illusion II: Silence
+Name: "Spell Tome - Illusion II: Silence"
 ---
 Id: 4B063D:MysticismMagic.esp
-Name: Spell Tome - Illusion II: Soothe
+Name: "Spell Tome - Illusion II: Soothe"
 ---
 Id: 3E5C0D:MysticismMagic.esp
-Name: Spell Tome - Illusion III: Chameleon
+Name: "Spell Tome - Illusion III: Chameleon"
 ---
 Id: 3E5C0F:MysticismMagic.esp
-Name: Spell Tome - Illusion III: Command
+Name: "Spell Tome - Illusion III: Command"
 ---
 Id: 4B0633:MysticismMagic.esp
-Name: Spell Tome - Illusion III: Hush
+Name: "Spell Tome - Illusion III: Hush"
 ---
 Id: 4B0632:MysticismMagic.esp
-Name: Spell Tome - Illusion III: Panic
+Name: "Spell Tome - Illusion III: Panic"
 ---
 Id: 3E5C12:MysticismMagic.esp
-Name: Spell Tome - Illusion III: Shroud
+Name: "Spell Tome - Illusion III: Shroud"
 ---
 Id: 3E5C10:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Calm Rune
+Name: "Spell Tome - Illusion IV: Calm Rune"
 ---
 Id: 3E5C17:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Command Rune
+Name: "Spell Tome - Illusion IV: Command Rune"
 ---
 Id: 3E5C14:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Control
+Name: "Spell Tome - Illusion IV: Control"
 ---
 Id: A9A576:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Fade
+Name: "Spell Tome - Illusion IV: Fade"
 ---
 Id: 3E5C16:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Fear Rune
+Name: "Spell Tome - Illusion IV: Fear Rune"
 ---
 Id: 4B063F:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Hypnotize
+Name: "Spell Tome - Illusion IV: Hypnotize"
 ---
 Id: 176CD1:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Immobilize
+Name: "Spell Tome - Illusion IV: Immobilize"
 ---
 Id: 3E5C13:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Mute
+Name: "Spell Tome - Illusion IV: Mute"
 ---
 Id: 3E5C18:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Paralyze Rune
+Name: "Spell Tome - Illusion IV: Paralyze Rune"
 ---
 Id: 3E5C15:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Silence Rune
+Name: "Spell Tome - Illusion IV: Silence Rune"
 ---
 Id: 4B0635:MysticismMagic.esp
-Name: Spell Tome - Illusion IV: Wrath
+Name: "Spell Tome - Illusion IV: Wrath"
 ---
 Id: 3E5C1D:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Debilitation
+Name: "Spell Tome - Illusion V: Debilitation"
 ---
 Id: 3E5C1C:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Domination
+Name: "Spell Tome - Illusion V: Domination"
 ---
 Id: 3E5C1E:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Ghostwalk
+Name: "Spell Tome - Illusion V: Ghostwalk"
 ---
 Id: 3E5C1B:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Quietude
+Name: "Spell Tome - Illusion V: Quietude"
 ---
 Id: 3E5C1F:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Sanctuary
+Name: "Spell Tome - Illusion V: Sanctuary"
 ---
 Id: 705EB3:MysticismMagic.esp
-Name: Spell Tome - Illusion V: Vanish
+Name: "Spell Tome - Illusion V: Vanish"
 ---
 Id: 9AC5D6:MysticismMagic.esp
-Name: Spell Tome - Restoration I: Poison Spray
+Name: "Spell Tome - Restoration I: Poison Spray"
 ---
 Id: CCC63C:MysticismMagic.esp
-Name: Spell Tome - Restoration I: Sunbeam
+Name: "Spell Tome - Restoration I: Sunbeam"
 ---
 Id: 515B98:MysticismMagic.esp
-Name: Spell Tome - Restoration II: Close Wounds
+Name: "Spell Tome - Restoration II: Close Wounds"
 ---
 Id: 209A85:MysticismMagic.esp
-Name: Spell Tome - Restoration II: Poisonbolt
+Name: "Spell Tome - Restoration II: Poisonbolt"
 ---
 Id: 209A83:MysticismMagic.esp
-Name: Spell Tome - Restoration II: Poisonous Touch
+Name: "Spell Tome - Restoration II: Poisonous Touch"
 ---
 Id: 3E0AA9:MysticismMagic.esp
-Name: Spell Tome - Restoration II: Regeneration
+Name: "Spell Tome - Restoration II: Regeneration"
 ---
 Id: 2508CA:MysticismMagic.esp
-Name: Spell Tome - Restoration II: Sunlight Touch
+Name: "Spell Tome - Restoration II: Sunlight Touch"
 ---
 Id: 3E0AAF:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Attunement
+Name: "Spell Tome - Restoration III: Attunement"
 ---
 Id: F21F4B:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Circle of Strength
+Name: "Spell Tome - Restoration III: Circle of Strength"
 ---
 Id: F3637E:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Circle of Vitality
+Name: "Spell Tome - Restoration III: Circle of Vitality"
 ---
 Id: B1DFBB:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Circle of Wisdom
+Name: "Spell Tome - Restoration III: Circle of Wisdom"
 ---
 Id: 3E0AB4:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Close Greater Wounds
+Name: "Spell Tome - Restoration III: Close Greater Wounds"
 ---
 Id: 3E0AB8:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Cure Disease
+Name: "Spell Tome - Restoration III: Cure Disease"
 ---
 Id: 9AC5D8:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Deadly Poison Spray
+Name: "Spell Tome - Restoration III: Deadly Poison Spray"
 ---
 Id: 209A87:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Poison Cloak
+Name: "Spell Tome - Restoration III: Poison Cloak"
 ---
 Id: 209A88:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Poison Cloud
+Name: "Spell Tome - Restoration III: Poison Cloud"
 ---
 Id: 78E9F8:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Radiant Sunbeam
+Name: "Spell Tome - Restoration III: Radiant Sunbeam"
 ---
 Id: D45F29:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Radiant Touch
+Name: "Spell Tome - Restoration III: Radiant Touch"
 ---
 Id: DBA6D4:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Rapid Regeneration
+Name: "Spell Tome - Restoration III: Rapid Regeneration"
 ---
 Id: D278E4:MysticismMagic.esp
-Name: Spell Tome - Restoration III: Venomous Touch
+Name: "Spell Tome - Restoration III: Venomous Touch"
 ---
 Id: 209A7E:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Deadly Poison Rune
+Name: "Spell Tome - Restoration IV: Deadly Poison Rune"
 ---
 Id: 3E0AB5:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Grand Healing
+Name: "Spell Tome - Restoration IV: Grand Healing"
 ---
 Id: 3E0AAB:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Grand Ward
+Name: "Spell Tome - Restoration IV: Grand Ward"
 ---
 Id: B18EB0:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Mutagen
+Name: "Spell Tome - Restoration IV: Mutagen"
 ---
 Id: 9AC5D5:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Radiant Sunlight Rune
+Name: "Spell Tome - Restoration IV: Radiant Sunlight Rune"
 ---
 Id: 2508CF:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Reflective Light
+Name: "Spell Tome - Restoration IV: Reflective Light"
 ---
 Id: 2508CC:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Searing Grasp
+Name: "Spell Tome - Restoration IV: Searing Grasp"
 ---
 Id: 209A84:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Viper's Grasp
+Name: "Spell Tome - Restoration IV: Viper's Grasp"
 ---
 Id: 209A86:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Viperbolt
+Name: "Spell Tome - Restoration IV: Viperbolt"
 ---
 Id: 9AC5DA:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Wall of Poison
+Name: "Spell Tome - Restoration IV: Wall of Poison"
 ---
 Id: 9E4105:MysticismMagic.esp
-Name: Spell Tome - Restoration IV: Wall of Sunlight
+Name: "Spell Tome - Restoration IV: Wall of Sunlight"
 ---
 Id: 7D5825:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Arkay's Light
+Name: "Spell Tome - Restoration V: Arkay's Light"
 ---
 Id: 3E0AB1:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Augur of Aetherius
+Name: "Spell Tome - Restoration V: Augur of Aetherius"
 ---
 Id: 36C2C5:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Black Marsh
+Name: "Spell Tome - Restoration V: Black Marsh"
 ---
 Id: 2508D0:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Charged Nova
+Name: "Spell Tome - Restoration V: Charged Nova"
 ---
 Id: 9F8520:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Daybreak
+Name: "Spell Tome - Restoration V: Daybreak"
 ---
 Id: 209A89:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Death Cloud
+Name: "Spell Tome - Restoration V: Death Cloud"
 ---
 Id: 48CF0E:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Eclipse
+Name: "Spell Tome - Restoration V: Eclipse"
 ---
 Id: F3635E:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Font of Strength
+Name: "Spell Tome - Restoration V: Font of Strength"
 ---
 Id: B1DFBE:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Font of Vitality
+Name: "Spell Tome - Restoration V: Font of Vitality"
 ---
 Id: F3636C:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Font of Wisdom
+Name: "Spell Tome - Restoration V: Font of Wisdom"
 ---
 Id: 9F8521:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Miasma
+Name: "Spell Tome - Restoration V: Miasma"
 ---
 Id: 25FC02:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Solar Flare
+Name: "Spell Tome - Restoration V: Solar Flare"
 ---
 Id: 3E0AB9:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Spelldrinker
+Name: "Spell Tome - Restoration V: Spelldrinker"
 ---
 Id: 482CE5:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Stendarr's Mercy
+Name: "Spell Tome - Restoration V: Stendarr's Mercy"
 ---
 Id: 48CF05:MysticismMagic.esp
-Name: Spell Tome - Restoration V: Venomfang
+Name: "Spell Tome - Restoration V: Venomfang"
