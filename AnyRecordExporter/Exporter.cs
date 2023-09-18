@@ -200,7 +200,7 @@ public static partial class Exporter
         var newRefs = targetMod.Mod.EnumerateMajorRecords<TMajorGetter>().ToDictionary(newRef => newRef.FormKey);
 
         bool reached = false;
-        foreach (var prevMod in env.LoadOrder.PriorityOrder)
+        foreach (var prevMod in env.LoadOrder.PriorityOrder.OnlyEnabled())
         {
             if (prevMod.FileName.Equals(_pluginName))
             {
