@@ -97,7 +97,8 @@ public static partial class Exporter
         PatchChanges<DataSpell, ISpellGetter>(env);
         PatchChanges<DataWeapon, IWeaponGetter>(env);
         
-        File.WriteAllText($@"{_patchFolder}\_Required.txt", string.Join("\r\n", RequiredMods) + "\r\n");
+        if (RequiredMods.Count > 0)
+            File.WriteAllText($@"{_patchFolder}\_Required.txt", string.Join("\r\n", RequiredMods) + "\r\n");
         
         Console.WriteLine("INFO: Done!");
         Thread.Sleep(500);
