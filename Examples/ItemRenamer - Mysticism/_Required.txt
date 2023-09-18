@@ -1,1 +1,4 @@
+# Any example of a comment
+# This file could also contain multple esps, each on their own line
+# if the mod requires more than one master
 MysticismMagic.esp

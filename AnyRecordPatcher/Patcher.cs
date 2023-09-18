@@ -253,6 +253,9 @@ public static partial class Patcher
             if (string.IsNullOrEmpty(reqModTrim))
                 continue;
 
+            if (reqModTrim.StartsWith("#"))
+                continue;
+
             // Check if each mod required is in the load order
             if (state.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(reqModTrim))) 
                 continue;
@@ -277,7 +280,9 @@ public static partial class Patcher
         string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
         string patchFolder = Path.GetDirectoryName(patchFileFullPath) ?? "";
         
-        Errors[patchFolder].Add($"{errorId} [Quote Error Likely]");
+        string errorKey = $"{patchFolder}\\{patchType}.yaml";
+        
+        Errors[errorKey].Add($"{errorId} [Quote Error Likely]");
     }
 
     private static Stream ToStream(this string str)
