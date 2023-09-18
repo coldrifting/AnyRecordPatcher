@@ -58,7 +58,7 @@ public static partial class Patcher
         if (!Directory.Exists(_patchDataPath))
         {
             Directory.CreateDirectory(_patchDataPath);
-            File.WriteAllText(_patchDataPath +  "Place User Patch Folders Here.txt", "");
+            File.WriteAllText(_patchDataPath + Path.DirectorySeparatorChar + "Place User Patch Folders Here.txt", "");
         }
         
         // Iterate over all patches
