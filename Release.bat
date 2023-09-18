@@ -1,4 +1,4 @@
-set version=0.9.5
+set version=0.9.6
 set patcher=AnyRecordPatcher-v%version%
 set exporter=AnyRecordExporter-v%version%
 

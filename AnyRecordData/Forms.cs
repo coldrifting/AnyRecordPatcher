@@ -29,29 +29,42 @@ public static partial class DataUtils
         return newObj?.ToString();
     }
 
-    public static string? PatchString(string? record, string? value)
+    public static string? PatchString(string? oldValue, string? newValue)
     {
-        if (value is null)
-            return record;
+        if (newValue is null)
+            return oldValue;
         
-        return value != Delete 
-            ? value 
+        return newValue != Delete 
+            ? newValue 
             : null;
+    }
+
+    public static string PatchStringNonNull(string oldValue, string? newValue)
+    {
+        if (newValue is null)
+            return oldValue;
+        
+        return newValue != Delete 
+            ? newValue 
+            : "";
     }
     
     public static void PatchFormLink<T>(T record, string? formKey)
         where T : IFormLink<ISkyrimMajorRecordGetter>
     {
-        if (formKey is null)
-            return;
-
-        if (formKey == "")
+        switch (formKey)
         {
-            record.SetTo(null);
-            return;
+            case null:
+                return;
+            
+            case "":
+                record.SetTo(null);
+                return;
+            
+            default:
+                record.SetTo(formKey.ToFormKey());
+                break;
         }
-
-        record.SetTo(formKey.ToFormKey());
     }
 
     public static FormKey ToFormKey(this string? input)

@@ -22,7 +22,7 @@ public interface IHasModel
         if (ModelFile is not null)
         {
             rec.Model ??= new Model();
-            DataUtils.PatchString(rec.Model.File , ModelFile);
+            rec.Model.File = DataUtils.PatchStringNonNull(rec.Model.File , ModelFile);
         }
 
         if (ModelTextures is null) 
