@@ -59,6 +59,11 @@ public static partial class Patcher
             Console.WriteLine($"Could not find patch directory: {_patchDataPath}. Exiting...");
             return;
         }
+
+        if (Directory.GetDirectories(_patchDataPath).Length == 0)
+        {
+            File.WriteAllText(_patchDataPath +  "Place User Patch Folders Here.txt", "");
+        }
         
         // Iterate over all patches
         string[] patchDirs = Directory.GetDirectories(_patchDataPath);
