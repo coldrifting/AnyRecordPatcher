@@ -53,15 +53,16 @@ public static partial class Patcher
             
             _patchDataPath = state.ExtraSettingsDataPath;
         }
-        
-        // Iterate over all patches
-        string[] patchDirs = Directory.GetDirectories(_patchDataPath);
 
-        if (patchDirs.Length == 0)
+        // Create user settings folder
+        if (!Directory.Exists(_patchDataPath))
         {
+            Directory.CreateDirectory(_patchDataPath);
             File.WriteAllText(_patchDataPath +  "Place User Patch Folders Here.txt", "");
         }
         
+        // Iterate over all patches
+        string[] patchDirs = Directory.GetDirectories(_patchDataPath);
         foreach (string patchDir in patchDirs)
         {
             // Check Dependencies, if any
