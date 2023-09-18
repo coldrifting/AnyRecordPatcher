@@ -13,7 +13,7 @@ the user settings folder of synthesis, usually located at
 
     <Synthesis Location>\Data\AnyRecordPatcher
 
-Then you're done!
+Then Run the patch in Synthesis and you're done!
 
 # Supported Records
 I may have been a bit hasty with the name of the project, 
