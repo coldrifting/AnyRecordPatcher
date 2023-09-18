@@ -16,7 +16,7 @@ public static partial class Patcher
     private const string PatchIdentifier = "AnyRecordPatcher.esp";
     private static bool _errors;
 
-    private static readonly List<string> Errors = new();
+    private static readonly Dictionary<string, List<string>> Errors = new();
 
     private static readonly Dictionary<FormKey, DataAmmo> Ammo = new();
     private static readonly Dictionary<FormKey, DataArmor> Armors = new();
@@ -70,7 +70,7 @@ public static partial class Patcher
                 continue;
 
             // Read in patch data
-            Console.WriteLine($"Running Patch: {new DirectoryInfo(patchDir).Name}");
+            Console.WriteLine($"Processing: {new DirectoryInfo(patchDir).Name}");
 
             // Read patch data
             ReadPatchFile(patchDir, Ammo);
@@ -89,32 +89,36 @@ public static partial class Patcher
             ReadPatchFile(patchDir, Weapons);
 
             // Patch records
-            Patch(state, Ammo);
-            Patch(state, Armors);
-            Patch(state, Books);
-            Patch(state, Cells);
-            Patch(state, Ingestibles);
-            Patch(state, Ingredients);
-            Patch(state, Lights);
-            Patch(state, Misc);
-            Patch(state, Perks);
-            Patch(state, Scrolls);
-            Patch(state, Shouts);
-            Patch(state, SoulGems);
-            Patch(state, Spells);
-            Patch(state, Weapons);
+            Patch(state, patchDir, Ammo);
+            Patch(state, patchDir, Armors);
+            Patch(state, patchDir, Books);
+            Patch(state, patchDir, Cells);
+            Patch(state, patchDir, Ingestibles);
+            Patch(state, patchDir, Ingredients);
+            Patch(state, patchDir, Lights);
+            Patch(state, patchDir, Misc);
+            Patch(state, patchDir, Perks);
+            Patch(state, patchDir, Scrolls);
+            Patch(state, patchDir, Shouts);
+            Patch(state, patchDir, SoulGems);
+            Patch(state, patchDir, Spells);
+            Patch(state, patchDir, Weapons);
         }
 
         if (Errors.Count > 0)
         {
-            Console.WriteLine("The following FormKeys could not be patched. \r\n" +
-                              "They could be in the wrong file or quotes might be not properly escaped. \r\n" +
-                              "Please check your config for errors");
-            foreach (string f in Errors)
+            Console.WriteLine("Error: The following FormKeys could not be patched.");
+            foreach (var errorKey in Errors)
             {
-                Console.WriteLine(f);
+                Console.WriteLine(errorKey.Key);
+                foreach (string formError in errorKey.Value)
+                {
+                    Console.WriteLine(formError);
+                }
             }
         }
+
+        Errors.Clear();
         
         if (!_errors) 
             return;
@@ -165,7 +169,7 @@ public static partial class Patcher
         }
     }
 
-    private static void Patch<T>(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, Dictionary<FormKey, T> dict)
+    private static void Patch<T>(IPatcherState<ISkyrimMod, ISkyrimModGetter> state, string patchDir, Dictionary<FormKey, T> dict)
         where T : DataBaseItem
     {
         bool first = true;
@@ -207,18 +211,28 @@ public static partial class Patcher
                 
                 if (first)
                 {
-                    Console.WriteLine($"Patching {data.PatchFileName}...");
+                    Console.WriteLine($" | Patching {data.PatchFileName}...");
                     first = false;
                 }
 
                 if (recOverride is not null)
                     data.Patch(recOverride);
-                
-
             }
             catch
             {
-                Errors.Add(f + $" ({data.PatchFileName}) [Patch in wrong file likely]");
+                string errorMessage = "Patch in wrong file likely";
+                if (!state.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(f.ModKey.FileName.ToString())))
+                    errorMessage = "Missing Master - Is a '_Required.txt' file present?";
+
+                string patchFolder = new DirectoryInfo(patchDir).Name;
+                string errorKey = $"{patchFolder}\\{data.PatchFileName}.yaml";
+
+                if (!Errors.ContainsKey(errorKey))
+                {
+                    Errors.Add(errorKey, new List<string>());
+                }
+                
+                Errors[errorKey].Add($"{f} [{errorMessage}]");
             }
         }
 
@@ -228,7 +242,7 @@ public static partial class Patcher
 
     private static bool AreRequiredModsPresent(IBaseRunState<ISkyrimMod, ISkyrimModGetter> state, string patchDir)
     {
-        string requiredModsInfo = patchDir + "_Required.txt";
+        string requiredModsInfo = patchDir + Path.DirectorySeparatorChar + "_Required.txt";
         if (!File.Exists(requiredModsInfo)) 
             return true;
         
@@ -242,9 +256,8 @@ public static partial class Patcher
             // Check if each mod required is in the load order
             if (state.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(reqModTrim))) 
                 continue;
-            
-            Console.WriteLine($"Skipping Patch: {new DirectoryInfo(patchDir).Name}, " +
-                              $"as one or more required mods was not present in the load order");
+
+            Console.WriteLine($"Skipping: {new DirectoryInfo(patchDir).Name} (A Required Mod was not found)");
             return false;
         }
 
@@ -262,8 +275,9 @@ public static partial class Patcher
         string errorId = yaml[indexStart..indexEnd].Trim();
 
         string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
-        if (errorId.Length > 0)
-            Errors.Add(errorId + $" ({patchType}) [Quote Error Likely]");
+        string patchFolder = Path.GetDirectoryName(patchFileFullPath) ?? "";
+        
+        Errors[patchFolder].Add($"{errorId} [Quote Error Likely]");
     }
 
     private static Stream ToStream(this string str)
