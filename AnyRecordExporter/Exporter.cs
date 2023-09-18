@@ -2,7 +2,6 @@
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
 using Mutagen.Bethesda.Skyrim;
-using Noggog;
 using YamlDotNet.Serialization;
 
 namespace AnyRecordExporter;
@@ -184,15 +183,15 @@ public static partial class Exporter
         return compares;
     }
 
-    private static bool CheckForMod(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env, string modName)
-    {
-        return env.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(modName));
-    }
-
     private static void WaitToExit()
     {
         Console.Error.WriteLine("INFO: Press any key to exit...");
         Console.ReadKey();
+    }
+    
+    private static bool CheckForMod(IGameEnvironment<ISkyrimMod, ISkyrimModGetter> env, string modName)
+    {
+        return env.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(modName));
     }
 
     [GeneratedRegex("\\.es(p|m)", RegexOptions.IgnoreCase, "en-US")]

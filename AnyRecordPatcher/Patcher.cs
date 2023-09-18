@@ -10,7 +10,7 @@ using YamlDotNet.Serialization.NamingConventions;
 namespace AnyRecordPatcher;
 using AnyRecordData.DataTypes;
 
-public static class Patcher
+public static partial class Patcher
 {
     private static string _patchDataPath = "";
     private const string PatchIdentifier = "AnyRecordPatcher.esp";
@@ -46,7 +46,10 @@ public static class Patcher
         if (_patchDataPath is "")
         {
             if (state.ExtraSettingsDataPath is null)
+            {
+                Console.WriteLine("Could not find Extra Settings Data Path. Exiting...");
                 return;
+            }
             
             _patchDataPath = state.ExtraSettingsDataPath;
         }
@@ -61,6 +64,10 @@ public static class Patcher
         string[] patchDirs = Directory.GetDirectories(_patchDataPath);
         foreach (string patchDir in patchDirs)
         {
+            // Check Dependencies, if any
+            if (!AreRequiredModsPresent(state, patchDir)) 
+                continue;
+
             // Read in patch data
             Console.WriteLine($"Running Patch: {new DirectoryInfo(patchDir).Name}");
 
@@ -125,9 +132,8 @@ public static class Patcher
             return;
         
         // Split YAML objects
-        const string pattern = @"(\r\n|\r|\n)---(\r\n|\r|\n)";
         string fileContents = File.ReadAllText(patchFileFullPath);
-        string[] splitFileContents = Regex.Split(fileContents, pattern);
+        string[] splitFileContents = YamlDocumentSplitterRegex().Split(fileContents);
 
         foreach (string yaml in splitFileContents)
         {
@@ -143,29 +149,17 @@ public static class Patcher
                     .Build();
                 T item = deserializer.Deserialize<T>(input);
 
-                if (item.Id is null)
+                if (string.IsNullOrEmpty(item.Id))
                 {
                     _errors = true;
                     continue;
                 }
-
+                
                 dictionary.Add(item.Id.ToFormKey(), item);
             }
             catch
             {
-                if (!yaml.Contains("Id:", StringComparison.InvariantCultureIgnoreCase))
-                    continue;
-
-                
-                
-                int indexStart = yaml.IndexOf("Id:", StringComparison.Ordinal) + 3;
-                int indexEnd = yaml.IndexOf("\n", StringComparison.Ordinal);
-
-                string errorId = yaml[indexStart..indexEnd].Trim();
-
-                string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
-                if (errorId.Length > 0)
-                    Errors.Add(errorId + $" ({patchType}) [Quote Error Likely]");
+                AddIdToErrorList(yaml, patchFileFullPath);
             }
         }
     }
@@ -223,12 +217,52 @@ public static class Patcher
             }
             catch
             {
-                Errors.Add(f.ToString() + $" ({data.PatchFileName}) [Patch in wrong file likely]");
+                Errors.Add(f + $" ({data.PatchFileName}) [Patch in wrong file likely]");
             }
         }
 
         // Clear database for next patch
         dict.Clear();
+    }
+
+    private static bool AreRequiredModsPresent(IBaseRunState<ISkyrimMod, ISkyrimModGetter> state, string patchDir)
+    {
+        string requiredModsInfo = patchDir + "_Required.txt";
+        if (!File.Exists(requiredModsInfo)) 
+            return true;
+        
+        string[] requiredMods = File.ReadAllLines(requiredModsInfo);
+        foreach (string requiredMod in requiredMods)
+        {
+            string reqModTrim = requiredMod.Trim();
+            if (string.IsNullOrEmpty(reqModTrim))
+                continue;
+
+            // Check if each mod required is in the load order
+            if (state.LoadOrder.ListedOrder.Any(mod => mod.FileName.Equals(reqModTrim))) 
+                continue;
+            
+            Console.WriteLine($"Skipping Patch: {new DirectoryInfo(patchDir).Name}, " +
+                              $"as one or more required mods was not present in the load order");
+            return false;
+        }
+
+        return true;
+    }
+
+    private static void AddIdToErrorList(string yaml, string patchFileFullPath)
+    {
+        if (!yaml.Contains("Id:", StringComparison.InvariantCultureIgnoreCase))
+            return;
+
+        int indexStart = yaml.IndexOf("Id:", StringComparison.Ordinal) + 3;
+        int indexEnd = yaml.IndexOf("\n", StringComparison.Ordinal);
+
+        string errorId = yaml[indexStart..indexEnd].Trim();
+
+        string patchType = Path.GetFileNameWithoutExtension(patchFileFullPath);
+        if (errorId.Length > 0)
+            Errors.Add(errorId + $" ({patchType}) [Quote Error Likely]");
     }
 
     private static Stream ToStream(this string str)
@@ -240,4 +274,7 @@ public static class Patcher
         stream.Position = 0;
         return stream;
     }
+
+    [GeneratedRegex(@"(\r\n|\r|\n)---(\r\n|\r|\n)")]
+    private static partial Regex YamlDocumentSplitterRegex();
 }
