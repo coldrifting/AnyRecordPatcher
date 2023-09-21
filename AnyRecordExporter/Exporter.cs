@@ -241,6 +241,6 @@ public static partial class Exporter
     [GeneratedRegex("\\.es(p|m)", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex StripPluginExtension();
     
-    [GeneratedRegex("([a-f0-9]{6}:.*?\\.es[mp])", RegexOptions.IgnoreCase, "en-US")]
+    [GeneratedRegex("([a-f0-9]{6}:.*?\\.es[mpl])", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex FormKeyRegex();
 }
