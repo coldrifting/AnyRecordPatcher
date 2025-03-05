@@ -78,12 +78,12 @@ public class DataArmor : DataBaseItem,
         Armatures = DataUtils.GetDataFormLinkList(newRef.Armature, oldRef.Armature);
 
         // Models
-        string? newMaleModelFile = newRef.WorldModel?.Male?.Model?.File.RawPath;
-        string? oldMaleModelFile = oldRef.WorldModel?.Male?.Model?.File.RawPath;
+        string? newMaleModelFile = newRef.WorldModel?.Male?.Model?.File.GivenPath;
+        string? oldMaleModelFile = oldRef.WorldModel?.Male?.Model?.File.GivenPath;
         MaleModelPath = DataUtils.GetString(newMaleModelFile, oldMaleModelFile);
         
-        string? newFemaleModelFile = newRef.WorldModel?.Female?.Model?.File.RawPath;
-        string? oldFemaleModelFile = oldRef.WorldModel?.Female?.Model?.File.RawPath;
+        string? newFemaleModelFile = newRef.WorldModel?.Female?.Model?.File.GivenPath;
+        string? oldFemaleModelFile = oldRef.WorldModel?.Female?.Model?.File.GivenPath;
         FemaleModelPath = DataUtils.GetString(newFemaleModelFile, oldFemaleModelFile);
         
         var newMaleList = newRef.WorldModel?.Male?.Model?.AlternateTextures;
@@ -140,7 +140,7 @@ public class DataArmor : DataBaseItem,
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Male ??= new ArmorModel();
             rec.WorldModel.Male.Model ??= new Model();
-            DataUtils.PatchString(rec.WorldModel.Male.Model.File.RawPath, MaleModelPath);
+            DataUtils.PatchString(rec.WorldModel.Male.Model.File.GivenPath, MaleModelPath);
         }
         
         if (MaleModelTextures is not null)
@@ -172,7 +172,7 @@ public class DataArmor : DataBaseItem,
             rec.WorldModel ??= new GenderedItem<ArmorModel?>(new ArmorModel(), new ArmorModel());
             rec.WorldModel.Female ??= new ArmorModel();
             rec.WorldModel.Female.Model ??= new Model();
-            DataUtils.PatchString(rec.WorldModel.Female.Model.File.RawPath, FemaleModelPath);
+            DataUtils.PatchString(rec.WorldModel.Female.Model.File.GivenPath, FemaleModelPath);
         }
         
         if (FemaleModelTextures is not null)

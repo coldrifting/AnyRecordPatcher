@@ -12,7 +12,7 @@ public interface IHasModel
     
     public void GetDataInterface(IModeledGetter newRef, IModeledGetter oldRef)
     {
-        ModelFile = DataUtils.GetString(newRef.Model?.File.RawPath, oldRef.Model?.File.RawPath);
+        ModelFile = DataUtils.GetString(newRef.Model?.File.GivenPath, oldRef.Model?.File.GivenPath);
         ModelTextures = DataAltTexSet.GetTextureList(newRef.Model?.AlternateTextures, oldRef.Model?.AlternateTextures);
     }
     
